@@ -1,9 +1,6 @@
-"use client"
-
-import { useState } from "react"
 import PageHeader from "@/components/page-header"
-import ProjectCard from "@/components/projects/project-card"
-import { cn } from "@/lib/utils"
+import PortfolioGrid from "@/components/portfolio/portfolio-grid"
+import ScrollReveal from "@/components/scroll-reveal"
 
 type Project = {
   id: string
@@ -16,8 +13,6 @@ type Project = {
 }
 
 export default function PortfolioPage() {
-  const [filter, setFilter] = useState<string>("all")
-
   const projects: Project[] = [
     {
       id: "riverside-penthouse",
@@ -25,7 +20,7 @@ export default function PortfolioPage() {
       category: "Interior Design",
       location: "New York, USA",
       year: "2023",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/projects.png",
       featured: true,
     },
     {
@@ -34,43 +29,7 @@ export default function PortfolioPage() {
       category: "Architecture",
       location: "Los Angeles, USA",
       year: "2022",
-      image: "/placeholder.svg?height=800&width=600",
-      featured: true,
-    },
-    {
-      id: "museum-gallery",
-      title: "Museum Gallery",
-      category: "Lighting Design",
-      location: "London, UK",
-      year: "2023",
-      image: "/placeholder.svg?height=800&width=600",
-      featured: false,
-    },
-    {
-      id: "waterfront-district",
-      title: "Waterfront District",
-      category: "Master Planning",
-      location: "Singapore",
-      year: "2021",
-      image: "/placeholder.svg?height=800&width=600",
-      featured: true,
-    },
-    {
-      id: "sculptural-dining-collection",
-      title: "Sculptural Dining Collection",
-      category: "Furnishings Product",
-      location: "Milan, Italy",
-      year: "2023",
-      image: "/placeholder.svg?height=800&width=600",
-      featured: false,
-    },
-    {
-      id: "wellness-retreat",
-      title: "Wellness Retreat",
-      category: "Lifestyle & Wellbeing",
-      location: "Bali, Indonesia",
-      year: "2022",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/pent-house.png",
       featured: true,
     },
     {
@@ -79,7 +38,7 @@ export default function PortfolioPage() {
       category: "Interior Design",
       location: "Santorini, Greece",
       year: "2022",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/vila.png",
       featured: false,
     },
     {
@@ -88,7 +47,7 @@ export default function PortfolioPage() {
       category: "Architecture",
       location: "Sydney, Australia",
       year: "2021",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/projects.png",
       featured: false,
     },
     {
@@ -97,7 +56,7 @@ export default function PortfolioPage() {
       category: "Lighting Design",
       location: "Paris, France",
       year: "2022",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/luxury-retail.png",
       featured: false,
     },
     {
@@ -106,7 +65,7 @@ export default function PortfolioPage() {
       category: "Master Planning",
       location: "Boston, USA",
       year: "2020",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/projects.png",
       featured: false,
     },
     {
@@ -115,7 +74,7 @@ export default function PortfolioPage() {
       category: "Furnishings Product",
       location: "Copenhagen, Denmark",
       year: "2023",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/projects.png",
       featured: false,
     },
     {
@@ -124,7 +83,7 @@ export default function PortfolioPage() {
       category: "Lifestyle & Wellbeing",
       location: "Tokyo, Japan",
       year: "2022",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/projects.png",
       featured: false,
     },
   ]
@@ -139,44 +98,27 @@ export default function PortfolioPage() {
     "Lifestyle & Wellbeing",
   ]
 
-  const filteredProjects = filter === "all" ? projects : projects.filter((project) => project.category === filter)
-
   return (
     <>
-      <PageHeader title="Portfolio" subtitle="Explore our selected works across various disciplines" />
+      <PageHeader
+        title="Portfolio"
+        subtitle="Explore our selected works across various disciplines"
+        className="bg-gradient-to-r from-architect-neutral to-architect-neutral"
+      />
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-wrap justify-center mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setFilter(category)}
-                className={cn(
-                  "px-4 py-2 mx-2 mb-2 text-sm transition-colors",
-                  filter === category
-                    ? "bg-neutral-900 text-white"
-                    : "bg-transparent text-neutral-600 hover:text-neutral-900",
-                )}
-              >
-                {category === "all" ? "All Projects" : category}
-              </button>
-            ))}
-          </div>
+          <ScrollReveal animation="fade-bottom">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <p className="text-foreground/80 leading-relaxed">
+                Our portfolio showcases a diverse range of projects that reflect our commitment to innovative design,
+                functionality, and aesthetic excellence. Each project represents a unique collaboration between our
+                creative vision and our clients' aspirations.
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                category={project.category}
-                image={project.image}
-                href={`/portfolio/${project.id}`}
-                location={project.location}
-                year={project.year}
-              />
-            ))}
-          </div>
+          <PortfolioGrid projects={projects} categories={categories} />
         </div>
       </section>
     </>

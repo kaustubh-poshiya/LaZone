@@ -8,42 +8,42 @@ export default function ServicesPage() {
       title: "Interior Design",
       description:
         "Creating harmonious interior spaces that balance aesthetics, functionality, and personal expression.",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/interior.jpg",
     },
     {
       id: "architecture",
       title: "Architecture",
       description:
         "Designing innovative structures that harmonize with their surroundings while pushing the boundaries of form and function.",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/architecture.png",
     },
     {
       id: "lighting-design",
       title: "Lighting Design",
       description:
         "Enhancing spaces through thoughtful lighting solutions that create atmosphere, highlight architectural features, and improve functionality.",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/lobby.png",
     },
     {
       id: "master-planning",
       title: "Master Planning",
       description:
         "Developing comprehensive spatial strategies that optimize land use, connectivity, and community engagement for large-scale projects.",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/master-planning.png",
     },
     {
       id: "furnishings-product",
       title: "Furnishings Product",
       description:
         "Curating and designing distinctive furniture and accessories that complement architectural spaces and enhance the overall design narrative.",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/furnishing-product.png",
     },
     {
       id: "lifestyle-wellbeing",
       title: "Lifestyle & Wellbeing",
       description:
         "Integrating wellness principles into design to create spaces that promote physical health, mental clarity, and emotional balance.",
-      image: "/placeholder.svg?height=800&width=600",
+      image: "/images/lifestyle.png",
     },
   ]
 

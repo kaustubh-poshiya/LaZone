@@ -2,7 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import "./globals.css"
-import Navigation from "@/components/navigation"
+import { ThemeProvider } from "@/components/theme-provider"
+import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 
 const playfair = Playfair_Display({
@@ -29,11 +30,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${playfair.variable} ${inter.variable} font-sans bg-neutral-50`}>
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={`${playfair.variable} ${inter.variable} font-sans`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

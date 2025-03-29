@@ -57,7 +57,7 @@ export default function AboutPage() {
             </div>
 
             <div className="relative h-[500px] md:h-[600px]">
-              <Image src="/placeholder.svg?height=1200&width=800" alt="LAZONE Studio" fill className="object-cover" />
+              <Image src="/images/master-planning.png" alt="LAZONE Studio" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      {/* <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight text-center mb-6">Our Team</h2>
           <div className="w-20 h-px bg-neutral-300 mx-auto mb-16"></div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 md:py-24 bg-neutral-900 text-white">
         <div className="container mx-auto px-4 md:px-6">

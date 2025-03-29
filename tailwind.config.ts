@@ -53,6 +53,19 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Updated vibrant architecture-inspired color palette
+        architect: {
+          primary: "#1E3A5F", // Deep blue
+          secondary: "#E8A87C", // Warm coral
+          tertiary: "#41B3A3", // Teal
+          accent: "#C38D9E", // Mauve
+          vibrant: "#FF7E5F", // Vibrant coral
+          emerald: "#2BAE66", // Emerald green
+          navy: "#0F2C4D", // Navy blue
+          gold: "#F9C846", // Gold
+          neutral: "#F2F2F2", // Light gray
+          dark: "#121212", // Deep charcoal
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -68,10 +81,50 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        slideUp: {
+          from: { opacity: "0", transform: "translateY(30px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        slideRight: {
+          from: { opacity: "0", transform: "translateX(-30px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        slideLeft: {
+          from: { opacity: "0", transform: "translateX(30px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        zoomIn: {
+          from: { opacity: "0", transform: "scale(0.95)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        rotate360: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        pulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fadeIn 0.8s ease-out forwards",
+        "slide-up": "slideUp 0.8s ease-out forwards",
+        "slide-right": "slideRight 0.8s ease-out forwards",
+        "slide-left": "slideLeft 0.8s ease-out forwards",
+        "zoom-in": "zoomIn 0.8s ease-out forwards",
+        float: "float 6s ease-in-out infinite",
+        "rotate-slow": "rotate360 15s linear infinite",
+        pulse: "pulse 2s ease-in-out infinite",
       },
     },
   },
