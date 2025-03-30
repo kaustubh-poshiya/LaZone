@@ -1,9 +1,9 @@
 "use client"
 
 import type React from "react"
-
-import { useState, type FormEvent } from "react"
+import { useEffect, useState, type FormEvent } from "react"
 import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook } from "lucide-react"
+
 import PageHeader from "@/components/page-header"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -20,6 +20,7 @@ export default function ContactPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [redirectUrl, setRedirectUrl] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -49,6 +50,13 @@ export default function ContactPage() {
     }, 1500)
   }
 
+  useEffect(() => {
+    // Set the redirect URL after the component mounts
+    if (typeof window !== "undefined") {
+      setRedirectUrl(window.location.href)
+    }
+  }, [])
+
   return (
     <>
       <PageHeader title="Contact Us" subtitle="Get in touch to discuss your project or inquire about our services" />
@@ -72,9 +80,8 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-sm font-medium text-neutral-800 mb-1">LOCATION</h4>
                     <p className="text-neutral-700">
-                      123 Design Avenue, Creative District
+                      P.O Box: 62137, Dubai, UAE
                       <br />
-                      New York, NY 10001
                     </p>
                   </div>
                 </div>
@@ -83,7 +90,7 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5 text-neutral-400 mt-0.5" />
                   <div>
                     <h4 className="text-sm font-medium text-neutral-800 mb-1">PHONE</h4>
-                    <p className="text-neutral-700">+1 (212) 555-7890</p>
+                    <p className="text-neutral-700">+971 4 553 3128</p>
                   </div>
                 </div>
 
@@ -91,7 +98,7 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-neutral-400 mt-0.5" />
                   <div>
                     <h4 className="text-sm font-medium text-neutral-800 mb-1">EMAIL</h4>
-                    <p className="text-neutral-700">info@lazone.design</p>
+                    <p className="text-neutral-700">contact@lazone.ae</p>
                   </div>
                 </div>
               </div>
@@ -100,9 +107,10 @@ export default function ContactPage() {
                 <h4 className="text-sm font-medium text-neutral-800 mb-4">FOLLOW US</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://www.instagram.com/lazone.ae/"
                     className="p-2 border border-neutral-200 rounded-full hover:bg-neutral-100 transition-colors"
                     aria-label="Instagram"
+                    target="_blank"
                   >
                     <Instagram className="h-5 w-5 text-neutral-600" />
                   </a>
@@ -125,7 +133,10 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
+                <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_ACCESS_KEY} />
+                <input type="hidden" name="redirect" value={redirectUrl} />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-light text-neutral-800">
@@ -216,7 +227,7 @@ export default function ContactPage() {
 
       <section className="h-[500px] relative">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425872426698!3d40.74076987138443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sNew%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1710856542996!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789012!2d55.123456789012!3d25.123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f123456789abc%3A0x1234567890abcdef!2sP.O%20Box%3A%2062137%2C%20Dubai%2C%20UAE!5e0!3m2!1sen!2sus!4v1710856542996!5m2!1sen!2sus"
           width="100%"
           height="100%"
           style={{ border: 0 }}

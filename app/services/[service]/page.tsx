@@ -132,7 +132,7 @@ function getServiceData(serviceSlug: string) {
     "interior-design": {
       title: "Interior Design",
       subtitle: "Creating harmonious spaces that inspire and comfort",
-      mainImage: "/placeholder.svg?height=1200&width=800",
+      mainImage: "/images/interior.jpg",
       description: [
         "Our interior design service transforms spaces into environments that reflect your personality, meet your functional needs, and create the desired atmosphere. We believe that a well-designed interior should not only be beautiful but should enhance the way you live, work, or play.",
         "Our team of experienced designers brings a wealth of knowledge in spatial planning, material selection, color theory, and custom furnishings to create interiors that are both aesthetically pleasing and highly functional.",
@@ -159,24 +159,24 @@ function getServiceData(serviceSlug: string) {
         {
           title: "Riverside Penthouse",
           slug: "riverside-penthouse",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/projects.png",
         },
         {
           title: "Minimalist Villa",
           slug: "minimalist-villa",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/vila.png",
         },
         {
           title: "Urban Loft",
           slug: "urban-loft",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/luxury-retail.png",
         },
       ],
     },
     architecture: {
       title: "Architecture",
       subtitle: "Designing innovative structures that harmonize with their surroundings",
-      mainImage: "/placeholder.svg?height=1200&width=800",
+      mainImage: "/images/architecture.png",
       description: [
         "Our architectural services encompass the complete design process, from initial concept to final construction. We create buildings that are not only visually striking but also functional, sustainable, and contextually appropriate.",
         "Our architects combine technical expertise with creative vision to design structures that respond to their environment, fulfill their purpose, and stand the test of time. We believe that great architecture should enhance the lives of its users while contributing positively to its surroundings.",
@@ -203,24 +203,24 @@ function getServiceData(serviceSlug: string) {
         {
           title: "Glass Pavilion",
           slug: "glass-pavilion",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/projects.png",
         },
         {
           title: "Coastal Residence",
           slug: "coastal-residence",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/luxury-retail.png",
         },
         {
           title: "Urban Office Tower",
           slug: "urban-office-tower",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/vila.png",
         },
       ],
     },
     "lighting-design": {
       title: "Lighting Design",
       subtitle: "Enhancing spaces through thoughtful illumination",
-      mainImage: "/placeholder.svg?height=1200&width=800",
+      mainImage: "/images/lobby.png",
       description: [
         "Our lighting design service creates illumination schemes that enhance architectural features, establish atmosphere, and support the functionality of spaces. We understand that lighting is a powerful tool that can transform the perception and experience of an environment.",
         "Our lighting designers combine technical knowledge with artistic sensibility to develop lighting solutions that address practical needs while creating the desired mood and aesthetic. We work with natural light, artificial light, and the interplay between them to achieve optimal results.",
@@ -247,24 +247,23 @@ function getServiceData(serviceSlug: string) {
         {
           title: "Museum Gallery",
           slug: "museum-gallery",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/projects.png",
         },
         {
           title: "Luxury Retail Space",
           slug: "luxury-retail-space",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/luxury-retail.png",
         },
         {
           title: "Boutique Hotel",
           slug: "boutique-hotel",
-          image: "/placeholder.svg?height=600&width=800",
-        },
+          image: "/images/vila.png",        },
       ],
     },
     "master-planning": {
       title: "Master Planning",
       subtitle: "Developing comprehensive spatial strategies for large-scale projects",
-      mainImage: "/placeholder.svg?height=1200&width=800",
+      mainImage: "/images/master-planning.png",
       description: [
         "Our master planning service provides a comprehensive framework for the development of large-scale projects, ensuring cohesive, functional, and sustainable outcomes. We create plans that optimize land use, circulation, and the relationship between different elements.",
         "Our planners take a holistic approach, considering environmental factors, social dynamics, economic viability, and long-term flexibility. We believe that successful master plans should provide clear direction while allowing for adaptation over time.",
@@ -290,24 +289,24 @@ function getServiceData(serviceSlug: string) {
         {
           title: "Waterfront District",
           slug: "waterfront-district",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/vila.png",
         },
         {
           title: "University Campus",
           slug: "university-campus",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/pent-house.png",
         },
         {
           title: "Mixed-Use Development",
           slug: "mixed-use-development",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/projects.png",
         },
       ],
     },
     "furnishings-product": {
       title: "Furnishings Product",
       subtitle: "Curating and designing distinctive furniture and accessories",
-      mainImage: "/placeholder.svg?height=1200&width=800",
+      mainImage: "/images/furnishing-product.png",
       description: [
         "Our furnishings product service encompasses both the curation of existing pieces and the design of custom furniture and accessories. We select and create items that complement architectural spaces while expressing the unique character of a project.",
         "Our product designers and specialists have extensive knowledge of materials, manufacturing techniques, and design history. We believe that furnishings should be both beautiful and functional, enhancing the overall experience of a space.",
@@ -334,24 +333,24 @@ function getServiceData(serviceSlug: string) {
         {
           title: "Sculptural Dining Collection",
           slug: "sculptural-dining-collection",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/pent-house.png",
         },
         {
           title: "Modular Lounge System",
           slug: "modular-lounge-system",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/projects.png",
         },
         {
           title: "Artisanal Lighting Series",
           slug: "artisanal-lighting-series",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/vila.png",
         },
       ],
     },
     "lifestyle-wellbeing": {
       title: "Lifestyle & Wellbeing",
       subtitle: "Integrating wellness principles into design for balanced living",
-      mainImage: "/placeholder.svg?height=1200&width=800",
+      mainImage: "/images/lifestyle.png",
       description: [
         "Our lifestyle and wellbeing service integrates principles of health, comfort, and balance into the design of spaces. We create environments that support physical wellness, mental clarity, and emotional equilibrium through thoughtful design choices.",
         "Our specialists combine knowledge of biophilic design, ergonomics, air quality, acoustics, and lighting to develop holistic solutions. We believe that well-designed spaces should contribute positively to the health and happiness of their occupants.",
@@ -378,17 +377,17 @@ function getServiceData(serviceSlug: string) {
         {
           title: "Wellness Retreat",
           slug: "wellness-retreat",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/luxury-retail.png",
         },
         {
           title: "Mindful Office",
           slug: "mindful-office",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/vila.png",
         },
         {
           title: "Biophilic Residence",
           slug: "biophilic-residence",
-          image: "/placeholder.svg?height=600&width=800",
+          image: "/images/projects.png",
         },
       ],
     },

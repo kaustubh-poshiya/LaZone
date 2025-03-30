@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 210 55% 25%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 25 75% 70%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 174 45% 48%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --background: 222 47% 11%;
+    --foreground: 210 20% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 20% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 25 75% 70%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 210 55% 25%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 174 45% 48%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 25 75% 70%;
   }
 }
 
@@ -54,53 +54,164 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
+@layer components {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
 
-  .animate-slide-up {
-    animation: slideUp 1s ease-out forwards;
+  .animate-on-scroll.animate-fade-in {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .animate-slide-right {
-    animation: slideRight 1s ease-out forwards;
+  .animate-on-scroll-right {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
+  .animate-on-scroll-right.animate-fade-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-on-scroll-left {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .animate-on-scroll-left.animate-fade-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-on-scroll-zoom {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .animate-on-scroll-zoom.animate-fade-in {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .project-card {
+    @apply relative overflow-hidden rounded-md;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-card-image {
+    transition: transform 0.7s ease;
+  }
+
+  .project-card:hover .project-card-image {
+    transform: scale(1.05);
+  }
+
+  .project-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0;
+    transition: opacity 0.5s ease;
+  }
+
+  .project-card:hover .project-card-overlay {
+    opacity: 1;
+  }
+
+  .project-card-content {
+    @apply absolute bottom-0 left-0 w-full p-6 text-white transform translate-y-4 opacity-0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .project-card:hover .project-card-content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .section-heading {
+    @apply relative inline-block font-serif font-light;
+  }
+
+  .section-heading::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-architect-secondary;
+    transition: width 0.5s ease;
+  }
+
+  .section-heading:hover::after {
+    @apply w-full;
+  }
+
+  /* Virtual Tour Styles */
+  .panorama-container {
+    @apply relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden rounded-lg;
+  }
+
+  .hotspot {
+    @apply absolute w-8 h-8 rounded-full bg-architect-vibrant text-white flex items-center justify-center cursor-pointer transform -translate-x-1/2 -translate-y-1/2 z-10;
+    box-shadow: 0 0 0 rgba(255, 126, 95, 0.6);
+    animation: pulse 2s infinite;
+  }
+
+  .hotspot-content {
+    @apply absolute bottom-full left-1/2 transform -translate-x-1/2 -translate-y-2 w-48 bg-white dark:bg-architect-navy p-3 rounded-lg shadow-lg text-sm opacity-0 pointer-events-none;
+    transition: opacity 0.3s ease;
+  }
+
+  .hotspot:hover .hotspot-content {
+    @apply opacity-100;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 126, 95, 0.6);
     }
-    to {
-      opacity: 1;
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 126, 95, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 126, 95, 0);
     }
   }
 
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Testimonial Styles */
+  .testimonial-card {
+    @apply bg-white dark:bg-architect-navy rounded-lg shadow-md p-6 transition-all duration-300;
   }
 
-  @keyframes slideRight {
-    from {
-      opacity: 0;
-      transform: translateX(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+  .testimonial-card:hover {
+    @apply shadow-lg transform -translate-y-1;
+  }
+
+  /* Project Story Timeline */
+  .timeline {
+    @apply relative pl-8 border-l-2 border-architect-tertiary;
+  }
+
+  .timeline-item {
+    @apply relative mb-10;
+  }
+
+  .timeline-item::before {
+    content: "";
+    @apply absolute w-4 h-4 rounded-full bg-architect-tertiary -left-[1.125rem] top-1;
+  }
+
+  .timeline-item:hover::before {
+    @apply bg-architect-vibrant scale-125 transition-all duration-300;
   }
 }
 
@@ -111,5 +222,75 @@
 
 .font-sans {
   font-family: var(--font-inter), sans-serif;
+}
+
+/* Scroll animations */
+.reveal {
+  position: relative;
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+.active.fade-bottom {
+  animation: fade-bottom 0.8s ease-in-out;
+}
+
+.active.fade-left {
+  animation: fade-left 0.8s ease-in-out;
+}
+
+.active.fade-right {
+  animation: fade-right 0.8s ease-in-out;
+}
+
+.active.fade-zoom {
+  animation: fade-zoom 0.8s ease-in-out;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-zoom {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
