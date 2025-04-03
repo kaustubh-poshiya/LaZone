@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import ThemeToggle from "@/components/theme-toggle"
 import Image from "next/image"
+import WhatsappIcon from "./ui/whatsapp-lcon"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -119,6 +120,7 @@ export default function Navbar() {
               )}
             </div>
           ))}
+          <WhatsappIcon />
         </nav>
 
         {/* Mobile Menu Button */}

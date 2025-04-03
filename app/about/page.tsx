@@ -115,7 +115,13 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-      <section className="py-16 md:py-24 bg-neutral-900 text-white">
+      <section
+        className="py-16 md:py-24 text-black"
+        style={{
+          background: "linear-gradient(135deg, #b0b0b0, #f5f5f5)", // More contrasting colors
+          backgroundSize: "cover",
+        }}
+      >
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">Our Vision</h2>

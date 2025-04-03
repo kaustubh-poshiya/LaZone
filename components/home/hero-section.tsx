@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -51,32 +50,18 @@ export default function HeroSection() {
           className="object-cover w-full h-full"
           poster="/images/thumbnail.png"
         >
-          <source src="/hero_video.mp4" type="video/webm" />
+          <source src="/hero_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {/* Fallback image */}
-        {/* <Image
-          src="/images/thumbnail.jpg"
-          alt="LAZONE Design Studio"
-          fill
-          className="object-cover hidden md:block"
-          priority
-        /> */}
         </div>
     
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl">
+      <div className="relative top-[27vh] md:top-[17vh] lg:right-[32vw] md:right-[25vw]  z-10 text-center text-white px-4 max-w-4xl">
         <h1
           ref={titleRef}
-          className="text-5xl md:text-7xl lg:text-8xl font-serif font-light tracking-tight mb-6 opacity-0 transition-opacity duration-1000"
+          className="text-start max-w-xs text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-6 opacity-0 transition-opacity duration-1000"
         >
-          BOLDLY <span className="text-architect-vibrant">CREATIVE</span>
+          Your Imagination, Our Canvas
         </h1>
-        <p
-          ref={subtitleRef}
-          className="text-xl text-center text-white md:text-xl font-light tracking-wide mb-8 opacity-0 transition-opacity duration-1000 delay-400"
-        >
-          Transforming spaces into extraordinary experiences through innovative design and meticulous craftsmanship.
-        </p>
         <div ref={buttonRef} className="opacity-0 transition-opacity duration-1000 delay-600 space-x-4">
           <Button asChild className="bg-architect-vibrant text-white hover:bg-architect-vibrant/90" size="lg">
             <Link href="/portfolio">Explore Our Work</Link>

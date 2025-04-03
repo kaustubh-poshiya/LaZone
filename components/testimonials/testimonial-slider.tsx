@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import ScrollReveal from "@/components/scroll-reveal"
+import { motion, AnimatePresence } from "framer-motion"
 
 type Testimonial = {
   id: string
@@ -20,6 +21,7 @@ type Testimonial = {
 
 export default function TestimonialSlider() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [itemsPerView, setItemsPerView] = useState(3)
 
   const testimonials: Testimonial[] = [
     {
@@ -57,12 +59,25 @@ export default function TestimonialSlider() {
     },
   ]
 
+  // Responsive items per view
+  useEffect(() => {
+    const updateItemsPerView = () => {
+      if (window.innerWidth >= 1024) setItemsPerView(3)
+      else if (window.innerWidth >= 768) setItemsPerView(2)
+      else setItemsPerView(1)
+    }
+    
+    window.addEventListener('resize', updateItemsPerView)
+    updateItemsPerView()
+    return () => window.removeEventListener('resize', updateItemsPerView)
+  }, [])
+
   const nextSlide = () => {
-    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
+    setActiveIndex(prev => (prev + 1) % testimonials.length)
   }
 
   const prevSlide = () => {
-    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
+    setActiveIndex(prev => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
   useEffect(() => {
@@ -74,7 +89,7 @@ export default function TestimonialSlider() {
   }, [])
 
   return (
-    <section className="py-12  bg-architect-tertiary/10">
+    <section className="py-16 bg-architect-tertiary/10">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollReveal animation="fade-bottom">
           <div className="text-center mb-12">
@@ -83,78 +98,70 @@ export default function TestimonialSlider() {
           </div>
         </ScrollReveal>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="relative min-h-[400px] md:min-h-[250px]">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className={cn(
-                  "absolute inset-0 transition-opacity duration-1000 ease-in-out flex flex-col md:flex-row items-center gap-8",
-                  index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0",
-                )}
-              >
-                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0">
-                  <Image
-                    src={testimonial.image || "/placeholder.svg"}
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex-1">
-                  <Quote className="text-architect-vibrant h-8 w-8 mb-4 opacity-50" />
-                  <p className="text-lg md:text-xl italic mb-4">{testimonial.quote}</p>
-                  <div>
-                    <p className="font-medium text-lg">{testimonial.name}</p>
-                    <p className="text-muted-foreground">
-                      {testimonial.position}, {testimonial.company}
-                    </p>
+        <div className="relative max-w-7xl mx-auto">
+          <div className="overflow-hidden px-4 py-8">
+            <motion.div
+              className="flex gap-8"
+              animate={{
+                x: `-${activeIndex * (100 / itemsPerView)}%`
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            >
+              {testimonials.map((testimonial) => (
+                <motion.div
+                  key={testimonial.id}
+                  className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                >
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="font-medium text-lg">{testimonial.name}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.position}, {testimonial.company}
+                        </p>
+                      </div>
+                    </div>
+                    <Quote className="text-architect-vibrant h-6 w-6 mb-4 opacity-50" />
+                    <p className="text-lg italic mb-6">{testimonial.quote}</p>
                     {testimonial.projectId && (
-                      <p className="text-sm mt-2">
-                        Project:{" "}
-                        <a
-                          href={`/portfolio/${testimonial.projectId}`}
-                          className="text-architect-vibrant hover:underline"
-                        >
-                          {testimonial.projectName}
-                        </a>
-                      </p>
+                      <a
+                        href={`/portfolio/${testimonial.projectId}`}
+                        className="inline-flex items-center text-architect-vibrant hover:underline"
+                      >
+                        View Project <ChevronRight className="h-4 w-4 ml-1" />
+                      </a>
                     )}
                   </div>
-                </div>
-              </div>
-            ))}
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
-          <div className="flex justify-center mt-20 space-x-4">
+          <div className="flex justify-center mt-8 gap-4">
             <Button
               onClick={prevSlide}
               size="icon"
               variant="outline"
               className="rounded-full border-architect-tertiary hover:bg-architect-tertiary/20"
-              aria-label="Previous testimonial"
             >
               <ChevronLeft className="h-5 w-5" />
             </Button>
-            <div className="flex items-center space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveIndex(index)}
-                  className={cn(
-                    "w-2 h-2 rounded-full transition-all duration-300",
-                    index === activeIndex ? "bg-architect-vibrant w-6" : "bg-architect-tertiary/50",
-                  )}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
             <Button
               onClick={nextSlide}
               size="icon"
               variant="outline"
               className="rounded-full border-architect-tertiary hover:bg-architect-tertiary/20"
-              aria-label="Next testimonial"
             >
               <ChevronRight className="h-5 w-5" />
             </Button>

@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-architect-navy text-white">
+    <footer className="bg-[#121212] text-white">
       <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <ScrollReveal animation="fade-bottom">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
