@@ -21,7 +21,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "LAZONE | Creative Design Studio",
   description: "Architecture, Interior Design & Lifestyle Experiences",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

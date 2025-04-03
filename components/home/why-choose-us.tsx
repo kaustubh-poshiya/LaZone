@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section id="about" ref={containerRef} className="flex items-center justify-center flex-col py-20 md:py-32 overflow-hidden bg-[#121212] min-h-[120vh]">
+    <section id="about" ref={containerRef} className="flex items-center justify-center flex-col py-20 md:py-24 overflow-hidden bg-[#121212] min-h-[110vh]">
       <div className="container">
       <h2 className="text-3xl md:text-4xl font-serif mb-6 uppercase text-white">Why choose us</h2>
       <div className=" flex items-start w-20 h-0.5 bg-architect-vibrant mb-6"></div>
@@ -63,13 +63,11 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.6 }}
               
             >
-              {/* <h2 className="text-3xl md:text-4xl font-serif mb-6 uppercase text-white">Why choose us</h2>
-              <div className=" flex items-start w-20 h-0.5 bg-architect-vibrant mb-6"></div> */}
-              <p className="text-muted-foreground mb-6 font-sans text-[#999999]">
+              <p className="mb-6 font-sans text-lg text-[#999999]">
                 Lazone is a premier interior design and architecture firm based in the UAE. We specialize in creating
                 bespoke designs that reflect our clients' unique personalities and lifestyles.
               </p>
-              <p className="text-muted-foreground mb-8 font-sans text-[#999999]">
+              <p className="mb-8 font-sans text-lg text-[#999999]">
                 Our team of experienced designers and architects work collaboratively to deliver innovative solutions
                 that transform spaces into extraordinary experiences. We believe that great design should not only be
                 beautiful but also functional and sustainable.
@@ -88,7 +86,7 @@ export default function WhyChooseUs() {
                       {stat.icon}
                     </div>
                     <div className="text-2xl font-bold text-[#999999]">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground text-[#999999]">{stat.label}</div>
+                    <div className="text-sm  text-[#999999]">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>

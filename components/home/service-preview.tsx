@@ -29,13 +29,13 @@ export default function ServicePreview() {
   ]
 
   return (
-    <section className="py-16  md:pb-24 md:pt-[12rem] lg:pt-[14rem] bg-[#121212] lg:pb-32 bg-muted/30 md:min-h-[120vh]">
+    <section className="py-16  md:pb-[5.3rem] md:pt-[10rem] lg:pt-[12rem] bg-[#121212] lg:pb-[7rem] md:min-h-[110vh]">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollReveal animation="fade-bottom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl  text-bold font-serif font-light tracking-tight mb-6 text-white">Our Services</h2>
             <div className="w-20 h-0.5 bg-architect-vibrant mx-auto mb-6"></div>
-            <p className="max-w-2xl mx-auto text-foreground/80 text-[#999999]">
+            <p className="max-w-2xl mx-auto text-lg text-[#999999]">
               We offer a comprehensive suite of design services that work in harmony to create cohesive, thoughtful
               spaces that inspire and elevate the human experience.
             </p>
@@ -56,7 +56,7 @@ export default function ServicePreview() {
                   <div className="absolute inset-0 bg-gradient-to-t from-architect-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <h3 className="text-xl font-serif mb-3 text-[#999999]">{service.title}</h3>
-                <p className="text-foreground/70 mb-4 text-[#999999]">{service.description}</p>
+                <p className="mb-4 text-[#999999]">{service.description}</p>
                 <Link
                   href={service.link}
                   className="inline-flex items-center text-[#999999] font-semibold hover:text-architect-vibrant/80 transition-colors"
