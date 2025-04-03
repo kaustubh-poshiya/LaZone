@@ -182,7 +182,6 @@ export default function TestimonialSection() {
                 variants={itemVariants}
                 className={cn(
                   "bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
-                  testimonial.featured ? "border-2 border-blue-500" : "",
                 )}
               >
                 <div className="flex items-center mb-4">
