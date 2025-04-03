@@ -18,10 +18,28 @@ const inter = Inter({
   display: "swap",
 })
 
-export const metadata: Metadata = {
-  title: "LAZONE | Creative Design Studio",
-  description: "Architecture, Interior Design & Lifestyle Experiences",
-}
+export const metadata = {
+  title: 'LAZONE | Creative Design Studio',
+  description: 'Architecture, Interior Design & Lifestyle Experiences',
+  openGraph: {
+    url: 'https://la-zone.vercel.app/',
+    type: 'website',
+    title: 'LAZONE | Creative Design Studio',
+    description: 'Architecture, Interior Design & Lifestyle Experiences',
+    images: ['/images/lobby.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    domain: 'la-zone.vercel.app',
+    url: 'https://la-zone.vercel.app/',
+    title: 'LAZONE | Creative Design Studio',
+    description: 'Architecture, Interior Design & Lifestyle Experiences',
+    images: ['/images/lobby.png'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
 
 export default function RootLayout({
   children,
