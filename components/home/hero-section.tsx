@@ -47,6 +47,7 @@ export default function HeroSection() {
           autoPlay
           loop
           muted
+          playsInline
           className="object-cover w-full h-full"
           poster="/images/thumbnail.png"
         >
@@ -55,7 +56,7 @@ export default function HeroSection() {
         </video>
         </div>
     
-      <div className="relative top-[27vh] md:top-[17vh] lg:right-[32vw] md:right-[25vw]  z-10 text-center text-white px-4 max-w-4xl">
+      <div className="relative top-[23vh] md:top-[17vh] lg:right-[32vw] md:right-[25vw]  z-10 text-center text-white px-4 max-w-4xl">
         <h1
           ref={titleRef}
           className="text-start max-w-xs text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-6 opacity-0 transition-opacity duration-1000"
@@ -74,7 +75,7 @@ export default function HeroSection() {
 
       <button
         onClick={scrollToNext}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce"
         aria-label="Scroll down"
       >
         <ArrowDown className="h-8 w-8" />
