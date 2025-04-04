@@ -158,12 +158,12 @@ export default function TestimonialSection() {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-16 md:py-24 bg-gradient-to-b font-serif from-white to-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">What Our Clients Say</h2>
-          <div className="w-20 h-1 bg-architect-vibrant mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900">What Our Clients Say</h2>
+          <div className="w-20 h-[2px] bg-architect-vibrant mx-auto mb-6"></div>
+          <p className="text-lg font-sans text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about their experience working with us.
           </p>
         </div>
@@ -181,7 +181,7 @@ export default function TestimonialSection() {
                 key={testimonial.id}
                 variants={itemVariants}
                 className={cn(
-                  "bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
+                  "bg-white font-sans rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
                 )}
               >
                 <div className="flex items-center mb-4">
@@ -205,7 +205,7 @@ export default function TestimonialSection() {
 
                 <div className="relative">
                   <Quote className="absolute -top-2 -left-2 w-8 h-8 text-blue-100" />
-                  <p className="text-gray-700 relative z-10 pl-4">{testimonial.text}</p>
+                  <p className="text-gray-700 font-sans relative z-10 pl-4">{testimonial.text}</p>
                 </div>
 
                 {testimonial.featured && (

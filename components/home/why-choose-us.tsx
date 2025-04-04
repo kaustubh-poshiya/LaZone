@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { motion, useScroll, useTransform, useInView } from "framer-motion"
 import { ArrowRight, Award, Users, Clock, CheckCircle } from "lucide-react"
+import Link from "next/link"
 
 export default function WhyChooseUs() {
   const containerRef = useRef(null)
@@ -29,8 +30,8 @@ export default function WhyChooseUs() {
   return (
     <section id="about" ref={containerRef} className="flex items-center justify-center flex-col py-20 md:py-24 overflow-hidden bg-[#121212] min-h-[110vh]">
       <div className="container">
-      <h2 className="text-3xl md:text-4xl font-serif mb-6 uppercase text-white">Why choose us</h2>
-      <div className=" flex items-start w-20 h-0.5 bg-architect-vibrant mb-6"></div>
+        <h2 className="text-3xl md:text-4xl font-serif mb-6 uppercase text-white">Why choose us</h2>
+        <div className=" flex items-start w-20 h-0.5 bg-architect-vibrant mb-6"></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
             <motion.div style={{ y: y1 }} className="relative z-10 rounded-lg overflow-hidden">
@@ -61,7 +62,7 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              
+
             >
               <p className="mb-6 font-sans text-lg text-[#999999]">
                 Lazone is a premier interior design and architecture firm based in the UAE. We specialize in creating
@@ -91,9 +92,11 @@ export default function WhyChooseUs() {
                 ))}
               </div>
 
-              <Button size="lg" className="mt-16 group flex px-8 py-3 border bg-transparent border-[#999999] text-[#999999] hover:bg-architect-vibrant hover:text-white transition-colors duration-700 rounded-full">
-                Learn More About Us <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 " />
-              </Button>
+              <Link href="/about">
+                <Button size="lg" className="mt-16 group flex px-8 py-3 border bg-transparent border-[#999999] text-[#999999] hover:bg-architect-vibrant hover:text-white transition-colors duration-700 rounded-full">
+                  Learn More About Us <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 " />
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

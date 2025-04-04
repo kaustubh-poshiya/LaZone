@@ -124,7 +124,13 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center space-x-4">
+        <div className="md:hidden flex items-center justify-around">
+          <Link
+            href={"https://wa.me/+97145533128?text=Hello!%20I%20want%20to%20know%20more%20about%20your%20services.%20Please%20call%20me%20back.%20Thanks"}
+            target='_blank'
+            className="cursor-pointer w-14 h-20 flex items-center">
+            <Image src="/images/whatsapp.png" alt="Whatsapp" width={100} height={100} className="w-7 h-7" />
+          </Link>
           <button className="relative z-10" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
             {mobileMenuOpen ? <X className="h-6 w-6 text-foreground" /> : <Menu className="h-6 w-6 text-foreground" />}
           </button>
@@ -133,6 +139,13 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="fixed inset-0 bg-background z-50 flex flex-col items-center justify-center">
+            <button
+              className="absolute top-6 right-6 p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <X className="h-6 w-6 text-foreground" />
+            </button>
             <nav className="flex flex-col items-center space-y-6">
               {navLinks.map((link) => (
                 <div key={link.name} className="text-center">
