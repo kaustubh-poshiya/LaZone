@@ -294,24 +294,29 @@
   }
 }
 
-/* Hide default cursor */
-* {
-  cursor: none !important;
+/* Hide default cursor (only on desktop) */
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
 }
 
 /* Custom Cursor Styles */
 .custom-cursor {
-  @apply fixed pointer-events-none z-50;
+  @apply fixed pointer-events-none z-50 hidden md:block;
   will-change: transform;
+  mix-blend-mode: difference;
 }
 
 .cursor-dot {
-  @apply w-1.5 h-1.5 bg-primary rounded-full;
+  @apply w-1.5 h-1.5 rounded-full;
   transform: translate(-50%, -50%);
+  background-color: white;
 }
 
 .cursor-circle {
-  @apply w-8 h-8 border border-foreground rounded-full;
+  @apply w-8 h-8 border rounded-full;
   transform: translate(-50%, -50%);
+  border-color: white;
 }
 
