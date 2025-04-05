@@ -5,6 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import CustomCursor from "./components/CustomCursor"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -37,8 +38,34 @@ export const metadata = {
     images: ['/images/lobby.png'],
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      {
+        url: '/images/logo.png',
+        sizes: '32x32',
+        type: 'image/png'
+      },
+      {
+        url: '/images/logo.png',
+        sizes: '16x16',
+        type: 'image/png'
+      }
+    ],
+    apple: [
+      {
+        url: '/images/logo.png',
+        sizes: '180x180',
+        type: 'image/png'
+      }
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/images/logo.png',
+        color: '#000000'
+      }
+    ]
   },
+  manifest: '/manifest.json'
 };
 
 export default function RootLayout({
@@ -50,6 +77,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${playfair.variable} ${inter.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <CustomCursor />
           <Navbar />
           <main>{children}</main>
           <Footer />

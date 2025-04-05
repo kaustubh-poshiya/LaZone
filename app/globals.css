@@ -294,3 +294,24 @@
   }
 }
 
+/* Hide default cursor */
+* {
+  cursor: none !important;
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  @apply fixed pointer-events-none z-50;
+  will-change: transform;
+}
+
+.cursor-dot {
+  @apply w-1.5 h-1.5 bg-primary rounded-full;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-circle {
+  @apply w-8 h-8 border border-foreground rounded-full;
+  transform: translate(-50%, -50%);
+}
+
