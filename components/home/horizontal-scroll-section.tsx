@@ -45,6 +45,7 @@ const contentSections = [
     features: [
       { title: "Flexibility", description: "We offer diversified aesthetics and influences for individuals to choose from, making significant contributions to changing the dynamics of contemporary living." },
       { title: "Originality", description: "A promise of originality is never amiss when it comes to our designs. We guarantee the genuineness of all our products with established craftsmanship." },
+      { title: "Quality", description: "We use a combination of craftsmanship, technology, and design to cater to a contemporary audience that values minimalism and elegance." }
     ],
     color: "bg-rose-50 dark:bg-rose-950",
     layout: "split"
@@ -305,19 +306,19 @@ export default function HorizontalScrollSection() {
             <div className="title-group mb-4 sm:mb-6 lg:mb-8">
               <h2 
                 ref={el => setTitleRef(el, index)} 
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-none"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-bold leading-none"
               >
                 {section.title}
               </h2>
               <h2 
                 ref={el => setSecondaryTitleRef(el, index)} 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-none mt-1 sm:mt-2"
               >
                 {section.titleSecondary}
               </h2>
               <h2 
                 ref={el => setAccentTitleRef(el, index)} 
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-none mt-1 sm:mt-2 text-indigo-600 dark:text-indigo-400"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 text-indigo-600 dark:text-indigo-400"
               >
                 {section.titleAccent}
               </h2>
@@ -437,6 +438,16 @@ export default function HorizontalScrollSection() {
                 </div>
               ))}
             </div>
+            
+            <a 
+              href="/contact" 
+              className="animate-item mt-8 sm:mt-10 inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-medium transition-colors bg-emerald-600 text-white hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-800"
+            >
+              Contact Us
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
           </div>
         );
         
@@ -517,7 +528,7 @@ export default function HorizontalScrollSection() {
                 section.color
               )}
             >
-              {/* Add decorative blurred circles */}
+              {/* Enhanced decorative elements */}
               <div className={cn(
                 "absolute top-[10%] right-[10%] w-64 h-64 rounded-full blur-3xl opacity-30",
                 section.layout === "left" ? "bg-indigo-300 dark:bg-indigo-700" :
@@ -533,6 +544,63 @@ export default function HorizontalScrollSection() {
                 section.layout === "split" ? "bg-rose-400 dark:bg-rose-600" :
                 "bg-emerald-400 dark:bg-emerald-600"
               )}></div>
+              
+              {/* Geometric shapes */}
+              {section.layout === "left" && (
+                <>
+                  <div className="absolute top-[25%] right-[25%] w-32 h-32 border-8 border-indigo-200/40 dark:border-indigo-800/30 rotate-45"></div>
+                  <div className="absolute bottom-[30%] right-[15%] w-16 h-16 border-4 border-indigo-300/30 dark:border-indigo-700/30 rounded-full"></div>
+                  <div className="absolute top-[15%] left-[15%] w-24 h-24 border-4 border-dashed border-indigo-300/20 dark:border-indigo-700/20 rounded-full"></div>
+                </>
+              )}
+              
+              {section.layout === "center" && (
+                <>
+                  <div className="absolute top-[20%] left-[20%] w-24 h-24 border-8 border-amber-200/30 dark:border-amber-800/30 rotate-12"></div>
+                  <div className="absolute bottom-[25%] right-[25%] w-20 h-20 border-4 border-amber-300/30 dark:border-amber-700/30 rounded-full"></div>
+                  <div className="absolute top-[30%] right-[20%] w-16 h-16 border-4 border-dashed border-amber-300/20 dark:border-amber-700/20 rounded-md rotate-45"></div>
+                </>
+              )}
+              
+              {section.layout === "split" && (
+                <>
+                  <div className="absolute top-[15%] right-[15%] w-28 h-28 border-8 border-rose-200/30 dark:border-rose-800/30 rounded-full"></div>
+                  <div className="absolute bottom-[20%] left-[25%] w-20 h-20 border-4 border-rose-300/30 dark:border-rose-700/30 rotate-45"></div>
+                  <div className="absolute top-[30%] left-[15%] w-16 h-16 border-4 border-dashed border-rose-300/20 dark:border-rose-700/20 rounded-md"></div>
+                </>
+              )}
+              
+              {section.layout === "right" && (
+                <>
+                  <div className="absolute top-[25%] left-[25%] w-32 h-32 border-8 border-emerald-200/30 dark:border-emerald-800/30 rotate-12"></div>
+                  <div className="absolute bottom-[30%] left-[15%] w-16 h-16 border-4 border-emerald-300/30 dark:border-emerald-700/30 rounded-md"></div>
+                  <div className="absolute top-[15%] right-[15%] w-24 h-24 border-4 border-dashed border-emerald-300/20 dark:border-emerald-700/20 rounded-full"></div>
+                </>
+              )}
+              
+              {/* Floating dots */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="h-full w-full flex items-center justify-center">
+                  {Array.from({ length: 20 }).map((_, i) => (
+                    <div 
+                      key={i} 
+                      className={cn(
+                        "absolute w-2 h-2 rounded-full opacity-20",
+                        section.layout === "left" ? "bg-indigo-500 dark:bg-indigo-300" :
+                        section.layout === "center" ? "bg-amber-500 dark:bg-amber-300" :
+                        section.layout === "split" ? "bg-rose-500 dark:bg-rose-300" :
+                        "bg-emerald-500 dark:bg-emerald-300"
+                      )}
+                      style={{
+                        top: `${Math.random() * 100}%`,
+                        left: `${Math.random() * 100}%`,
+                        transform: `scale(${Math.random() * 1.5 + 0.5})`,
+                        opacity: Math.random() * 0.3 + 0.1
+                      }}
+                    ></div>
+                  ))}
+                </div>
+              </div>
               
               {renderSectionContent(section, index)}
             </div>
