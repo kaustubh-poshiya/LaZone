@@ -5,6 +5,7 @@ import StudioPhilosophy from "@/components/home/studio-philosophy"
 import ContactCta from "@/components/home/contact-cta"
 import WhyChooseUs from "@/components/home/why-choose-us";
 import TestimonialSection from "@/components/home/testimonial-section"
+import HorizontalScrollSection from "@/components/home/horizontal-scroll-section"
 
 export default function Home() {
 
@@ -14,7 +15,8 @@ export default function Home() {
       <StudioPhilosophy />
       <ServicePreview />
       <FeaturedProjects />
-      <WhyChooseUs />
+      <HorizontalScrollSection />
+      {/* <WhyChooseUs /> */}
       <TestimonialSection />
       <ContactCta />
     </>
