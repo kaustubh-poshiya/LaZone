@@ -95,7 +95,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-neutral-900 text-white">
+      <section className="py-16 md:py-24 bg-[#121212] text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">
@@ -113,16 +113,6 @@ export default function ServicePage({ params }: ServicePageProps) {
           </div>
         </div>
       </section>
-
-      <div className="container mx-auto px-4 md:px-6 py-8">
-        <Link
-          href="/services"
-          className="inline-flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to Services
-        </Link>
-      </div>
     </>
   )
 }

@@ -25,6 +25,7 @@ export default function Navbar() {
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden"
+      // Don't reset scroll position
     } else {
       document.body.style.overflow = "auto"
     }
@@ -78,30 +79,36 @@ export default function Navbar() {
               {link.dropdown ? (
                 <>
                   <button
-                    className="flex items-center text-sm uppercase tracking-wider font-light text-foreground hover:text-primary transition-colors"
+                    className="flex mt-2 items-center text-sm uppercase tracking-wider font-light text-foreground hover:text-primary transition-colors"
                     onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
                     aria-haspopup="true"
                     aria-expanded={servicesOpen}
                     aria-controls="services-dropdown"
                     aria-label="Services dropdown"
-                    onClick={() => setServicesOpen(!servicesOpen)}
                   >
                     {link.name}
                     <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
                   </button>
+                  <div className="h-2"
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}>
+                  </div>
                   <div
-                    onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}
+                    id="services-dropdown"
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
                     className={cn(
-                      "absolute left-0 mt-2 w-56 origin-top-left bg-background shadow-lg ring-1 ring-black/5 focus:outline-none rounded-md overflow-hidden transition-all duration-200 ease-in-out",
+                      "absolute left-0 w-56 origin-top-left bg-background/95 backdrop-blur-md shadow-lg ring-1 ring-black/5 focus:outline-none rounded-md overflow-hidden transition-all duration-200 ease-in-out",
                       servicesOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none",
                     )}
                   >
-                    <div className="py-1" >
+                    <div className="py-1">
                       {link.dropdown.map((item) => (
                         <Link
                           key={item.name}
                           href={item.href}
-                          className="block px-4 py-2 text-sm text-foreground hover:bg-muted"
+                          className="block px-4 py-3 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-l-2 border-transparent hover:border-primary"
                           onClick={() => setServicesOpen(false)}
                         >
                           {item.name}
@@ -131,14 +138,23 @@ export default function Navbar() {
             className="cursor-pointer w-14 h-20 flex items-center">
             <Image src="/images/whatsapp.png" alt="Whatsapp" width={100} height={100} className="w-7 h-7" />
           </Link>
-          <button className="relative z-10" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+          <button
+            className="relative z-10"
+            onClick={() => {
+              setMobileMenuOpen(!mobileMenuOpen)
+              if (!mobileMenuOpen) {
+                setServicesOpen(false)
+              }
+            }}
+            aria-label="Toggle menu"
+          >
             {mobileMenuOpen ? <X className="h-6 w-6 text-foreground" /> : <Menu className="h-6 w-6 text-foreground" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="fixed inset-0 bg-background z-50 flex flex-col items-center justify-center">
+          <div className="fixed inset-0 bg-background z-50 flex flex-col items-center justify-center overflow-y-auto" style={{ height: '100vh', top: 0 }}>
             <button
               className="absolute top-6 right-6 p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
@@ -146,7 +162,7 @@ export default function Navbar() {
             >
               <X className="h-6 w-6 text-foreground" />
             </button>
-            <nav className="flex flex-col items-center space-y-6">
+            <nav className="flex flex-col items-center space-y-6 py-16 max-h-screen">
               {navLinks.map((link) => (
                 <div key={link.name} className="text-center">
                   {link.dropdown ? (
