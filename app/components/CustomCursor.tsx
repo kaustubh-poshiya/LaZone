@@ -1,50 +1,39 @@
 "use client"
 
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback, useRef } from "react"
 
-const SPRING_STRENGTH = 0.1
-const DAMPING = 0.8
-const PRECISION = 0.01
+// Even smoother animation parameters
+const SMOOTHING_FACTOR = 0.08 // Lower value for smoother motion
 
 export default function CustomCursor() {
   const [dotPosition, setDotPosition] = useState({ x: 0, y: 0 })
   const [circlePosition, setCirclePosition] = useState({ x: 0, y: 0 })
-  const [velocity, setVelocity] = useState({ x: 0, y: 0 })
   const [isPointer, setIsPointer] = useState(false)
+  const rafRef = useRef<number | null>(null)
+  const prevTimeRef = useRef<number | null>(null)
 
-  const updateSpring = useCallback(() => {
-    // Calculate spring force
-    const dx = dotPosition.x - circlePosition.x
-    const dy = dotPosition.y - circlePosition.y
-    
-    // Apply spring physics
-    let newVelocity = {
-      x: velocity.x + dx * SPRING_STRENGTH,
-      y: velocity.y + dy * SPRING_STRENGTH
+  const updateCursorPosition = useCallback((timestamp: number) => {
+    if (prevTimeRef.current === null) {
+      prevTimeRef.current = timestamp
     }
     
-    // Apply damping
-    newVelocity = {
-      x: newVelocity.x * DAMPING,
-      y: newVelocity.y * DAMPING
-    }
+    // Calculate time delta for more consistent animation across different frame rates
+    const deltaTime = timestamp - prevTimeRef.current
+    const smoothingAdjusted = Math.min(1.0, SMOOTHING_FACTOR * (deltaTime / 16.67)) // Normalize to 60fps
     
-    // Update position
-    const newPosition = {
-      x: circlePosition.x + newVelocity.x,
-      y: circlePosition.y + newVelocity.y
-    }
-
-    // Only update if the movement is significant
-    if (Math.abs(newVelocity.x) > PRECISION || Math.abs(newVelocity.y) > PRECISION) {
-      setCirclePosition(newPosition)
-      setVelocity(newVelocity)
-      requestAnimationFrame(updateSpring)
-    }
-  }, [dotPosition, circlePosition, velocity])
+    // Smooth follow using improved lerp (linear interpolation)
+    setCirclePosition(prev => ({
+      x: prev.x + (dotPosition.x - prev.x) * smoothingAdjusted,
+      y: prev.y + (dotPosition.y - prev.y) * smoothingAdjusted
+    }))
+    
+    prevTimeRef.current = timestamp
+    // Continue animation
+    rafRef.current = requestAnimationFrame(updateCursorPosition)
+  }, [dotPosition])
 
   useEffect(() => {
-    const updateCursorPosition = (e: MouseEvent) => {
+    const handleMouseMove = (e: MouseEvent) => {
       // Update dot position immediately
       setDotPosition({ x: e.clientX, y: e.clientY })
       
@@ -53,17 +42,18 @@ export default function CustomCursor() {
       setIsPointer(window.getComputedStyle(target).cursor === "pointer")
     }
 
-    window.addEventListener("mousemove", updateCursorPosition)
+    window.addEventListener("mousemove", handleMouseMove)
+    
+    // Start the animation loop
+    rafRef.current = requestAnimationFrame(updateCursorPosition)
 
     return () => {
-      window.removeEventListener("mousemove", updateCursorPosition)
+      window.removeEventListener("mousemove", handleMouseMove)
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
+      }
     }
-  }, [])
-
-  // Start spring animation when dot position changes
-  useEffect(() => {
-    requestAnimationFrame(updateSpring)
-  }, [dotPosition, updateSpring])
+  }, [updateCursorPosition])
 
   return (
     <>
@@ -73,6 +63,7 @@ export default function CustomCursor() {
           left: `${dotPosition.x}px`,
           top: `${dotPosition.y}px`,
           transform: `translate(-50%, -50%) scale(${isPointer ? 1.5 : 1})`,
+          transition: "transform 0.15s ease-out"
         }}
       />
       <div
@@ -81,6 +72,7 @@ export default function CustomCursor() {
           left: `${circlePosition.x}px`,
           top: `${circlePosition.y}px`,
           transform: `translate(-50%, -50%) scale(${isPointer ? 1.5 : 1})`,
+          transition: "transform 0.15s ease-out"
         }}
       />
     </>
