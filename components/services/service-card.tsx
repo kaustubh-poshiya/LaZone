@@ -19,12 +19,13 @@ export default function ServiceCard({ id, title, description, image }: ServiceCa
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-lazone-black/0 group-hover:bg-lazone-black/20 transition-colors duration-500"></div>
       </div>
       <h3 className="text-xl font-serif mb-3">{title}</h3>
-      <p className="text-neutral-700 mb-4">{description}</p>
+      <p className="text-muted-foreground mb-4">{description}</p>
       <Link
         href={`/services/${id}`}
-        className="inline-flex items-center text-neutral-900 hover:text-neutral-600 transition-colors"
+        className="inline-flex items-center text-foreground hover:text-lazone-orange transition-colors"
       >
         Learn more
         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

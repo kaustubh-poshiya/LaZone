@@ -7,11 +7,17 @@ import { cn } from "@/lib/utils"
 import ThemeToggle from "@/components/theme-toggle"
 import Image from "next/image"
 import WhatsappIcon from "./ui/whatsapp-lcon"
+import { usePathname } from "next/navigation"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Determine if current page has a light background header
+  // Add more paths here if needed
+  const hasLightBackground = ['/contact', '/about', '/services', '/portfolio'].includes(pathname)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +60,7 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        isScrolled ? "bg-background/90 backdrop-blur-md py-3 shadow-md" : "bg-transparent py-5 ",
+        isScrolled ? "bg-background/90 backdrop-blur-md py-2 shadow-md" : "bg-transparent py-5 ",
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -79,7 +85,11 @@ export default function Navbar() {
               {link.dropdown ? (
                 <>
                   <button
-                    className="flex mt-2 items-center text-sm uppercase tracking-wider font-light text-foreground hover:text-primary transition-colors"
+                    className={`flex mt-2 items-center text-sm uppercase tracking-wider font-light transition-colors ${
+                      isScrolled || hasLightBackground 
+                        ? "text-foreground hover:text-lazone-vibrantOrange" 
+                        : "text-white hover:text-white/80"
+                    }`}
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}
                     aria-haspopup="true"
@@ -108,7 +118,7 @@ export default function Navbar() {
                         <Link
                           key={item.name}
                           href={item.href}
-                          className="block px-4 py-3 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-l-2 border-transparent hover:border-primary"
+                          className="block px-4 py-3 text-sm text-foreground hover:bg-primary/10 hover:text-lazone-vibrantOrange transition-colors border-l-2 border-transparent hover:border-lazone-vibrantOrange"
                           onClick={() => setServicesOpen(false)}
                         >
                           {item.name}
@@ -120,7 +130,11 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className="text-sm uppercase tracking-wider font-light text-foreground hover:text-primary transition-colors"
+                  className={`text-sm uppercase tracking-wider font-light transition-colors ${
+                    isScrolled || hasLightBackground 
+                      ? "text-foreground hover:text-lazone-vibrantOrange" 
+                      : "text-white hover:text-white/80"
+                  }`}
                 >
                   {link.name}
                 </Link>
@@ -148,7 +162,10 @@ export default function Navbar() {
             }}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6 text-foreground" /> : <Menu className="h-6 w-6 text-foreground" />}
+            {mobileMenuOpen ? 
+              <X className="h-6 w-6 text-foreground" /> : 
+              <Menu className={`h-6 w-6 ${isScrolled || hasLightBackground ? "text-foreground" : "text-white"}`} />
+            }
           </button>
         </div>
 
@@ -168,7 +185,7 @@ export default function Navbar() {
                   {link.dropdown ? (
                     <>
                       <button
-                        className="flex items-center text-lg uppercase tracking-wider font-light text-foreground hover:text-primary transition-colors"
+                        className="flex items-center text-lg uppercase tracking-wider font-light text-foreground hover:text-lazone-vibrantOrange transition-colors"
                         onClick={() => setServicesOpen(!servicesOpen)}
                       >
                         {link.name}
@@ -185,7 +202,7 @@ export default function Navbar() {
                             <Link
                               key={item.name}
                               href={item.href}
-                              className="block text-sm text-foreground hover:text-primary py-1"
+                              className="block text-sm text-foreground hover:text-lazone-vibrantOrange py-1"
                               onClick={() => {
                                 setServicesOpen(false)
                                 setMobileMenuOpen(false)
@@ -200,7 +217,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-lg uppercase tracking-wider font-light text-foreground hover:text-primary transition-colors"
+                      className="text-lg uppercase tracking-wider font-light text-foreground hover:text-lazone-vibrantOrange transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.name}

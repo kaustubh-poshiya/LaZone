@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import ScrollReveal from "@/components/scroll-reveal"
+import { ArrowRight } from "lucide-react"
 
 export default function StudioPhilosophy() {
   return (
@@ -10,7 +11,7 @@ export default function StudioPhilosophy() {
           <ScrollReveal animation="fade-right">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight">Our Philosophy</h2>
-              <div className="w-20 h-0.5 bg-architect-vibrant"></div>
+              <div className="w-20 h-0.5 bg-lazone-orange"></div>
               <p className="text-foreground/80 leading-relaxed">
                 At LAZONE, we believe that exceptional design emerges from the perfect balance of form, function, and
                 feeling. Our approach is guided by a commitment to bold creativity, minimal elegance, and human
@@ -24,9 +25,9 @@ export default function StudioPhilosophy() {
               <div className="pt-4">
                 <Link
                   href="/about"
-                  className="inline-flex items-center border-b border-architect-vibrant pb-1 text-foreground hover:text-architect-vibrant transition-colors"
+                  className="inline-flex items-center border-b border-lazone-orange pb-1 text-foreground hover:text-lazone-orange transition-colors"
                 >
-                  Learn more about our studio
+                  Learn more about our studio <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -35,12 +36,12 @@ export default function StudioPhilosophy() {
           <ScrollReveal animation="fade-left">
             <div className="relative h-[500px] md:h-[600px] rounded-lg overflow-hidden">
               <Image
-                src="/images/master-planning.png"
-                alt="LAZONE Design Philosophy"
+                src="/images/team-studio.jpg" 
+                alt="LAZONE Design Team at Work"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-architect-navy/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-lazone-black/30 to-transparent"></div>
             </div>
           </ScrollReveal>
         </div>

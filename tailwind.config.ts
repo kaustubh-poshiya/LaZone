@@ -53,18 +53,34 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Updated vibrant architecture-inspired color palette
+        // LaZone theme colors based on provided color palette
+        lazone: {
+          // Main colors
+          light: "#AEAEAE",    // Light gray
+          medium: "#5B5B5B",   // Medium gray
+          dark: "#3F3F3A",     // Dark gray / olive black
+          black: "#222327",    // Deep black
+          orange: "#FF4E16",   // Vibrant orange (primary accent)
+          
+          // Additional shades
+          lightGray: "#AEAEAE",
+          mediumGray: "#5B5B5B",
+          darkGray: "#3F3F3A",
+          deepBlack: "#222327",
+          vibrantOrange: "#FF4E16",
+        },
+        // Keeping the previous architect colors for compatibility
         architect: {
           primary: "#1E3A5F", // Deep blue
           secondary: "#E8A87C", // Warm coral
           tertiary: "#41B3A3", // Teal
           accent: "#C38D9E", // Mauve
-          vibrant: "#FF7E5F", // Vibrant coral
+          vibrant: "#FF4E16", // Updated to match LaZone orange
           emerald: "#2BAE66", // Emerald green
           navy: "#0F2C4D", // Navy blue
           gold: "#F9C846", // Gold
           neutral: "#F2F2F2", // Light gray
-          dark: "#121212", // Deep charcoal
+          dark: "#222327", // Updated to match LaZone black
         },
       },
       borderRadius: {

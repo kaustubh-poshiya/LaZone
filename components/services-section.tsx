@@ -21,42 +21,42 @@ export default function ServicesSection() {
       title: "INTERIOR DESIGN",
       description:
         "Crafting bespoke interior spaces that balance aesthetics, functionality, and personal expression to create environments that inspire and comfort.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/interior.jpg",
     },
     {
       id: "architecture",
       title: "ARCHITECTURE",
       description:
         "Designing innovative structures that harmonize with their surroundings while pushing the boundaries of form, function, and sustainability.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/architecture.png",
     },
     {
       id: "lobby-design",
       title: "LOBBY DESIGN",
       description:
         "Creating impactful first impressions through thoughtfully designed entrance spaces that set the tone for the entire building experience.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/lobby.png",
     },
     {
       id: "master-planning",
       title: "MASTER PLANNING",
       description:
         "Developing comprehensive spatial strategies that optimize land use, connectivity, and community engagement for large-scale projects.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/master-planning.png",
     },
     {
       id: "furnishing-product",
       title: "FURNISHING PRODUCT",
       description:
         "Curating and designing distinctive furniture and accessories that complement architectural spaces and enhance the overall design narrative.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/furnishing-product.png",
     },
     {
       id: "lifestyle-wellbeing",
       title: "LIFESTYLE WELLBEING",
       description:
         "Integrating wellness principles into design to create spaces that promote physical health, mental clarity, and emotional balance.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/lifestyle.png",
     },
   ]
 
@@ -89,11 +89,11 @@ export default function ServicesSection() {
   }, [])
 
   return (
-    <section id="services" ref={sectionRef} className="py-24 md:py-32">
+    <section id="services" ref={sectionRef} className="py-24 md:py-32 bg-lazone-black text-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light tracking-wider text-neutral-800 mb-6">OUR SERVICES</h2>
-          <div className="w-20 h-0.5 bg-neutral-300 mx-auto"></div>
+          <h2 className="text-3xl md:text-4xl font-light tracking-wider mb-6">OUR SERVICES</h2>
+          <div className="w-20 h-0.5 bg-lazone-orange mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -116,7 +116,7 @@ export default function ServicesSection() {
                 <h3 className="text-xl font-light tracking-wider mb-2">{service.title}</h3>
                 <div
                   className={cn(
-                    "w-12 h-0.5 bg-white mb-4 transition-all duration-500",
+                    "w-12 h-0.5 bg-lazone-orange mb-4 transition-all duration-500",
                     activeService === service.id ? "w-20" : "w-12",
                   )}
                 ></div>
