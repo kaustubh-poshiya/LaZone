@@ -52,7 +52,7 @@ export default function ContactPage() {
       setIsSubmitted(true)
       setFormState({
         name: "",
-        email: "",
+      email: "",
         phone: "",
         subject: "",
         message: "",
@@ -195,7 +195,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="pt-6" ref={socialRef}>
+              <div className="pt-6">
                 <h4 className="text-sm font-medium text-neutral-800 mb-4">FOLLOW US</h4>
                 <div className="flex space-x-4">
                   <a

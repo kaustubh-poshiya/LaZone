@@ -39,8 +39,8 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
                 className={cn(
                   "px-4 py-2 mx-2 mb-2 text-sm transition-colors rounded-md",
                   filter === category
-                    ? "bg-architect-primary text-white"
-                    : "bg-transparent text-foreground hover:bg-muted",
+                    ? "bg-lazone-orange text-white border border-lazone-orange"
+                    : "bg-transparent text-foreground hover:border-lazone-orange border border-transparent",
                 )}
               >
                 {category === "all" ? "All Projects" : category}
@@ -50,7 +50,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
           <div className="flex items-center space-x-2">
             <button
               onClick={() => setLayout("grid")}
-              className={cn("p-2 rounded-md transition-colors", layout === "grid" ? "bg-muted" : "hover:bg-muted/50")}
+              className={cn("p-2 rounded-md transition-colors", layout === "grid" ? "bg-neutral-100 dark:bg-neutral-800" : "hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50")}
               aria-label="Grid layout"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +60,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
                   width="7"
                   height="7"
                   rx="1"
-                  className={layout === "grid" ? "fill-primary" : "fill-foreground"}
+                  className={layout === "grid" ? "fill-lazone-orange" : "fill-foreground"}
                 />
                 <rect
                   x="14"
@@ -68,7 +68,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
                   width="7"
                   height="7"
                   rx="1"
-                  className={layout === "grid" ? "fill-primary" : "fill-foreground"}
+                  className={layout === "grid" ? "fill-lazone-orange" : "fill-foreground"}
                 />
                 <rect
                   x="3"
@@ -76,7 +76,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
                   width="7"
                   height="7"
                   rx="1"
-                  className={layout === "grid" ? "fill-primary" : "fill-foreground"}
+                  className={layout === "grid" ? "fill-lazone-orange" : "fill-foreground"}
                 />
                 <rect
                   x="14"
@@ -84,7 +84,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
                   width="7"
                   height="7"
                   rx="1"
-                  className={layout === "grid" ? "fill-primary" : "fill-foreground"}
+                  className={layout === "grid" ? "fill-lazone-orange" : "fill-foreground"}
                 />
               </svg>
             </button>
@@ -92,7 +92,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
               onClick={() => setLayout("masonry")}
               className={cn(
                 "p-2 rounded-md transition-colors",
-                layout === "masonry" ? "bg-muted" : "hover:bg-muted/50",
+                layout === "masonry" ? "bg-neutral-100 dark:bg-neutral-800" : "hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50",
               )}
               aria-label="Masonry layout"
             >
@@ -103,7 +103,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
                   width="7"
                   height="10"
                   rx="1"
-                  className={layout === "masonry" ? "fill-primary" : "fill-foreground"}
+                  className={layout === "masonry" ? "fill-lazone-orange" : "fill-foreground"}
                 />
                 <rect
                   x="14"
@@ -111,7 +111,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
                   width="7"
                   height="7"
                   rx="1"
-                  className={layout === "masonry" ? "fill-primary" : "fill-foreground"}
+                  className={layout === "masonry" ? "fill-lazone-orange" : "fill-foreground"}
                 />
                 <rect
                   x="3"
@@ -119,7 +119,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
                   width="7"
                   height="4"
                   rx="1"
-                  className={layout === "masonry" ? "fill-primary" : "fill-foreground"}
+                  className={layout === "masonry" ? "fill-lazone-orange" : "fill-foreground"}
                 />
                 <rect
                   x="14"
@@ -127,7 +127,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
                   width="7"
                   height="7"
                   rx="1"
-                  className={layout === "masonry" ? "fill-primary" : "fill-foreground"}
+                  className={layout === "masonry" ? "fill-lazone-orange" : "fill-foreground"}
                 />
               </svg>
             </button>

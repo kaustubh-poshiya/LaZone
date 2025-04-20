@@ -36,7 +36,7 @@ export default function StudioPhilosophy() {
           <ScrollReveal animation="fade-left">
             <div className="relative h-[500px] md:h-[600px] rounded-lg overflow-hidden">
               <Image
-                src="/images/team-studio.jpg" 
+                src="/images/master-planning.png" 
                 alt="LAZONE Design Team at Work"
                 fill
                 className="object-cover"

@@ -1,5 +1,6 @@
 import PageHeader from "@/components/page-header"
 import ServiceCard from "@/components/services/service-card"
+import ScrollReveal from "@/components/scroll-reveal"
 
 export default function ServicesPage() {
   const services = [
@@ -51,81 +52,80 @@ export default function ServicesPage() {
     <>
       <PageHeader title="Our Services" subtitle="Comprehensive design solutions for every aspect of your space" />
 
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-800">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-neutral-700 leading-relaxed">
-              At LAZONE, we offer a comprehensive suite of design services that work in harmony to create cohesive,
-              thoughtful spaces. Whether you're looking for a single service or a complete design solution, our team
-              brings expertise, creativity, and attention to detail to every project.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">What We Offer</h2>
+              <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
+              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                At LAZONE, we offer a comprehensive suite of design services that work in harmony to create cohesive,
+                thoughtful spaces. Whether you're looking for a single service or a complete design solution, our team
+                brings expertise, creativity, and attention to detail to every project.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <ServiceCard
-                key={service.id}
-                id={service.id}
-                title={service.title}
-                description={service.description}
-                image={service.image}
-              />
+            {services.map((service, index) => (
+              <ScrollReveal key={service.id} delay={index * 100}>
+                <ServiceCard
+                  id={service.id}
+                  title={service.title}
+                  description={service.description}
+                  image={service.image}
+                />
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-neutral-100">
+      {/* Process Section */}
+      <section className="py-16 md:py-24 bg-neutral-900 text-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">Our Process</h2>
-            <div className="w-20 h-px bg-neutral-300 mx-auto mb-6"></div>
-            <p className="text-neutral-700 leading-relaxed">
-              We follow a collaborative, iterative process that ensures your vision is realized with precision and
-              creativity.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-8 text-center">
-              <div className="w-12 h-12 bg-neutral-900 text-white flex items-center justify-center mx-auto mb-6 font-serif">
-                1
-              </div>
-              <h3 className="text-xl font-serif mb-4">Discovery</h3>
-              <p className="text-neutral-700">
-                We begin by understanding your needs, preferences, and aspirations through in-depth consultation.
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">Our Process</h2>
+              <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
+              <p className="text-neutral-300 leading-relaxed">
+                Our design process is structured yet flexible, allowing us to tailor our approach to each client's unique needs while ensuring consistent quality and attention to detail.
               </p>
             </div>
+          </ScrollReveal>
 
-            <div className="bg-white p-8 text-center">
-              <div className="w-12 h-12 bg-neutral-900 text-white flex items-center justify-center mx-auto mb-6 font-serif">
-                2
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <ScrollReveal animation="fade-right" delay={100}>
+              <div className="relative p-6 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-colors duration-300">
+                <div className="absolute -top-5 -left-2 w-10 h-10 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl">1</div>
+                <h3 className="text-xl font-serif mb-3 mt-4 text-white">Discovery</h3>
+                <p className="text-neutral-400">We begin by understanding your vision, requirements, and constraints through in-depth consultation and site analysis.</p>
               </div>
-              <h3 className="text-xl font-serif mb-4">Concept</h3>
-              <p className="text-neutral-700">
-                Our team develops creative concepts that align with your vision while pushing boundaries.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 text-center">
-              <div className="w-12 h-12 bg-neutral-900 text-white flex items-center justify-center mx-auto mb-6 font-serif">
-                3
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fade-right" delay={200}>
+              <div className="relative p-6 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-colors duration-300">
+                <div className="absolute -top-5 -left-2 w-10 h-10 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl">2</div>
+                <h3 className="text-xl font-serif mb-3 mt-4 text-white">Concept Development</h3>
+                <p className="text-neutral-400">We create preliminary designs that translate your requirements into spatial and aesthetic solutions.</p>
               </div>
-              <h3 className="text-xl font-serif mb-4">Development</h3>
-              <p className="text-neutral-700">
-                We refine the selected concept, addressing all technical and aesthetic considerations.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 text-center">
-              <div className="w-12 h-12 bg-neutral-900 text-white flex items-center justify-center mx-auto mb-6 font-serif">
-                4
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fade-right" delay={300}>
+              <div className="relative p-6 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-colors duration-300">
+                <div className="absolute -top-5 -left-2 w-10 h-10 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl">3</div>
+                <h3 className="text-xl font-serif mb-3 mt-4 text-white">Refinement</h3>
+                <p className="text-neutral-400">We refine the design based on your feedback, developing detailed plans and specifications for implementation.</p>
               </div>
-              <h3 className="text-xl font-serif mb-4">Realization</h3>
-              <p className="text-neutral-700">
-                We oversee implementation to ensure the design is executed with precision and care.
-              </p>
-            </div>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fade-right" delay={400}>
+              <div className="relative p-6 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-colors duration-300">
+                <div className="absolute -top-5 -left-2 w-10 h-10 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl">4</div>
+                <h3 className="text-xl font-serif mb-3 mt-4 text-white">Realization</h3>
+                <p className="text-neutral-400">We oversee the implementation of the design, ensuring that every detail is executed according to plan.</p>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

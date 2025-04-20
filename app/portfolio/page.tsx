@@ -103,14 +103,16 @@ export default function PortfolioPage() {
       <PageHeader
         title="Portfolio"
         subtitle="Explore our selected works across various disciplines"
-        className="bg-gradient-to-r from-architect-neutral to-architect-neutral"
+        className="bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-800"
       />
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <ScrollReveal animation="fade-bottom">
             <div className="max-w-3xl mx-auto text-center mb-12">
-              <p className="text-foreground/80 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">Our Projects</h2>
+              <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
+              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
                 Our portfolio showcases a diverse range of projects that reflect our commitment to innovative design,
                 functionality, and aesthetic excellence. Each project represents a unique collaboration between our
                 creative vision and our clients' aspirations.

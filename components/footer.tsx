@@ -25,21 +25,21 @@ export default function Footer() {
                   className="text-white/70 hover:text-lazone-orange transition-colors"
                   aria-label="Instagram"
                 >
-                  <Instagram className="h-5 w-5" />
+                  <Instagram className="h-7 w-7" />
                 </a>
                 <a
                   href="#"
                   className="text-white/70 hover:text-lazone-orange transition-colors"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="h-5 w-5" />
+                  <Linkedin className="h-7 w-7" />
                 </a>
                 <a
                   href="#"
                   className="text-white/70 hover:text-lazone-orange transition-colors"
                   aria-label="Facebook"
                 >
-                  <Facebook className="h-5 w-5" />
+                  <Facebook className="h-7 w-7" />
                 </a>
               </div>
             </div>

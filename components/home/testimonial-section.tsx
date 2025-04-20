@@ -128,7 +128,7 @@ export default function TestimonialSection() {
     return Array.from({ length: 5 }).map((_, i) => (
       <svg
         key={i}
-        className={cn("w-5 h-5", i < rating ? "text-yellow-400" : "text-gray-300")}
+        className={cn("w-5 h-5", i < rating ? "text-lazone-orange" : "text-neutral-300 dark:text-neutral-600")}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -158,12 +158,12 @@ export default function TestimonialSection() {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b font-serif from-white to-gray-50">
+    <section className="py-16 md:py-24 bg-gradient-to-r from-neutral-100 to-neutral-200 dark:from-neutral-900 dark:to-neutral-800">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900">What Our Clients Say</h2>
-          <div className="w-20 h-[2px] bg-architect-vibrant mx-auto mb-6"></div>
-          <p className="text-lg font-sans text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-4">What Our Clients Say</h2>
+          <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
+          <p className="text-lg text-neutral-700 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">
             Don't just take our word for it. Here's what our clients have to say about their experience working with us.
           </p>
         </div>
@@ -181,11 +181,11 @@ export default function TestimonialSection() {
                 key={testimonial.id}
                 variants={itemVariants}
                 className={cn(
-                  "bg-white font-sans rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
+                  "bg-white dark:bg-neutral-800 rounded-md shadow-sm p-6 transition-all duration-300 hover:shadow-md border-t-4 border-transparent hover:border-lazone-orange",
                 )}
               >
                 <div className="flex items-center mb-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-blue-100">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-neutral-200 dark:border-neutral-700">
                     <Image
                       src={testimonial.image || "/placeholder.svg"}
                       alt={testimonial.name}
@@ -194,9 +194,9 @@ export default function TestimonialSection() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">
-                      {testimonial.position}, <span className="text-blue-600">{testimonial.company}</span>
+                    <h4 className="font-medium text-neutral-900 dark:text-white">{testimonial.name}</h4>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                      {testimonial.position}, <span className="text-lazone-orange">{testimonial.company}</span>
                     </p>
                   </div>
                 </div>
@@ -204,13 +204,13 @@ export default function TestimonialSection() {
                 <div className="flex mb-4">{renderStars(testimonial.rating)}</div>
 
                 <div className="relative">
-                  <Quote className="absolute -top-2 -left-2 w-8 h-8 text-blue-100" />
-                  <p className="text-gray-700 font-sans relative z-10 pl-4">{testimonial.text}</p>
+                  <Quote className="absolute -top-2 -left-2 w-8 h-8 text-lazone-orange/10" />
+                  <p className="text-neutral-700 dark:text-neutral-300 relative z-10 pl-4">{testimonial.text}</p>
                 </div>
 
                 {testimonial.featured && (
-                  <div className="mt-4 pt-4 border-t border-gray-100">
-                    <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full">
+                  <div className="mt-4 pt-4 border-t border-neutral-100 dark:border-neutral-700">
+                    <span className="inline-block px-3 py-1 bg-lazone-orange/10 text-lazone-orange text-xs font-medium rounded-full">
                       Featured Testimonial
                     </span>
                   </div>
@@ -223,10 +223,10 @@ export default function TestimonialSection() {
           <div className="flex justify-between items-center">
             <button
               onClick={prevSlide}
-              className="p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors"
+              className="p-2 rounded-full bg-white dark:bg-neutral-800 shadow-sm hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
               aria-label="Previous testimonials"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-700" />
+              <ChevronLeft className="w-6 h-6 text-neutral-700 dark:text-neutral-300 group-hover:text-lazone-orange" />
             </button>
 
             <div className="flex space-x-2">
@@ -236,7 +236,7 @@ export default function TestimonialSection() {
                   onClick={() => goToSlide(index)}
                   className={cn(
                     "w-3 h-3 rounded-full transition-all duration-300",
-                    activeIndex / 3 === index ? "bg-architect-vibrant" : "bg-gray-300",
+                    activeIndex / 3 === index ? "bg-lazone-orange" : "bg-neutral-300 dark:bg-neutral-600",
                   )}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -245,10 +245,10 @@ export default function TestimonialSection() {
 
             <button
               onClick={nextSlide}
-              className="p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors"
+              className="p-2 rounded-full bg-white dark:bg-neutral-800 shadow-sm hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
               aria-label="Next testimonials"
             >
-              <ChevronRight className="w-6 h-6 text-gray-700" />
+              <ChevronRight className="w-6 h-6 text-neutral-700 dark:text-neutral-300 group-hover:text-lazone-orange" />
             </button>
           </div>
         </div>
