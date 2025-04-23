@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Compass, Star, Coffee, Eye, ArrowRight, Lightbulb, Diamond, Users } from "lucide-react"
+import { ArrowRight, Lightbulb, Diamond, Users } from "lucide-react"
 import PageHeader from "@/components/page-header"
 import ScrollReveal from "@/components/scroll-reveal"
 
@@ -13,11 +13,11 @@ const fadeIn = {
 
 const staggerContainer = {
   hidden: { opacity: 0 },
-  visible: { 
+  visible: {
     opacity: 1,
-    transition: { 
-      staggerChildren: 0.2 
-    } 
+    transition: {
+      staggerChildren: 0.2
+    }
   }
 }
 
@@ -29,28 +29,34 @@ const itemVariant = {
 export default function AboutPage() {
   const teamMembers = [
     {
-      name: "Alexandra Reynolds",
-      role: "Founder & Creative Director",
-      image: "/placeholder.svg?height=600&width=600",
-      bio: "With over 15 years of experience in architecture and interior design, Alexandra founded LAZONE with a vision to create spaces that inspire and transform.",
+      name: "YOGESH DOSHI",
+      role: "CHAIRMAN",
+      image: "/images/team/chairman.png",
+      bio: "With over 20 years of experience in the real estate and design industry, Yogesh has established himself as a visionary leader with a passion for excellence. His strategic direction has been instrumental in LAZONE's growth and success.",
     },
     {
-      name: "Marcus Chen",
-      role: "Lead Architect",
-      image: "/placeholder.svg?height=600&width=600",
-      bio: "Marcus brings a unique perspective to architectural design, blending innovative techniques with timeless principles to create structures that are both functional and visually striking.",
+      name: "KAIVAL DOSHI",
+      role: "CEO",
+      image: "/images/team/ceo.png",
+      bio: "Kaival brings over 15 years of executive leadership to LAZONE. His expertise in business development and client relations has helped transform LAZONE into a premier design studio known for its innovative approach and client-centered philosophy.",
     },
     {
-      name: "Sophia Patel",
-      role: "Interior Design Director",
-      image: "/placeholder.svg?height=600&width=600",
-      bio: "Sophia's approach to interior design focuses on creating harmonious spaces that reflect the client's personality while maintaining a sense of elegance and sophistication.",
+      name: "MITAL DOSHI",
+      role: "DESIGN DIRECTOR",
+      image: "/images/team/design-director.png",
+      bio: "Mital's creative vision and technical expertise have been driving forces behind LAZONE's most acclaimed projects. Her approach combines bold creativity with meticulous attention to detail, resulting in spaces that are both functional and visually stunning.",
     },
     {
-      name: "David Kowalski",
-      role: "Lighting Design Specialist",
-      image: "/placeholder.svg?height=600&width=600",
-      bio: "David's expertise in lighting design adds depth and dimension to our projects, enhancing the overall experience and atmosphere of each space.",
+      name: "TULASI SUSHRA DOSHI",
+      role: "MARKETING DIRECTOR",
+      image: "/images/team/marketing-director.png",
+      bio: "Tulasi's innovative marketing strategies have significantly enhanced LAZONE's brand presence in the industry. Her deep understanding of design trends and client needs allows her to effectively communicate the studio's unique value proposition.",
+    },
+    {
+      name: "BAIJU MEHTA",
+      role: "OPERATIONS DIRECTOR",
+      image: "/images/team/operations-director.png",
+      bio: "Baiju oversees the operational excellence that underpins LAZONE's project delivery. His systematic approach ensures that each project is executed with precision, efficiency, and the highest standards of quality control.",
     },
   ]
 
@@ -61,7 +67,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-b from-neutral-100 to-white dark:from-neutral-900 dark:to-neutral-800">
         <div className="container mx-auto px-4 md:px-6">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
@@ -105,35 +111,19 @@ export default function AboutPage() {
             <ScrollReveal animation="fade-left" delay={200}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-[300px] md:h-[400px] overflow-hidden rounded-md border-2 border-transparent hover:border-lazone-orange transition-all duration-300">
-                  <Image 
-                    src="/images/master-planning.png" 
-                    alt="LAZONE Studio" 
-                    fill 
-                    className="object-cover transition-transform duration-700 hover:scale-105" 
-                  />
-                </div>
-                <div className="relative h-[300px] md:h-[400px] mt-8 overflow-hidden rounded-md border-2 border-transparent hover:border-lazone-orange transition-all duration-300">
-                  <Image 
-                    src="/images/interior-design.png" 
-                    alt="LAZONE Interior Design" 
-                    fill 
-                    className="object-cover transition-transform duration-700 hover:scale-105" 
+                  <Image
+                    src="/images/master-planning.png"
+                    alt="LAZONE Studio"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
                 <div className="relative h-[300px] md:h-[400px] -mt-8 overflow-hidden rounded-md border-2 border-transparent hover:border-lazone-orange transition-all duration-300">
-                  <Image 
-                    src="/images/architecture.png" 
-                    alt="LAZONE Architecture" 
-                    fill 
-                    className="object-cover transition-transform duration-700 hover:scale-105" 
-                  />
-                </div>
-                <div className="relative h-[300px] md:h-[400px] overflow-hidden rounded-md border-2 border-transparent hover:border-lazone-orange transition-all duration-300">
-                  <Image 
-                    src="/images/lighting-design.png" 
-                    alt="LAZONE Lighting Design" 
-                    fill 
-                    className="object-cover transition-transform duration-700 hover:scale-105" 
+                  <Image
+                    src="/images/architecture.png"
+                    alt="LAZONE Architecture"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
               </div>
@@ -156,15 +146,15 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
           >
-            <motion.div 
-              variants={itemVariant} 
+            <motion.div
+              variants={itemVariant}
               className="bg-white dark:bg-neutral-800 p-8 md:p-10 shadow-sm hover:shadow-lg transition-all duration-300 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-md border-t-4 border-lazone-orange group"
             >
               <div className="flex items-center mb-6">
@@ -180,8 +170,8 @@ export default function AboutPage() {
               <div className="w-full h-0.5 bg-gradient-to-r from-lazone-orange to-transparent mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
 
-            <motion.div 
-              variants={itemVariant} 
+            <motion.div
+              variants={itemVariant}
               className="bg-white dark:bg-neutral-800 p-8 md:p-10 shadow-sm hover:shadow-lg transition-all duration-300 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-md border-t-4 border-lazone-orange group"
             >
               <div className="flex items-center mb-6">
@@ -197,8 +187,8 @@ export default function AboutPage() {
               <div className="w-full h-0.5 bg-gradient-to-r from-lazone-orange to-transparent mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
 
-            <motion.div 
-              variants={itemVariant} 
+            <motion.div
+              variants={itemVariant}
               className="bg-white dark:bg-neutral-800 p-8 md:p-10 shadow-sm hover:shadow-lg transition-all duration-300 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-md border-t-4 border-lazone-orange group"
             >
               <div className="flex items-center mb-6">
@@ -217,6 +207,57 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team Members Section */}
+      <section className="py-20 md:py-32 bg-neutral-900 text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-serif font-light tracking-tight mb-6 text-white">Meet Our Team</h2>
+              <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
+              <p className="text-neutral-300 leading-relaxed">
+                Meet the talented individuals who bring our vision to life. Our diverse team combines expertise, creativity, and passion to deliver exceptional design solutions.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 max-w-7xl mx-auto"
+          >
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariant}
+                className="group flex flex-col"
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <div className="relative w-full h-[400px] overflow-hidden mb-6 rounded-md bg-neutral-800">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 868px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={index < 3}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      {member.bio}
+                    </p>
+                  </div>
+                </div>
+                <h3 className="text-xl font-serif mb-1 text-white tracking-wide">{member.name}</h3>
+                <p className="text-sm text-lazone-orange font-medium">{member.role}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Call to Action Section */}
       <section className="py-16 md:py-24 bg-neutral-900 text-white">
         <div className="container mx-auto px-4 md:px-6">
@@ -227,8 +268,8 @@ export default function AboutPage() {
             <p className="text-lg md:text-xl mb-8 text-neutral-300">
               Your Vision, Our Expertise: Let's Create Extraordinary Spaces Together
             </p>
-            <a 
-              href="/contact" 
+            <a
+              href="/contact"
               className="group inline-flex items-center px-8 py-3 bg-lazone-orange text-white text-lg hover:bg-white hover:text-lazone-orange transition-colors duration-300 rounded-sm"
             >
               Let's Talk

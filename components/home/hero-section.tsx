@@ -52,7 +52,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         {/* Black overlay for better text visibility */}
         <div className="absolute inset-0 bg-black/30 z-10"></div>
-        
+
         {/* Hero video */}
         <video
           autoPlay
@@ -66,7 +66,7 @@ export default function HeroSection() {
           Your browser does not support the video tag.
         </video>
       </div>
-    
+
       <div className="relative top-[23vh] md:top-[17vh] lg:right-[32vw] md:right-[25vw] z-20 text-center text-white px-4 max-w-4xl">
         <h1
           ref={titleRef}
@@ -74,13 +74,13 @@ export default function HeroSection() {
         >
           Curating Spaces, Shaping Standards.
         </h1>
-        <p 
+        <p
           ref={subtitleRef}
           className="text-start max-w-xs text-2xl md:text-3xl lg:text-4xl font-serif font-medium mb-2 opacity-0 transition-opacity duration-1000"
         >
           All in one zone.
         </p>
-        {/* <p 
+        {/* <p
           ref={subtitleTwoRef}
           className="text-start max-w-xs text-xl md:text-2xl lg:text-3xl font-serif font-light mb-6 opacity-0 transition-opacity duration-1000"
         >
@@ -90,7 +90,7 @@ export default function HeroSection() {
           <Button asChild className="bg-lazone-orange text-white hover:bg-lazone-orange/90" size="lg">
             <Link href="/contact">Book Your Consultation</Link>
           </Button>
-          <Button asChild variant="outline" className="border-white text-black hover:bg-white/10" size="lg">
+          <Button asChild variant="outline" className="border-white text-white/90 bg-transparent hover:bg-black/30" size="lg">
             <Link href="/portfolio">Our Projects</Link>
           </Button>
         </div>

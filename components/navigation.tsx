@@ -42,7 +42,7 @@ export default function Navigation() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        isScrolled ? "bg-white/90 backdrop-blur-md py-3 shadow-sm" : "bg-transparent py-6",
+        isScrolled ? "bg-background/90 backdrop-blur-md py-3 shadow-sm" : "bg-transparent py-6",
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -59,7 +59,7 @@ export default function Navigation() {
               {link.dropdown ? (
                 <>
                   <button
-                    className="flex items-center text-sm uppercase tracking-wider font-light hover:text-neutral-500 transition-colors"
+                    className="flex items-center text-sm uppercase tracking-wider font-light text-foreground hover:text-primary transition-colors"
                     onClick={() => setServicesOpen(!servicesOpen)}
                   >
                     {link.name}
@@ -67,7 +67,7 @@ export default function Navigation() {
                   </button>
                   <div
                     className={cn(
-                      "absolute left-0 mt-2 w-56 origin-top-left bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition-all duration-200 ease-in-out",
+                      "absolute left-0 mt-2 w-56 origin-top-left bg-background shadow-lg ring-1 ring-border focus:outline-none transition-all duration-200 ease-in-out",
                       servicesOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none",
                     )}
                   >
@@ -76,7 +76,7 @@ export default function Navigation() {
                         <Link
                           key={item.name}
                           href={item.href}
-                          className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100"
+                          className="block px-4 py-2 text-sm text-foreground hover:bg-muted"
                           onClick={() => setServicesOpen(false)}
                         >
                           {item.name}
@@ -88,7 +88,7 @@ export default function Navigation() {
               ) : (
                 <Link
                   href={link.href}
-                  className="text-sm uppercase tracking-wider font-light hover:text-neutral-500 transition-colors"
+                  className="text-sm uppercase tracking-wider font-light text-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -103,19 +103,19 @@ export default function Navigation() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X className="h-6 w-6 text-black" /> : <Menu className="h-6 w-6 text-black" />}
+          {mobileMenuOpen ? <X className="h-6 w-6 text-foreground" /> : <Menu className="h-6 w-6 text-foreground" />}
         </button>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="fixed inset-0 bg-white z-0 flex flex-col items-center justify-center">
+          <div className="fixed inset-0 bg-background z-0 flex flex-col items-center justify-center">
             <nav className="flex flex-col items-center space-y-6">
               {navLinks.map((link) => (
                 <div key={link.name} className="text-center">
                   {link.dropdown ? (
                     <>
                       <button
-                        className="flex items-center text-lg uppercase tracking-wider font-light hover:text-neutral-500 transition-colors"
+                        className="flex items-center text-lg uppercase tracking-wider font-light text-foreground hover:text-primary transition-colors"
                         onClick={() => setServicesOpen(!servicesOpen)}
                       >
                         {link.name}
@@ -132,7 +132,7 @@ export default function Navigation() {
                             <Link
                               key={item.name}
                               href={item.href}
-                              className="block text-sm text-neutral-700 hover:text-neutral-900 py-1"
+                              className="block text-sm text-foreground hover:text-primary py-1"
                               onClick={() => {
                                 setServicesOpen(false)
                                 setMobileMenuOpen(false)
@@ -147,7 +147,7 @@ export default function Navigation() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-lg uppercase tracking-wider font-light hover:text-neutral-500 transition-colors"
+                      className="text-lg uppercase tracking-wider font-light text-foreground hover:text-primary transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.name}

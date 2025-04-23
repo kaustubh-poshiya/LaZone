@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { motion, useScroll, useTransform, useInView } from "framer-motion"
 import { ArrowRight, Award, Users, Clock, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import CountUp from "@/components/ui/count-up"
 
 export default function WhyChooseUs() {
   const containerRef = useRef(null)
@@ -21,10 +22,10 @@ export default function WhyChooseUs() {
   const y3 = useTransform(scrollYProgress, [0, 1], [-100, 100])
 
   const stats = [
-    { icon: <Award className="h-6 w-6" />, value: "10+", label: "Years of Experience" },
-    { icon: <Users className="h-6 w-6" />, value: "200+", label: "Happy Clients" },
-    { icon: <CheckCircle className="h-6 w-6" />, value: "150+", label: "Projects Completed" },
-    { icon: <Clock className="h-6 w-6" />, value: "24/7", label: "Customer Support" },
+    { icon: <Award className="h-6 w-6" />, value: 10, suffix: "+", label: "Years of Experience" },
+    { icon: <Users className="h-6 w-6" />, value: 200, suffix: "+", label: "Happy Clients" },
+    { icon: <CheckCircle className="h-6 w-6" />, value: 150, suffix: "+", label: "Projects Completed" },
+    { icon: <Clock className="h-6 w-6" />, value: 24, suffix: "/7", label: "Customer Support" },
   ]
 
   return (
@@ -64,11 +65,11 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.6 }}
 
             >
-              <p className="mb-6 font-sans text-lg text-[#999999]">
+              <p className="mb-6 font-sans text-lg text-white/70">
                 Lazone is a premier interior design and architecture firm based in the UAE. We specialize in creating
                 bespoke designs that reflect our clients' unique personalities and lifestyles.
               </p>
-              <p className="mb-8 font-sans text-lg text-[#999999]">
+              <p className="mb-8 font-sans text-lg text-white/70">
                 Our team of experienced designers and architects work collaboratively to deliver innovative solutions
                 that transform spaces into extraordinary experiences. We believe that great design should not only be
                 beautiful but also functional and sustainable.
@@ -83,17 +84,24 @@ export default function WhyChooseUs() {
                     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                     className="text-center"
                   >
-                    <div className="inline-flex items-center justify-center w-12 h-12 border border-[#999999] rounded-full bg-primary/10 text-[#999999] mb-3">
+                    <div className="inline-flex items-center justify-center w-12 h-12 border border-white/30 rounded-full bg-primary/10 text-white/80 mb-3">
                       {stat.icon}
                     </div>
-                    <div className="text-2xl font-bold text-[#999999]">{stat.value}</div>
-                    <div className="text-sm  text-[#999999]">{stat.label}</div>
+                    <CountUp
+                      end={stat.value}
+                      suffix={stat.suffix}
+                      duration={2}
+                      delay={index * 0.2}
+                      className="text-2xl font-bold text-white/80"
+                      startOnView={true}
+                    />
+                    <div className="text-sm text-white/70">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
 
               <Link href="/about">
-                <Button size="lg" className="mt-16 group flex px-8 py-3 border bg-transparent border-[#999999] text-[#999999] hover:bg-architect-vibrant hover:text-white transition-colors duration-700 rounded-full">
+                <Button size="lg" className="mt-16 group flex px-8 py-3 border bg-transparent border-white/30 text-white/80 hover:bg-architect-vibrant hover:text-white transition-colors duration-700 rounded-full">
                   Learn More About Us <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 " />
                 </Button>
               </Link>

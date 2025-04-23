@@ -8,12 +8,17 @@ import ThemeToggle from "@/components/theme-toggle"
 import Image from "next/image"
 import WhatsappIcon from "./ui/whatsapp-lcon"
 import { usePathname } from "next/navigation"
+import { useTheme } from "next-themes"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const pathname = usePathname()
+  const theme  = useTheme()
+
+  // current mode
+  const isDarkMode = theme.theme === "dark"
 
   // Determine if current page has a light background header
   // Add more paths here if needed
@@ -67,7 +72,7 @@ export default function Navbar() {
         <Link href="/" className="relative z-10">
           <div className="flex items-center">
             <Image
-              src="/images/logo.png"
+              src={isDarkMode ? "/images/logo-light.png" :"/images/logo.png"}
               alt="LAZONE Logo"
               width={100}
               height={100}
@@ -86,8 +91,8 @@ export default function Navbar() {
                 <>
                   <button
                     className={`flex mt-2 items-center text-sm uppercase tracking-wider font-light transition-colors ${
-                      isScrolled || hasLightBackground 
-                        ? "text-foreground hover:text-lazone-vibrantOrange" 
+                      isScrolled || hasLightBackground
+                        ? "text-foreground hover:text-lazone-vibrantOrange"
                         : "text-white hover:text-white/80"
                     }`}
                     onMouseEnter={() => setServicesOpen(true)}
@@ -109,7 +114,7 @@ export default function Navbar() {
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}
                     className={cn(
-                      "absolute left-0 w-56 origin-top-left bg-background/95 backdrop-blur-md shadow-lg ring-1 ring-black/5 focus:outline-none rounded-md overflow-hidden transition-all duration-200 ease-in-out",
+                      "absolute left-0 w-56 origin-top-left bg-background/95 backdrop-blur-md shadow-lg ring-1 ring-border focus:outline-none rounded-md overflow-hidden transition-all duration-200 ease-in-out",
                       servicesOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none",
                     )}
                   >
@@ -131,8 +136,8 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={`text-sm uppercase tracking-wider font-light transition-colors ${
-                    isScrolled || hasLightBackground 
-                      ? "text-foreground hover:text-lazone-vibrantOrange" 
+                    isScrolled || hasLightBackground
+                      ? "text-foreground hover:text-lazone-vibrantOrange"
                       : "text-white hover:text-white/80"
                   }`}
                 >
@@ -142,16 +147,22 @@ export default function Navbar() {
             </div>
           ))}
           <WhatsappIcon />
+          <div className="ml-2">
+            <ThemeToggle />
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center justify-around">
+        <div className="md:hidden flex items-center justify-around gap-2">
           <Link
             href={"https://wa.me/+97145533128?text=Hello!%20I%20want%20to%20know%20more%20about%20your%20services.%20Please%20call%20me%20back.%20Thanks"}
             target='_blank'
-            className="cursor-pointer w-14 h-20 flex items-center">
+            className="cursor-pointer w-[34px] h-20 flex items-center">
             <Image src="/images/whatsapp.png" alt="Whatsapp" width={100} height={100} className="w-7 h-7" />
           </Link>
+          <div className="flex items-center justify-center">
+            <ThemeToggle />
+          </div>
           <button
             className="relative z-10"
             onClick={() => {
@@ -162,8 +173,8 @@ export default function Navbar() {
             }}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? 
-              <X className="h-6 w-6 text-foreground" /> : 
+            {mobileMenuOpen ?
+              <X className="h-6 w-6 text-foreground" /> :
               <Menu className={`h-6 w-6 ${isScrolled || hasLightBackground ? "text-foreground" : "text-white"}`} />
             }
           </button>
@@ -225,6 +236,12 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+              <div className="mt-6 flex items-center justify-center">
+                <div className="flex items-center gap-3">
+                  <span className="text-sm text-foreground/80">Theme</span>
+                  <ThemeToggle />
+                </div>
+              </div>
             </nav>
           </div>
         )}

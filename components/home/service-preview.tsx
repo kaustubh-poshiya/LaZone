@@ -35,7 +35,7 @@ export default function ServicePreview() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl  text-bold font-serif font-light tracking-tight mb-6 text-white">Our Services</h2>
             <div className="w-20 h-0.5 bg-architect-vibrant mx-auto mb-6"></div>
-            <p className="max-w-2xl mx-auto text-lg text-[#999999]">
+            <p className="max-w-2xl mx-auto text-lg text-white/70">
               We offer a comprehensive suite of design services that work in harmony to create cohesive, thoughtful
               spaces that inspire and elevate the human experience.
             </p>
@@ -55,11 +55,11 @@ export default function ServicePreview() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-architect-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <h3 className="text-xl font-serif mb-3 text-[#999999]">{service.title}</h3>
-                <p className="mb-4 text-[#999999]">{service.description}</p>
+                <h3 className="text-xl font-serif mb-3 text-white/80">{service.title}</h3>
+                <p className="mb-4 text-white/70">{service.description}</p>
                 <Link
                   href={service.link}
-                  className="inline-flex items-center text-[#999999] font-semibold hover:text-architect-vibrant/80 transition-colors"
+                  className="inline-flex items-center text-white/80 font-semibold hover:text-architect-vibrant/80 transition-colors"
                 >
                   Explore
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -72,7 +72,7 @@ export default function ServicePreview() {
         <div className="text-center mt-12">
           <Link
             href="/services"
-            className="inline-block px-8 py-3 border duration-700 border-[#999999] text-[#999999] hover:bg-architect-vibrant hover:text-white transition-colors rounded-md"
+            className="inline-block px-8 py-3 border duration-700 border-white/30 text-white/80 hover:bg-architect-vibrant hover:text-white transition-colors rounded-md"
           >
             View All Services
           </Link>

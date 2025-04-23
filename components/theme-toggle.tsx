@@ -15,7 +15,7 @@ export default function ThemeToggle() {
   }, [])
 
   if (!mounted) {
-    return <div className="w-9 h-9"></div>
+    return <div className="w-8 h-8"></div>
   }
 
   return (
@@ -23,13 +23,13 @@ export default function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="rounded-full w-9 h-9 bg-background/50 backdrop-blur-sm hover:bg-background/80"
+      className="rounded-full w-8 h-8 flex items-center justify-center p-0 bg-lazone-orange/20 hover:bg-lazone-orange/30 transition-colors duration-200"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
-        <Sun className="h-5 w-5 text-lazone-orange" />
+        <Sun className="h-4 w-4 text-lazone-orange" />
       ) : (
-        <Moon className="h-5 w-5 text-lazone-orange" />
+        <Moon className="h-4 w-4 text-lazone-orange" />
       )}
     </Button>
   )
