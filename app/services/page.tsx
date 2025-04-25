@@ -1,6 +1,7 @@
 import PageHeader from "@/components/page-header"
 import ServiceCard from "@/components/services/service-card"
 import ScrollReveal from "@/components/scroll-reveal"
+import { Search, Lightbulb, PenTool, CheckSquare } from "lucide-react"
 
 export default function ServicesPage() {
   const services = [
@@ -96,34 +97,42 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <ScrollReveal animation="fade-right" delay={100}>
-              <div className="relative p-6 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-colors duration-300">
-                <div className="absolute -top-5 -left-2 w-10 h-10 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl">1</div>
-                <h3 className="text-xl font-serif mb-3 mt-4 text-white">Discovery</h3>
-                <p className="text-neutral-400">We begin by understanding your vision, requirements, and constraints through in-depth consultation and site analysis.</p>
+              <div className="relative p-6 pt-12 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-all duration-300 hover:bg-neutral-800/30 h-full min-h-[250px] flex flex-col items-center">
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl shadow-lg">
+                  <Search className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-serif mb-3 mt-2 text-white text-center">Discovery</h3>
+                <p className="text-neutral-400 text-center">We begin by understanding your vision, requirements, and constraints through in-depth consultation and site analysis.</p>
               </div>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-right" delay={200}>
-              <div className="relative p-6 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-colors duration-300">
-                <div className="absolute -top-5 -left-2 w-10 h-10 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl">2</div>
-                <h3 className="text-xl font-serif mb-3 mt-4 text-white">Concept Development</h3>
-                <p className="text-neutral-400">We create preliminary designs that translate your requirements into spatial and aesthetic solutions.</p>
+              <div className="relative p-6 pt-12 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-all duration-300 hover:bg-neutral-800/30 h-full min-h-[250px] flex flex-col items-center">
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl shadow-lg">
+                  <Lightbulb className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-serif mb-3 mt-2 text-white text-center">Concept Development</h3>
+                <p className="text-neutral-400 text-center">We create preliminary designs that translate your requirements into spatial and aesthetic solutions.</p>
               </div>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-right" delay={300}>
-              <div className="relative p-6 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-colors duration-300">
-                <div className="absolute -top-5 -left-2 w-10 h-10 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl">3</div>
-                <h3 className="text-xl font-serif mb-3 mt-4 text-white">Refinement</h3>
-                <p className="text-neutral-400">We refine the design based on your feedback, developing detailed plans and specifications for implementation.</p>
+              <div className="relative p-6 pt-12 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-all duration-300 hover:bg-neutral-800/30 h-full min-h-[250px] flex flex-col items-center">
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl shadow-lg">
+                  <PenTool className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-serif mb-3 mt-2 text-white text-center">Refinement</h3>
+                <p className="text-neutral-400 text-center">We refine the design based on your feedback, developing detailed plans and specifications for implementation.</p>
               </div>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-right" delay={400}>
-              <div className="relative p-6 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-colors duration-300">
-                <div className="absolute -top-5 -left-2 w-10 h-10 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl">4</div>
-                <h3 className="text-xl font-serif mb-3 mt-4 text-white">Realization</h3>
-                <p className="text-neutral-400">We oversee the implementation of the design, ensuring that every detail is executed according to plan.</p>
+              <div className="relative p-6 pt-12 border border-neutral-800 rounded-md group hover:border-lazone-orange transition-all duration-300 hover:bg-neutral-800/30 h-full min-h-[250px] flex flex-col items-center">
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-lazone-orange rounded-full flex items-center justify-center font-serif text-xl shadow-lg">
+                  <CheckSquare className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-serif mb-3 mt-2 text-white text-center">Realization</h3>
+                <p className="text-neutral-400 text-center">We oversee the implementation of the design, ensuring that every detail is executed according to plan.</p>
               </div>
             </ScrollReveal>
           </div>

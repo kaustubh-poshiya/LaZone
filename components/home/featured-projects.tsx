@@ -27,7 +27,7 @@ export default function FeaturedProjects() {
       title: "Serene Residential Building",
       // category: "Interior Design",
       location: "Dubai South, DWC, Dubai",
-      image: "/images/projects/serene.png",
+      image: "/assets/the-serene/a.jpg",
     },
     {
       id: "THE-WINGS",
@@ -41,7 +41,7 @@ export default function FeaturedProjects() {
       title: "THE HARMONY",
       // category: "Master Planning",
       location: "Dubai South, DWC, Dubai",
-      image: "/images/projects/harmony.png",
+      image: "/assets/the-harmony/01.jpg",
     },
     {
       id: "MAJAN-TWIN",
@@ -98,7 +98,7 @@ export default function FeaturedProjects() {
                 )}
               >
                 <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-8 md:p-12 text-white">
                   <div className="text-base md:text-lg font-light tracking-wider mb-2 text-architect-vibrant">
                     {project.location}

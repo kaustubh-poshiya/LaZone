@@ -48,21 +48,6 @@ const contentSections: ContentSection[] = [
   },
   {
     id: 2,
-    title: "Meticulous",
-    titleSecondary: "Craftsmanship",
-    titleAccent: "Excellence",
-    subtitle: "ATTENTION TO DETAIL",
-    description: "Our design process combines craftsmanship, technology and artistic vision to create contemporary spaces with minimalist elegance.",
-    stats: [
-      { value: "60%", label: "Design Sensitivities", description: "Distinct design philosophies with non-negotiable quality standards" },
-      { value: "100%", label: "Originality", description: "Guaranteed genuineness with established craftsmanship" }
-    ],
-    color: "bg-lazone-black",
-    accentColor: "text-lazone-orange",
-    layout: "center"
-  },
-  {
-    id: 4,
     title: "Nurturing",
     titleSecondary: "Design",
     titleAccent: "Excellence",
@@ -276,6 +261,29 @@ export default function HorizontalScrollSection() {
                   }
                 }
               )
+            })
+          }
+          
+          // Special handling for counters to trigger them at the right moment
+          const counters = contentRefs.current[i]?.querySelectorAll('.counter-wrapper')
+          if (counters?.length) {
+            counters.forEach((counter) => {
+              // Create a scroll trigger that will mark the counter as visible
+              ScrollTrigger.create({
+                trigger: panel as HTMLElement,
+                containerAnimation: tl,
+                start: "left center-=20%",
+                end: "right center+=20%",
+                onEnter: () => {
+                  counter.setAttribute('data-visible', 'true')
+                },
+                onLeaveBack: () => {
+                  counter.setAttribute('data-visible', 'false')
+                },
+                onLeave: () => {
+                  counter.setAttribute('data-visible', 'false')
+                }
+              })
             })
           }
         }
@@ -496,14 +504,16 @@ export default function HorizontalScrollSection() {
             <div ref={el => setContentRef(el, index)} className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 w-full max-w-3xl">
               {section.counters?.map((counter, i) => (
                 <div key={i} className="animate-item text-center bg-lazone-black/50 p-6 sm:p-8 rounded-xl shadow-lg backdrop-blur-sm border border-lazone-orange/20 hover:border-lazone-orange/40 transition-all duration-300">
-                  <CountUp
-                    end={counter.value}
-                    suffix={counter.suffix}
-                    duration={3}
-                    delay={i * 0.3}
-                    className={`text-6xl sm:text-7xl lg:text-8xl font-bold ${section.accentColor} mb-4 sm:mb-5`}
-                    startOnView={false}
-                  />
+                  <div className="counter-wrapper">
+                    <CountUp
+                      end={counter.value}
+                      suffix={counter.suffix}
+                      duration={2}
+                      delay={i * 0.2}
+                      className={`text-6xl sm:text-7xl lg:text-8xl font-bold ${section.accentColor} mb-4 sm:mb-5`}
+                      startOnView={true}
+                    />
+                  </div>
                   <div className="text-md sm:text-lg lg:text-xl uppercase tracking-wider text-white/80">{counter.label}</div>
                 </div>
               ))}

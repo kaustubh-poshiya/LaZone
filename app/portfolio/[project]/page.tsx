@@ -2,9 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { notFound } from "next/navigation"
-import RelatedProjects from "@/components/projects/related-projects"
 import ProjectStory from "@/components/projects/project-story"
-import PanoramaViewer from "@/components/virtual-tour/panorama-viewer"
 import ScrollReveal from "@/components/scroll-reveal"
 
 type ProjectPageProps = {
@@ -93,25 +91,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         />
       )}
 
-      {/* Virtual Tour */}
-      {projectData.virtualTour && (
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4 md:px-6">
-            <ScrollReveal animation="fade-bottom">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-4">Virtual Tour</h2>
-                <div className="w-20 h-0.5 bg-architect-vibrant mx-auto mb-4"></div>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Explore the space virtually and discover the key design features
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <PanoramaViewer scenes={projectData.virtualTour} />
-          </div>
-        </section>
-      )}
-
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">
           <ScrollReveal animation="fade-bottom">
@@ -170,43 +149,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      {/* Client Testimonial */}
-      {projectData.testimonial && (
-        <section className="py-16 md:py-24 bg-architect-tertiary/10">
-          <div className="container mx-auto px-4 md:px-6">
-            <ScrollReveal animation="fade-bottom">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-4">Client Feedback</h2>
-                <div className="w-20 h-0.5 bg-architect-vibrant mx-auto"></div>
-              </div>
-            </ScrollReveal>
-
-            <div className="max-w-3xl mx-auto testimonial-card">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0">
-                  <Image
-                    src={projectData.testimonial.image || "/placeholder.svg"}
-                    alt={projectData.testimonial.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex-1 text-center md:text-left">
-                  <p className="text-lg md:text-xl italic mb-4">{projectData.testimonial.quote}</p>
-                  <div>
-                    <p className="font-medium text-lg">{projectData.testimonial.name}</p>
-                    <p className="text-muted-foreground">
-                      {projectData.testimonial.position}, {projectData.testimonial.company}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      <RelatedProjects currentProject={params.project} category={projectData.category} />
+      {/* <RelatedProjects currentProject={params.project} category={projectData.category} /> */}
 
       <div className="container mx-auto px-4 md:px-6 py-8">
         <Link
@@ -223,490 +166,347 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
 function getProjectData(projectSlug: string) {
   const projects = {
-    "riverside-penthouse": {
-      title: "Riverside Penthouse",
+    "Serene": {
+      title: "Serene Residential Building",
       category: "Interior Design",
       client: "Private Client",
-      location: "New York, USA",
+      location: "Dubai South, DWC, Dubai",
       year: "2023",
-      size: "450 m²",
+      size: "14,500 m²",
       services: ["Interior Design", "Furnishings Product", "Lighting Design"],
-      heroImage: "/placeholder.svg?height=1200&width=2000",
+      heroImage: "/images/projects/serene.png",
       description: [
-        "This luxury penthouse overlooking the Hudson River required a complete interior redesign to maximize the spectacular views while creating a sophisticated, comfortable living environment.",
-        "Our approach balanced contemporary elegance with warmth, using a neutral palette accented with carefully selected materials and textures. The open-plan layout was designed to enhance flow between spaces while maintaining distinct functional zones.",
-        "Custom furnishings and lighting solutions were developed specifically for the project, ensuring each element contributed to the cohesive design narrative while meeting the client's practical needs.",
+        "Serene Residential Building is a luxurious development designed to provide a tranquil living environment amidst the bustling city of Dubai.",
+        "Our approach balanced contemporary elegance with functionality, using a neutral palette accented with carefully selected materials and textures. The open-plan layouts were designed to enhance flow between spaces while maintaining distinct functional zones.",
+        "Custom furnishings and lighting solutions were developed specifically for the project, ensuring each element contributed to the cohesive design narrative while meeting the residents' practical needs.",
       ],
       approach: [
-        "The design concept centered on creating a dialogue between the interior and the dramatic city and river views. Large windows were left unobstructed, with seating arranged to capitalize on the vistas.",
-        "Materials were selected for their tactile qualities and visual subtlety, with natural stone, warm woods, and soft textiles creating layers of interest without competing with the views.",
-        "Lighting was carefully considered to transition from day to night, with a scheme that adapts to different moods and activities while highlighting architectural features and art pieces.",
+        "The design concept centered on creating a dialogue between the interior and the exterior views, with large windows that frame the Dubai skyline.",
+        "Materials were selected for their tactile qualities and visual subtlety, with natural stone, warm woods, and soft textiles creating layers of interest without overwhelming the senses.",
+        "Lighting was carefully considered to transition from day to night, with a scheme that adapts to different moods and activities while highlighting architectural features and design elements.",
       ],
-      approachImage: "/placeholder.svg?height=800&width=1200",
+      approachImage: "/assets/the-serene/b.jpg",
       gallery: [
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
+        "/assets/the-serene/a.jpg",
+        "/assets/the-serene/b.jpg",
+        "/assets/the-serene/c.jpg",
+        "/assets/the-serene/d.jpg",
+        "/assets/the-serene/01.jpg",
+        "/assets/the-serene/02.jpg",
       ],
       story: [
         {
           title: "Client Brief & Inspiration",
           description:
-            "The client, a well-traveled art collector, sought a space that would showcase their collection while providing a serene retreat from city life. Inspired by Japanese minimalism and Scandinavian warmth, we developed a concept that balanced openness with intimacy.",
-          image: "/placeholder.svg?height=600&width=900",
+            "The client sought to create a residential building that would stand out in Dubai's competitive real estate market while providing residents with a sense of serenity and well-being.",
+          image: "/assets/the-serene/a.jpg",
         },
         {
           title: "Space Planning & Flow",
           description:
-            "The original layout compartmentalized the space, blocking natural light and views. We removed non-structural walls to create an open floor plan that follows the natural circulation patterns while defining zones through subtle architectural elements and material changes.",
-          image: "/placeholder.svg?height=600&width=900",
+            "We developed floor plans that maximize space efficiency while creating a natural flow between living areas, with special attention to the relationship between private and communal spaces.",
+          image: "/assets/the-serene/b.jpg",
         },
         {
           title: "Material Selection",
           description:
-            "We selected a palette of natural materials that would age gracefully: limestone flooring, walnut paneling, and bronze accents. Each material was chosen not only for its aesthetic qualities but also for how it interacts with the changing natural light throughout the day.",
-          image: "/placeholder.svg?height=600&width=900",
+            "We selected a palette of premium materials that would age gracefully: marble flooring, wood paneling, and metal accents. Each material was chosen for its aesthetic qualities and durability in Dubai's climate.",
+          image: "/assets/the-serene/c.jpg",
         },
         {
           title: "Custom Furnishings",
           description:
-            "Several key pieces were custom designed for the space, including a floating credenza in the dining area and built-in seating in the living room. These elements were crafted by local artisans, emphasizing our commitment to quality craftsmanship.",
-          image: "/placeholder.svg?height=600&width=900",
+            "Several key pieces were custom designed for the common areas, including reception furniture and lounge seating. These elements were crafted by skilled artisans, emphasizing our commitment to quality craftsmanship.",
+          image: "/assets/the-serene/d.jpg",
         },
         {
           title: "Lighting Design",
           description:
-            "The lighting scheme was developed to enhance the architecture and art while creating atmosphere. Recessed lighting provides ambient illumination, while targeted fixtures highlight art pieces and architectural features. All lighting is controllable via a smart home system.",
-          image: "/placeholder.svg?height=600&width=900",
-        },
-      ],
-      virtualTour: [
-        {
-          id: "living-room",
-          title: "Living Room",
-          image: "/placeholder.svg?height=1200&width=2400",
-          hotspots: [
-            {
-              id: "hotspot-1",
-              x: 35,
-              y: 45,
-              title: "Custom Sofa",
-              description:
-                "Bespoke modular sofa designed specifically for this space, upholstered in Italian wool bouclé.",
-            },
-            {
-              id: "hotspot-2",
-              x: 65,
-              y: 40,
-              title: "Sculptural Coffee Table",
-              description:
-                "Hand-carved marble coffee table by sculptor James Chen, combining functionality with artistic expression.",
-            },
-            {
-              id: "hotspot-3",
-              x: 50,
-              y: 25,
-              title: "Statement Lighting",
-              description:
-                "Custom brass and glass chandelier designed to create a focal point without obstructing the view.",
-            },
-          ],
-        },
-        {
-          id: "dining-area",
-          title: "Dining Area",
-          image: "/placeholder.svg?height=1200&width=2400",
-          hotspots: [
-            {
-              id: "hotspot-4",
-              x: 45,
-              y: 50,
-              title: "Dining Table",
-              description: "Solid walnut dining table with live edge, showcasing the natural beauty of the wood.",
-            },
-            {
-              id: "hotspot-5",
-              x: 70,
-              y: 45,
-              title: "Floating Credenza",
-              description: "Custom-designed floating credenza with integrated wine storage and serving area.",
-            },
-            {
-              id: "hotspot-6",
-              x: 30,
-              y: 30,
-              title: "Art Installation",
-              description: "Site-specific art installation commissioned for this space, responding to the river views.",
-            },
-          ],
-        },
-        {
-          id: "master-bedroom",
-          title: "Master Bedroom",
-          image: "/placeholder.svg?height=1200&width=2400",
-          hotspots: [
-            {
-              id: "hotspot-7",
-              x: 40,
-              y: 55,
-              title: "Platform Bed",
-              description: "Custom platform bed with integrated nightstands and subtle lighting.",
-            },
-            {
-              id: "hotspot-8",
-              x: 65,
-              y: 40,
-              title: "Reading Nook",
-              description: "Comfortable reading area positioned to capture morning light and river views.",
-            },
-            {
-              id: "hotspot-9",
-              x: 25,
-              y: 35,
-              title: "Textile Wall",
-              description: "Acoustic wall treatment using handwoven textiles to add warmth and improve sound quality.",
-            },
-          ],
+            "The lighting scheme was developed to enhance the architecture while creating atmosphere. Recessed lighting provides ambient illumination, while targeted fixtures highlight design features. Smart lighting systems allow for energy efficiency and scene setting.",
+          image: "/assets/the-serene/01.jpg",
         },
       ],
       testimonial: {
         quote:
-          "LAZONE transformed our vision into a stunning reality. Their attention to detail and innovative approach created a space that perfectly balances aesthetics and functionality. The team's ability to understand our needs and translate them into design was exceptional.",
-        name: "Alexandra Reynolds",
-        position: "Homeowner",
-        company: "Riverside Penthouse",
+          "LAZONE transformed our vision into a stunning reality. Their attention to detail and innovative approach created a residential building that perfectly balances aesthetics and functionality. The team's ability to understand our needs and translate them into design was exceptional.",
+        name: "Mohammed Al Farsi",
+        position: "Development Director",
+        company: "Serene Properties",
         image: "/placeholder.svg?height=400&width=400",
       },
+      virtualTour: [],
     },
-    "glass-pavilion": {
-      title: "Glass Pavilion",
+    "THE-WINGS": {
+      title: "THE WINGS",
       category: "Architecture",
-      client: "Arts Foundation",
-      location: "Los Angeles, USA",
+      client: "Dubai Properties",
+      location: "Arjan, AlBarsha South, Dubai",
       year: "2022",
-      size: "850 m²",
-      services: ["Architecture", "Interior Design", "Landscape Design"],
-      heroImage: "/placeholder.svg?height=1200&width=2000",
+      size: "22,000 m²",
+      services: ["Architecture", "Master Planning", "Landscape Design"],
+      heroImage: "/images/projects/wings.png",
       description: [
-        "The Glass Pavilion was designed as a multipurpose cultural space set within a sculpture garden. The brief called for a transparent structure that would showcase art while maintaining a strong connection to the surrounding landscape.",
-        "Our architectural solution features expansive glass walls supported by a minimal steel framework, creating the impression of a floating roof plane. The boundary between interior and exterior is deliberately blurred, allowing nature to become part of the exhibition experience.",
-        "The pavilion includes flexible gallery spaces, a small auditorium, and support facilities, all designed with adaptability in mind to accommodate various types of exhibitions and events.",
+        "THE WINGS is an architectural landmark in Arjan, designed to make a bold statement while providing functional living spaces for residents.",
+        "The distinctive wing-shaped facades give the building its unique identity, while also serving to optimize natural light and views from the residences.",
+        "This project demonstrates our ability to create architecture that is both visually striking and practically responsive to the needs of its users and context.",
       ],
       approach: [
-        "The design process began with careful site analysis to determine optimal orientation, views, and relationship to existing landscape features. The building's footprint and form were developed to minimize disruption to the natural environment.",
-        "Technical challenges of creating a predominantly glass structure in a seismically active region were addressed through innovative structural solutions and advanced glazing systems that ensure safety while maintaining visual lightness.",
-        "Sustainability was integrated throughout, with passive cooling strategies, photovoltaic panels embedded in the roof, and a rainwater harvesting system that supplies irrigation for the surrounding gardens.",
+        "The design process began with extensive site analysis to determine optimal orientation, views, and relationship to the surrounding urban context of Arjan.",
+        "Technical challenges of creating the wing-shaped facades in Dubai's climate were addressed through innovative structural solutions and advanced building systems.",
+        "Sustainability was integrated throughout, with passive cooling strategies, energy-efficient systems, and thoughtful material selection to reduce environmental impact.",
       ],
-      approachImage: "/placeholder.svg?height=800&width=1200",
+      approachImage: "/images/projects/wings.png",
       gallery: [
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
+        "/images/projects/wings.png",
+        "/images/projects/wings.png",
+        "/images/projects/wings.png",
+        "/images/projects/wings.png",
+        "/images/projects/wings.png",
+        "/images/projects/wings.png",
       ],
       story: [
         {
           title: "Concept Development",
           description:
-            "The concept for the Glass Pavilion emerged from the client's desire to create a space where art and nature could coexist and enhance one another. Drawing inspiration from modernist glass houses and Japanese pavilions, we developed a design that prioritizes transparency, lightness, and connection to the landscape.",
-          image: "/placeholder.svg?height=600&width=900",
+            "The concept for THE WINGS emerged from the desire to create a building that would stand out in Dubai's architectural landscape while providing optimal living conditions for residents.",
+          image: "/images/projects/wings.png",
         },
         {
-          title: "Site Integration",
+          title: "Form Finding",
           description:
-            "The site, a former private estate with mature trees and natural topography, presented both opportunities and constraints. We positioned the pavilion to preserve existing specimen trees while capturing key views and optimizing natural light. The building seems to emerge from the landscape rather than imposing upon it.",
-          image: "/placeholder.svg?height=600&width=900",
+            "The distinctive wing-shaped form was developed through multiple iterations, balancing aesthetic goals with practical considerations of construction and interior space planning.",
+          image: "/images/projects/wings.png",
         },
         {
           title: "Structural Innovation",
           description:
-            "Creating a predominantly glass structure in a seismic zone required innovative engineering solutions. We collaborated with structural engineers to develop a system of slender steel columns and a lightweight roof structure that could withstand seismic forces while maintaining the desired aesthetic of transparency and lightness.",
-          image: "/placeholder.svg?height=600&width=900",
+            "Creating the dynamic form required innovative structural engineering solutions. We collaborated with engineers to develop a system that could realize the design vision while ensuring safety and buildability.",
+          image: "/images/projects/wings.png",
         },
         {
-          title: "Environmental Strategies",
+          title: "Facade Design",
           description:
-            "Despite the extensive glazing, the pavilion achieves high energy efficiency through carefully designed overhangs, high-performance glass, and natural ventilation systems. The roof incorporates photovoltaic panels that generate electricity while providing necessary shade to prevent overheating.",
-          image: "/placeholder.svg?height=600&width=900",
+            "The facade system was carefully designed to manage Dubai's intense sunlight, with elements providing shade while maintaining views and allowing natural light into the interior spaces.",
+          image: "/images/projects/wings.png",
         },
         {
-          title: "Interior Flexibility",
+          title: "Spatial Experience",
           description:
-            "The interior spaces were designed with maximum flexibility to accommodate changing exhibitions and events. Movable partition systems, adjustable lighting tracks, and integrated technology allow the space to transform from open gallery to intimate auditorium or workshop space as needed.",
-          image: "/placeholder.svg?height=600&width=900",
+            "Interior spaces were designed to maximize the benefits of the building's unique form, with living areas positioned to capture views and create a sense of connection to the surrounding city.",
+          image: "/images/projects/wings.png",
         },
       ],
-      virtualTour: [
-        {
-          id: "main-gallery",
-          title: "Main Gallery",
-          image: "/placeholder.svg?height=1200&width=2400",
-          hotspots: [
-            {
-              id: "hotspot-1",
-              x: 45,
-              y: 50,
-              title: "Floating Ceiling",
-              description:
-                "The ceiling plane appears to float above the space, concealing structural elements and mechanical systems while providing flexible lighting options.",
-            },
-            {
-              id: "hotspot-2",
-              x: 70,
-              y: 45,
-              title: "Glass Wall System",
-              description:
-                "Frameless glass walls with minimal structural supports create a seamless connection between interior and exterior spaces.",
-            },
-            {
-              id: "hotspot-3",
-              x: 25,
-              y: 40,
-              title: "Movable Display System",
-              description:
-                "Custom-designed display panels can be reconfigured to create different exhibition layouts and spatial experiences.",
-            },
-          ],
-        },
-        {
-          id: "auditorium",
-          title: "Auditorium",
-          image: "/placeholder.svg?height=1200&width=2400",
-          hotspots: [
-            {
-              id: "hotspot-4",
-              x: 50,
-              y: 55,
-              title: "Acoustic Treatment",
-              description:
-                "Perforated wood panels provide acoustic control while maintaining the aesthetic warmth of natural materials.",
-            },
-            {
-              id: "hotspot-5",
-              x: 30,
-              y: 45,
-              title: "Retractable Seating",
-              description:
-                "Seating system can be fully retracted to transform the space for different uses and configurations.",
-            },
-            {
-              id: "hotspot-6",
-              x: 65,
-              y: 35,
-              title: "Projection System",
-              description: "State-of-the-art projection and sound systems integrated discreetly into the architecture.",
-            },
-          ],
-        },
-        {
-          id: "sculpture-garden",
-          title: "Sculpture Garden",
-          image: "/placeholder.svg?height=1200&width=2400",
-          hotspots: [
-            {
-              id: "hotspot-7",
-              x: 40,
-              y: 60,
-              title: "Water Feature",
-              description:
-                "Reflecting pool creates a dialogue between the architecture, landscape, and sky through reflection and movement.",
-            },
-            {
-              id: "hotspot-8",
-              x: 60,
-              y: 50,
-              title: "Pavilion View",
-              description:
-                "From this vantage point, the pavilion appears to dissolve into the landscape, with reflections and transparency blurring the boundaries.",
-            },
-            {
-              id: "hotspot-9",
-              x: 25,
-              y: 45,
-              title: "Sculpture Platform",
-              description:
-                "Raised platform provides a stage for rotating sculpture exhibitions, with integrated lighting for nighttime viewing.",
-            },
-          ],
-        },
-      ],
-      testimonial: {
-        quote:
-          "Working with LAZONE on the Glass Pavilion was a truly collaborative experience. They listened carefully to our vision and translated it into a building that exceeds our expectations. The pavilion has transformed our programming capabilities and created a unique cultural destination that our visitors love.",
-        name: "Michael Chen",
-        position: "Director",
-        company: "Arts Foundation",
-        image: "/placeholder.svg?height=400&width=400",
-      },
+      virtualTour: [],
     },
-    "wellness-retreat": {
-      title: "Wellness Retreat",
-      category: "Lifestyle & Wellbeing",
-      client: "Wellness Group International",
-      location: "Bali, Indonesia",
+    "THE-HARMONY": {
+      title: "THE HARMONY",
+      category: "Interior Design",
+      client: "Dubai South Developments",
+      location: "Dubai South, DWC, Dubai",
       year: "2022",
-      size: "2,500 m²",
-      services: ["Architecture", "Interior Design", "Landscape Design", "Lifestyle & Wellbeing"],
-      heroImage: "/placeholder.svg?height=1200&width=2000",
+      size: "18,000 m²",
+      services: ["Interior Design", "Furnishings Product"],
+      heroImage: "/images/projects/harmony.png",
       description: [
-        "This comprehensive wellness retreat was designed to provide an immersive healing environment that harmonizes with its tropical setting. The project encompasses accommodation pavilions, treatment spaces, meditation areas, and communal facilities.",
-        "Our design approach emphasized biophilic principles, creating spaces that foster connection with nature while providing comfort, privacy, and opportunities for both solitude and community. Local materials and building traditions were reinterpreted in a contemporary context.",
-        "Each element of the retreat was considered from both functional and experiential perspectives, ensuring that the environment actively contributes to guests' wellbeing journey through thoughtful spatial design, natural ventilation, and sensory engagement.",
+        "THE HARMONY is a residential development in Dubai South that emphasizes balanced living environments through thoughtful interior design.",
+        "Our interior design strategy focused on creating spaces that promote wellbeing, with careful attention to spatial flow, natural light, and material selection.",
+        "The project demonstrates our approach to creating interiors that feel both luxurious and livable, with a timeless quality that will endure beyond passing trends.",
       ],
       approach: [
-        "The master plan was developed to respect the existing topography and vegetation, with buildings nestled among trees and oriented to capture prevailing breezes and optimal views. Circulation paths were designed as journeys through the landscape.",
-        "Material selection prioritized natural, local, and sustainable options, with an emphasis on craftsmanship and tactile qualities. The palette draws from the surrounding environment, creating a sense of harmony and belonging.",
-        "Wellness principles informed every aspect of the design, from the quality of natural light to acoustic considerations, air flow, and the integration of water features that provide both aesthetic value and cooling effects.",
+        "We began with a deep understanding of how residents would use the spaces, developing interior layouts that support daily activities while creating moments of delight.",
+        "Material and color palettes were selected to create a sense of harmony and cohesion throughout the building, with subtle variations defining different zones and functions.",
+        "Custom design elements were integrated throughout to give the project a unique identity and create a sense of place specific to Dubai South.",
       ],
-      approachImage: "/placeholder.svg?height=800&width=1200",
+      approachImage: "/assets/the-harmony/02.jpg",
       gallery: [
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
-        "/placeholder.svg?height=800&width=1200",
+        "/assets/the-harmony/01.jpg",
+        "/assets/the-harmony/02.jpg",
+        "/assets/the-harmony/03.jpg",
+        "/assets/the-harmony/Cl1.jpg",
+        "/assets/the-harmony/05.jpg",
+        "/assets/the-harmony/07.jpg",
       ],
       story: [
         {
-          title: "Wellness Philosophy",
+          title: "Design Vision",
           description:
-            "The project began with a deep exploration of the client's wellness philosophy, which emphasizes the integration of mind, body, and spirit with nature. This holistic approach informed every aspect of the design, from master planning to material selection and sensory experiences.",
-          image: "/placeholder.svg?height=600&width=900",
+            "The vision for THE HARMONY was to create interior spaces that balance aesthetic refinement with practical functionality, supporting residents' lifestyles while elevating their daily experience.",
+          image: "/assets/the-harmony/01.jpg",
         },
         {
-          title: "Site Sensitivity",
+          title: "Spatial Planning",
           description:
-            "The 5-acre site features a dramatic topography with lush tropical vegetation and natural water sources. Rather than imposing a rigid design on the landscape, we worked with the existing contours and ecosystems, positioning buildings to minimize disruption to mature trees and natural drainage patterns.",
-          image: "/placeholder.svg?height=600&width=900",
+            "We developed floor plans that create a natural progression from public to private spaces, with careful consideration of proportions and relationships between different functional areas.",
+          image: "/assets/the-harmony/02.jpg",
         },
         {
-          title: "Pavilion Architecture",
+          title: "Material Palette",
           description:
-            "The retreat consists of a series of pavilions rather than a single large structure, allowing guests to experience the journey between spaces as part of their wellness experience. Each pavilion is designed with cross-ventilation, optimal daylight, and framed views of nature, creating spaces that breathe with the landscape.",
-          image: "/placeholder.svg?height=600&width=900",
+            "The material palette combines warm and cool elements - stone, wood, glass, and metal - creating a balanced composition that feels simultaneously sophisticated and welcoming.",
+          image: "/assets/the-harmony/03.jpg",
         },
         {
-          title: "Material Authenticity",
+          title: "Custom Elements",
           description:
-            "We sourced local materials including reclaimed teak, volcanic stone, and handmade terracotta tiles, working with local craftspeople to incorporate traditional techniques in contemporary ways. These materials connect the architecture to its place while providing rich sensory experiences through texture, scent, and acoustic qualities.",
-          image: "/placeholder.svg?height=600&width=900",
+            "Bespoke design elements, from built-in cabinetry to decorative features, were developed to give THE HARMONY its distinctive character while addressing specific functional requirements.",
+          image: "/assets/the-harmony/Cl1.jpg",
         },
         {
-          title: "Sensory Design",
+          title: "Lighting Strategy",
           description:
-            "Every space was designed with attention to all senses. Gardens feature aromatic plants, water features provide soothing sounds, natural materials offer tactile richness, and carefully framed views create visual harmony. These sensory elements support the retreat's therapeutic goals.",
-          image: "/placeholder.svg?height=600&width=900",
-        },
-      ],
-      virtualTour: [
-        {
-          id: "reception-pavilion",
-          title: "Reception Pavilion",
-          image: "/placeholder.svg?height=1200&width=2400",
-          hotspots: [
-            {
-              id: "hotspot-1",
-              x: 50,
-              y: 45,
-              title: "Living Roof",
-              description:
-                "The planted roof provides natural insulation, absorbs rainwater, and visually connects the building to the surrounding landscape.",
-            },
-            {
-              id: "hotspot-2",
-              x: 30,
-              y: 50,
-              title: "Water Feature",
-              description:
-                "The arrival sequence includes crossing over a reflecting pool, symbolizing the transition from everyday life to the retreat experience.",
-            },
-            {
-              id: "hotspot-3",
-              x: 70,
-              y: 40,
-              title: "Open-Air Design",
-              description:
-                "The pavilion has no solid walls, allowing breezes to flow through and blurring the boundary between inside and outside.",
-            },
-          ],
-        },
-        {
-          id: "meditation-space",
-          title: "Meditation Space",
-          image: "/placeholder.svg?height=1200&width=2400",
-          hotspots: [
-            {
-              id: "hotspot-4",
-              x: 45,
-              y: 55,
-              title: "Acoustic Design",
-              description:
-                "The circular space is designed with specific acoustic properties to enhance meditation practices, with a perfect balance of sound absorption and reflection.",
-            },
-            {
-              id: "hotspot-5",
-              x: 60,
-              y: 40,
-              title: "Oculus",
-              description:
-                "The circular opening in the center of the ceiling creates a column of light that moves through the space throughout the day, connecting occupants to the rhythm of the sun.",
-            },
-            {
-              id: "hotspot-6",
-              x: 25,
-              y: 45,
-              title: "Natural Materials",
-              description:
-                "The floor is made of polished local stone that feels cool to bare feet, while bamboo screens filter light and create gentle shadows.",
-            },
-          ],
-        },
-        {
-          id: "treatment-pavilion",
-          title: "Treatment Pavilion",
-          image: "/placeholder.svg?height=1200&width=2400",
-          hotspots: [
-            {
-              id: "hotspot-7",
-              x: 40,
-              y: 50,
-              title: "Private Gardens",
-              description:
-                "Each treatment room opens onto a private walled garden, allowing treatments to take place indoors or outdoors depending on weather and preference.",
-            },
-            {
-              id: "hotspot-8",
-              x: 65,
-              y: 45,
-              title: "Natural Ventilation",
-              description:
-                "Louvered walls can be adjusted to control airflow and privacy while maintaining connection to the surrounding environment.",
-            },
-            {
-              id: "hotspot-9",
-              x: 30,
-              y: 40,
-              title: "Integrated Water Elements",
-              description:
-                "Soaking tubs are built into the floor, with views to private gardens, creating a sense of bathing in nature.",
-            },
-          ],
+            "The lighting design integrates natural and artificial light sources to create spaces that feel vibrant during the day and intimate at night, with scene-setting capabilities for different activities and moods.",
+          image: "/assets/the-harmony/05.jpg",
         },
       ],
       testimonial: {
         quote:
-          "LAZONE's holistic approach to wellness design has transformed our retreat into a sanctuary of peace and rejuvenation. Their understanding of how space affects wellbeing is unparalleled, creating environments that nurture both body and mind. Our guests consistently praise the sense of harmony and tranquility they experience here.",
-        name: "Sophia Patel",
-        position: "Founder",
-        company: "Wellness Group International",
+          "LAZONE's interior design for THE HARMONY perfectly captures our vision of creating living spaces that feel both luxurious and comfortable. Their attention to detail and thoughtful approach to materials, lighting, and spatial design has resulted in interiors that our residents truly appreciate and enjoy.",
+        name: "Fatima Al Zaabi",
+        position: "Design Director",
+        company: "Dubai South Developments",
         image: "/placeholder.svg?height=400&width=400",
       },
+      virtualTour: [],
+    },
+    "MAJAN-TWIN": {
+      title: "MAJAN TWIN",
+      category: "Lifestyle & Wellbeing",
+      client: "Wadi AlSafa Development",
+      location: "Majan, Wadi AlSafa, Dubai",
+      year: "2021",
+      size: "25,000 m²",
+      services: [ "Interior Design", "Lifestyle & Wellbeing"],
+      heroImage: "/images/projects/twin.png",
+      description: [
+        "MAJAN TWIN is a dual-tower residential development that prioritizes resident wellbeing through thoughtful design of both architecture and amenity spaces.",
+        "The project incorporates extensive wellness facilities, including fitness centers, spa areas, meditation rooms, and outdoor recreation spaces designed to promote physical and mental health.",
+        "Our integrated approach to lifestyle design ensures that wellness isn't just an add-on amenity but is woven into the fabric of the entire residential experience.",
+      ],
+      approach: [
+        "We approached this project with a holistic view of wellbeing, considering how design decisions at every scale - from master planning to material selection - impact resident health and happiness.",
+        "Biophilic design principles informed many aspects of the project, with abundant natural light, ventilation, views to nature, and natural materials creating spaces that support human wellbeing.",
+        "Community and social connection were prioritized through the design of shared spaces that encourage interaction while still providing opportunities for privacy and solitude when desired.",
+      ],
+      approachImage: "/images/projects/twin.png",
+      gallery: [
+        "/images/projects/twin.png",
+        "/images/projects/twin.png",
+        "/images/projects/twin.png",
+        "/images/projects/twin.png",
+        "/images/projects/twin.png",
+        "/images/projects/twin.png",
+      ],
+      story: [
+        {
+          title: "Wellness Vision",
+          description:
+            "The vision for MAJAN TWIN was to create a residential development that goes beyond providing shelter to actively support residents' physical, mental, and social wellbeing through thoughtful design.",
+          image: "/images/projects/twin.png",
+        },
+        {
+          title: "Twin Tower Concept",
+          description:
+            "The twin tower design creates a visual dialogue between the buildings while allowing for efficient organization of units and amenities, with each tower having its own distinct character within a unified overall design.",
+          image: "/images/projects/twin.png",
+        },
+        {
+          title: "Wellness Amenities",
+          description:
+            "Extensive wellness facilities were integrated throughout the development, from rooftop yoga decks to spa facilities, fitness centers, and quiet contemplation spaces designed to support diverse wellbeing practices.",
+          image: "/images/projects/twin.png",
+        },
+        {
+          title: "Outdoor Spaces",
+          description:
+            "Landscaped areas between and around the towers provide opportunities for outdoor exercise, social gatherings, or quiet relaxation, with a variety of spaces supporting different activities and preferences.",
+          image: "/images/projects/twin.png",
+        },
+        {
+          title: "Healthy Materials",
+          description:
+            "Interior materials were selected not only for their aesthetic qualities but also for their health impacts, with a focus on low-VOC finishes, natural materials, and good indoor air quality throughout the development.",
+          image: "/images/projects/twin.png",
+        },
+      ],
+      testimonial: {
+        quote:
+          "LAZONE brought our vision for a wellness-focused residential development to life in MAJAN TWIN. Their integrated approach to wellbeing through design has created a living environment that truly supports our residents' health and happiness. The project has set a new standard for lifestyle-oriented residential design in Dubai.",
+        name: "Khalid Almarzooqi",
+        position: "President",
+        company: "Wadi AlSafa Development",
+        image: "/placeholder.svg?height=400&width=400",
+      },
+      virtualTour: [],
+    },
+    "luxury-retail-space": {
+      title: "Luxury Retail Space",
+      category: "Lighting Design",
+      client: "Maison de Luxe",
+      location: "Paris, France",
+      year: "2022",
+      size: "750 m²",
+      services: ["Lighting Design", "Interior Design"],
+      heroImage: "/images/luxury-retail.png",
+      description: [
+        "This high-end retail environment in Paris required sophisticated lighting design to showcase luxury products while creating an immersive brand experience for customers.",
+        "Our lighting concept focused on highlighting merchandise with precision while establishing atmosphere and guiding the customer journey through the space.",
+        "The result is a retail environment where lighting plays a central role in brand storytelling and product presentation, enhancing the perceived value of merchandise through careful illumination.",
+      ],
+      approach: [
+        "We began with a detailed analysis of the merchandise categories, display strategies, and brand identity to develop a lighting concept that would support specific retail goals.",
+        "Technical lighting solutions were balanced with atmospheric considerations, creating a space that functions effectively for retail while maintaining an emotional connection with customers.",
+        "Energy efficiency and flexibility were integrated into the system, with programmable scenes allowing the space to transform for different events and seasonal displays.",
+      ],
+      approachImage: "/images/luxury-retail.png",
+      gallery: [
+        "/images/luxury-retail.png",
+        "/images/luxury-retail.png",
+        "/images/luxury-retail.png",
+        "/images/luxury-retail.png",
+        "/images/luxury-retail.png",
+        "/images/luxury-retail.png",
+      ],
+      story: [
+        {
+          title: "Brand Analysis",
+          description:
+            "The project began with a deep dive into the brand's identity, history, and target customer, ensuring that the lighting design would support and enhance the overall brand experience.",
+          image: "/images/luxury-retail.png",
+        },
+        {
+          title: "Zoning Strategy",
+          description:
+            "The lighting plan divides the space into distinct zones—entrance, main retail floor, feature displays, fitting rooms, and point of sale—each with lighting characteristics appropriate to its function.",
+          image: "/images/luxury-retail.png",
+        },
+        {
+          title: "Product Illumination",
+          description:
+            "Special attention was paid to merchandise lighting, with custom fixtures developed to highlight the specific materials, textures, and colors of different product categories.",
+          image: "/images/luxury-retail.png",
+        },
+        {
+          title: "Control Systems",
+          description:
+            "An advanced lighting control system allows staff to adjust settings throughout the day, respond to changing natural light conditions, and create special effects for events or seasonal displays.",
+          image: "/images/luxury-retail.png",
+        },
+        {
+          title: "Integration with Architecture",
+          description:
+            "Lighting elements were carefully integrated with the historic building's architecture, respecting its character while introducing contemporary technology in an unobtrusive way.",
+          image: "/images/luxury-retail.png",
+        },
+      ],
+      testimonial: {
+        quote:
+          "LAZONE's lighting design has transformed our Paris flagship store. They understood exactly how to use light to enhance our products and create the sophisticated atmosphere our brand demands. The flexibility of the system allows us to continually refresh the space, keeping the experience exciting for our customers.",
+        name: "Jean-Pierre Moreau",
+        position: "Creative Director",
+        company: "Maison de Luxe",
+        image: "/placeholder.svg?height=400&width=400",
+      },
+      virtualTour: [],
     },
   }
 

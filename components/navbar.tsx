@@ -6,9 +6,9 @@ import { Menu, X, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import ThemeToggle from "@/components/theme-toggle"
 import Image from "next/image"
-import WhatsappIcon from "./ui/whatsapp-lcon"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
+import { FaWhatsapp } from "react-icons/fa"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -21,8 +21,8 @@ export default function Navbar() {
   const isDarkMode = theme.theme === "dark"
 
   // Determine if current page has a light background header
-  // Add more paths here if needed
-  const hasLightBackground = ['/contact', '/about', '/services', '/portfolio'].includes(pathname)
+  // Add more paths here if needed 
+  const hasLightBackground = ['/contact', '/about', '/services', '/portfolio', '/services/interior-design', '/services/architecture', '/services/lighting-design', '/services/master-planning', '/services/furnishings-product', '/services/lifestyle-wellbeing'].includes(pathname)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,6 +60,9 @@ export default function Navbar() {
     { name: "Portfolio", href: "/portfolio" },
     { name: "Contact", href: "/contact" },
   ]
+
+  // Determine WhatsApp icon color based on scroll state and background
+  const whatsappIconColor = !isDarkMode && (isScrolled || hasLightBackground) ? "black" : "white"
 
   return (
     <header
@@ -146,7 +149,14 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          <WhatsappIcon />
+          <Link
+            href="https://wa.me/+97145533128?text=Hello!%20I%20want%20to%20know%20more%20about%20your%20services.%20Please%20call%20me%20back.%20Thanks"
+            target="_blank"
+            className="transition-transform hover:scale-110 cursor-pointer flex items-center justify-center"
+            aria-label="Contact us on WhatsApp"
+          >
+            <FaWhatsapp size={24} color={whatsappIconColor} />
+          </Link>
           <div className="ml-2">
             <ThemeToggle />
           </div>
@@ -155,10 +165,12 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center justify-around gap-2">
           <Link
-            href={"https://wa.me/+97145533128?text=Hello!%20I%20want%20to%20know%20more%20about%20your%20services.%20Please%20call%20me%20back.%20Thanks"}
-            target='_blank'
-            className="cursor-pointer w-[34px] h-20 flex items-center">
-            <Image src="/images/whatsapp.png" alt="Whatsapp" width={100} height={100} className="w-7 h-7" />
+            href="https://wa.me/+97145533128?text=Hello!%20I%20want%20to%20know%20more%20about%20your%20services.%20Please%20call%20me%20back.%20Thanks"
+            target="_blank"
+            className="transition-transform hover:scale-110 cursor-pointer flex items-center justify-center"
+            aria-label="Contact us on WhatsApp"
+          >
+            <FaWhatsapp size={24} color={whatsappIconColor} />
           </Link>
           <div className="flex items-center justify-center">
             <ThemeToggle />

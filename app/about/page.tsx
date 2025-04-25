@@ -77,7 +77,7 @@ export default function AboutPage() {
               Shaping design narratives through spaces that evoke the essence of art
             </h1>
             <div className="w-24 h-px bg-lazone-orange mx-auto mb-8"></div>
-            <p className="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-neutral-800 dark:text-neutral-200 leading-relaxed">
               LAZONE unites design that transcends mere function, merging the essence of art with contemporary craftsmanship. Our curated approach reflects a philosophy rooted in integrity and simplicity—creating spaces that are timeless, purposeful, and free from excess.
             </p>
           </motion.div>
@@ -85,47 +85,67 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-32 bg-neutral-900">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* First subsection - Text left, Image right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
             <ScrollReveal animation="fade-right">
               <div className="space-y-6">
-                <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight">Our Story</h2>
-                <div className="w-20 h-px bg-lazone-orange"></div>
-                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                <h2 className="text-3xl md:text-5xl font-serif font-light tracking-tight text-white">Our Story</h2>
+                <div className="w-20 h-1 bg-lazone-orange mb-6"></div>
+                <p className="text-neutral-200 leading-relaxed">
                   Founded in 2010, LAZONE began as a small interior design studio with a passion for creating spaces that
                   inspire. Over the years, we've evolved into a comprehensive creative studio, expanding our services to
                   include architecture, lighting design, master planning, furnishings, and lifestyle experiences.
                 </p>
-                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                <p className="text-neutral-200 leading-relaxed">
                   Our journey has been defined by a commitment to excellence, innovation, and a deep understanding of how
                   spaces influence human experience. We believe that thoughtful design has the power to transform not just
                   physical environments, but the way people live, work, and interact.
                 </p>
-                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                  Today, LAZONE is recognized for our distinctive approach that balances bold creativity with minimal
-                  elegance, creating designs that are both timeless and contemporary.
-                </p>
               </div>
             </ScrollReveal>
+            
             <ScrollReveal animation="fade-left" delay={200}>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative h-[300px] md:h-[400px] overflow-hidden rounded-md border-2 border-transparent hover:border-lazone-orange transition-all duration-300">
-                  <Image
-                    src="/images/master-planning.png"
-                    alt="LAZONE Studio"
-                    fill
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="relative h-[300px] md:h-[400px] -mt-8 overflow-hidden rounded-md border-2 border-transparent hover:border-lazone-orange transition-all duration-300">
-                  <Image
-                    src="/images/architecture.png"
-                    alt="LAZONE Architecture"
-                    fill
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
+              <div className="relative h-[400px] lg:h-[500px] overflow-hidden rounded-md border-2 border-transparent hover:border-lazone-orange transition-all duration-300 group">
+                <Image
+                  src="/images/master-planning.png"
+                  alt="LAZONE Studio"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </ScrollReveal>
+          </div>
+          
+          {/* Second subsection - Image left, Text right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center lg:mt-32">
+            <ScrollReveal animation="fade-right">
+              <div className="relative h-[400px] lg:h-[500px] overflow-hidden rounded-md border-2 border-transparent hover:border-lazone-orange transition-all duration-300 group order-2 lg:order-1">
+                <Image
+                  src="/images/architecture.png"
+                  alt="LAZONE Architecture"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fade-left" delay={200} className="order-1 lg:order-2">
+              <div className="space-y-6">
+                <h2 className="text-3xl md:text-5xl font-serif font-light tracking-tight text-white">Our Vision</h2>
+                <div className="w-20 h-1 bg-lazone-orange mb-6"></div>
+                <p className="text-neutral-200 leading-relaxed">
+                  At LAZONE, we are committed to creating spaces that seamlessly blend functionality with aesthetic excellence. 
+                  We approach each project with a fresh perspective, embracing the unique challenges and opportunities it presents.
+                </p>
+                <p className="text-neutral-200 leading-relaxed">
+                  Today, LAZONE is recognized for our distinctive approach that balances bold creativity with minimal
+                  elegance, creating designs that are both timeless and contemporary. Our holistic design philosophy considers not just 
+                  the visual appeal, but how spaces influence emotions, productivity, and well-being.
+                </p>
               </div>
             </ScrollReveal>
           </div>
@@ -139,7 +159,7 @@ export default function AboutPage() {
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">Our Philosophy</h2>
               <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
-              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              <p className="text-neutral-800 dark:text-neutral-200 leading-relaxed">
                 At LAZONE, we believe that exceptional design emerges from the perfect balance of form, function, and
                 feeling. Our approach is guided by three core principles:
               </p>
@@ -163,7 +183,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-serif text-lazone-orange">Bold Creativity</h3>
               </div>
-              <p className="text-neutral-700 dark:text-neutral-300">
+              <p className="text-neutral-800 dark:text-neutral-200">
                 We embrace innovative thinking and creative exploration, pushing boundaries to discover unique solutions
                 that make a statement while serving a purpose.
               </p>
@@ -180,7 +200,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-serif text-lazone-orange">Minimal Elegance</h3>
               </div>
-              <p className="text-neutral-700 dark:text-neutral-300">
+              <p className="text-neutral-800 dark:text-neutral-200">
                 We value simplicity and refinement, believing that true luxury lies in the careful curation of elements,
                 where each detail contributes to a harmonious whole.
               </p>
@@ -197,7 +217,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-serif text-lazone-orange">Human Connection</h3>
               </div>
-              <p className="text-neutral-700 dark:text-neutral-300">
+              <p className="text-neutral-800 dark:text-neutral-200">
                 We design with people in mind, creating spaces that not only look beautiful but feel right, fostering
                 meaningful connections and enhancing quality of life.
               </p>
@@ -214,7 +234,7 @@ export default function AboutPage() {
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-serif font-light tracking-tight mb-6 text-white">Meet Our Team</h2>
               <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
-              <p className="text-neutral-300 leading-relaxed">
+              <p className="text-neutral-100 leading-relaxed">
                 Meet the talented individuals who bring our vision to life. Our diverse team combines expertise, creativity, and passion to deliver exceptional design solutions.
               </p>
             </div>
@@ -265,7 +285,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">
               Bring Your Vision to Life
             </h2>
-            <p className="text-lg md:text-xl mb-8 text-neutral-300">
+            <p className="text-lg md:text-xl mb-8 text-neutral-100">
               Your Vision, Our Expertise: Let's Create Extraordinary Spaces Together
             </p>
             <a
