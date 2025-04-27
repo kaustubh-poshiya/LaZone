@@ -32,52 +32,68 @@ type ContentSection = {
 const contentSections: ContentSection[] = [
   {
     id: 1,
-    title: "Innovative",
-    titleSecondary: "Provocative",
-    titleAccent: "Immersive",
-    subtitle: "ARCHITECTURAL EXCELLENCE",
-    description: "We transform spaces into living art, where every angle tells a story and every detail serves a purpose. Our designs are not just buildings, but experiences that inspire.",
-    points: [
-      "Spatial harmony and flow",
-      "Sustainable design principles",
-      "Timeless architectural elegance"
+    title: "Visionary",
+    titleSecondary: "Spaces",
+    titleAccent: "Redefined",
+    subtitle: "DESIGN PHILOSOPHY",
+    description: "We craft extraordinary spaces that transcend conventional architecture. Each project is a masterpiece where innovation meets functionality, creating environments that inspire and transform.",
+    features: [
+      { title: "Innovative Design Approach", description: "Pushing boundaries with cutting-edge architectural concepts and creative solutions" },
+      { title: "Sustainable Integration", description: "Harmoniously blending eco-conscious materials with modern design principles" },
+      { title: "Human-Centric Spaces", description: "Creating environments that enhance well-being and foster connection" }
     ],
     color: "bg-gradient-to-br from-gray-900 via-black to-gray-900",
     accentColor: "text-lazone-orange",
-    layout: "left"
+    layout: "split"
   },
   {
     id: 2,
-    title: "Nurturing",
+    title: "Precision",
+    titleSecondary: "Meets",
+    titleAccent: "Artistry",
+    subtitle: "CRAFTSMANSHIP",
+    description: "Our design process marries precision engineering with artistic vision, delivering spaces that are both functionally superior and aesthetically captivating.",
+    stats: [
+      { value: "98%", label: "Client Satisfaction", description: "Exceeding expectations through meticulous attention to detail" },
+      { value: "100%", label: "Design Excellence", description: "Commitment to uncompromising quality in every project" }
+    ],
+    color: "bg-gradient-to-br from-gray-900 via-black to-gray-900",
+    accentColor: "text-lazone-orange",
+    layout: "center"
+  },
+  {
+    id: 3,
+    title: "Timeless",
     titleSecondary: "Design",
     titleAccent: "Excellence",
-    subtitle: "CRAFTING SPACES WITH PURPOSE",
-    description: "Every project is a journey of discovery, where we blend functionality with artistic vision to create spaces that resonate with their inhabitants.",
+    subtitle: "ENDURING BEAUTY",
+    description: "We create spaces that stand the test of time, combining classic elegance with contemporary innovation to deliver lasting architectural impact.",
     features: [
-      { title: "Spatial Planning", description: "Intelligent layouts that maximize functionality while maintaining aesthetic appeal" },
-      { title: "Material Selection", description: "Carefully curated materials that tell a story and stand the test of time" },
-      { title: "Light & Space", description: "Masterful manipulation of natural light and spatial relationships" }
+      { title: "Intelligent Space Planning", description: "Optimizing flow and functionality while maximizing aesthetic appeal" },
+      { title: "Premium Materials", description: "Selecting exceptional materials that enhance both beauty and durability" },
+      { title: "Natural Integration", description: "Seamlessly incorporating natural light and environmental elements" }
     ],
     color: "bg-gradient-to-br from-black via-gray-900 to-black",
     accentColor: "text-lazone-orange",
     layout: "split"
   },
-  {
-    id: 3,
-    title: "Distinctive",
-    titleSecondary: "Design",
-    titleAccent: "Aesthetics",
-    subtitle: "OUR LEGACY OF EXCELLENCE",
-    description: "With decades of experience, we've mastered the art of creating spaces that inspire, comfort, and endure. Our portfolio speaks of our commitment to architectural excellence.",
-    counters: [
-      { value: 250, label: "Completed Projects", suffix: "+" },
-      { value: 15, label: "Design Awards", suffix: "+" },
-      { value: 25, label: "Years of Excellence", suffix: "+" }
-    ],
-    color: "bg-gradient-to-br from-gray-900 via-black to-gray-900",
-    accentColor: "text-lazone-orange",
-    layout: "right"
-  },
+  
+  // {
+  //   id: 3,
+  //   title: "Distinctive",
+  //   titleSecondary: "Design",
+  //   titleAccent: "Aesthetics",
+  //   subtitle: "OUR LEGACY OF EXCELLENCE",
+  //   description: "With decades of experience, we've mastered the art of creating spaces that inspire, comfort, and endure. Our portfolio speaks of our commitment to architectural excellence.",
+  //   counters: [
+  //     { value: 250, label: "Completed Projects", suffix: "+" },
+  //     { value: 15, label: "Design Awards", suffix: "+" },
+  //     { value: 25, label: "Years of Excellence", suffix: "+" }
+  //   ],
+  //   color: "bg-gradient-to-br from-gray-900 via-black to-gray-900",
+  //   accentColor: "text-lazone-orange",
+  //   layout: "right"
+  // },
 ]
 
 export default function HorizontalScrollSection() {
@@ -365,19 +381,19 @@ export default function HorizontalScrollSection() {
             <div className="title-group mb-8 sm:mb-10 lg:mb-12">
               <h2
                 ref={el => setTitleRef(el, index)}
-                className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none text-white"
+                className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none text-white"
               >
                 {section.title} <ArrowRight className="inline-block ml-4 h-10 w-10" />
               </h2>
               <h2
                 ref={el => setSecondaryTitleRef(el, index)}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 text-white/80"
               >
                 {section.titleSecondary}
               </h2>
               <h2
                 ref={el => setAccentTitleRef(el, index)}
-                className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
               >
                 {section.titleAccent}
               </h2>
@@ -416,19 +432,19 @@ export default function HorizontalScrollSection() {
             <div className="title-group mb-8 sm:mb-10 lg:mb-12 text-center">
               <h2
                 ref={el => setTitleRef(el, index)}
-                className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none text-white"
+                className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none text-white"
               >
                 {section.title}
               </h2>
               <h2
                 ref={el => setSecondaryTitleRef(el, index)}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 text-white/80"
               >
                 {section.titleSecondary}
               </h2>
               <h2
                 ref={el => setAccentTitleRef(el, index)}
-                className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
               >
                 {section.titleAccent}
               </h2>
@@ -443,7 +459,7 @@ export default function HorizontalScrollSection() {
 
             <div ref={el => setContentRef(el, index)} className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 w-full max-w-5xl">
               {section.stats?.map((stat, i) => (
-                <div key={i} className="animate-item bg-lazone-black/50 p-8 sm:p-10 lg:p-12 rounded-xl shadow-lg backdrop-blur-sm border border-lazone-orange/20 hover:border-lazone-orange/40 transition-all duration-300">
+                <div key={i} className="animate-item bg-lazone-black/50 p-8 sm:p-10 lg:p-10 rounded-xl shadow-lg backdrop-blur-sm border border-lazone-orange/20 hover:border-lazone-orange/40 transition-all duration-300">
                   <div className={`text-6xl sm:text-7xl lg:text-8xl font-bold ${section.accentColor} mb-6 sm:mb-8`}>{stat.value}</div>
                   <h4 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-5 text-white">{stat.label}</h4>
                   <p className="text-lg sm:text-xl text-white/70 font-light leading-relaxed">
@@ -540,19 +556,19 @@ export default function HorizontalScrollSection() {
               <div className="title-group mb-8 sm:mb-10 lg:mb-12">
                 <h2
                   ref={el => setTitleRef(el, index)}
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none text-white"
+                  className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none text-white"
                 >
                   {section.title}
                 </h2>
                 <h2
                   ref={el => setSecondaryTitleRef(el, index)}
-                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                  className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 text-white/80"
                 >
                   {section.titleSecondary}
                 </h2>
                 <h2
                   ref={el => setAccentTitleRef(el, index)}
-                  className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                  className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
                 >
                   {section.titleAccent}
                 </h2>

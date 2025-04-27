@@ -22,17 +22,17 @@ export default function WhyChooseUs() {
   const y3 = useTransform(scrollYProgress, [0, 1], [-100, 100])
 
   const stats = [
-    { icon: <Award className="h-6 w-6" />, value: 10, suffix: "+", label: "Years of Experience" },
-    { icon: <Users className="h-6 w-6" />, value: 200, suffix: "+", label: "Happy Clients" },
-    { icon: <CheckCircle className="h-6 w-6" />, value: 150, suffix: "+", label: "Projects Completed" },
-    { icon: <Clock className="h-6 w-6" />, value: 24, suffix: "/7", label: "Customer Support" },
+    { icon: <Award className="h-6 w-6" />, value: 20, suffix: "+", label: "Years of Experience" },
+    { icon: <Users className="h-6 w-6" />, value: 2500, suffix: "+", label: "Satisfied Customers" },
+    { icon: <CheckCircle className="h-6 w-6" />, value: 30, suffix: "+", label: "Projects Completed" },
+    // { icon: <Clock className="h-6 w-6" />, value: 24, suffix: "/7", label: "Customer Support" },
   ]
 
   return (
-    <section id="about" ref={containerRef} className="flex items-center justify-center flex-col py-20 md:py-24 overflow-hidden bg-[#121212] min-h-[110vh]">
+    <section id="about" ref={containerRef} className="flex items-center justify-center flex-col py-20 md:py-24 overflow-hidden bg-[#080D13] min-h-[110vh]">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl font-serif mb-6 uppercase text-white">Why choose us</h2>
-        <div className=" flex items-start w-20 h-0.5 bg-architect-vibrant mb-6"></div>
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif mb-6 uppercase text-white">Why choose us</h2>
+        <div className=" flex items-start w-32 h-0.5 bg-architect-vibrant mb-6"></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
             <motion.div style={{ y: y1 }} className="relative z-10 rounded-lg overflow-hidden">
@@ -65,11 +65,11 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.6 }}
 
             >
-              <p className="mb-6 font-sans text-lg text-white/70">
+              <p className="mb-6 font-sans text-xl text-white/70">
                 Lazone is a premier interior design and architecture firm based in the UAE. We specialize in creating
                 bespoke designs that reflect our clients' unique personalities and lifestyles.
               </p>
-              <p className="mb-8 font-sans text-lg text-white/70">
+              <p className="mb-8 font-sans text-xl text-white/70">
                 Our team of experienced designers and architects work collaboratively to deliver innovative solutions
                 that transform spaces into extraordinary experiences. We believe that great design should not only be
                 beautiful but also functional and sustainable.
@@ -82,9 +82,9 @@ export default function WhyChooseUs() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                    className="text-center"
+                    className="text-center px-4 py-6 bg-black/20 rounded-lg backdrop-blur-sm border border-white/5"
                   >
-                    <div className="inline-flex items-center justify-center w-12 h-12 border border-white/30 rounded-full bg-primary/10 text-white/80 mb-3">
+                    <div className="inline-flex items-center justify-center w-14 h-14 border border-white/30 rounded-full bg-primary/10 text-white/80 mb-4">
                       {stat.icon}
                     </div>
                     <CountUp
@@ -92,10 +92,10 @@ export default function WhyChooseUs() {
                       suffix={stat.suffix}
                       duration={2}
                       delay={index * 0.2}
-                      className="text-2xl font-bold text-white/80"
+                      className="text-3xl md:text-4xl font-bold text-lazone-orange mb-2"
                       startOnView={true}
                     />
-                    <div className="text-sm text-white/70">{stat.label}</div>
+                    <div className="text-sm md:text-base text-white/70 font-light">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>

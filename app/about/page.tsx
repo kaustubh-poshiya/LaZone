@@ -279,24 +279,26 @@ export default function AboutPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 md:py-24 bg-neutral-900 text-white">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="relative py-16 md:py-24 bg-gradient-to-b from-neutral-900 via-[#080D13] to-black text-white overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">
               Bring Your Vision to Life
             </h2>
-            <p className="text-lg md:text-xl mb-8 text-neutral-100">
+            <p className="text-lg md:text-xl mb-8 text-neutral-100/80">
               Your Vision, Our Expertise: Let's Create Extraordinary Spaces Together
             </p>
             <a
               href="/contact"
-              className="group inline-flex items-center px-8 py-3 bg-lazone-orange text-white text-lg hover:bg-white hover:text-lazone-orange transition-colors duration-300 rounded-sm"
+              className="group inline-flex items-center px-8 py-4 bg-lazone-orange text-white text-lg hover:bg-white hover:text-lazone-orange transition-all duration-300 rounded-sm hover:scale-105"
             >
               Let's Talk
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-transparent opacity-50 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5 pointer-events-none"></div>
       </section>
     </>
   )
