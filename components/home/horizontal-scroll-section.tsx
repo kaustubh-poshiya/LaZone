@@ -35,14 +35,14 @@ const contentSections: ContentSection[] = [
     title: "Innovative",
     titleSecondary: "Provocative",
     titleAccent: "Immersive",
-    subtitle: "ARTISTRY BEYOND BOUNDARIES",
-    description: "We bring architectural design solutions that harmonize with your lifestyle, infusing sublime touches through innovative approaches.",
+    subtitle: "ARCHITECTURAL EXCELLENCE",
+    description: "We transform spaces into living art, where every angle tells a story and every detail serves a purpose. Our designs are not just buildings, but experiences that inspire.",
     points: [
-      "Poetically evocative designs",
-      "Timelessly elegant solutions",
-      "Seamless charm of luxury spaces"
+      "Spatial harmony and flow",
+      "Sustainable design principles",
+      "Timeless architectural elegance"
     ],
-    color: "bg-lazone-black",
+    color: "bg-gradient-to-br from-gray-900 via-black to-gray-900",
     accentColor: "text-lazone-orange",
     layout: "left"
   },
@@ -51,14 +51,14 @@ const contentSections: ContentSection[] = [
     title: "Nurturing",
     titleSecondary: "Design",
     titleAccent: "Excellence",
-    subtitle: "WITH RESPECT AND PASSION",
-    description: "We offer distinctive design approaches with unique sensibilities, ensuring quality and originality throughout.",
+    subtitle: "CRAFTING SPACES WITH PURPOSE",
+    description: "Every project is a journey of discovery, where we blend functionality with artistic vision to create spaces that resonate with their inhabitants.",
     features: [
-      { title: "Flexibility", description: "Diversified aesthetics that transform contemporary living" },
-      { title: "Originality", description: "Genuine designs with established craftsmanship" },
-      { title: "Quality", description: "Combining technology and design for contemporary elegance" }
+      { title: "Spatial Planning", description: "Intelligent layouts that maximize functionality while maintaining aesthetic appeal" },
+      { title: "Material Selection", description: "Carefully curated materials that tell a story and stand the test of time" },
+      { title: "Light & Space", description: "Masterful manipulation of natural light and spatial relationships" }
     ],
-    color: "bg-lazone-black",
+    color: "bg-gradient-to-br from-black via-gray-900 to-black",
     accentColor: "text-lazone-orange",
     layout: "split"
   },
@@ -67,14 +67,14 @@ const contentSections: ContentSection[] = [
     title: "Distinctive",
     titleSecondary: "Design",
     titleAccent: "Aesthetics",
-    subtitle: "WHY CHOOSE US",
-    description: "Experience seamless charm that breathes luxury into your spaces while maintaining authenticity and character.",
+    subtitle: "OUR LEGACY OF EXCELLENCE",
+    description: "With decades of experience, we've mastered the art of creating spaces that inspire, comfort, and endure. Our portfolio speaks of our commitment to architectural excellence.",
     counters: [
-      { value: 15, label: "Design Approaches", suffix: "+" },
-      { value: 1500, label: "Projects", suffix: "+" },
-      { value: 20, label: "Years Experience", suffix: "+" }
+      { value: 250, label: "Completed Projects", suffix: "+" },
+      { value: 15, label: "Design Awards", suffix: "+" },
+      { value: 25, label: "Years of Excellence", suffix: "+" }
     ],
-    color: "bg-lazone-black",
+    color: "bg-gradient-to-br from-gray-900 via-black to-gray-900",
     accentColor: "text-lazone-orange",
     layout: "right"
   },
@@ -354,7 +354,7 @@ export default function HorizontalScrollSection() {
     switch(section.layout) {
       case "left":
         return (
-          <div className="content-wrapper h-full w-full flex flex-col justify-center px-6 sm:px-10 md:pl-16 md:pr-12 lg:pl-32 xl:pl-48 pt-20 sm:pt-16 md:pt-0">
+          <div className="content-wrapper h-full w-full flex flex-col justify-center px-6 sm:px-10 md:pl-16 md:pr-12 lg:pl-32 xl:pl-48 pt-20 sm:pt-16 md:pt-0 transition-all duration-300 hover:scale-[1.02]">
             <h3
               ref={el => setSubtitleRef(el, index)}
               className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange"
@@ -392,17 +392,14 @@ export default function HorizontalScrollSection() {
 
             <div ref={el => setContentRef(el, index)} className="mt-6 sm:mt-8 space-y-4 sm:space-y-6">
               {section.points?.map((point, i) => (
-                <div key={i} className="animate-item flex items-center space-x-4">
-                  <div className="h-3 w-3 bg-lazone-orange rounded-full flex-shrink-0"></div>
-                  <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-light">{point}</p>
+                <div key={i} className="animate-item flex items-center space-x-4 group">
+                  <div className="h-3 w-3 bg-lazone-orange rounded-full flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
+                  <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-light group-hover:text-white transition-colors duration-300">{point}</p>
                 </div>
               ))}
             </div>
 
-            {/* Decorative elements */}
-            <div className="decorative-element absolute top-1/4 right-1/4 w-48 h-48 border-8 border-lazone-orange/20 rotate-45"></div>
-            <div className="decorative-element absolute bottom-1/3 right-1/6 w-32 h-32 border-4 border-lazone-orange/15 rounded-full"></div>
-            <div className="decorative-element absolute top-1/3 left-1/4 w-24 h-24 border-[6px] border-lazone-orange/10 rounded-full"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none"></div>
           </div>
         );
 
@@ -456,10 +453,7 @@ export default function HorizontalScrollSection() {
               ))}
             </div>
 
-            {/* Decorative elements */}
-            <div className="decorative-element absolute top-1/5 left-1/5 w-48 h-48 border-8 border-lazone-orange/20 rotate-12"></div>
-            <div className="decorative-element absolute bottom-1/4 right-1/4 w-32 h-32 border-4 border-lazone-orange/15 rounded-full"></div>
-            <div className="decorative-element absolute top-1/2 right-1/5 w-24 h-24 border-[6px] border-lazone-orange/10 rotate-45"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none"></div>
           </div>
         );
 
@@ -503,7 +497,7 @@ export default function HorizontalScrollSection() {
 
             <div ref={el => setContentRef(el, index)} className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 w-full max-w-3xl">
               {section.counters?.map((counter, i) => (
-                <div key={i} className="animate-item text-center bg-lazone-black/50 p-6 sm:p-8 rounded-xl shadow-lg backdrop-blur-sm border border-lazone-orange/20 hover:border-lazone-orange/40 transition-all duration-300">
+                <div key={i} className="animate-item text-center bg-black/30 p-6 sm:p-8 rounded-xl backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/5">
                   <div className="counter-wrapper">
                     <CountUp
                       end={counter.value}
@@ -521,16 +515,13 @@ export default function HorizontalScrollSection() {
 
             <a
               href="/contact"
-              className="animate-item mt-10 sm:mt-12 inline-flex items-center justify-center rounded-md px-8 py-4 text-lg font-medium transition-colors bg-lazone-orange text-white hover:bg-lazone-orange/90 shadow-lg"
+              className="animate-item mt-10 sm:mt-12 inline-flex items-center justify-center rounded-md px-8 py-4 text-lg font-medium transition-all duration-300 bg-gradient-to-r from-lazone-orange to-lazone-orange/80 text-white hover:from-lazone-orange/90 hover:to-lazone-orange/70 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/20"
             >
               Contact Us
-              <ArrowRight className="h-6 w-6 ml-3" />
+              <ArrowRight className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
 
-            {/* Decorative elements */}
-            <div className="decorative-element absolute top-1/4 left-1/4 w-48 h-48 border-8 border-lazone-orange/20 rotate-12"></div>
-            <div className="decorative-element absolute bottom-1/3 left-1/6 w-32 h-32 border-4 border-lazone-orange/15 rounded-md"></div>
-            <div className="decorative-element absolute top-1/3 right-1/4 w-24 h-24 border-[6px] border-lazone-orange/10 rounded-full"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none"></div>
           </div>
         );
 
@@ -578,7 +569,7 @@ export default function HorizontalScrollSection() {
             <div ref={el => setContentRef(el, index)} className="flex flex-col justify-center mt-2 sm:mt-0">
               <div className="space-y-6 sm:space-y-8 lg:space-y-10">
                 {section.features?.map((feature, i) => (
-                  <div key={i} className="animate-item bg-lazone-black/50 p-8 sm:p-10 rounded-xl backdrop-blur-sm border border-lazone-orange/20 hover:border-lazone-orange/40 transition-all duration-300 shadow-lg">
+                  <div key={i} className="animate-item bg-black/30 p-8 sm:p-10 rounded-xl backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/5">
                     <h4 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 ${section.accentColor}`}>{feature.title}</h4>
                     <p className="text-lg sm:text-xl text-white/80 font-light leading-relaxed">
                       {feature.description.length > 100 ? `${feature.description.substring(0, 100)}...` : feature.description}
@@ -588,10 +579,7 @@ export default function HorizontalScrollSection() {
               </div>
             </div>
 
-            {/* Decorative elements */}
-            <div className="decorative-element absolute top-1/6 right-1/6 w-48 h-48 border-8 border-lazone-orange/20 rounded-full"></div>
-            <div className="decorative-element absolute bottom-1/5 left-1/4 w-32 h-32 border-4 border-lazone-orange/15 rotate-45"></div>
-            <div className="decorative-element absolute top-1/2 left-1/6 w-24 h-24 border-[6px] border-lazone-orange/10 rounded-full"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none"></div>
           </div>
         );
     }
@@ -618,68 +606,6 @@ export default function HorizontalScrollSection() {
                 section.color
               )}
             >
-              {/* Enhanced decorative elements */}
-              <div className={cn(
-                "absolute top-[10%] right-[10%] w-64 h-64 rounded-full blur-3xl opacity-30",
-                "bg-lazone-orange/20"
-              )}></div>
-
-              <div className={cn(
-                "absolute bottom-[15%] left-[10%] w-64 h-64 rounded-full blur-3xl opacity-20",
-                "bg-lazone-orange/20"
-              )}></div>
-
-              {/* Geometric shapes */}
-              {section.layout === "left" && (
-                <>
-                  <div className="absolute top-[25%] right-[25%] w-32 h-32 border-8 border-lazone-orange/20 rotate-45"></div>
-                  <div className="absolute bottom-[30%] right-[15%] w-16 h-16 border-4 border-lazone-orange/20 rounded-full"></div>
-                  <div className="absolute top-[15%] left-[15%] w-24 h-24 border-4 border-dashed border-lazone-orange/15 rounded-full"></div>
-                </>
-              )}
-
-              {section.layout === "center" && (
-                <>
-                  <div className="absolute top-[20%] left-[20%] w-32 h-32 border-8 border-lazone-orange/20 rotate-12"></div>
-                  <div className="absolute bottom-[25%] right-[25%] w-20 h-20 border-4 border-lazone-orange/20 rounded-full"></div>
-                  <div className="absolute top-[30%] right-[20%] w-24 h-24 border-4 border-dashed border-lazone-orange/15 rounded-md rotate-45"></div>
-                </>
-              )}
-
-              {section.layout === "split" && (
-                <>
-                  <div className="absolute top-[15%] right-[15%] w-32 h-32 border-8 border-lazone-orange/20 rounded-full"></div>
-                  <div className="absolute bottom-[20%] left-[25%] w-24 h-24 border-4 border-lazone-orange/20 rotate-45"></div>
-                  <div className="absolute top-[30%] left-[15%] w-20 h-20 border-4 border-dashed border-lazone-orange/15 rounded-md"></div>
-                </>
-              )}
-
-              {section.layout === "right" && (
-                <>
-                  <div className="absolute top-[25%] left-[25%] w-32 h-32 border-8 border-lazone-orange/20 rotate-12"></div>
-                  <div className="absolute bottom-[30%] left-[15%] w-16 h-16 border-4 border-lazone-orange/20 rounded-md"></div>
-                  <div className="absolute top-[15%] right-[15%] w-24 h-24 border-4 border-dashed border-lazone-orange/15 rounded-full"></div>
-                </>
-              )}
-
-              {/* Floating dots */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="h-full w-full flex items-center justify-center">
-                  {Array.from({ length: 20 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-2 h-2 rounded-full bg-lazone-orange opacity-20"
-                      style={{
-                        top: `${Math.random() * 100}%`,
-                        left: `${Math.random() * 100}%`,
-                        transform: `scale(${Math.random() * 1.5 + 0.5})`,
-                        opacity: Math.random() * 0.3 + 0.1
-                      }}
-                    ></div>
-                  ))}
-                </div>
-              </div>
-
               {renderSectionContent(section, index)}
             </div>
           ))}

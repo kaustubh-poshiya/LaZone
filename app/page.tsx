@@ -16,7 +16,7 @@ export default function Home() {
       <ServicePreview />
       <FeaturedProjects />
       <HorizontalScrollSection />
-      {/* <WhyChooseUs /> */}
+      <WhyChooseUs />
       <TestimonialSection />
       <ContactCta />
     </>
