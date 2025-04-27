@@ -75,7 +75,7 @@ export default function WhyChooseUs() {
                 beautiful but also functional and sustainable.
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
               </div>
 
               <Link href="/about">
-                <Button size="lg" className="mt-16 group flex px-8 py-3 border bg-transparent border-white/30 text-white/80 hover:bg-architect-vibrant hover:text-white transition-colors duration-700 rounded-full">
+                <Button size="lg" className="mt-16 group flex px-10 py-3 border bg-transparent border-white/30 text-white/80 hover:bg-architect-vibrant hover:text-white transition-colors duration-700 rounded-full">
                   Learn More About Us <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 " />
                 </Button>
               </Link>

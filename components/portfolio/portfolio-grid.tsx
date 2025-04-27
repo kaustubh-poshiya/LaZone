@@ -47,7 +47,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
               </button>
             ))}
           </div>
-          <div className="flex items-center space-x-2">
+          {/* <div className="flex items-center space-x-2">
             <button
               onClick={() => setLayout("grid")}
               className={cn("p-2 rounded-md transition-colors", layout === "grid" ? "bg-neutral-100 dark:bg-neutral-800" : "hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50")}
@@ -131,7 +131,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
       )}
 

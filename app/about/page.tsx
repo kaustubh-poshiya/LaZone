@@ -105,7 +105,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </ScrollReveal>
-            
+
             <ScrollReveal animation="fade-left" delay={200}>
               <div className="relative h-[400px] lg:h-[500px] overflow-hidden rounded-md border-2 border-transparent hover:border-lazone-orange transition-all duration-300 group">
                 <Image
@@ -118,7 +118,7 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
           </div>
-          
+
           {/* Second subsection - Image left, Text right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center lg:mt-32">
             <ScrollReveal animation="fade-right">
@@ -132,18 +132,18 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </ScrollReveal>
-            
+
             <ScrollReveal animation="fade-left" delay={200} className="order-1 lg:order-2">
               <div className="space-y-6">
                 <h2 className="text-3xl md:text-5xl font-serif font-light tracking-tight text-white">Our Vision</h2>
                 <div className="w-20 h-1 bg-lazone-orange mb-6"></div>
                 <p className="text-neutral-200 leading-relaxed">
-                  At LAZONE, we are committed to creating spaces that seamlessly blend functionality with aesthetic excellence. 
+                  At LAZONE, we are committed to creating spaces that seamlessly blend functionality with aesthetic excellence.
                   We approach each project with a fresh perspective, embracing the unique challenges and opportunities it presents.
                 </p>
                 <p className="text-neutral-200 leading-relaxed">
                   Today, LAZONE is recognized for our distinctive approach that balances bold creativity with minimal
-                  elegance, creating designs that are both timeless and contemporary. Our holistic design philosophy considers not just 
+                  elegance, creating designs that are both timeless and contemporary. Our holistic design philosophy considers not just
                   the visual appeal, but how spaces influence emotions, productivity, and well-being.
                 </p>
               </div>
@@ -245,7 +245,7 @@ export default function AboutPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 max-w-7xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 md:gap-x-8 md:gap-y-12 max-w-7xl mx-auto"
           >
             {teamMembers.map((member, index) => (
               <motion.div
@@ -255,13 +255,13 @@ export default function AboutPage() {
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <div className="relative w-full h-[400px] overflow-hidden mb-6 rounded-md bg-neutral-800">
+                <div className="relative w-full h-[350px] sm:h-[400px] md:h-[450px] overflow-hidden mb-6 rounded-md bg-neutral-800">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 868px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     priority={index < 3}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">

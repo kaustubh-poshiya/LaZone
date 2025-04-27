@@ -6,6 +6,102 @@ import PageHeader from "@/components/page-header"
 import ProjectCard from "@/components/projects/project-card"
 import ScrollReveal from "@/components/scroll-reveal"
 
+// Import project data from portfolio
+type Project = {
+  id: string
+  title: string
+  category: string
+  location: string
+  year: string
+  image: string
+  featured: boolean
+}
+
+// Define projects data
+const projects: Project[] = [
+  {
+    id: "Serene",
+    year: "2023",
+    featured: true,
+    title: "Serene Residential Building",
+    category: "Interior Design",
+    location: "Dubai South, DWC, Dubai",
+    image: "/images/projects/serene.png",
+  },
+  {
+    id: "THE-WINGS",
+    year: "2022",
+    featured: true,
+    title: "THE WINGS",
+    category: "Architecture",
+    location: "Arjan, AlBarsha South, Dubai",
+    image: "/images/projects/wings.png",
+  },
+  {
+    id: "THE-HARMONY",
+    title: "THE HARMONY",
+    location: "Dubai South, DWC, Dubai",
+    image: "/images/projects/harmony.png",
+    category: "Interior Design",
+    year: "2022",
+    featured: false,
+  },
+  {
+    id: "MAJAN-TWIN",
+    title: "MAJAN TWIN",
+    category: "Lifestyle & Wellbeing",
+    location: "Majan, Wadi AlSafa, Dubai ",
+    year: "2021",
+    image: "/images/projects/twin.png",
+    featured: false,
+  },
+  {
+    id: "SQUARE-I",
+    title: "SQUARE I",
+    category: "Residential Architecture",
+    location: "Business Bay, Dubai",
+    year: "2022",
+    image: "/images/projects/square-I.png",
+    featured: true,
+  },
+  {
+    id: "SQUARE-II",
+    title: "SQUARE II",
+    category: "Interior Design",
+    location: "Business Bay, Dubai",
+    year: "2023",
+    image: "/images/projects/square-II.png",
+    featured: true,
+  },
+  {
+    id: "CB10-VILLA",
+    title: "CB10 Luxury Villa",
+    category: "Lighting Design",
+    location: "Palm Jumeirah, Dubai",
+    year: "2024",
+    image: "/images/projects/cb10-villa.jpg",
+    featured: true,
+  },
+  {
+    id: "ERMAX-RESIDENCE",
+    title: "ERMAX Modern Residence",
+    category: "Master Planning",
+    location: "Downtown Dubai",
+    year: "2024",
+    image: "/images/projects/ermax-residence.jpg",
+    featured: true,
+  },
+  {
+    id: "TERVA-HOMES",
+    title: "Terva Contemporary Living",
+    category: "Furnishings Product",
+    location: "Dubai Hills Estate, Dubai",
+    year: "2024",
+    image: "/images/projects/terva-homes.jpg",
+    featured: false,
+  },
+];
+
 type ServicePageProps = {
   params: {
     service: string
@@ -106,7 +202,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                   title={project.title}
                   category={serviceData.title}
                   image={project.image}
-                  href={`/portfolio/${project.slug}`}
+                  href={`/portfolio/${project.id}`}
                 />
               </ScrollReveal>
             ))}
@@ -148,6 +244,30 @@ export default function ServicePage({ params }: ServicePageProps) {
 }
 
 function getServiceData(serviceSlug: string) {
+  // Filter projects for each service category
+  const getProjectsByCategory = (category: string, limit: number = 3) => {
+    return projects
+      .filter(project => project.category === category)
+      .slice(0, limit)
+      .map(project => ({
+        title: project.title,
+        id: project.id,
+        image: project.image
+      }));
+  };
+
+  // Get projects for related categories (Architecture and Residential Architecture)
+  const getArchitectureProjects = (limit: number = 3) => {
+    return projects
+      .filter(project => project.category === "Architecture" || project.category === "Residential Architecture")
+      .slice(0, limit)
+      .map(project => ({
+        title: project.title,
+        id: project.id,
+        image: project.image
+      }));
+  };
+
   const services = {
     "interior-design": {
       title: "Interior Design",
@@ -175,23 +295,7 @@ function getServiceData(serviceSlug: string) {
             "We ensure each interior reflects the unique personality, lifestyle, and needs of its inhabitants.",
         },
       ],
-      featuredProjects: [
-        {
-          title: "Modern Apartment",
-          slug: "modern-apartment",
-          image: "/images/projects.png",
-        },
-        {
-          title: "Luxury Retail Space",
-          slug: "luxury-retail-space",
-          image: "/images/luxury-retail.png",
-        },
-        {
-          title: "Mountain Villa",
-          slug: "mountain-villa",
-          image: "/images/vila.png",
-        },
-      ],
+      featuredProjects: getProjectsByCategory("Interior Design"),
     },
     architecture: {
       title: "Architecture",
@@ -219,23 +323,7 @@ function getServiceData(serviceSlug: string) {
             "We incorporate environmentally responsible practices and materials to create buildings that minimize their ecological footprint.",
         },
       ],
-      featuredProjects: [
-        {
-          title: "Glass Pavilion",
-          slug: "glass-pavilion",
-          image: "/images/projects.png",
-        },
-        {
-          title: "Coastal Residence",
-          slug: "coastal-residence",
-          image: "/images/luxury-retail.png",
-        },
-        {
-          title: "Urban Office Tower",
-          slug: "urban-office-tower",
-          image: "/images/vila.png",
-        },
-      ],
+      featuredProjects: getArchitectureProjects(),
     },
     "lighting-design": {
       title: "Lighting Design",
@@ -263,23 +351,7 @@ function getServiceData(serviceSlug: string) {
             "We select efficient fixtures and smart control systems to minimize energy consumption while maximizing lighting effectiveness.",
         },
       ],
-      featuredProjects: [
-        {
-          title: "Boutique Hotel",
-          slug: "boutique-hotel",
-          image: "/images/vila.png",
-        },
-        {
-          title: "Art Gallery",
-          slug: "art-gallery",
-          image: "/images/projects.png",
-        },
-        {
-          title: "Executive Residence",
-          slug: "executive-residence",
-          image: "/images/luxury-retail.png",
-        },
-      ],
+      featuredProjects: getProjectsByCategory("Lighting Design"),
     },
     "master-planning": {
       title: "Master Planning",
@@ -306,23 +378,7 @@ function getServiceData(serviceSlug: string) {
           description: "We create plans that foster social interaction, cultural expression, and a sense of belonging.",
         },
       ],
-      featuredProjects: [
-        {
-          title: "Waterfront District",
-          slug: "waterfront-district",
-          image: "/images/vila.png",
-        },
-        {
-          title: "University Campus",
-          slug: "university-campus",
-          image: "/images/pent-house.png",
-        },
-        {
-          title: "Mixed-Use Development",
-          slug: "mixed-use-development",
-          image: "/images/projects.png",
-        },
-      ],
+      featuredProjects: getProjectsByCategory("Master Planning"),
     },
     "furnishings-product": {
       title: "Furnishings Product",
@@ -350,23 +406,7 @@ function getServiceData(serviceSlug: string) {
             "We carefully select pieces that work together harmoniously while adding interest through thoughtful contrast.",
         },
       ],
-      featuredProjects: [
-        {
-          title: "Luxury Hotel Collection",
-          slug: "luxury-hotel-collection",
-          image: "/images/luxury-retail.png",
-        },
-        {
-          title: "Executive Office Suite",
-          slug: "executive-office-suite",
-          image: "/images/pent-house.png",
-        },
-        {
-          title: "Residential Custom Pieces",
-          slug: "residential-custom-pieces",
-          image: "/images/vila.png",
-        },
-      ],
+      featuredProjects: getProjectsByCategory("Furnishings Product"),
     },
     "lifestyle-wellbeing": {
       title: "Lifestyle & Wellbeing",
@@ -394,23 +434,7 @@ function getServiceData(serviceSlug: string) {
             "We create environments that can evolve with changing needs, supporting various activities and states of being.",
         },
       ],
-      featuredProjects: [
-        {
-          title: "Wellness Retreat",
-          slug: "wellness-retreat",
-          image: "/images/projects.png",
-        },
-        {
-          title: "Corporate Wellness Center",
-          slug: "corporate-wellness-center",
-          image: "/images/vila.png",
-        },
-        {
-          title: "Biophilic Residence",
-          slug: "biophilic-residence",
-          image: "/images/luxury-retail.png",
-        },
-      ],
+      featuredProjects: getProjectsByCategory("Lifestyle & Wellbeing"),
     },
   }
 

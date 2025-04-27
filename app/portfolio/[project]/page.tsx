@@ -71,10 +71,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                   <span className="text-muted-foreground">Size</span>
                   <span className="font-medium">{projectData.size}</span>
                 </li>
-                <li className="flex justify-between">
+                {/* <li className="flex justify-between">
                   <span className="text-muted-foreground">Services</span>
                   <span className="font-medium">{projectData.services.join(", ")}</span>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -578,6 +578,159 @@ function getProjectData(projectSlug: string) {
         image: "/placeholder.svg?height=400&width=400",
       },
       virtualTour: [],
+    },
+    "CB10-VILLA": {
+      title: "CB10 Luxury Villa",
+      category: "Interior Design",
+      client: "Private Client",
+      location: "Palm Jumeirah, Dubai",
+      year: "2024",
+      size: "1,200 m²",
+      services: ["Interior Design", "Furnishings Product", "Lighting Design"],
+      heroImage: "/images/projects/cb10-villa.jpg",
+      description: [
+        "CB10 Luxury Villa represents the pinnacle of contemporary luxury living, seamlessly blending sophisticated design with comfortable functionality.",
+        "Our design approach focused on creating fluid spaces that transition effortlessly between indoor and outdoor living areas, taking full advantage of the Palm Jumeirah location.",
+        "Each room was carefully curated with bespoke furnishings and unique design elements that reflect the client's refined taste while maintaining a warm, inviting atmosphere.",
+      ],
+      approach: [
+        "The interior design concept revolves around creating a harmonious balance between luxury and comfort, using a carefully selected palette of premium materials and textures.",
+        "Special attention was paid to the lighting design, incorporating both natural and artificial light sources to enhance the architectural features and create different moods throughout the day.",
+        "Custom furniture pieces were designed specifically for key spaces, ensuring perfect proportions and optimal functionality while maintaining the overall design aesthetic.",
+      ],
+      approachImage: "/images/projects/cb10-villa.jpg",
+      gallery: [
+        "/images/projects/cb10-villa.jpg",
+        "/images/projects/cb10-villa/ex1.jpg",
+        "/images/projects/cb10-villa/ex2.jpg",
+        "/images/projects/cb10-villa/guest01.jpg",
+        "/images/projects/cb10-villa/guest02.jpg",
+        "/images/projects/cb10-villa/cinema2.jpg",
+      ],
+      story: [
+        {
+          title: "Client Vision",
+          description: "The project began with a clear vision from our client: to create a contemporary luxury villa that would serve as both a private retreat and an entertainment space.",
+          image: "/images/projects/cb10-villa.jpg",
+        },
+        {
+          title: "Space Planning",
+          description: "The layout was carefully planned to optimize flow between spaces while maintaining privacy where needed, with particular attention to the master suite and entertainment areas.",
+          image: "/images/projects/cb10-villa/ex1.jpg",
+        },
+        {
+          title: "Material Selection",
+          description: "We selected a sophisticated palette of materials including natural stone, exotic woods, and premium textiles to create a luxurious yet welcoming atmosphere.",
+          image: "/images/projects/cb10-villa/ex2.jpg",
+        },
+        {
+          title: "Lighting Design",
+          description: "A comprehensive lighting scheme was developed to enhance the architecture and create ambiance, combining natural light with carefully positioned artificial lighting.",
+          image: "/images/projects/cb10-villa/guest01.jpg",
+        },
+      ],
+    },
+    "ERMAX-RESIDENCE": {
+      title: "ERMAX Modern Residence",
+      category: "Architecture",
+      client: "ERMAX Development",
+      location: "Downtown Dubai",
+      year: "2024",
+      size: "18,000 m²",
+      services: ["Architecture", "Interior Design", "Landscape Design"],
+      heroImage: "/images/projects/ermax-residence.jpg",
+      description: [
+        "ERMAX Modern Residence is a striking architectural masterpiece that redefines luxury living in Downtown Dubai.",
+        "The design emphasizes clean lines and bold geometries while maintaining a strong connection to the surrounding urban context.",
+        "Sustainability and innovation are key features of the project, with smart home technology and energy-efficient systems integrated throughout.",
+      ],
+      approach: [
+        "The architectural concept focuses on creating a dynamic form that responds to both environmental conditions and urban context.",
+        "Advanced building technologies and sustainable materials were incorporated to minimize environmental impact while maximizing comfort.",
+        "The facade design creates an ever-changing play of light and shadow throughout the day, while providing optimal thermal performance.",
+      ],
+      approachImage: "/images/projects/ermax-residence.jpg",
+      gallery: [
+        "/images/projects/ermax-residence.jpg",
+        "/images/projects/ermax/1.jpg",
+        "/images/projects/ermax/2.jpg",
+        "/images/projects/ermax/3.jpg",
+        "/images/projects/ermax/5.jpg",
+        "/images/projects/ermax/9.jpg",
+      ],
+      story: [
+        {
+          title: "Concept Development",
+          description: "The initial concept was inspired by the dynamic energy of Downtown Dubai, with a design that would stand out while complementing the urban fabric.",
+          image: "/images/projects/ermax-residence.jpg",
+        },
+        {
+          title: "Sustainable Design",
+          description: "Environmental considerations were integrated from the start, with passive solar design and smart systems reducing energy consumption.",
+          image: "/images/projects/ermax/2.jpg",
+        },
+        {
+          title: "Construction Innovation",
+          description: "Advanced construction techniques and materials were employed to achieve the complex geometries while ensuring structural integrity.",
+          image: "/images/projects/ermax/3.jpg",
+        },
+        {
+          title: "Interior Integration",
+          description: "The interior design was developed in parallel with the architecture to ensure a seamless flow between indoor and outdoor spaces.",
+          image: "/images/projects/ermax/4.jpg",
+        },
+      ],
+    },
+    "TERVA-HOMES": {
+      title: "Terva Contemporary Living",
+      category: "Residential Architecture",
+      client: "Terva Development Group",
+      location: "Dubai Hills Estate, Dubai",
+      year: "2024",
+      size: "25,000 m²",
+      services: ["Residential Architecture", "Interior Design", "Landscape Design"],
+      heroImage: "/images/projects/terva-homes.jpg",
+      description: [
+        "Terva Contemporary Living is a collection of modern residential units that redefine community living in Dubai Hills Estate.",
+        "The project combines contemporary architecture with sustainable design principles to create homes that are both beautiful and environmentally conscious.",
+        "Each residence is thoughtfully designed to maximize space and natural light while providing privacy and comfort for residents.",
+      ],
+      approach: [
+        "The design approach focused on creating a harmonious balance between private spaces and community areas, fostering a sense of belonging.",
+        "Natural materials and native landscaping were integrated throughout the development to create a sustainable and low-maintenance environment.",
+        "Each home was designed with flexibility in mind, allowing for customization while maintaining the overall architectural integrity.",
+      ],
+      approachImage: "/images/projects/terva-homes.jpg",
+      gallery: [
+        "/images/projects/terva-homes.jpg",
+        "/images/projects/terva-homes/01.jpg",
+        "/images/projects/terva-homes/02.jpg",
+        "/images/projects/terva-homes/04.jpg",
+        "/images/projects/terva-homes/05.jpg",
+        "/images/projects/terva-homes/bath.jpg",
+      ],
+      story: [
+        {
+          title: "Community Planning",
+          description: "The project began with extensive community planning to create a development that would foster social interaction while respecting privacy.",
+          image: "/images/projects/terva-homes.jpg",
+        },
+        {
+          title: "Sustainable Integration",
+          description: "Sustainable features were integrated into every aspect of the design, from material selection to energy systems.",
+          image: "/images/projects/terva-homes/02.jpg",
+        },
+        {
+          title: "Landscape Design",
+          description: "The landscape design creates a seamless connection between built and natural environments, with careful consideration for local climate.",
+          image: "/images/projects/terva-homes/04.jpg",
+        },
+        {
+          title: "Interior Spaces",
+          description: "Interior spaces were designed to be flexible and adaptable, with high-quality finishes and attention to detail throughout.",
+          image: "/images/projects/terva-homes/05.jpg",
+        },
+      ],
     },
   }
 

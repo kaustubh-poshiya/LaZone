@@ -68,7 +68,33 @@ export default function PortfolioPage() {
       image: "/images/projects/square-II.png",
       featured: true,
     },
-    
+    {
+      id: "CB10-VILLA",
+      title: "CB10 Luxury Villa",
+      category: "Lighting Design",
+      location: "Palm Jumeirah, Dubai",
+      year: "2024",
+      image: "/images/projects/cb10-villa.jpg",
+      featured: true,
+    },
+    {
+      id: "ERMAX-RESIDENCE",
+      title: "ERMAX Modern Residence",
+      category: "Master Planning",
+      location: "Downtown Dubai",
+      year: "2024",
+      image: "/images/projects/ermax-residence.jpg",
+      featured: true,
+    },
+    {
+      id: "TERVA-HOMES",
+      title: "Terva Contemporary Living",
+      category: "Furnishings Product",
+      location: "Dubai Hills Estate, Dubai",
+      year: "2024",
+      image: "/images/projects/terva-homes.jpg",
+      featured: false,
+    },
   ]
 
   const categories = [
@@ -76,10 +102,10 @@ export default function PortfolioPage() {
     "Interior Design",
     "Architecture",
     "Residential Architecture",
+    "Lifestyle & Wellbeing",
     "Lighting Design",
     "Master Planning",
     "Furnishings Product",
-    "Lifestyle & Wellbeing",
   ]
 
   return (
