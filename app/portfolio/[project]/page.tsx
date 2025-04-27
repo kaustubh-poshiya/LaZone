@@ -368,6 +368,147 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
+    "SQUARE-I": {
+      title: "SQUARE I",
+      category: "Residential Architecture",
+      client: "Business Bay Development",
+      location: "Business Bay, Dubai",
+      year: "2022",
+      size: "32,000 m²",
+      services: ["Architecture", "Interior Design", "Master Planning"],
+      heroImage: "/images/projects/square-I.png",
+      description: [
+        "SQUARE I is a modern residential development in Business Bay that combines elegant architecture with practical living spaces.",
+        "The project features a distinctive façade that creates a strong identity within the urban context, while interior spaces are designed to maximize views and natural light.",
+        "Our comprehensive design approach considered both the aesthetic impact of the building in its setting and the quality of life for residents within their homes.",
+      ],
+      approach: [
+        "The architectural concept responds to the dense urban context of Business Bay, creating a distinctive presence while optimizing unit layouts for views of the Dubai skyline.",
+        "Interior spaces were designed with flexibility in mind, accommodating diverse lifestyles while maintaining a cohesive design language throughout the building.",
+        "Material selections balance durability with luxury, creating spaces that will retain their appeal over time while meeting the practical needs of residents.",
+      ],
+      approachImage: "/assets/square-1/living-2.jpg",
+      gallery: [
+        "/assets/square-1/living.jpg",
+        "/assets/square-1/lobby.jpg",
+        "/assets/square-1/bed-2.jpg",
+        "/assets/square-1/living-3.jpg",
+        "/assets/square-1/plan.jpg",
+        "/assets/square-1/bedroom.jpg",
+      ],
+      story: [
+        {
+          title: "Urban Integration",
+          description:
+            "The design process began with careful analysis of the Business Bay context, identifying opportunities to create a building that would stand out while harmonizing with surrounding developments.",
+          image: "/images/projects/square-I.png",
+        },
+        {
+          title: "Spatial Organization",
+          description:
+            "Floor plans were optimized to create efficient unit layouts with logical flow between spaces, maximizing usable area while ensuring generous proportions in key living areas.",
+          image: "/assets/square-1/plan.jpg",
+        },
+        {
+          title: "Common Areas",
+          description:
+            "Lobbies and amenity spaces were designed to create an immediate impression of quality and sophistication, with carefully selected materials and lighting creating a welcoming atmosphere.",
+          image: "/assets/square-1/lobby.jpg",
+        },
+        {
+          title: "Interior Design",
+          description:
+            "Residential interiors feature neutral palettes that serve as perfect backgrounds for residents' personal styles, with subtle details adding interest and quality throughout.",
+          image: "/assets/square-1/bed-2.jpg",
+        },
+        {
+          title: "Living Spaces",
+          description:
+            "Living areas were designed to balance openness with definition, creating spaces that flow together while maintaining clear functional zones for different activities.",
+          image: "/assets/square-1/interior-2.jpg",
+        },
+      ],
+      testimonial: {
+        quote:
+          "LAZONE delivered a residential development that exceeds expectations in both architectural design and interior quality. Their attention to detail and understanding of the premium residential market created a building that has been exceptionally well-received by buyers and residents alike.",
+        name: "Ahmed Al Mansouri",
+        position: "Managing Director",
+        company: "Business Bay Development",
+        image: "/placeholder.svg?height=400&width=400",
+      },
+      virtualTour: [],
+    },
+    "SQUARE-II": {
+      title: "SQUARE II",
+      category: "Interior Design",
+      client: "Business Bay Properties",
+      location: "Business Bay, Dubai",
+      year: "2023",
+      size: "28,000 m²",
+      services: ["Interior Design", "Furnishings Design", "Lighting Design"],
+      heroImage: "/assets/square-2/main-view.jpg",
+      description: [
+        "SQUARE II represents an evolution in residential interior design, with a focus on creating versatile living spaces that adapt to residents' changing needs.",
+        "Our design strategy emphasizes spacious layouts, premium finishes, and thoughtful details that elevate everyday living experiences.",
+        "Each residence features carefully considered material palettes that balance visual warmth with durability, creating spaces that feel both luxurious and livable.",
+      ],
+      approach: [
+        "Interior layouts were developed to maximize spatial efficiency while maintaining generous proportions in key living areas, with particular attention to natural light and flow between spaces.",
+        "Material and finish selections were guided by principles of longevity and timelessness, avoiding trends in favor of enduring quality and visual appeal.",
+        "Lighting design was integrated from the beginning of the process, with layered solutions that adapt to different activities and times of day.",
+      ],
+      approachImage: "/assets/square-2/living.jpg",
+      gallery: [
+        "/assets/square-2/main-view.jpg",
+        "/assets/square-2/living.jpg",
+        "/assets/square-2/kitchen.jpg",
+        "/assets/square-2/bedroom.jpg",
+        "/assets/square-2/balcony.jpg",
+        "/assets/square-2/dining.jpg",
+        "/images/projects/square-II.png",
+      ],
+      story: [
+        {
+          title: "Design Vision",
+          description:
+            "The vision for SQUARE II was to create residential interiors that feel both sophisticated and comfortable, with a timeless quality that would transcend changing trends.",
+          image: "/assets/square-2/main-view.jpg",
+        },
+        {
+          title: "Living Spaces",
+          description:
+            "Open-plan living areas were designed with flexibility in mind, allowing residents to adapt spaces to their changing needs while maintaining clear functional zones.",
+          image: "/assets/square-2/living.jpg",
+        },
+        {
+          title: "Kitchen Design",
+          description:
+            "Kitchens feature clean lines and innovative storage solutions, with premium appliances integrated into cabinetry for a sleek, cohesive appearance.",
+          image: "/assets/square-2/kitchen.jpg",
+        },
+        {
+          title: "Bedroom Retreats",
+          description:
+            "Bedrooms were conceived as tranquil retreats, with careful attention to proportions, storage, and lighting creating spaces that promote rest and relaxation.",
+          image: "/assets/square-2/bedroom.jpg",
+        },
+        {
+          title: "Outdoor Connection",
+          description:
+            "Terraces and balconies were designed as natural extensions of interior spaces, with durable materials and thoughtful detailing creating comfortable outdoor living environments.",
+          image: "/assets/square-2/balcony.jpg",
+        },
+      ],
+      testimonial: {
+        quote:
+          "LAZONE's interior design for SQUARE II has set a new standard in the residential market. Their thoughtful approach to space planning and material selection has created homes that truly enhance residents' daily lives. The attention to detail and quality is evident in every aspect of the design.",
+        name: "Fatima Rahman",
+        position: "Creative Director",
+        company: "Business Bay Properties",
+        image: "/placeholder.svg?height=400&width=400",
+      },
+      virtualTour: [],
+    },
     "MAJAN-TWIN": {
       title: "MAJAN TWIN",
       category: "Lifestyle & Wellbeing",
@@ -434,76 +575,6 @@ function getProjectData(projectSlug: string) {
         name: "Khalid Almarzooqi",
         position: "President",
         company: "Wadi AlSafa Development",
-        image: "/placeholder.svg?height=400&width=400",
-      },
-      virtualTour: [],
-    },
-    "luxury-retail-space": {
-      title: "Luxury Retail Space",
-      category: "Lighting Design",
-      client: "Maison de Luxe",
-      location: "Paris, France",
-      year: "2022",
-      size: "750 m²",
-      services: ["Lighting Design", "Interior Design"],
-      heroImage: "/images/luxury-retail.png",
-      description: [
-        "This high-end retail environment in Paris required sophisticated lighting design to showcase luxury products while creating an immersive brand experience for customers.",
-        "Our lighting concept focused on highlighting merchandise with precision while establishing atmosphere and guiding the customer journey through the space.",
-        "The result is a retail environment where lighting plays a central role in brand storytelling and product presentation, enhancing the perceived value of merchandise through careful illumination.",
-      ],
-      approach: [
-        "We began with a detailed analysis of the merchandise categories, display strategies, and brand identity to develop a lighting concept that would support specific retail goals.",
-        "Technical lighting solutions were balanced with atmospheric considerations, creating a space that functions effectively for retail while maintaining an emotional connection with customers.",
-        "Energy efficiency and flexibility were integrated into the system, with programmable scenes allowing the space to transform for different events and seasonal displays.",
-      ],
-      approachImage: "/images/luxury-retail.png",
-      gallery: [
-        "/images/luxury-retail.png",
-        "/images/luxury-retail.png",
-        "/images/luxury-retail.png",
-        "/images/luxury-retail.png",
-        "/images/luxury-retail.png",
-        "/images/luxury-retail.png",
-      ],
-      story: [
-        {
-          title: "Brand Analysis",
-          description:
-            "The project began with a deep dive into the brand's identity, history, and target customer, ensuring that the lighting design would support and enhance the overall brand experience.",
-          image: "/images/luxury-retail.png",
-        },
-        {
-          title: "Zoning Strategy",
-          description:
-            "The lighting plan divides the space into distinct zones—entrance, main retail floor, feature displays, fitting rooms, and point of sale—each with lighting characteristics appropriate to its function.",
-          image: "/images/luxury-retail.png",
-        },
-        {
-          title: "Product Illumination",
-          description:
-            "Special attention was paid to merchandise lighting, with custom fixtures developed to highlight the specific materials, textures, and colors of different product categories.",
-          image: "/images/luxury-retail.png",
-        },
-        {
-          title: "Control Systems",
-          description:
-            "An advanced lighting control system allows staff to adjust settings throughout the day, respond to changing natural light conditions, and create special effects for events or seasonal displays.",
-          image: "/images/luxury-retail.png",
-        },
-        {
-          title: "Integration with Architecture",
-          description:
-            "Lighting elements were carefully integrated with the historic building's architecture, respecting its character while introducing contemporary technology in an unobtrusive way.",
-          image: "/images/luxury-retail.png",
-        },
-      ],
-      testimonial: {
-        quote:
-          "LAZONE's lighting design has transformed our Paris flagship store. They understood exactly how to use light to enhance our products and create the sophisticated atmosphere our brand demands. The flexibility of the system allows us to continually refresh the space, keeping the experience exciting for our customers.",
-        name: "Jean-Pierre Moreau",
-        position: "Creative Director",
-        company: "Maison de Luxe",
         image: "/placeholder.svg?height=400&width=400",
       },
       virtualTour: [],

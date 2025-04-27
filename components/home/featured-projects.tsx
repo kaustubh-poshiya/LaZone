@@ -27,7 +27,14 @@ export default function FeaturedProjects() {
       title: "Serene Residential Building",
       // category: "Interior Design",
       location: "Dubai South, DWC, Dubai",
-      image: "/assets/the-serene/a.jpg",
+      image: "/images/projects/serene.png",
+    },
+    {
+      id: "SQUARE-II",
+      title: "SQUARE II",
+      // category: "Interior Design",
+      location: "Business Bay, Dubai",
+      image: "/images/projects/square-II.png",
     },
     {
       id: "THE-WINGS",
@@ -41,7 +48,7 @@ export default function FeaturedProjects() {
       title: "THE HARMONY",
       // category: "Master Planning",
       location: "Dubai South, DWC, Dubai",
-      image: "/assets/the-harmony/01.jpg",
+      image: "/images/projects/harmony.png",
     },
     {
       id: "MAJAN-TWIN",
