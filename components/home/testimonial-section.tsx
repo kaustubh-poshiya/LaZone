@@ -31,7 +31,7 @@ export default function TestimonialSection() {
       company: "Reviora",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "Koala Studio is known for their innovative solutions that push the boundaries of traditional design. They fearlessly experiment with new ideas to deliver truly original spaces that exceed expectations.",
+      text: "LaZone is known for their innovative solutions that push the boundaries of traditional design. They fearlessly experiment with new ideas to deliver truly original spaces that exceed expectations.",
       featured: true,
     },
     {
@@ -41,7 +41,7 @@ export default function TestimonialSection() {
       company: "Quentro",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "Koala Studio's designs exude timeless elegance. They have a keen eye for classic aesthetics and a knack for incorporating modern elements to create spaces that stand the test of time.",
+      text: "LaZone's designs exude timeless elegance. They have a keen eye for classic aesthetics and a knack for incorporating modern elements to create spaces that stand the test of time.",
       featured: true,
     },
     {
@@ -51,7 +51,7 @@ export default function TestimonialSection() {
       company: "Cyfuse",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "Koala Studio takes a personalized approach to every project, ensuring that each space reflects the unique personality and preferences of the client. Their tailored designs leave a lasting impression.",
+      text: "LaZone takes a personalized approach to every project, ensuring that each space reflects the unique personality and preferences of the client. Their tailored designs leave a lasting impression.",
       featured: true,
     },
     {
@@ -61,7 +61,7 @@ export default function TestimonialSection() {
       company: "Velion",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "Koala Studio's expertise in color theory shines through in their harmonious color schemes. They masterfully combine hues to create spaces that evoke the desired mood and atmosphere.",
+      text: "LaZone's expertise in color theory shines through in their harmonious color schemes. They masterfully combine hues to create spaces that evoke the desired mood and atmosphere.",
     },
     {
       id: "5",
@@ -70,7 +70,7 @@ export default function TestimonialSection() {
       company: "Reviora",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "Koala Studio prioritizes functional layouts that optimize space usage and enhance the overall flow of a room. Their thoughtful arrangements ensure that every corner serves a purpose.",
+      text: "LaZone prioritizes functional layouts that optimize space usage and enhance the overall flow of a room. Their thoughtful arrangements ensure that every corner serves a purpose.",
     },
     {
       id: "6",
@@ -79,7 +79,7 @@ export default function TestimonialSection() {
       company: "Orbital",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "Koala Studio's artistic vision is evident in every project they undertake. They infuse creativity and passion into their designs, resulting in spaces that are truly works of art.",
+      text: "LaZone's artistic vision is evident in every project they undertake. They infuse creativity and passion into their designs, resulting in spaces that are truly works of art.",
     },
   ]
 
