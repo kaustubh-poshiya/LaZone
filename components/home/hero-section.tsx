@@ -67,16 +67,16 @@ export default function HeroSection() {
         </video>
       </div>
 
-      <div className="relative top-[23vh] md:top-[17vh] lg:right-[32vw] md:right-[25vw] z-20 text-center text-white px-4 max-w-4xl">
+      <div className="relative top-[10vh] sm:top-[15vh] md:top-[17vh] lg:right-[32vw] md:right-[25vw] z-20 text-white px-4 max-w-4xl mx-auto md:mx-0">
         <h1
           ref={titleRef}
-          className="text-start max-w-xs text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-4 opacity-0 transition-opacity duration-1000"
+          className="text-center md:text-start max-w-xs text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-4 opacity-0 transition-opacity duration-1000"
         >
           Curating Spaces, Shaping Standards.
         </h1>
         <p
           ref={subtitleRef}
-          className="text-start max-w-xs text-2xl md:text-3xl lg:text-4xl font-serif font-medium mb-2 opacity-0 transition-opacity duration-1000"
+          className="text-center md:text-start max-w-xs text-2xl md:text-3xl lg:text-4xl font-serif font-medium mb-2 opacity-0 transition-opacity duration-1000"
         >
           All in one zone.
         </p>
@@ -86,11 +86,11 @@ export default function HeroSection() {
         >
           Experience a 360° approach to modern luxury.
         </p> */}
-        <div ref={buttonRef} className="opacity-0 mt-6 transition-opacity duration-1000 delay-600 space-x-4">
-          <Button asChild className="bg-lazone-orange text-white hover:bg-lazone-orange/90" size="lg">
+        <div ref={buttonRef} className="opacity-0 mt-6 transition-opacity duration-1000 delay-600 flex flex-col sm:flex-row gap-4">
+          <Button asChild className="bg-lazone-orange text-white hover:bg-lazone-orange/90 w-full sm:w-auto" size="lg">
             <Link href="/contact">Book Your Consultation</Link>
           </Button>
-          <Button asChild variant="outline" className="border-white text-white/90 bg-transparent hover:bg-black/30" size="lg">
+          <Button asChild variant="outline" className="border-white text-white/90 bg-transparent hover:bg-black/30 w-full sm:w-auto" size="lg">
             <Link href="/portfolio">Our Projects</Link>
           </Button>
         </div>

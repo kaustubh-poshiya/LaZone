@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { cn } from '@/lib/utils'
@@ -106,239 +106,314 @@ export default function HorizontalScrollSection() {
   const subtitleRefs = useRef<(HTMLHeadingElement | null)[]>([])
   const descriptionRefs = useRef<(HTMLParagraphElement | null)[]>([])
   const contentRefs = useRef<(HTMLDivElement | null)[]>([])
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    // Check if current device is mobile (screen width less than 768px)
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    // Initial check
+    checkMobile()
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile)
+    
+    // Cleanup the event listener on component unmount
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     // Register the ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger)
 
-    const initScrollTrigger = () => {
-      if (!horizontalRef.current || !triggerRef.current) return
+    // Clear any existing ScrollTrigger instances
+    ScrollTrigger.getAll().forEach(t => t.kill())
 
-      // Calculate the width of all panels combined minus one screen width
-      const panelsWidth = horizontalRef.current.scrollWidth
-      const distanceToScroll = panelsWidth - window.innerWidth
+    // Only set up horizontal scroll for non-mobile devices
+    if (!isMobile) {
+      const initScrollTrigger = () => {
+        if (!horizontalRef.current || !triggerRef.current) return
 
-      // Create the horizontal scrolling animation
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: "top top",
-          end: `+=${distanceToScroll}`,
-          pin: true,
-          anticipatePin: 1,
-          scrub: 1,
-          pinSpacing: true,
-          refreshPriority: 1,
-          invalidateOnRefresh: true
-        }
-      })
+        // Calculate the width of all panels combined minus one screen width
+        const panelsWidth = horizontalRef.current.scrollWidth
+        const distanceToScroll = panelsWidth - window.innerWidth
 
-      // The timeline animation that moves the content horizontally
-      tl.to(horizontalRef.current, {
-        x: -distanceToScroll,
-        ease: "none"
-      })
-
-      // Create animations for each section's content
-      gsap.utils.toArray(horizontalRef.current.children).forEach((panel, i) => {
-        const contentEl = (panel as HTMLElement).querySelector('.content-wrapper')
-        if (!contentEl) return
-
-        // Animate the entire content wrapper with a subtle scale effect
-        gsap.fromTo(contentEl,
-          { opacity: 0, scale: 0.95 },
-          {
-            opacity: 1,
-            scale: 1,
-            scrollTrigger: {
-              trigger: panel as HTMLElement,
-              containerAnimation: tl,
-              start: "left center",
-              end: "right center",
-              scrub: 0.5,
-            }
+        // Create the horizontal scrolling animation
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: triggerRef.current,
+            start: "top top",
+            end: `+=${distanceToScroll}`,
+            pin: true,
+            anticipatePin: 1,
+            scrub: 1,
+            pinSpacing: true,
+            refreshPriority: 1,
+            invalidateOnRefresh: true
           }
-        )
+        })
 
-        // Animate subtitle with a slide-up and fade
-        if (subtitleRefs.current[i]) {
-          gsap.fromTo(subtitleRefs.current[i],
-            { y: 30, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.4,
-              scrollTrigger: {
-                trigger: panel as HTMLElement,
-                containerAnimation: tl,
-                start: "left center-=10%",
-                end: "left center+=10%",
-                scrub: 0.3,
-              }
-            }
-          )
-        }
+        // The timeline animation that moves the content horizontally
+        tl.to(horizontalRef.current, {
+          x: -distanceToScroll,
+          ease: "none"
+        })
 
-        // Animate main title with a larger scale and slide effect
-        if (titleRefs.current[i]) {
-          gsap.fromTo(titleRefs.current[i],
-            { y: -80, opacity: 0, scale: 0.9 },
+        // Create animations for each section's content
+        gsap.utils.toArray(horizontalRef.current.children).forEach((panel, i) => {
+          const contentEl = (panel as HTMLElement).querySelector('.content-wrapper')
+          if (!contentEl) return
+
+          // Animate the entire content wrapper with a subtle scale effect
+          gsap.fromTo(contentEl,
+            { opacity: 0, scale: 0.95 },
             {
-              y: 0,
               opacity: 1,
               scale: 1,
-              duration: 0.8,
-              scrollTrigger: {
-                trigger: panel as HTMLElement,
-                containerAnimation: tl,
-                start: "left center-=15%",
-                end: "left center+=10%",
-                scrub: 0.4,
-              }
-            }
-          )
-        }
-
-        // Animate secondary title with a slide effect
-        if (secondaryTitleRefs.current[i]) {
-          gsap.fromTo(secondaryTitleRefs.current[i],
-            { x: -50, opacity: 0 },
-            {
-              x: 0,
-              opacity: 1,
-              duration: 0.6,
-              scrollTrigger: {
-                trigger: panel as HTMLElement,
-                containerAnimation: tl,
-                start: "left center-=10%",
-                end: "left center+=15%",
-                scrub: 0.4,
-              }
-            }
-          )
-        }
-
-        // Animate accent title with a slide effect
-        if (accentTitleRefs.current[i]) {
-          gsap.fromTo(accentTitleRefs.current[i],
-            { x: 50, opacity: 0 },
-            {
-              x: 0,
-              opacity: 1,
-              duration: 0.7,
-              scrollTrigger: {
-                trigger: panel as HTMLElement,
-                containerAnimation: tl,
-                start: "left center-=5%",
-                end: "left center+=20%",
-                scrub: 0.4,
-              }
-            }
-          )
-        }
-
-        // Animate description with a slide-up and fade
-        if (descriptionRefs.current[i]) {
-          gsap.fromTo(descriptionRefs.current[i],
-            { y: 30, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.6,
               scrollTrigger: {
                 trigger: panel as HTMLElement,
                 containerAnimation: tl,
                 start: "left center",
-                end: "left center+=20%",
+                end: "right center",
                 scrub: 0.5,
               }
             }
           )
-        }
 
-        // Animate content blocks with staggered effect
-        if (contentRefs.current[i]) {
-          const items = contentRefs.current[i]?.querySelectorAll('.animate-item')
+          // Animate subtitle with a slide-up and fade
+          if (subtitleRefs.current[i]) {
+            gsap.fromTo(subtitleRefs.current[i],
+              { y: 30, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.4,
+                scrollTrigger: {
+                  trigger: panel as HTMLElement,
+                  containerAnimation: tl,
+                  start: "left center-=10%",
+                  end: "left center+=10%",
+                  scrub: 0.3,
+                }
+              }
+            )
+          }
+
+          // Animate main title with a larger scale and slide effect
+          if (titleRefs.current[i]) {
+            gsap.fromTo(titleRefs.current[i],
+              { y: -80, opacity: 0, scale: 0.9 },
+              {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                scrollTrigger: {
+                  trigger: panel as HTMLElement,
+                  containerAnimation: tl,
+                  start: "left center-=15%",
+                  end: "left center+=10%",
+                  scrub: 0.4,
+                }
+              }
+            )
+          }
+
+          // Animate secondary title with a slide effect
+          if (secondaryTitleRefs.current[i]) {
+            gsap.fromTo(secondaryTitleRefs.current[i],
+              { x: -50, opacity: 0 },
+              {
+                x: 0,
+                opacity: 1,
+                duration: 0.6,
+                scrollTrigger: {
+                  trigger: panel as HTMLElement,
+                  containerAnimation: tl,
+                  start: "left center-=10%",
+                  end: "left center+=15%",
+                  scrub: 0.4,
+                }
+              }
+            )
+          }
+
+          // Animate accent title with a slide effect
+          if (accentTitleRefs.current[i]) {
+            gsap.fromTo(accentTitleRefs.current[i],
+              { x: 50, opacity: 0 },
+              {
+                x: 0,
+                opacity: 1,
+                duration: 0.7,
+                scrollTrigger: {
+                  trigger: panel as HTMLElement,
+                  containerAnimation: tl,
+                  start: "left center-=5%",
+                  end: "left center+=20%",
+                  scrub: 0.4,
+                }
+              }
+            )
+          }
+
+          // Animate description with a slide-up and fade
+          if (descriptionRefs.current[i]) {
+            gsap.fromTo(descriptionRefs.current[i],
+              { y: 30, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                scrollTrigger: {
+                  trigger: panel as HTMLElement,
+                  containerAnimation: tl,
+                  start: "left center",
+                  end: "left center+=20%",
+                  scrub: 0.5,
+                }
+              }
+            )
+          }
+
+          // Animate content blocks with staggered effect
+          if (contentRefs.current[i]) {
+            const items = contentRefs.current[i]?.querySelectorAll('.animate-item')
+            if (items?.length) {
+              items.forEach((item, j) => {
+                gsap.fromTo(item,
+                  { y: 30, opacity: 0 },
+                  {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    delay: j * 0.1,
+                    scrollTrigger: {
+                      trigger: panel as HTMLElement,
+                      containerAnimation: tl,
+                      start: "left center+=5%",
+                      end: "left center+=35%",
+                      scrub: 0.3,
+                    }
+                  }
+                )
+              })
+            }
+            
+            // Special handling for counters to trigger them at the right moment
+            const counters = contentRefs.current[i]?.querySelectorAll('.counter-wrapper')
+            if (counters?.length) {
+              counters.forEach((counter) => {
+                // Create a scroll trigger that will mark the counter as visible
+                ScrollTrigger.create({
+                  trigger: panel as HTMLElement,
+                  containerAnimation: tl,
+                  start: "left center-=20%",
+                  end: "right center+=20%",
+                  onEnter: () => {
+                    counter.setAttribute('data-visible', 'true')
+                  },
+                  onLeaveBack: () => {
+                    counter.setAttribute('data-visible', 'false')
+                  },
+                  onLeave: () => {
+                    counter.setAttribute('data-visible', 'false')
+                  }
+                })
+              })
+            }
+          }
+
+          // Animate decorative elements
+          const decorativeElements = (panel as HTMLElement).querySelectorAll('.decorative-element')
+          decorativeElements.forEach((element, j) => {
+            gsap.fromTo(element,
+              { scale: 0.8, opacity: 0, rotate: -45 },
+              {
+                scale: 1,
+                opacity: 0.7,
+                rotate: 0,
+                duration: 0.8,
+                delay: j * 0.2,
+                scrollTrigger: {
+                  trigger: panel as HTMLElement,
+                  containerAnimation: tl,
+                  start: "left center",
+                  end: "left center+=30%",
+                  scrub: 0.5,
+                }
+              }
+            )
+          })
+        })
+      }
+
+      // Wait a moment for proper initialization
+      const timer = setTimeout(() => {
+        initScrollTrigger()
+      }, 200)
+
+      // Clean up
+      return () => {
+        clearTimeout(timer)
+        ScrollTrigger.getAll().forEach(t => t.kill())
+      }
+    } else {
+      // For mobile: set up simple scroll animations without horizontal scrolling
+      const setupMobileAnimations = () => {
+        contentSections.forEach((_, i) => {
+          const sectionEl = document.getElementById(`mobile-section-${i}`)
+          if (!sectionEl) return
+
+          // Animate content with a fade in effect
+          gsap.fromTo(sectionEl,
+            { opacity: 0, y: 50 },
+            {
+              opacity: 1,
+              y: 0,
+              scrollTrigger: {
+                trigger: sectionEl,
+                start: "top 80%",
+                end: "top 30%",
+                scrub: 0.5,
+              }
+            }
+          )
+
+          // Animate items within each section
+          const items = sectionEl.querySelectorAll('.animate-item')
           if (items?.length) {
             items.forEach((item, j) => {
               gsap.fromTo(item,
-                { y: 30, opacity: 0 },
+                { opacity: 0, y: 30 },
                 {
-                  y: 0,
                   opacity: 1,
-                  duration: 0.4,
-                  delay: j * 0.1,
+                  y: 0,
                   scrollTrigger: {
-                    trigger: panel as HTMLElement,
-                    containerAnimation: tl,
-                    start: "left center+=5%",
-                    end: "left center+=35%",
+                    trigger: item,
+                    start: "top 85%",
+                    end: "top 65%",
                     scrub: 0.3,
                   }
                 }
               )
             })
           }
-          
-          // Special handling for counters to trigger them at the right moment
-          const counters = contentRefs.current[i]?.querySelectorAll('.counter-wrapper')
-          if (counters?.length) {
-            counters.forEach((counter) => {
-              // Create a scroll trigger that will mark the counter as visible
-              ScrollTrigger.create({
-                trigger: panel as HTMLElement,
-                containerAnimation: tl,
-                start: "left center-=20%",
-                end: "right center+=20%",
-                onEnter: () => {
-                  counter.setAttribute('data-visible', 'true')
-                },
-                onLeaveBack: () => {
-                  counter.setAttribute('data-visible', 'false')
-                },
-                onLeave: () => {
-                  counter.setAttribute('data-visible', 'false')
-                }
-              })
-            })
-          }
-        }
-
-        // Animate decorative elements
-        const decorativeElements = (panel as HTMLElement).querySelectorAll('.decorative-element')
-        decorativeElements.forEach((element, j) => {
-          gsap.fromTo(element,
-            { scale: 0.8, opacity: 0, rotate: -45 },
-            {
-              scale: 1,
-              opacity: 0.7,
-              rotate: 0,
-              duration: 0.8,
-              delay: j * 0.2,
-              scrollTrigger: {
-                trigger: panel as HTMLElement,
-                containerAnimation: tl,
-                start: "left center",
-                end: "left center+=30%",
-                scrub: 0.5,
-              }
-            }
-          )
         })
-      })
-    }
+      }
 
-    // Wait a moment for proper initialization
-    const timer = setTimeout(() => {
-      initScrollTrigger()
-    }, 200)
+      const timer = setTimeout(() => {
+        setupMobileAnimations()
+      }, 200)
 
-    // Clean up
-    return () => {
-      clearTimeout(timer)
-      ScrollTrigger.getAll().forEach(t => t.kill())
+      return () => {
+        clearTimeout(timer)
+        ScrollTrigger.getAll().forEach(t => t.kill())
+      }
     }
-  }, [])
+  }, [isMobile])
 
   // Function to set refs for each type of element
   const setTitleRef = (el: HTMLHeadingElement | null, index: number) => {
@@ -601,6 +676,27 @@ export default function HorizontalScrollSection() {
     }
   };
 
+  // For mobile view - render sections vertically
+  if (isMobile) {
+    return (
+      <section className="relative bg-black" data-scroll-section ref={sectionRef}>
+        {contentSections.map((section, index) => (
+          <div
+            id={`mobile-section-${index}`}
+            key={section.id}
+            className={cn(
+              "min-h-screen w-full py-16 px-4 relative",
+              section.color
+            )}
+          >
+            {renderSectionContent(section, index)}
+          </div>
+        ))}
+      </section>
+    )
+  }
+
+  // For desktop view - horizontal scrolling
   return (
     <section className="relative" data-scroll-section ref={sectionRef}>
       {/* This wrapper is what gets pinned */}
