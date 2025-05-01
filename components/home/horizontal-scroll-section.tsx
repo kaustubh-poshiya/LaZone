@@ -448,7 +448,7 @@ export default function HorizontalScrollSection() {
           <div className="content-wrapper h-full w-full flex flex-col justify-center px-6 sm:px-10 md:pl-16 md:pr-12 lg:pl-32 xl:pl-48 pt-20 sm:pt-16 md:pt-0 transition-all duration-300 hover:scale-[1.02]">
             <h3
               ref={el => setSubtitleRef(el, index)}
-              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange"
+              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange font-sans"
             >
               {section.subtitle}
             </h3>
@@ -456,19 +456,19 @@ export default function HorizontalScrollSection() {
             <div className="title-group mb-8 sm:mb-10 lg:mb-12">
               <h2
                 ref={el => setTitleRef(el, index)}
-                className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none text-white"
+                className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-none text-white"
               >
                 {section.title} <ArrowRight className="inline-block ml-4 h-10 w-10" />
               </h2>
               <h2
                 ref={el => setSecondaryTitleRef(el, index)}
-                className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-none mt-1 sm:mt-2 text-white/80"
               >
                 {section.titleSecondary}
               </h2>
               <h2
                 ref={el => setAccentTitleRef(el, index)}
-                className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
               >
                 {section.titleAccent}
               </h2>
@@ -476,184 +476,166 @@ export default function HorizontalScrollSection() {
 
             <p
               ref={el => setDescriptionRef(el, index)}
-              className="text-lg sm:text-xl md:text-2xl max-w-3xl mb-10 sm:mb-12 lg:mb-16 text-white/80 font-light leading-relaxed"
+              className="text-base sm:text-lg lg:text-xl max-w-lg text-white/80 leading-relaxed mb-8 font-sans"
             >
-              {section.description.length > 150 ? `${section.description.substring(0, 150)}...` : section.description}
+              {section.description}
             </p>
 
-            <div ref={el => setContentRef(el, index)} className="mt-6 sm:mt-8 space-y-4 sm:space-y-6">
-              {section.points?.map((point, i) => (
-                <div key={i} className="animate-item flex items-center space-x-4 group">
-                  <div className="h-3 w-3 bg-lazone-orange rounded-full flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
-                  <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-light group-hover:text-white transition-colors duration-300">{point}</p>
-                </div>
-              ))}
+            <div ref={el => setContentRef(el, index)}>
+              {section.points && (
+                <ul className="space-y-3">
+                  {section.points.map((point, i) => (
+                    <li key={i} className="animate-item flex items-start text-white/90 font-sans">
+                      <span className="text-lazone-orange mr-3 text-2xl">•</span>
+                      <span className="text-lg">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-
-            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none"></div>
           </div>
         );
-
+      
       case "center":
         return (
-          <div className="content-wrapper h-full w-full flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 overflow-y-auto pt-20 sm:pt-16 md:pt-0">
+          <div className="content-wrapper h-full w-full flex flex-col items-center justify-center px-6 transition-all duration-300 hover:scale-[1.02]">
             <h3
               ref={el => setSubtitleRef(el, index)}
-              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-center text-lazone-orange"
+              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange text-center font-sans"
             >
               {section.subtitle}
             </h3>
-
+            
             <div className="title-group mb-8 sm:mb-10 lg:mb-12 text-center">
               <h2
                 ref={el => setTitleRef(el, index)}
-                className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none text-white"
+                className="text-6xl sm:text-7xl lg:text-8xl font-serif font-bold leading-none text-white"
               >
                 {section.title}
               </h2>
               <h2
                 ref={el => setSecondaryTitleRef(el, index)}
-                className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold leading-none mt-1 sm:mt-2 text-white/80"
               >
                 {section.titleSecondary}
               </h2>
               <h2
                 ref={el => setAccentTitleRef(el, index)}
-                className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                className={`text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
               >
                 {section.titleAccent}
               </h2>
             </div>
-
+            
             <p
               ref={el => setDescriptionRef(el, index)}
-              className="text-lg sm:text-xl md:text-2xl max-w-3xl mb-10 sm:mb-12 lg:mb-16 text-center text-white/80 font-light leading-relaxed"
+              className="text-lg max-w-2xl text-center text-white/80 leading-relaxed mb-12 font-sans"
             >
-              {section.description.length > 150 ? `${section.description.substring(0, 150)}...` : section.description}
+              {section.description}
             </p>
-
-            <div ref={el => setContentRef(el, index)} className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 w-full max-w-5xl">
+            
+            <div ref={el => setContentRef(el, index)} className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
               {section.stats?.map((stat, i) => (
-                <div key={i} className="animate-item bg-lazone-black/50 p-8 sm:p-10 lg:p-10 rounded-xl shadow-lg backdrop-blur-sm border border-lazone-orange/20 hover:border-lazone-orange/40 transition-all duration-300">
-                  <div className={`text-6xl sm:text-7xl lg:text-8xl font-bold ${section.accentColor} mb-6 sm:mb-8`}>{stat.value}</div>
-                  <h4 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-5 text-white">{stat.label}</h4>
-                  <p className="text-lg sm:text-xl text-white/70 font-light leading-relaxed">
-                    {stat.description.length > 100 ? `${stat.description.substring(0, 100)}...` : stat.description}
-                  </p>
+                <div key={i} className="animate-item bg-black/30 p-8 rounded-xl backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300 text-center">
+                  <div className="text-5xl font-serif font-bold text-lazone-orange mb-3">{stat.value}</div>
+                  <h4 className="text-xl font-serif font-medium text-white mb-2">{stat.label}</h4>
+                  <p className="text-white/70 text-sm font-sans">{stat.description}</p>
                 </div>
               ))}
             </div>
-
-            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none"></div>
           </div>
         );
-
+      
       case "right":
         return (
-          <div className="content-wrapper h-full w-full flex flex-col justify-center items-end px-6 sm:px-10 md:pr-16 md:pl-12 lg:pr-32 xl:pr-48 overflow-y-auto pt-20 sm:pt-16 md:pt-0">
+          <div className="content-wrapper h-full w-full flex flex-col justify-center items-end px-6 sm:px-10 md:pr-16 md:pl-12 lg:pr-32 xl:pr-48 pt-20 sm:pt-16 md:pt-0 transition-all duration-300 hover:scale-[1.02]">
             <h3
               ref={el => setSubtitleRef(el, index)}
-              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-right text-lazone-orange"
+              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange text-right font-sans"
             >
               {section.subtitle}
             </h3>
-
+            
             <div className="title-group mb-8 sm:mb-10 lg:mb-12 text-right">
               <h2
                 ref={el => setTitleRef(el, index)}
-                className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none text-white"
+                className="text-6xl sm:text-7xl lg:text-8xl font-serif font-bold leading-none text-white"
               >
                 {section.title}
               </h2>
               <h2
                 ref={el => setSecondaryTitleRef(el, index)}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold leading-none mt-1 sm:mt-2 text-white/80"
               >
                 {section.titleSecondary}
               </h2>
               <h2
                 ref={el => setAccentTitleRef(el, index)}
-                className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                className={`text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
               >
                 {section.titleAccent}
               </h2>
             </div>
-
+            
             <p
               ref={el => setDescriptionRef(el, index)}
-              className="text-lg sm:text-xl md:text-2xl max-w-3xl mb-10 sm:mb-12 lg:mb-16 text-right text-white/80 font-light leading-relaxed"
+              className="text-lg max-w-lg text-right text-white/80 leading-relaxed mb-8 font-sans"
             >
-              {section.description.length > 150 ? `${section.description.substring(0, 150)}...` : section.description}
+              {section.description}
             </p>
-
-            <div ref={el => setContentRef(el, index)} className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 w-full max-w-3xl">
+            
+            <div ref={el => setContentRef(el, index)} className="flex flex-row space-x-6 justify-end">
               {section.counters?.map((counter, i) => (
-                <div key={i} className="animate-item text-center bg-black/30 p-6 sm:p-8 rounded-xl backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/5">
-                  <div className="counter-wrapper">
-                    <CountUp
-                      end={counter.value}
-                      suffix={counter.suffix}
-                      duration={2}
-                      delay={i * 0.2}
-                      className={`text-6xl sm:text-7xl lg:text-8xl font-bold ${section.accentColor} mb-4 sm:mb-5`}
-                      startOnView={true}
-                    />
-                  </div>
-                  <div className="text-md sm:text-lg lg:text-xl uppercase tracking-wider text-white/80">{counter.label}</div>
+                <div key={i} className="counter-wrapper animate-item text-center">
+                  <CountUp 
+                    end={counter.value} 
+                    suffix={counter.suffix} 
+                    className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white" 
+                  />
+                  <p className="text-base md:text-lg text-white/90 mt-2 font-sans">{counter.label}</p>
                 </div>
               ))}
             </div>
-
-            <a
-              href="/contact"
-              className="animate-item mt-10 sm:mt-12 inline-flex items-center justify-center rounded-md px-8 py-4 text-lg font-medium transition-all duration-300 bg-gradient-to-r from-lazone-orange to-lazone-orange/80 text-white hover:from-lazone-orange/90 hover:to-lazone-orange/70 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/20"
-            >
-              Contact Us
-              <ArrowRight className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
-
-            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none"></div>
           </div>
         );
-
+      
       case "split":
-      default:
         return (
-          <div className="content-wrapper h-full w-full flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 px-6 sm:px-10 md:px-16 overflow-y-auto py-20 sm:py-16 md:py-4 lg:py-0 items-center justify-center">
-            <div className="flex flex-col justify-center">
+          <div className="content-wrapper h-full w-full grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 p-6 sm:p-10 transition-all duration-300 hover:scale-[1.02]">
+            <div className="flex flex-col justify-center md:pr-8 mb-8 md:mb-0">
               <h3
                 ref={el => setSubtitleRef(el, index)}
-                className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange"
+                className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange font-sans"
               >
                 {section.subtitle}
               </h3>
-
+              
               <div className="title-group mb-8 sm:mb-10 lg:mb-12">
                 <h2
                   ref={el => setTitleRef(el, index)}
-                  className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none text-white"
+                  className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-none text-white"
                 >
                   {section.title}
                 </h2>
                 <h2
                   ref={el => setSecondaryTitleRef(el, index)}
-                  className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                  className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-none mt-1 sm:mt-2 text-white/80"
                 >
                   {section.titleSecondary}
                 </h2>
                 <h2
                   ref={el => setAccentTitleRef(el, index)}
-                  className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                  className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
                 >
                   {section.titleAccent}
                 </h2>
               </div>
-
+              
               <p
                 ref={el => setDescriptionRef(el, index)}
-                className="text-lg sm:text-xl md:text-2xl max-w-xl text-white/80 font-light leading-relaxed"
+                className="text-base sm:text-lg text-white/80 leading-relaxed font-sans"
               >
-                {section.description.length > 150 ? `${section.description.substring(0, 150)}...` : section.description}
+                {section.description}
               </p>
             </div>
 
@@ -661,8 +643,8 @@ export default function HorizontalScrollSection() {
               <div className="space-y-6 sm:space-y-8 lg:space-y-10">
                 {section.features?.map((feature, i) => (
                   <div key={i} className="animate-item bg-black/30 p-8 sm:p-10 rounded-xl backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/5">
-                    <h4 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 ${section.accentColor}`}>{feature.title}</h4>
-                    <p className="text-lg sm:text-xl text-white/80 font-light leading-relaxed">
+                    <h4 className={`text-2xl sm:text-3xl font-serif font-bold mb-3 sm:mb-4 ${section.accentColor}`}>{feature.title}</h4>
+                    <p className="text-lg sm:text-xl text-white/80 font-sans font-light leading-relaxed">
                       {feature.description.length > 100 ? `${feature.description.substring(0, 100)}...` : feature.description}
                     </p>
                   </div>
