@@ -11,7 +11,7 @@ type ProjectPageProps = {
   }
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const projectData = getProjectData(params.project)
 
   if (!projectData) {
@@ -166,7 +166,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
 function getProjectData(projectSlug: string) {
   const projects = {
-    "Serene": {
+    "serene": {
       title: "Serene Residential Building",
       category: "Interior Design",
       client: "Private Client",
@@ -236,7 +236,7 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
-    "THE-WINGS": {
+    "the-wings": {
       title: "THE WINGS",
       category: "Architecture",
       client: "Dubai Properties",
@@ -255,14 +255,14 @@ function getProjectData(projectSlug: string) {
         "Technical challenges of creating the wing-shaped facades in Dubai's climate were addressed through innovative structural solutions and advanced building systems.",
         "Sustainability was integrated throughout, with passive cooling strategies, energy-efficient systems, and thoughtful material selection to reduce environmental impact.",
       ],
-      approachImage: "/images/projects/wings.png",
+      approachImage: "/assets/the-wings/wings.png",
       gallery: [
-        "/images/projects/wings.png",
-        "/images/projects/wings.png",
-        "/images/projects/wings.png",
-        "/images/projects/wings.png",
-        "/images/projects/wings.png",
-        "/images/projects/wings.png",
+        "/assets/the-wings/image38.jpeg",
+        "/assets/the-wings/image36.jpeg",
+        "/assets/the-wings/Lobby-A.jpg",
+        "/assets/the-wings/POOL1-NIGHT-2A4.jpg",
+        "/assets/the-wings/image36.jpeg",
+        "/assets/the-wings/image38.jpeg",
       ],
       story: [
         {
@@ -275,30 +275,30 @@ function getProjectData(projectSlug: string) {
           title: "Form Finding",
           description:
             "The distinctive wing-shaped form was developed through multiple iterations, balancing aesthetic goals with practical considerations of construction and interior space planning.",
-          image: "/images/projects/wings.png",
+          image: "/assets/the-wings/image38.jpeg",
         },
         {
           title: "Structural Innovation",
           description:
             "Creating the dynamic form required innovative structural engineering solutions. We collaborated with engineers to develop a system that could realize the design vision while ensuring safety and buildability.",
-          image: "/images/projects/wings.png",
+          image: "/assets/the-wings/wings.png",
         },
         {
           title: "Facade Design",
           description:
             "The facade system was carefully designed to manage Dubai's intense sunlight, with elements providing shade while maintaining views and allowing natural light into the interior spaces.",
-          image: "/images/projects/wings.png",
+          image: "/assets/the-wings/image36.jpeg",
         },
         {
           title: "Spatial Experience",
           description:
             "Interior spaces were designed to maximize the benefits of the building's unique form, with living areas positioned to capture views and create a sense of connection to the surrounding city.",
-          image: "/images/projects/wings.png",
+          image: "/assets/the-wings/interior.jpg",
         },
       ],
       virtualTour: [],
     },
-    "THE-HARMONY": {
+    "the-harmony": {
       title: "THE HARMONY",
       category: "Interior Design",
       client: "Dubai South Developments",
@@ -368,7 +368,7 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
-    "SQUARE-I": {
+    "square-I": {
       title: "SQUARE I",
       category: "Residential Architecture",
       client: "Business Bay Development",
@@ -438,7 +438,7 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
-    "SQUARE-II": {
+    "square-II": {
       title: "SQUARE II",
       category: "Interior Design",
       client: "Business Bay Properties",
@@ -509,7 +509,7 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
-    "MAJAN-TWIN": {
+    "majan-twin": {
       title: "MAJAN TWIN",
       category: "Lifestyle & Wellbeing",
       client: "Wadi AlSafa Development",
@@ -530,43 +530,43 @@ function getProjectData(projectSlug: string) {
       ],
       approachImage: "/images/projects/twin.png",
       gallery: [
-        "/images/projects/twin.png",
-        "/images/projects/twin.png",
-        "/images/projects/twin.png",
-        "/images/projects/twin.png",
-        "/images/projects/twin.png",
-        "/images/projects/twin.png",
+        "/assets/majan-twin/image61.jpeg",
+        "/assets/majan-twin/image69.jpeg",
+        "/assets/majan-twin/image70.jpeg",
+        "/assets/majan-twin/image69.jpeg",
+        "/assets/majan-twin/image70.jpeg",
+        "/assets/majan-twin/image61.jpeg",
       ],
       story: [
         {
           title: "Wellness Vision",
           description:
             "The vision for MAJAN TWIN was to create a residential development that goes beyond providing shelter to actively support residents' physical, mental, and social wellbeing through thoughtful design.",
-          image: "/images/projects/twin.png",
+          image: "/assets/majan-twin/image61.jpeg",
         },
         {
           title: "Twin Tower Concept",
           description:
             "The twin tower design creates a visual dialogue between the buildings while allowing for efficient organization of units and amenities, with each tower having its own distinct character within a unified overall design.",
-          image: "/images/projects/twin.png",
+          image: "/assets/majan-twin/image69.jpeg",
         },
         {
           title: "Wellness Amenities",
           description:
             "Extensive wellness facilities were integrated throughout the development, from rooftop yoga decks to spa facilities, fitness centers, and quiet contemplation spaces designed to support diverse wellbeing practices.",
-          image: "/images/projects/twin.png",
+          image: "/assets/majan-twin/image70.jpeg",
         },
         {
           title: "Outdoor Spaces",
           description:
             "Landscaped areas between and around the towers provide opportunities for outdoor exercise, social gatherings, or quiet relaxation, with a variety of spaces supporting different activities and preferences.",
-          image: "/images/projects/twin.png",
+          image: "/assets/majan-twin/image61.jpeg",
         },
         {
           title: "Healthy Materials",
           description:
             "Interior materials were selected not only for their aesthetic qualities but also for their health impacts, with a focus on low-VOC finishes, natural materials, and good indoor air quality throughout the development.",
-          image: "/images/projects/twin.png",
+          image: "/assets/majan-twin/image69.jpeg",
         },
       ],
       testimonial: {
@@ -579,7 +579,7 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
-    "CB10-VILLA": {
+    "cb10-villa": {
       title: "CB10 Luxury Villa",
       category: "Interior Design",
       client: "Private Client",
@@ -601,11 +601,11 @@ function getProjectData(projectSlug: string) {
       approachImage: "/images/projects/cb10-villa.jpg",
       gallery: [
         "/images/projects/cb10-villa.jpg",
-        "/images/projects/cb10-villa/ex1.jpg",
-        "/images/projects/cb10-villa/ex2.jpg",
-        "/images/projects/cb10-villa/guest01.jpg",
-        "/images/projects/cb10-villa/guest02.jpg",
-        "/images/projects/cb10-villa/cinema2.jpg",
+        "/assets/cb10-villa/ex1.jpg",
+        "/assets/cb10-villa/ex2.jpg",
+        "/assets/cb10-villa/guest01.jpg",
+        "/assets/cb10-villa/guest02.jpg",
+        "/assets/cb10-villa/cinema2.jpg",
       ],
       story: [
         {
@@ -616,21 +616,21 @@ function getProjectData(projectSlug: string) {
         {
           title: "Space Planning",
           description: "The layout was carefully planned to optimize flow between spaces while maintaining privacy where needed, with particular attention to the master suite and entertainment areas.",
-          image: "/images/projects/cb10-villa/ex1.jpg",
+          image: "/assets/cb10-villa/ex1.jpg",
         },
         {
           title: "Material Selection",
           description: "We selected a sophisticated palette of materials including natural stone, exotic woods, and premium textiles to create a luxurious yet welcoming atmosphere.",
-          image: "/images/projects/cb10-villa/ex2.jpg",
+          image: "/assets/cb10-villa/ex2.jpg",
         },
         {
           title: "Lighting Design",
           description: "A comprehensive lighting scheme was developed to enhance the architecture and create ambiance, combining natural light with carefully positioned artificial lighting.",
-          image: "/images/projects/cb10-villa/guest01.jpg",
+          image: "/assets/cb10-villa/guest01.jpg",
         },
       ],
     },
-    "ERMAX-RESIDENCE": {
+    "ermax-residence": {
       title: "ERMAX Modern Residence",
       category: "Architecture",
       client: "ERMAX Development",
@@ -652,11 +652,11 @@ function getProjectData(projectSlug: string) {
       approachImage: "/images/projects/ermax-residence.jpg",
       gallery: [
         "/images/projects/ermax-residence.jpg",
-        "/images/projects/ermax/1.jpg",
-        "/images/projects/ermax/2.jpg",
-        "/images/projects/ermax/3.jpg",
-        "/images/projects/ermax/5.jpg",
-        "/images/projects/ermax/9.jpg",
+        "/assets/ermax/1.jpg",
+        "/assets/ermax/2.jpg",
+        "/assets/ermax/3.jpg",
+        "/assets/ermax/5.jpg",
+        "/assets/ermax/9.jpg",
       ],
       story: [
         {
@@ -667,21 +667,21 @@ function getProjectData(projectSlug: string) {
         {
           title: "Sustainable Design",
           description: "Environmental considerations were integrated from the start, with passive solar design and smart systems reducing energy consumption.",
-          image: "/images/projects/ermax/2.jpg",
+          image: "/assets/ermax/2.jpg",
         },
         {
           title: "Construction Innovation",
           description: "Advanced construction techniques and materials were employed to achieve the complex geometries while ensuring structural integrity.",
-          image: "/images/projects/ermax/3.jpg",
+          image: "/assets/ermax/3.jpg",
         },
         {
           title: "Interior Integration",
           description: "The interior design was developed in parallel with the architecture to ensure a seamless flow between indoor and outdoor spaces.",
-          image: "/images/projects/ermax/4.jpg",
+          image: "/assets/ermax/4.jpg",
         },
       ],
     },
-    "TERVA-HOMES": {
+    "terva-homes": {
       title: "Terva Contemporary Living",
       category: "Residential Architecture",
       client: "Terva Development Group",
@@ -703,32 +703,491 @@ function getProjectData(projectSlug: string) {
       approachImage: "/images/projects/terva-homes.jpg",
       gallery: [
         "/images/projects/terva-homes.jpg",
-        "/images/projects/terva-homes/01.jpg",
-        "/images/projects/terva-homes/02.jpg",
-        "/images/projects/terva-homes/04.jpg",
-        "/images/projects/terva-homes/05.jpg",
-        "/images/projects/terva-homes/bath.jpg",
+        "/assets/terva-homes/1.jpg",
+        "/assets/terva-homes/2.jpg",
+        "/assets/terva-homes/4.jpg",
+        "/assets/terva-homes/5.jpg",
+        "/assets/terva-homes/bath.jpg",
       ],
       story: [
         {
           title: "Community Planning",
           description: "The project began with extensive community planning to create a development that would foster social interaction while respecting privacy.",
-          image: "/images/projects/terva-homes.jpg",
+          image: "/assets/terva-homes/1.jpg",
         },
         {
           title: "Sustainable Integration",
           description: "Sustainable features were integrated into every aspect of the design, from material selection to energy systems.",
-          image: "/images/projects/terva-homes/02.jpg",
+          image: "/assets/terva-homes/2.jpg",
         },
         {
           title: "Landscape Design",
           description: "The landscape design creates a seamless connection between built and natural environments, with careful consideration for local climate.",
-          image: "/images/projects/terva-homes/04.jpg",
+          image: "/assets/terva-homes/5.jpg",
         },
         {
           title: "Interior Spaces",
           description: "Interior spaces were designed to be flexible and adaptable, with high-quality finishes and attention to detail throughout.",
-          image: "/images/projects/terva-homes/05.jpg",
+          image: "/assets/terva-homes/4.jpg",
+        },
+      ],
+    },
+    "square-III": {
+      title: "THE SQUARE III",
+      category: "Residential Architecture",
+      client: "D.I.C Development",
+      location: "D.I.C, Saih Shuaib, Dubai",
+      year: "2026",
+      size: "216,751 sqft",
+      services: ["Residential Architecture", "Retail Design", "Master Planning"],
+      heroImage: "/images/projects/square-III.jpg",
+      description: [
+        "THE SQUARE III is a sophisticated G+6F+R residential and retail building that combines modern living spaces with commercial opportunities.",
+        "The project features a carefully planned unit mix of 1BR, 2BR, and 3BR apartments, complemented by retail spaces on the ground floor.",
+        "The design emphasizes functionality and comfort while maintaining a strong visual presence in the Saih Shuaib area.",
+      ],
+      approach: [
+        "The architectural concept focuses on creating a balanced relationship between residential and retail spaces, ensuring both functions complement each other.",
+        "Special attention was paid to the building's orientation and massing to optimize views and natural light for residential units.",
+        "The retail spaces were designed with flexibility in mind, accommodating various commercial needs while maintaining visual coherence.",
+      ],
+      approachImage: "/images/projects/square-III.jpg",
+      gallery: [
+        "/assets/square-3/image63.jpeg",
+        "/assets/square-3/image64.jpeg",
+        "/assets/square-3/image63.jpeg",
+        "/assets/square-3/image64.jpeg",
+        "/assets/square-3/image63.jpeg",
+        "/assets/square-3/image64.jpeg",
+      ],
+      story: [
+        {
+          title: "Site Analysis",
+          description: "The project began with a thorough analysis of the site context and surrounding urban fabric to ensure the building would integrate seamlessly with its environment.",
+          image: "/assets/square-3/image63.jpeg",
+        },
+        {
+          title: "Unit Planning",
+          description: "Residential units were carefully planned to maximize space efficiency while providing comfortable living environments for different family sizes.",
+          image: "/assets/square-3/image64.jpeg",
+        },
+        {
+          title: "Retail Integration",
+          description: "The retail spaces were designed to create an engaging street presence while maintaining privacy for residential units above.",
+          image: "/assets/square-3/image63.jpeg",
+        },
+        {
+          title: "Facade Design",
+          description: "The building's facade was developed to create visual interest while responding to Dubai's climate and providing appropriate shading and privacy.",
+          image: "/assets/square-3/image64.jpeg",
+        },
+      ],
+    },
+    "majan-plaza": {
+      title: "MAJAN PLAZA",
+      category: "Mixed-Use Architecture",
+      client: "Majan Development",
+      location: "Majan, Wadi AlSafa, Dubai",
+      year: "2027",
+      size: "806,000 sqft",
+      services: ["Mixed-Use Architecture", "Commercial Design", "Master Planning"],
+      heroImage: "/images/projects/majan-plaza.jpg",
+      description: [
+        "MAJAN PLAZA is a landmark mixed-use development featuring a 2B+6+29F tower that combines residential, retail, and office spaces.",
+        "The project offers a diverse unit mix including 2BR, 3BR, 4BR Duplex, and 5BR Duplex apartments, complemented by a shopping mall and office spaces.",
+        "The design creates a vibrant urban environment that serves both residents and visitors while maintaining a strong architectural presence.",
+      ],
+      approach: [
+        "The architectural concept emphasizes vertical connectivity and spatial efficiency, creating a seamless flow between different programmatic elements.",
+        "The design incorporates sustainable features and smart building technologies to ensure long-term efficiency and comfort.",
+        "Public spaces were carefully planned to encourage social interaction while maintaining privacy for residential areas.",
+      ],
+      approachImage: "/images/projects/majan-plaza.jpg",
+      gallery: [
+        "/assets/majan-plaza/image65.jpeg",
+        "/assets/majan-plaza/image66.jpeg",
+        "/assets/majan-plaza/image67.jpeg",
+        "/assets/majan-plaza/image65.jpeg",
+        "/assets/majan-plaza/image66.jpeg",
+        "/assets/majan-plaza/image67.jpeg",
+      ],
+      story: [
+        {
+          title: "Master Planning",
+          description: "The project began with comprehensive master planning to create a balanced mix of uses while ensuring efficient circulation and access.",
+          image: "/assets/majan-plaza/image65.jpeg",
+        },
+        {
+          title: "Residential Design",
+          description: "Residential units were designed to offer luxury living with panoramic views, incorporating flexible layouts to accommodate various lifestyles.",
+          image: "/assets/majan-plaza/image66.jpeg",
+        },
+        {
+          title: "Commercial Spaces",
+          description: "The shopping mall and office spaces were planned to create an engaging retail experience while maintaining operational efficiency.",
+          image: "/assets/majan-plaza/image67.jpeg",
+        },
+        {
+          title: "Public Realm",
+          description: "The public spaces were designed to create a welcoming environment that encourages social interaction and community engagement.",
+          image: "/assets/majan-plaza/image65.jpeg",
+        },
+      ],
+    },
+    "arjan-diamond": {
+      title: "ARJAN DIAMOND",
+      category: "Commercial Architecture",
+      client: "Arjan Development",
+      location: "Arjan, AlBarsha South, Dubai",
+      year: "2026",
+      size: "128,914 sqft",
+      services: ["Commercial Architecture", "Retail Design", "Interior Design"],
+      heroImage: "/images/projects/arjan-diamond.jpg",
+      description: [
+        "ARJAN DIAMOND is a sophisticated B+G+4F+R commercial building that combines retail and office spaces in a modern architectural setting.",
+        "The project features a carefully planned mix of shopping mall and office spaces, creating a dynamic commercial environment.",
+        "The design emphasizes functionality and flexibility while maintaining a strong visual identity in the Arjan area.",
+      ],
+      approach: [
+        "The architectural concept focuses on creating an efficient and engaging commercial environment that serves both retail and office users.",
+        "Special attention was paid to circulation and wayfinding, ensuring easy navigation through the building's various spaces.",
+        "The design incorporates sustainable features and smart building technologies to ensure optimal performance and user comfort.",
+      ],
+      approachImage: "/images/projects/arjan-diamond.jpg",
+      gallery: [
+        "/assets/arjan-diamond/image71.jpeg",
+        "/assets/arjan-diamond/image49.jpeg",
+        "/assets/arjan-diamond/image53.jpeg",
+        "/assets/arjan-diamond/image49.jpeg",
+        "/assets/arjan-diamond/image53.jpeg",
+        "/assets/arjan-diamond/image71.jpeg",
+      ],
+      story: [
+        {
+          title: "Commercial Planning",
+          description: "The project began with careful analysis of commercial requirements and market needs to create spaces that would serve both retail and office users effectively.",
+          image: "/assets/arjan-diamond/image71.jpeg",
+        },
+        {
+          title: "Retail Design",
+          description: "The shopping mall was designed to create an engaging retail experience with flexible spaces that can accommodate various tenant needs.",
+          image: "/assets/arjan-diamond/image49.jpeg",
+        },
+        {
+          title: "Office Spaces",
+          description: "Office spaces were planned to provide efficient layouts while maintaining flexibility for different business requirements.",
+          image: "/assets/arjan-diamond/image53.jpeg",
+        },
+        {
+          title: "Facade Development",
+          description: "The building's facade was designed to create a distinctive presence while responding to Dubai's climate and providing appropriate shading.",
+          image: "/assets/arjan-diamond/image71.jpeg",
+        },
+      ],
+    },
+    "living-heaven": {
+      title: "LIVING HEAVEN",
+      category: "Residential Architecture",
+      client: "Wadi Al Safa Development",
+      location: "Wadi Al Safa, Dubai",
+      year: "2027",
+      size: "681,290 sqft",
+      services: ["Residential Architecture", "Master Planning", "Landscape Design"],
+      heroImage: "/images/projects/living-heaven.jpg",
+      description: [
+        "LIVING HEAVEN is a comprehensive residential development featuring 6+13F+R and G+20F+R buildings that offer diverse living options.",
+        "The project provides a wide range of unit types from 1BR to 6BR Triplex, catering to various family sizes and lifestyles.",
+        "The design creates a harmonious living environment that combines modern architecture with thoughtful amenities and landscaping.",
+      ],
+      approach: [
+        "The architectural concept emphasizes creating a balanced community with diverse housing options and shared amenities.",
+        "Special attention was paid to the relationship between buildings and outdoor spaces, creating a cohesive living environment.",
+        "The design incorporates sustainable features and smart building technologies to ensure long-term efficiency and comfort.",
+      ],
+      approachImage: "/images/projects/living-heaven.jpg",
+      gallery: [
+        "/assets/living-heaven/image72.jpeg",
+        "/assets/living-heaven/image72.jpeg",
+        "/assets/living-heaven/image72.jpeg",
+        "/assets/living-heaven/image72.jpeg",
+        "/assets/living-heaven/image72.jpeg",
+        "/assets/living-heaven/image72.jpeg",
+      ],
+      story: [
+        {
+          title: "Master Planning",
+          description: "The project began with comprehensive master planning to create a balanced community with diverse housing options and shared amenities.",
+          image: "/assets/living-heaven/image72.jpeg",
+        },
+        {
+          title: "Unit Design",
+          description: "Residential units were carefully planned to maximize space efficiency while providing comfortable living environments for different family sizes.",
+          image: "/assets/living-heaven/image72.jpeg",
+        },
+        {
+          title: "Amenity Spaces",
+          description: "Shared amenities were designed to create opportunities for social interaction while maintaining privacy for residents.",
+          image: "/assets/living-heaven/image72.jpeg",
+        },
+        {
+          title: "Landscape Integration",
+          description: "The landscape design creates a seamless connection between buildings and outdoor spaces, enhancing the overall living experience.",
+          image: "/assets/living-heaven/image72.jpeg",
+        },
+      ],
+    },
+    "yd-villa": {
+      title: "YD VILLA",
+      category: "Residential Architecture",
+      client: "Private Client",
+      location: "The Villa Community, Dubailand, Dubai",
+      year: "2023",
+      size: "11,144 sqft",
+      services: ["Residential Architecture", "Interior Design", "Landscape Design"],
+      heroImage: "/images/projects/yd-villa.jpg",
+      description: [
+        "YD VILLA is a luxurious G+1F residential villa that combines sophisticated design with comfortable living spaces.",
+        "The project features a spacious 6BR layout designed to accommodate extended family living while maintaining privacy and comfort.",
+        "The design emphasizes the connection between indoor and outdoor spaces, creating a seamless living experience.",
+      ],
+      approach: [
+        "The architectural concept focuses on creating a harmonious balance between private and shared spaces within the villa.",
+        "Special attention was paid to natural light and ventilation, ensuring comfortable living conditions throughout the year.",
+        "The design incorporates sustainable features and smart home technologies to enhance the living experience.",
+      ],
+      approachImage: "/images/projects/yd-villa.jpg",
+      gallery: [
+        "/assets/yd-villa/image81.jpeg",
+        "/assets/yd-villa/image89.jpeg",
+        "/assets/yd-villa/image90.jpeg",
+        "/assets/yd-villa/image81.jpeg",
+        "/assets/yd-villa/image89.jpeg",
+        "/assets/yd-villa/image90.jpeg",
+      ],
+      story: [
+        {
+          title: "Client Vision",
+          description: "The project began with understanding the client's vision for a family home that would accommodate their specific needs and lifestyle.",
+          image: "/assets/yd-villa/image81.jpeg",
+        },
+        {
+          title: "Space Planning",
+          description: "The villa's layout was carefully planned to create a natural flow between spaces while maintaining privacy where needed.",
+          image: "/assets/yd-villa/image89.jpeg",
+        },
+        {
+          title: "Material Selection",
+          description: "Materials were selected for their durability and aesthetic qualities, creating a timeless and sophisticated appearance.",
+          image: "/assets/yd-villa/image90.jpeg",
+        },
+        {
+          title: "Landscape Design",
+          description: "The outdoor spaces were designed to extend the living areas and create a seamless connection with nature.",
+          image: "/assets/yd-villa/image81.jpeg",
+        },
+      ],
+    },
+    "mallorca": {
+      title: "MALLORCA",
+      category: "Residential Architecture",
+      client: "Private Client",
+      location: "The Villa Community, Dubailand, Dubai",
+      year: "2023",
+      size: "12,574 sqft",
+      services: ["Residential Architecture", "Interior Design", "Landscape Design"],
+      heroImage: "/images/projects/mallorca.jpg",
+      description: [
+        "MALLORCA is an elegant G+1F residential villa that combines Mediterranean-inspired design with modern luxury.",
+        "The project features a spacious 7BR layout designed to accommodate extended family living while maintaining privacy and comfort.",
+        "The design emphasizes the connection between indoor and outdoor spaces, creating a resort-like living experience.",
+      ],
+      approach: [
+        "The architectural concept draws inspiration from Mediterranean architecture while incorporating modern design elements.",
+        "Special attention was paid to creating a seamless flow between indoor and outdoor living spaces.",
+        "The design incorporates sustainable features and smart home technologies to enhance the living experience.",
+      ],
+      approachImage: "/images/projects/mallorca.jpg",
+      gallery: [
+        "/assets/mallorca/image86.jpeg",
+        "/assets/mallorca/image87.jpeg",
+        "/assets/mallorca/image88.jpeg",
+        "/assets/mallorca/image86.jpeg",
+        "/assets/mallorca/image87.jpeg",
+        "/assets/mallorca/image88.jpeg",
+      ],
+      story: [
+        {
+          title: "Design Inspiration",
+          description: "The project began with exploring Mediterranean architectural elements and adapting them to Dubai's climate and context.",
+          image: "/assets/mallorca/image86.jpeg",
+        },
+        {
+          title: "Space Planning",
+          description: "The villa's layout was carefully planned to create a natural flow between spaces while maintaining privacy where needed.",
+          image: "/assets/mallorca/image87.jpeg",
+        },
+        {
+          title: "Material Selection",
+          description: "Materials were selected to reflect Mediterranean aesthetics while ensuring durability in Dubai's climate.",
+          image: "/assets/mallorca/image88.jpeg",
+        },
+        {
+          title: "Outdoor Living",
+          description: "The outdoor spaces were designed to create a resort-like atmosphere with various entertainment and relaxation areas.",
+          image: "/assets/mallorca/image86.jpeg",
+        },
+      ],
+    },
+    "black-pearl-villa": {
+      title: "BLACK PEARL VILLA",
+      category: "Residential Architecture",
+      client: "Private Client",
+      location: "Pearl Jumeirah Island, Jumeirah First, Dubai",
+      year: "2025",
+      size: "16,544 sqft",
+      services: ["Residential Architecture", "Interior Design", "Landscape Design"],
+      heroImage: "/images/projects/black-pearl-villa.jpg",
+      description: [
+        "BLACK PEARL VILLA is a luxurious B+G+1F+R residential villa that combines sophisticated design with waterfront living.",
+        "The project features a spacious 5BR layout designed to maximize views of the surrounding water while maintaining privacy.",
+        "The design emphasizes the connection between indoor and outdoor spaces, creating a seamless living experience with the water.",
+      ],
+      approach: [
+        "The architectural concept focuses on creating a harmonious relationship between the villa and its waterfront setting.",
+        "Special attention was paid to maximizing views and creating outdoor spaces that take advantage of the water frontage.",
+        "The design incorporates sustainable features and smart home technologies to enhance the living experience.",
+      ],
+      approachImage: "/images/projects/black-pearl-villa.jpg",
+      gallery: [
+        "/assets/black-pearl-villa/image80.jpeg",
+        "/assets/black-pearl-villa/image84.jpeg",
+        "/assets/black-pearl-villa/image85.jpeg",
+        "/assets/black-pearl-villa/image80.jpeg",
+        "/assets/black-pearl-villa/image84.jpeg",
+        "/assets/black-pearl-villa/image85.jpeg",
+      ],
+      story: [
+        {
+          title: "Site Analysis",
+          description: "The project began with careful analysis of the waterfront site to maximize views and create a strong connection with the water.",
+          image: "/assets/black-pearl-villa/image80.jpeg",
+        },
+        {
+          title: "Space Planning",
+          description: "The villa's layout was carefully planned to create a natural flow between spaces while maximizing water views.",
+          image: "/assets/black-pearl-villa/image84.jpeg",
+        },
+        {
+          title: "Material Selection",
+          description: "Materials were selected for their durability in a marine environment while maintaining a luxurious aesthetic.",
+          image: "/assets/black-pearl-villa/image85.jpeg",
+        },
+        {
+          title: "Waterfront Design",
+          description: "The waterfront spaces were designed to create various opportunities for water-based activities and relaxation.",
+          image: "/assets/black-pearl-villa/image80.jpeg",
+        },
+      ],
+    },
+    "white-ponderosa": {
+      title: "WHITE PONDEROSA",
+      category: "Residential Architecture",
+      client: "Private Client",
+      location: "The Villa Community, Dubailand, Dubai",
+      year: "2024",
+      size: "8,948 sqft",
+      services: ["Residential Architecture", "Interior Design", "Landscape Design"],
+      heroImage: "/images/projects/white-ponderosa.jpg",
+      description: [
+        "WHITE PONDEROSA is an elegant G+1F residential villa that combines contemporary design with comfortable family living.",
+        "The project features a spacious 6BR layout designed to accommodate extended family living while maintaining privacy and comfort.",
+        "The design emphasizes the connection between indoor and outdoor spaces, creating a seamless living experience.",
+      ],
+      approach: [
+        "The architectural concept focuses on creating a harmonious balance between private and shared spaces within the villa.",
+        "Special attention was paid to natural light and ventilation, ensuring comfortable living conditions throughout the year.",
+        "The design incorporates sustainable features and smart home technologies to enhance the living experience.",
+      ],
+      approachImage: "/images/projects/white-ponderosa.jpg",
+      gallery: [
+        "/assets/white-ponderosa/image79.jpeg",
+        "/assets/white-ponderosa/image82.jpeg",
+        "/assets/white-ponderosa/image83.jpeg",
+        "/assets/white-ponderosa/image79.jpeg",
+        "/assets/white-ponderosa/image82.jpeg",
+        "/assets/white-ponderosa/image83.jpeg",
+      ],
+      story: [
+        {
+          title: "Client Vision",
+          description: "The project began with understanding the client's vision for a family home that would accommodate their specific needs and lifestyle.",
+          image: "/assets/white-ponderosa/image79.jpeg",
+        },
+        {
+          title: "Space Planning",
+          description: "The villa's layout was carefully planned to create a natural flow between spaces while maintaining privacy where needed.",
+          image: "/assets/white-ponderosa/image82.jpeg",
+        },
+        {
+          title: "Material Selection",
+          description: "Materials were selected for their durability and aesthetic qualities, creating a timeless and sophisticated appearance.",
+          image: "/assets/white-ponderosa/image83.jpeg",
+        },
+        {
+          title: "Landscape Design",
+          description: "The outdoor spaces were designed to extend the living areas and create a seamless connection with nature.",
+          image: "/assets/white-ponderosa/image79.jpeg",
+        },
+      ],
+    },
+    "isha-island": {
+      title: "ISHA ISLAND",
+      category: "Residential Architecture",
+      client: "World Islands Development",
+      location: "World Islands, Dubai",
+      year: "2028",
+      size: "-",
+      services: ["Residential Architecture", "Master Planning", "Landscape Design"],
+      heroImage: "/images/projects/isha-island.jpg",
+      description: [
+        "ISHA ISLAND is an exclusive beach-front development featuring 30 luxury villas and a clubhouse on the World Islands.",
+        "The project offers a range of villa types from 3BR to 5BR, each designed to maximize views and connection with the water.",
+        "The design creates a unique island living experience that combines luxury with natural beauty.",
+      ],
+      approach: [
+        "The architectural concept emphasizes creating a harmonious relationship between the villas and their natural island setting.",
+        "Special attention was paid to maximizing views and creating outdoor spaces that take advantage of the beach frontage.",
+        "The design incorporates sustainable features and smart technologies to ensure long-term efficiency and comfort.",
+      ],
+      approachImage: "/images/projects/isha-island.jpg",
+      gallery: [
+        "/assets/isha-island/image74.jpeg",
+        "/assets/isha-island/image75.jpeg",
+        "/assets/isha-island/image76.jpeg",
+        "/assets/isha-island/image77.jpeg",
+        "/assets/isha-island/image74.jpeg",
+        "/assets/isha-island/image75.jpeg",
+      ],
+      story: [
+        {
+          title: "Island Planning",
+          description: "The project began with comprehensive planning of the island's development, considering environmental factors and creating a sustainable community.",
+          image: "/assets/isha-island/image74.jpeg",
+        },
+        {
+          title: "Villa Design",
+          description: "Each villa was carefully designed to maximize views and create a strong connection with the surrounding water and natural environment.",
+          image: "/assets/isha-island/image75.jpeg",
+        },
+        {
+          title: "Clubhouse Development",
+          description: "The clubhouse was designed to serve as a central gathering space for residents while offering various amenities and services.",
+          image: "/assets/isha-island/image76.jpeg",
+        },
+        {
+          title: "Landscape Integration",
+          description: "The landscape design creates a seamless connection between the built environment and the natural island setting.",
+          image: "/assets/isha-island/image77.jpeg",
         },
       ],
     },

@@ -82,7 +82,7 @@ export default function AboutPage() {
                 <h2 className="text-3xl md:text-5xl font-serif font-light tracking-tight text-white">Our Story</h2>
                 <div className="w-20 h-1 bg-lazone-orange mb-6"></div>
                 <p className="text-neutral-200 leading-relaxed">
-                  Founded in 2010, LAZONE began as a small interior design studio with a passion for creating spaces that
+                  Founded in 2023, LAZONE began as a small interior design studio with a passion for creating spaces that
                   inspire. Over the years, we've evolved into a comprehensive creative studio, expanding our services to
                   include architecture, lighting design, master planning, furnishings, and lifestyle experiences.
                 </p>
