@@ -4,8 +4,13 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { cn } from '@/lib/utils'
-import { ArrowRight } from 'lucide-react'
+import { 
+  ArrowRight, Box, Compass, Hexagon, Layers, Triangle, Circle, Square, 
+  Award, Home, Wind, Lightbulb, Sun, Star, Zap, Shield, Eye, Layout, 
+  PanelTop, Palette, Aperture, Sparkles, Construction
+} from 'lucide-react'
 import CountUp from '@/components/ui/count-up'
+import Image from 'next/image'
 
 type Counter = {
   value: number;
@@ -25,8 +30,9 @@ type ContentSection = {
   layout: 'left' | 'center' | 'right' | 'split';
   points?: string[];
   stats?: { value: string; label: string; description: string }[];
-  features?: { title: string; description: string }[];
+  features?: { title: string; description: string; icon?: any }[];
   counters?: Counter[];
+  decorativeElements?: { type: string; position: string; size: number; color: string; opacity: number }[];
 }
 
 const contentSections: ContentSection[] = [
@@ -38,13 +44,14 @@ const contentSections: ContentSection[] = [
     subtitle: "DESIGN PHILOSOPHY",
     description: "We craft extraordinary spaces that transcend conventional architecture. Each project is a masterpiece where innovation meets functionality, creating environments that inspire and transform.",
     features: [
-      { title: "Innovative Design Approach", description: "Pushing boundaries with cutting-edge architectural concepts and creative solutions" },
-      { title: "Sustainable Integration", description: "Harmoniously blending eco-conscious materials with modern design principles" },
-      { title: "Human-Centric Spaces", description: "Creating environments that enhance well-being and foster connection" }
+      { title: "Innovative Design Approach", description: "Pushing boundaries with cutting-edge architectural concepts and creative solutions", icon: Lightbulb },
+      { title: "Sustainable Integration", description: "Harmoniously blending eco-conscious materials with modern design principles", icon: Wind },
+      { title: "Human-Centric Spaces", description: "Creating environments that enhance well-being and foster connection", icon: Home }
     ],
     color: "bg-gradient-to-br from-gray-900 via-black to-gray-900",
     accentColor: "text-lazone-orange",
-    layout: "split"
+    layout: "split",
+    decorativeElements: []
   },
   {
     id: 2,
@@ -59,7 +66,8 @@ const contentSections: ContentSection[] = [
     ],
     color: "bg-gradient-to-br from-gray-900 via-black to-gray-900",
     accentColor: "text-lazone-orange",
-    layout: "center"
+    layout: "center",
+    decorativeElements: []
   },
   {
     id: 3,
@@ -69,31 +77,15 @@ const contentSections: ContentSection[] = [
     subtitle: "ENDURING BEAUTY",
     description: "We create spaces that stand the test of time, combining classic elegance with contemporary innovation to deliver lasting architectural impact.",
     features: [
-      { title: "Intelligent Space Planning", description: "Optimizing flow and functionality while maximizing aesthetic appeal" },
-      { title: "Premium Materials", description: "Selecting exceptional materials that enhance both beauty and durability" },
-      { title: "Natural Integration", description: "Seamlessly incorporating natural light and environmental elements" }
+      { title: "Intelligent Space Planning", description: "Optimizing flow and functionality while maximizing aesthetic appeal", icon: Layout },
+      { title: "Premium Materials", description: "Selecting exceptional materials that enhance both beauty and durability", icon: Shield },
+      { title: "Natural Integration", description: "Seamlessly incorporating natural light and environmental elements", icon: Sun }
     ],
     color: "bg-gradient-to-br from-black via-gray-900 to-black",
     accentColor: "text-lazone-orange",
-    layout: "split"
+    layout: "split",
+    decorativeElements: []
   },
-  
-  // {
-  //   id: 3,
-  //   title: "Distinctive",
-  //   titleSecondary: "Design",
-  //   titleAccent: "Aesthetics",
-  //   subtitle: "OUR LEGACY OF EXCELLENCE",
-  //   description: "With decades of experience, we've mastered the art of creating spaces that inspire, comfort, and endure. Our portfolio speaks of our commitment to architectural excellence.",
-  //   counters: [
-  //     { value: 250, label: "Completed Projects", suffix: "+" },
-  //     { value: 15, label: "Design Awards", suffix: "+" },
-  //     { value: 25, label: "Years of Excellence", suffix: "+" }
-  //   ],
-  //   color: "bg-gradient-to-br from-gray-900 via-black to-gray-900",
-  //   accentColor: "text-lazone-orange",
-  //   layout: "right"
-  // },
 ]
 
 export default function HorizontalScrollSection() {
@@ -145,10 +137,10 @@ export default function HorizontalScrollSection() {
           scrollTrigger: {
             trigger: triggerRef.current,
             start: "top top",
-            end: `+=${distanceToScroll}`,
+            end: `+=${distanceToScroll * 0.9}`,
             pin: true,
             anticipatePin: 1,
-            scrub: 1,
+            scrub: 0.1,
             pinSpacing: true,
             refreshPriority: 1,
             invalidateOnRefresh: true
@@ -158,7 +150,7 @@ export default function HorizontalScrollSection() {
         // The timeline animation that moves the content horizontally
         tl.to(horizontalRef.current, {
           x: -distanceToScroll,
-          ease: "none"
+          ease: "power1.out"
         })
 
         // Create animations for each section's content
@@ -175,9 +167,9 @@ export default function HorizontalScrollSection() {
               scrollTrigger: {
                 trigger: panel as HTMLElement,
                 containerAnimation: tl,
-                start: "left center",
-                end: "right center",
-                scrub: 0.5,
+                start: "left-=20% center",
+                end: "right-=70% center",
+                scrub: 0.1,
               }
             }
           )
@@ -189,13 +181,13 @@ export default function HorizontalScrollSection() {
               {
                 y: 0,
                 opacity: 1,
-                duration: 0.4,
+                duration: 0.2,
                 scrollTrigger: {
                   trigger: panel as HTMLElement,
                   containerAnimation: tl,
-                  start: "left center-=10%",
-                  end: "left center+=10%",
-                  scrub: 0.3,
+                  start: "left-=25% center",
+                  end: "left-=15% center",
+                  scrub: 0.1,
                 }
               }
             )
@@ -209,13 +201,13 @@ export default function HorizontalScrollSection() {
                 y: 0,
                 opacity: 1,
                 scale: 1,
-                duration: 0.8,
+                duration: 0.4,
                 scrollTrigger: {
                   trigger: panel as HTMLElement,
                   containerAnimation: tl,
-                  start: "left center-=15%",
-                  end: "left center+=10%",
-                  scrub: 0.4,
+                  start: "left-=25% center",
+                  end: "left-=10% center",
+                  scrub: 0.1,
                 }
               }
             )
@@ -228,13 +220,13 @@ export default function HorizontalScrollSection() {
               {
                 x: 0,
                 opacity: 1,
-                duration: 0.6,
+                duration: 0.3,
                 scrollTrigger: {
                   trigger: panel as HTMLElement,
                   containerAnimation: tl,
-                  start: "left center-=10%",
-                  end: "left center+=15%",
-                  scrub: 0.4,
+                  start: "left-=20% center",
+                  end: "left-=5% center",
+                  scrub: 0.1,
                 }
               }
             )
@@ -247,13 +239,13 @@ export default function HorizontalScrollSection() {
               {
                 x: 0,
                 opacity: 1,
-                duration: 0.7,
+                duration: 0.3,
                 scrollTrigger: {
                   trigger: panel as HTMLElement,
                   containerAnimation: tl,
-                  start: "left center-=5%",
-                  end: "left center+=20%",
-                  scrub: 0.4,
+                  start: "left-=15% center",
+                  end: "left center",
+                  scrub: 0.1,
                 }
               }
             )
@@ -266,13 +258,13 @@ export default function HorizontalScrollSection() {
               {
                 y: 0,
                 opacity: 1,
-                duration: 0.6,
+                duration: 0.3,
                 scrollTrigger: {
                   trigger: panel as HTMLElement,
                   containerAnimation: tl,
-                  start: "left center",
-                  end: "left center+=20%",
-                  scrub: 0.5,
+                  start: "left-=10% center",
+                  end: "left+=5% center",
+                  scrub: 0.1,
                 }
               }
             )
@@ -288,14 +280,14 @@ export default function HorizontalScrollSection() {
                   {
                     y: 0,
                     opacity: 1,
-                    duration: 0.4,
-                    delay: j * 0.1,
+                    duration: 0.2,
+                    delay: j * 0.05,
                     scrollTrigger: {
                       trigger: panel as HTMLElement,
                       containerAnimation: tl,
-                      start: "left center+=5%",
-                      end: "left center+=35%",
-                      scrub: 0.3,
+                      start: "left-=5% center",
+                      end: "left+=10% center",
+                      scrub: 0.1,
                     }
                   }
                 )
@@ -325,35 +317,13 @@ export default function HorizontalScrollSection() {
               })
             }
           }
-
-          // Animate decorative elements
-          const decorativeElements = (panel as HTMLElement).querySelectorAll('.decorative-element')
-          decorativeElements.forEach((element, j) => {
-            gsap.fromTo(element,
-              { scale: 0.8, opacity: 0, rotate: -45 },
-              {
-                scale: 1,
-                opacity: 0.7,
-                rotate: 0,
-                duration: 0.8,
-                delay: j * 0.2,
-                scrollTrigger: {
-                  trigger: panel as HTMLElement,
-                  containerAnimation: tl,
-                  start: "left center",
-                  end: "left center+=30%",
-                  scrub: 0.5,
-                }
-              }
-            )
-          })
         })
       }
 
       // Wait a moment for proper initialization
       const timer = setTimeout(() => {
         initScrollTrigger()
-      }, 200)
+      }, 100)
 
       // Clean up
       return () => {
@@ -498,15 +468,20 @@ export default function HorizontalScrollSection() {
       
       case "center":
         return (
-          <div className="content-wrapper h-full w-full flex flex-col items-center justify-center px-6 transition-all duration-300 hover:scale-[1.02]">
+          <div className="content-wrapper relative h-full w-full flex flex-col items-center justify-center px-6 transition-all duration-300 hover:scale-[1.02]">
             <h3
               ref={el => setSubtitleRef(el, index)}
-              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange text-center font-sans"
+              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange text-center font-sans flex items-center"
             >
+              <Compass className="mr-2 h-4 w-4 text-lazone-orange" />
               {section.subtitle}
+              <Compass className="ml-2 h-4 w-4 text-lazone-orange" />
             </h3>
             
-            <div className="title-group mb-8 sm:mb-10 lg:mb-12 text-center">
+            <div className="title-group mb-8 sm:mb-10 lg:mb-12 text-center relative">
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                <Award className="h-16 w-16 text-lazone-orange/20" />
+              </div>
               <h2
                 ref={el => setTitleRef(el, index)}
                 className="text-6xl sm:text-7xl lg:text-8xl font-serif font-bold leading-none text-white"
@@ -521,9 +496,15 @@ export default function HorizontalScrollSection() {
               </h2>
               <h2
                 ref={el => setAccentTitleRef(el, index)}
-                className={`text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                className={`text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor} flex items-center justify-center`}
               >
+                <span className="mr-4 inline-block">
+                  <Star className="h-6 w-6 inline-block text-lazone-orange" />
+                </span>
                 {section.titleAccent}
+                <span className="ml-4 inline-block">
+                  <Star className="h-6 w-6 inline-block text-lazone-orange" />
+                </span>
               </h2>
             </div>
             
@@ -536,8 +517,11 @@ export default function HorizontalScrollSection() {
             
             <div ref={el => setContentRef(el, index)} className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
               {section.stats?.map((stat, i) => (
-                <div key={i} className="animate-item bg-black/30 p-8 rounded-xl backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300 text-center">
-                  <div className="text-5xl font-serif font-bold text-lazone-orange mb-3">{stat.value}</div>
+                <div key={i} className="animate-item bg-black/40 p-8 rounded-xl backdrop-blur-sm border border-white/5 hover:border-lazone-orange/20 transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:shadow-lazone-orange/10 transform hover:-translate-y-1 group relative overflow-hidden">
+                  <div className="absolute top-0 right-0 opacity-10 group-hover:opacity-20 transition-opacity">
+                    {i === 0 ? <Award className="h-32 w-32 text-lazone-orange" /> : <Zap className="h-32 w-32 text-lazone-orange" />}
+                  </div>
+                  <div className="text-5xl font-serif font-bold text-lazone-orange mb-3 group-hover:scale-110 transition-transform">{stat.value}</div>
                   <h4 className="text-xl font-serif font-medium text-white mb-2">{stat.label}</h4>
                   <p className="text-white/70 text-sm font-sans">{stat.description}</p>
                 </div>
@@ -601,12 +585,14 @@ export default function HorizontalScrollSection() {
       
       case "split":
         return (
-          <div className="content-wrapper h-full w-full grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 p-6 sm:p-10 transition-all duration-300 hover:scale-[1.02]">
-            <div className="flex flex-col justify-center md:pr-8 mb-8 md:mb-0">
+          <div className="content-wrapper relative h-full w-full grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 p-6 sm:p-10 transition-all duration-300 hover:scale-[1.02]">
+            <div className="flex flex-col justify-center md:pr-8 mb-8 md:mb-0 relative z-10">
               <h3
                 ref={el => setSubtitleRef(el, index)}
-                className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange font-sans"
+                className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange font-sans flex items-center"
               >
+                {section.id === 1 && <Lightbulb className="mr-2 h-4 w-4 text-lazone-orange" />}
+                {section.id === 3 && <Award className="mr-2 h-4 w-4 text-lazone-orange" />}
                 {section.subtitle}
               </h3>
               
@@ -625,9 +611,12 @@ export default function HorizontalScrollSection() {
                 </h2>
                 <h2
                   ref={el => setAccentTitleRef(el, index)}
-                  className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                  className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor} flex items-center`}
                 >
                   {section.titleAccent}
+                  <span className="ml-4 inline-block">
+                    <Star className="h-8 w-8 inline-block text-lazone-orange animate-pulse" />
+                  </span>
                 </h2>
               </div>
               
@@ -637,22 +626,43 @@ export default function HorizontalScrollSection() {
               >
                 {section.description}
               </p>
-            </div>
 
-            <div ref={el => setContentRef(el, index)} className="flex flex-col justify-center mt-2 sm:mt-0">
-              <div className="space-y-6 sm:space-y-8 lg:space-y-10">
-                {section.features?.map((feature, i) => (
-                  <div key={i} className="animate-item bg-black/30 p-8 sm:p-10 rounded-xl backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/5">
-                    <h4 className={`text-2xl sm:text-3xl font-serif font-bold mb-3 sm:mb-4 ${section.accentColor}`}>{feature.title}</h4>
-                    <p className="text-lg sm:text-xl text-white/80 font-sans font-light leading-relaxed">
-                      {feature.description.length > 100 ? `${feature.description.substring(0, 100)}...` : feature.description}
-                    </p>
-                  </div>
-                ))}
+              <div className="mt-8 flex items-center">
+                <div className="bg-black/30 p-3 rounded-full backdrop-blur-sm border border-white/10 shadow-lg">
+                  <Image 
+                    src="/images/logo-light.png" 
+                    alt="LaZone Logo" 
+                    width={60} 
+                    height={60} 
+                    className="animate-item opacity-90 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="ml-4 px-4 py-2 bg-gradient-to-r from-black/50 to-transparent rounded-full border border-white/5">
+                  <span className="text-white/70 font-serif text-sm">Design Excellence</span>
+                </div>
               </div>
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none"></div>
+            <div ref={el => setContentRef(el, index)} className="flex flex-col justify-center mt-2 sm:mt-0 relative z-10">
+              <div className="space-y-6 sm:space-y-8 lg:space-y-10">
+                {section.features?.map((feature, i) => {
+                  const IconComponent = feature.icon || Square;
+                  return (
+                    <div key={i} className="animate-item bg-black/40 p-8 sm:p-10 rounded-xl backdrop-blur-sm border border-white/5 hover:border-lazone-orange/20 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/10 transform hover:-translate-y-1 flex items-start group">
+                      <div className={`mr-5 p-4 rounded-lg bg-black/60 ${section.accentColor}/20 group-hover:${section.accentColor}/30 transition-all duration-300 transform group-hover:scale-110`}>
+                        <IconComponent className={`h-8 w-8 ${section.accentColor}`} />
+                      </div>
+                      <div>
+                        <h4 className={`text-2xl sm:text-3xl font-serif font-bold mb-3 sm:mb-4 ${section.accentColor}`}>{feature.title}</h4>
+                        <p className="text-lg sm:text-xl text-white/80 font-sans font-light leading-relaxed">
+                          {feature.description.length > 100 ? `${feature.description.substring(0, 100)}...` : feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         );
     }
@@ -708,3 +718,8 @@ export default function HorizontalScrollSection() {
     </section>
   )
 }
+
+// Simple placeholder function for renderDecorativeElements
+const renderDecorativeElements = (elements?: ContentSection['decorativeElements']) => {
+  return null; // Return null to avoid rendering any decorative elements
+};

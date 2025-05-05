@@ -6,11 +6,11 @@ import { Search, Lightbulb, PenTool, CheckSquare } from "lucide-react"
 export default function ServicesPage() {
   const services = [
     {
-      id: "interior-design",
-      title: "Interior Design",
+      id: "master-planning",
+      title: "Master Planning",
       description:
-        "Creating harmonious interior spaces that balance aesthetics, functionality, and personal expression.",
-      image: "/images/interior.jpg",
+        "Developing comprehensive spatial strategies that optimize land use, connectivity, and community engagement for large-scale projects.",
+      image: "/images/master-planning.png",
     },
     {
       id: "architecture",
@@ -20,18 +20,18 @@ export default function ServicesPage() {
       image: "/images/architecture.png",
     },
     {
+      id: "interior-design",
+      title: "Interior Design",
+      description:
+        "Creating harmonious interior spaces that balance aesthetics, functionality, and personal expression.",
+      image: "/images/interior.jpg",
+    },
+    {
       id: "lighting-design",
       title: "Lighting Design",
       description:
         "Enhancing spaces through thoughtful lighting solutions that create atmosphere, highlight architectural features, and improve functionality.",
       image: "/images/lobby.png",
-    },
-    {
-      id: "master-planning",
-      title: "Master Planning",
-      description:
-        "Developing comprehensive spatial strategies that optimize land use, connectivity, and community engagement for large-scale projects.",
-      image: "/images/master-planning.png",
     },
     {
       id: "furnishings-product",
@@ -83,7 +83,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 md:py-24 bg-neutral-900 text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-neutral-900 to-black text-white">
         <div className="container mx-auto px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center mb-16">

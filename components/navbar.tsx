@@ -92,7 +92,8 @@ export default function Navbar() {
             <div key={link.name} className="relative group">
               {link.dropdown ? (
                 <>
-                  <button
+                  <Link
+                    href={link.href}
                     className={`flex mt-2 items-center text-sm uppercase tracking-wider font-light transition-colors ${
                       isScrolled || hasLightBackground
                         ? "text-foreground hover:text-lazone-vibrantOrange"
@@ -107,7 +108,7 @@ export default function Navbar() {
                   >
                     {link.name}
                     <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
-                  </button>
+                  </Link>
                   <div className="h-2"
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}>
@@ -120,6 +121,7 @@ export default function Navbar() {
                       "absolute left-0 w-56 origin-top-left bg-background/95 backdrop-blur-md shadow-lg ring-1 ring-border focus:outline-none rounded-md overflow-hidden transition-all duration-200 ease-in-out",
                       servicesOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none",
                     )}
+                    style={{ zIndex: 60 }}
                   >
                     <div className="py-1">
                       {link.dropdown.map((item) => (

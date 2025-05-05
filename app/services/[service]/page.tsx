@@ -220,7 +220,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-neutral-900 text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-neutral-900 to-black text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">

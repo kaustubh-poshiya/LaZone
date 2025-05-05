@@ -35,22 +35,10 @@ export default function AboutPage() {
       bio: "With over 20 years of experience in the real estate and design industry, Yogesh has established himself as a visionary leader with a passion for excellence. His strategic direction has been instrumental in LAZONE's growth and success.",
     },
     {
-      name: "KAIVAL DOSHI",
-      role: "CEO",
-      image: "/images/team/ceo.png",
-      bio: "Kaival brings over 15 years of executive leadership to LAZONE. His expertise in business development and client relations has helped transform LAZONE into a premier design studio known for its innovative approach and client-centered philosophy.",
-    },
-    {
       name: "MITAL DOSHI",
       role: "DESIGN DIRECTOR",
       image: "/images/team/design-director.png",
       bio: "Mital's creative vision and technical expertise have been driving forces behind LAZONE's most acclaimed projects. Her approach combines bold creativity with meticulous attention to detail, resulting in spaces that are both functional and visually stunning.",
-    },
-    {
-      name: "TULASI SUSHRA DOSHI",
-      role: "MARKETING DIRECTOR",
-      image: "/images/team/marketing-director.png",
-      bio: "Tulasi's innovative marketing strategies have significantly enhanced LAZONE's brand presence in the industry. Her deep understanding of design trends and client needs allows her to effectively communicate the studio's unique value proposition.",
     },
     {
       name: "BAIJU MEHTA",

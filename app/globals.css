@@ -317,9 +317,8 @@
 
 /* Custom Cursor Styles */
 .custom-cursor {
-  @apply fixed pointer-events-none z-50 hidden md:block;
+  @apply fixed pointer-events-none z-[100] hidden md:block;
   will-change: transform;
-  mix-blend-mode: difference;
 }
 
 .cursor-dot {
@@ -328,9 +327,21 @@
   background-color: white;
 }
 
+.cursor-logo {
+  @apply flex items-center justify-center;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-logo img {
+  height: 24px;
+  width: auto;
+  max-width: 20px;
+}
+
 .cursor-circle {
-  @apply w-8 h-8 border rounded-full;
+  @apply border rounded-full;
   transform: translate(-50%, -50%);
   border-color: white;
+  border-width: 1px;
 }
 
