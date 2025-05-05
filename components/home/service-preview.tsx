@@ -6,11 +6,11 @@ import ScrollReveal from "@/components/scroll-reveal"
 export default function ServicePreview() {
   const services = [
     {
-      title: "Interior Design",
+      title: "Master Planning",
       description:
-        "Creating harmonious interior spaces that balance aesthetics, functionality, and personal expression.",
-      image: "/images/interior.jpg",
-      link: "/services/interior-design",
+        "Creating comprehensive spatial frameworks that guide development, optimize land use, and establish sustainable, functional environments.",
+      image: "/images/master-planning.png",
+      link: "/services/master-planning",
     },
     {
       title: "Architecture",
@@ -20,11 +20,11 @@ export default function ServicePreview() {
       link: "/services/architecture",
     },
     {
-      title: "Lighting Design",
+      title: "Interior Design",
       description:
-        "Enhancing spaces through thoughtful lighting solutions that create atmosphere, highlight architectural features, and improve functionality.",
-      image: "/images/lobby.png",
-      link: "/services/lighting-design",
+        "Creating harmonious interior spaces that balance aesthetics, functionality, and personal expression.",
+      image: "/images/interior.jpg",
+      link: "/services/interior-design",
     },
   ]
 

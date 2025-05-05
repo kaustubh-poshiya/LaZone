@@ -36,10 +36,10 @@ export default function StudioPhilosophy() {
           <ScrollReveal animation="fade-left">
             <div className="relative h-[500px] md:h-[600px] rounded-lg overflow-hidden">
               <Image
-                src="/images/master-planning.png" 
+                src="/assets/the-serene/01.jpg" 
                 alt="LAZONE Design Team at Work"
                 fill
-                className="object-cover"
+                className="object-fit"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-lazone-black/30 to-transparent"></div>
             </div>
