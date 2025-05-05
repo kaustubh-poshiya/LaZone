@@ -15,7 +15,7 @@ type Project = {
 export default function PortfolioPage() {
   const projects: Project[] = [
     {
-      id: "Serene",
+      id: "serene",
       year: "2023",
       featured: true,
       title: "Serene Residential Building",
@@ -24,7 +24,7 @@ export default function PortfolioPage() {
       image: "/images/projects/serene.png",
     },
     {
-      id: "THE-WINGS",
+      id: "the-wings",
       year: "2022",
       featured: true,
       title: "THE WINGS",
@@ -33,7 +33,7 @@ export default function PortfolioPage() {
       image: "/images/projects/wings.png",
     },
     {
-      id: "THE-HARMONY",
+      id: "the-harmony",
       title: "THE HARMONY",
       location: "Dubai South, DWC, Dubai",
       image: "/images/projects/harmony.png",
@@ -42,7 +42,7 @@ export default function PortfolioPage() {
       featured: false,
     },
     {
-      id: "MAJAN-TWIN",
+      id: "majan-twin",
       title: "MAJAN TWIN",
       category: "Lifestyle & Wellbeing",
       location: "Majan, Wadi AlSafa, Dubai ",
@@ -51,7 +51,7 @@ export default function PortfolioPage() {
       featured: false,
     },
     {
-      id: "SQUARE-I",
+      id: "square-I",
       title: "SQUARE I",
       category: "Residential Architecture",
       location: "Business Bay, Dubai",
@@ -60,7 +60,7 @@ export default function PortfolioPage() {
       featured: true,
     },
     {
-      id: "SQUARE-II",
+      id: "square-II",
       title: "SQUARE II",
       category: "Interior Design",
       location: "Business Bay, Dubai",
@@ -69,7 +69,7 @@ export default function PortfolioPage() {
       featured: true,
     },
     {
-      id: "CB10-VILLA",
+      id: "cb10-villa",
       title: "CB10 Luxury Villa",
       category: "Lighting Design",
       location: "Palm Jumeirah, Dubai",
@@ -78,7 +78,7 @@ export default function PortfolioPage() {
       featured: true,
     },
     {
-      id: "ERMAX-RESIDENCE",
+      id: "ermax-residence",
       title: "ERMAX Modern Residence",
       category: "Master Planning",
       location: "Downtown Dubai",
@@ -87,7 +87,7 @@ export default function PortfolioPage() {
       featured: true,
     },
     {
-      id: "TERVA-HOMES",
+      id: "terva-homes",
       title: "Terva Contemporary Living",
       category: "Furnishings Product",
       location: "Dubai Hills Estate, Dubai",
@@ -96,7 +96,7 @@ export default function PortfolioPage() {
       featured: false,
     },
     {
-      id: "SQUARE-III",
+      id: "square-III",
       title: "THE SQUARE III",
       category: "Architecture",
       location: "D.I.C, Saih Shuaib, Dubai",
@@ -105,7 +105,7 @@ export default function PortfolioPage() {
       featured: true,
     },
     {
-      id: "MAJAN-PLAZA",
+      id: "majan-plaza",
       title: "MAJAN PLAZA",
       category: "Architecture",
       location: "Majan, Wadi AlSafa, Dubai",
@@ -114,7 +114,7 @@ export default function PortfolioPage() {
       featured: true,
     },
     {
-      id: "ARJAN-DIAMOND",
+      id: "arjan-diamond",
       title: "ARJAN DIAMOND",
       category: "Architecture",
       location: "Arjan, AlBarsha South, Dubai",
@@ -123,7 +123,7 @@ export default function PortfolioPage() {
       featured: false,
     },
     {
-      id: "LIVING-HEAVEN",
+      id: "living-heaven",
       title: "LIVING HEAVEN",
       category: "Architecture",
       location: "Wadi Al Safa, Dubai",
@@ -132,7 +132,7 @@ export default function PortfolioPage() {
       featured: true,
     },
     {
-      id: "YD-VILLA",
+      id: "yd-villa",
       title: "YD VILLA",
       category: "Architecture",
       location: "The Villa Community, Dubailand, Dubai",
@@ -141,7 +141,7 @@ export default function PortfolioPage() {
       featured: false,
     },
     {
-      id: "MALLORCA",
+      id: "mallorca",
       title: "MALLORCA",
       category: "Architecture",
       location: "The Villa Community, Dubailand, Dubai",
@@ -150,7 +150,7 @@ export default function PortfolioPage() {
       featured: false,
     },
     {
-      id: "BLACK-PEARL-VILLA",
+      id: "black-pearl-villa",
       title: "BLACK PEARL VILLA",
       category: "Architecture",
       location: "Pearl Jumeirah Island, Jumeirah First, Dubai",
@@ -159,7 +159,7 @@ export default function PortfolioPage() {
       featured: true,
     },
     {
-      id: "WHITE-PONDEROSA",
+      id: "white-ponderosa",
       title: "WHITE PONDEROSA",
       category: "Architecture",
       location: "The Villa Community, Dubailand, Dubai",
@@ -168,7 +168,7 @@ export default function PortfolioPage() {
       featured: false,
     },
     {
-      id: "ISHA-ISLAND",
+      id: "isha-island",
       title: "ISHA ISLAND",
       category: "Architecture",
       location: "World Islands, Dubai",

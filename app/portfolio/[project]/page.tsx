@@ -166,7 +166,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
 function getProjectData(projectSlug: string) {
   const projects = {
-    "Serene": {
+    "serene": {
       title: "Serene Residential Building",
       category: "Interior Design",
       client: "Private Client",
@@ -236,7 +236,7 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
-    "THE-WINGS": {
+    "the-wings": {
       title: "THE WINGS",
       category: "Architecture",
       client: "Dubai Properties",
@@ -298,7 +298,7 @@ function getProjectData(projectSlug: string) {
       ],
       virtualTour: [],
     },
-    "THE-HARMONY": {
+    "the-harmony": {
       title: "THE HARMONY",
       category: "Interior Design",
       client: "Dubai South Developments",
@@ -368,7 +368,7 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
-    "SQUARE-I": {
+    "square-I": {
       title: "SQUARE I",
       category: "Residential Architecture",
       client: "Business Bay Development",
@@ -438,7 +438,7 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
-    "SQUARE-II": {
+    "square-II": {
       title: "SQUARE II",
       category: "Interior Design",
       client: "Business Bay Properties",
@@ -509,7 +509,7 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
-    "MAJAN-TWIN": {
+    "majan-twin": {
       title: "MAJAN TWIN",
       category: "Lifestyle & Wellbeing",
       client: "Wadi AlSafa Development",
@@ -579,7 +579,7 @@ function getProjectData(projectSlug: string) {
       },
       virtualTour: [],
     },
-    "CB10-VILLA": {
+    "cb10-villa": {
       title: "CB10 Luxury Villa",
       category: "Interior Design",
       client: "Private Client",
@@ -630,7 +630,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "ERMAX-RESIDENCE": {
+    "ermax-residence": {
       title: "ERMAX Modern Residence",
       category: "Architecture",
       client: "ERMAX Development",
@@ -681,7 +681,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "TERVA-HOMES": {
+    "terva-homes": {
       title: "Terva Contemporary Living",
       category: "Residential Architecture",
       client: "Terva Development Group",
@@ -732,7 +732,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "SQUARE-III": {
+    "square-III": {
       title: "THE SQUARE III",
       category: "Residential Architecture",
       client: "D.I.C Development",
@@ -783,7 +783,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "MAJAN-PLAZA": {
+    "majan-plaza": {
       title: "MAJAN PLAZA",
       category: "Mixed-Use Architecture",
       client: "Majan Development",
@@ -834,7 +834,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "ARJAN-DIAMOND": {
+    "arjan-diamond": {
       title: "ARJAN DIAMOND",
       category: "Commercial Architecture",
       client: "Arjan Development",
@@ -885,7 +885,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "LIVING-HEAVEN": {
+    "living-heaven": {
       title: "LIVING HEAVEN",
       category: "Residential Architecture",
       client: "Wadi Al Safa Development",
@@ -936,7 +936,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "YD-VILLA": {
+    "yd-villa": {
       title: "YD VILLA",
       category: "Residential Architecture",
       client: "Private Client",
@@ -987,7 +987,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "MALLORCA": {
+    "mallorca": {
       title: "MALLORCA",
       category: "Residential Architecture",
       client: "Private Client",
@@ -1038,7 +1038,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "BLACK-PEARL-VILLA": {
+    "black-pearl-villa": {
       title: "BLACK PEARL VILLA",
       category: "Residential Architecture",
       client: "Private Client",
@@ -1089,7 +1089,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "WHITE-PONDEROSA": {
+    "white-ponderosa": {
       title: "WHITE PONDEROSA",
       category: "Residential Architecture",
       client: "Private Client",
@@ -1140,7 +1140,7 @@ function getProjectData(projectSlug: string) {
         },
       ],
     },
-    "ISHA-ISLAND": {
+    "isha-island": {
       title: "ISHA ISLAND",
       category: "Residential Architecture",
       client: "World Islands Development",
