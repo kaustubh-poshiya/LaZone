@@ -150,7 +150,7 @@ export default function Footer() {
               <address className="not-italic text-white/70 text-sm space-y-2">
                 <div className="flex gap-1 items-center">
                   <MapPin className="h-5 w-5 text-neutral-400 mt-0.5" />
-                  <p> P.O Box: 62137, Dubai, UAE</p>
+                  <p>P.O Box: 62137, Dubai, UAE </p>
                 </div>
                 <div className="flex gap-1 items-center">
                   <Phone className="h-5 w-5 text-neutral-400 mt-0.5" />

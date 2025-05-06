@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button"
 type Project = {
   id: string
   title: string
-  category?: string
   location: string
   image: string
 }
@@ -25,38 +24,39 @@ export default function FeaturedProjects() {
     {
       id: "Serene",
       title: "Serene Residential Building",
-      // category: "Interior Design",
       location: "Dubai South, DWC, Dubai",
       image: "/images/projects/serene.png",
     },
     // {
-    //   id: "SQUARE-II",
-    //   title: "SQUARE II",
-    //   // category: "Interior Design",
-    //   location: "Business Bay, Dubai",
-    //   image: "/images/projects/square-II.png",
+    //   id: "THE-WINGS",
+    //   title: "THE WINGS",
+    //   location: "Arjan, AlBarsha South, Dubai",
+    //   image: "/images/projects/wings.png",
     // },
-    {
-      id: "THE-WINGS",
-      title: "THE WINGS",
-      // category: "Architecture",
-      location: "Arjan, AlBarsha South, Dubai",
-      image: "/images/projects/wings.png",
-    },
     {
       id: "THE-HARMONY",
       title: "THE HARMONY",
-      // category: "Master Planning",
       location: "Dubai South, DWC, Dubai",
       image: "/images/projects/harmony.png",
     },
     {
       id: "MAJAN-TWIN",
       title: "MAJAN TWIN",
-      // category: "Lifestyle & Wellbeing",
       location: "Majan, Wadi AlSafa, Dubai ",
       image: "/images/projects/twin.png",
     },
+    {
+      id:"isha-island",
+      title: "ISHA ISLAND",
+      location: "World Islands, Dubai",
+      image: "/images/projects/isha-island.jpg",
+    },
+    {
+      id:"white-ponderosa",
+      title: "WHITE PONDEROSA",
+      location: "The Villa Community, Dubailand, Dubai",
+      image: "/images/projects/white-ponderosa.jpg",
+    }
   ]
 
   const nextSlide = () => {

@@ -179,7 +179,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="space-y-6 pt-4" ref={contactInfoRef}>
+              <div className="space-y-6 px-6 pt-4" ref={contactInfoRef}>
                 <div className="flex items-start space-x-4 contact-item hover:transform hover:translate-x-1 transition-transform duration-300">
                   <div className="p-3 rounded-full bg-lazone-vibrantOrange/10">
                     <MapPin className="h-5 w-5 text-lazone-vibrantOrange" />
@@ -187,7 +187,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-1">LOCATION</h4>
                     <p className="text-neutral-700 dark:text-neutral-300">
-                      P.O Box: 62137, Dubai, UAE
+                      609- Apricot Tower, Silicon Oasis, Dubai, UAE
                     </p>
                   </div>
                 </div>
@@ -427,19 +427,21 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="h-[500px] relative" ref={mapRef}>
-        <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-background to-transparent z-10"></div>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789012!2d55.123456789012!3d25.123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f123456789abc%3A0x1234567890abcdef!2sP.O%20Box%3A%2062137%2C%20Dubai%2C%20UAE!5e0!3m2!1sen!2sus!4v1710856542996!5m2!1sen!2sus"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="LAZONE Studio Location"
-          className="absolute inset-0"
-        ></iframe>
+      <section className="h-[500px] md:h-[500px] relative overflow-hidden" ref={mapRef}>
+        {/* <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-background to-transparent z-10"></div> */}
+        <div className="w-full h-full relative">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.5975277975227!2d55.38439981744385!3d25.111916599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f65006987c229%3A0x7e1778034f8401c2!2sLa%20Zone%20Design%20Studio!5e0!3m2!1sen!2sae!4v1710856542996!5m2!1sen!2sae"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="LAZONE Studio Location"
+            className="absolute inset-0 w-full h-full"
+          ></iframe>
+        </div>
       </section>
     </>
   )

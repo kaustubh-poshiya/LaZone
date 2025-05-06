@@ -266,31 +266,6 @@ export default function TestimonialSection() {
                 {testimonials[4].text}
               </p>
             </motion.div>
-
-            {/* Wide testimonial - bottom */}
-            <motion.div
-              variants={itemVariants}
-              className="col-span-12 bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-md flex flex-col md:flex-row items-start gap-4"
-            >
-              <div className="flex items-start gap-3 mb-3 md:mb-0 md:w-1/4 lg:w-1/5">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
-                  <span className="text-xl font-medium text-neutral-600 dark:text-neutral-300">{testimonials[5].name.charAt(0)}</span>
-                </div>
-                <div>
-                  <h4 className="font-medium text-neutral-900 dark:text-white">{testimonials[5].name}</h4>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                    {testimonials[5].position}, <span className="text-lazone-orange">{testimonials[5].company}</span>
-                  </p>
-                  <div className="flex mt-1">{renderStars(testimonials[5].rating)}</div>
-                </div>
-              </div>
-              <div className="md:w-3/4 lg:w-4/5">
-                <Quote className="w-8 h-8 text-lazone-orange/20 mb-2 hidden md:block" />
-                <p className="text-neutral-700 dark:text-neutral-300">
-                  {testimonials[5].text}
-                </p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

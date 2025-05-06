@@ -308,40 +308,46 @@
   }
 }
 
-/* Hide default cursor (only on desktop) */
+/* Custom Cursor Styles */
+.custom-cursor {
+  display: none !important;
+  pointer-events: none;
+}
+
+/* Only show custom cursor on desktop */
 @media (min-width: 768px) {
   * {
     cursor: none !important;
   }
-}
+  
+  .custom-cursor {
+    display: block !important;
+    position: fixed;
+    z-index: 100;
+  }
 
-/* Custom Cursor Styles */
-.custom-cursor {
-  @apply fixed pointer-events-none z-[100] hidden md:block;
-  will-change: transform;
-}
+  .cursor-dot {
+    @apply w-1.5 h-1.5 rounded-full;
+    transform: translate(-50%, -50%);
+    background-color: white;
+  }
 
-.cursor-dot {
-  @apply w-1.5 h-1.5 rounded-full;
-  transform: translate(-50%, -50%);
-  background-color: white;
-}
+  .cursor-logo {
+    @apply flex items-center justify-center;
+    transform: translate(-50%, -50%);
+  }
 
-.cursor-logo {
-  @apply flex items-center justify-center;
-  transform: translate(-50%, -50%);
-}
+  .cursor-logo img {
+    height: 24px;
+    width: auto;
+    max-width: 20px;
+  }
 
-.cursor-logo img {
-  height: 24px;
-  width: auto;
-  max-width: 20px;
-}
-
-.cursor-circle {
-  @apply border rounded-full;
-  transform: translate(-50%, -50%);
-  border-color: white;
-  border-width: 1px;
+  .cursor-circle {
+    @apply border rounded-full;
+    transform: translate(-50%, -50%);
+    border-color: white;
+    border-width: 1px;
+  }
 }
 
