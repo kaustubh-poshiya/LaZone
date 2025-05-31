@@ -158,7 +158,7 @@ export default function TestimonialSection() {
             {/* Featured testimonial - large */}
             <motion.div
               variants={itemVariants}
-              className="col-span-12 md:col-span-6 bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-md border-t-4 border-lazone-orange"
+              className="col-span-12 md:col-span-6 bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-md border-t-2 border-lazone-orange"
             >
               <Quote className="w-10 h-10 text-lazone-orange/20 mb-2" />
               <p className="text-neutral-700 dark:text-neutral-300 text-lg mb-5 leading-relaxed">
@@ -182,7 +182,7 @@ export default function TestimonialSection() {
             {/* Featured testimonial - medium */}
             <motion.div
               variants={itemVariants}
-              className="col-span-12 md:col-span-6 bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-md border-t-4 border-lazone-orange"
+              className="col-span-12 md:col-span-6 bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-md border-t-2 border-lazone-orange"
             >
               <Quote className="w-10 h-10 text-lazone-orange/20 mb-2" />
               <p className="text-neutral-700 dark:text-neutral-300 text-lg mb-5 leading-relaxed">
