@@ -70,13 +70,13 @@ export default function HeroSection() {
       <div className="relative top-[10vh] sm:top-[15vh] md:top-[17vh] lg:right-[32vw] md:right-[25vw] z-20 text-white px-4 max-w-4xl mx-auto md:mx-0">
         <h1
           ref={titleRef}
-          className="text-center md:text-start max-w-xs text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-4 opacity-0 transition-opacity duration-1000"
+          className="text-center md:text-start max-w-xs text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight mb-4 opacity-0 transition-opacity duration-1000"
         >
           Curating Spaces, Shaping Standards.
         </h1>
         <p
           ref={subtitleRef}
-          className="text-center md:text-start max-w-xs text-2xl md:text-3xl lg:text-4xl font-serif font-medium mb-2 opacity-0 transition-opacity duration-1000"
+          className="text-center md:text-start max-w-xs text-1.5xl md:text-2xl lg:text-3xl font-light mb-2 opacity-0 transition-opacity duration-1000"
         >
           All in one zone.
         </p>

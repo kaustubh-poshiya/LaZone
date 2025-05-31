@@ -5,9 +5,9 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { cn } from '@/lib/utils'
 import { 
-  ArrowRight, Box, Compass, Hexagon, Layers, Triangle, Circle, Square, 
-  Award, Home, Wind, Lightbulb, Sun, Star, Zap, Shield, Eye, Layout, 
-  PanelTop, Palette, Aperture, Sparkles, Construction
+  // ArrowRight, Box, Compass, Hexagon, Layers, Triangle, Circle, Square, 
+  // Award, Home, Wind, Lightbulb, Sun, Star, Zap, Shield, Eye, Layout, 
+  // PanelTop, Palette, Aperture, Sparkles, Construction
 } from 'lucide-react'
 import CountUp from '@/components/ui/count-up'
 import Image from 'next/image'
@@ -30,7 +30,7 @@ type ContentSection = {
   layout: 'left' | 'center' | 'right' | 'split';
   points?: string[];
   stats?: { value: string; label: string; description: string }[];
-  features?: { title: string; description: string; icon?: any }[];
+  features?: { title: string; description: string }[];
   counters?: Counter[];
   decorativeElements?: { type: string; position: string; size: number; color: string; opacity: number }[];
 }
@@ -44,9 +44,9 @@ const contentSections: ContentSection[] = [
     subtitle: "DESIGN PHILOSOPHY",
     description: "We craft extraordinary spaces that transcend conventional architecture. Each project is a masterpiece where innovation meets functionality, creating environments that inspire and transform.",
     features: [
-      { title: "Innovative Design Approach", description: "Pushing boundaries with cutting-edge architectural concepts and creative solutions", icon: Lightbulb },
-      { title: "Sustainable Integration", description: "Harmoniously blending eco-conscious materials with modern design principles", icon: Wind },
-      { title: "Human-Centric Spaces", description: "Creating environments that enhance well-being and foster connection", icon: Home }
+      { title: "Innovative Design Approach", description: "Pushing boundaries with cutting-edge architectural concepts and creative solutions" },
+      { title: "Sustainable Integration", description: "Harmoniously blending eco-conscious materials with modern design principles" },
+      { title: "Human-Centric Spaces", description: "Creating environments that enhance well-being and foster connection" }
     ],
     color: "bg-gradient-to-br from-gray-900 via-black to-gray-900",
     accentColor: "text-lazone-orange",
@@ -77,9 +77,9 @@ const contentSections: ContentSection[] = [
     subtitle: "ENDURING BEAUTY",
     description: "We create spaces that stand the test of time, combining classic elegance with contemporary innovation to deliver lasting architectural impact.",
     features: [
-      { title: "Intelligent Space Planning", description: "Optimizing flow and functionality while maximizing aesthetic appeal", icon: Layout },
-      { title: "Premium Materials", description: "Selecting exceptional materials that enhance both beauty and durability", icon: Shield },
-      { title: "Natural Integration", description: "Seamlessly incorporating natural light and environmental elements", icon: Sun }
+      { title: "Intelligent Space Planning", description: "Optimizing flow and functionality while maximizing aesthetic appeal" },
+      { title: "Premium Materials", description: "Selecting exceptional materials that enhance both beauty and durability" },
+      { title: "Natural Integration", description: "Seamlessly incorporating natural light and environmental elements" }
     ],
     color: "bg-gradient-to-br from-black via-gray-900 to-black",
     accentColor: "text-lazone-orange",
@@ -137,10 +137,10 @@ export default function HorizontalScrollSection() {
           scrollTrigger: {
             trigger: triggerRef.current,
             start: "top top",
-            end: `+=${distanceToScroll * 0.9}`,
+            end: `+=${distanceToScroll * 0.6}`,
             pin: true,
             anticipatePin: 1,
-            scrub: 0.1,
+            scrub: 0.05,
             pinSpacing: true,
             refreshPriority: 1,
             invalidateOnRefresh: true
@@ -169,7 +169,7 @@ export default function HorizontalScrollSection() {
                 containerAnimation: tl,
                 start: "left-=20% center",
                 end: "right-=70% center",
-                scrub: 0.1,
+                scrub: 0.05,
               }
             }
           )
@@ -187,7 +187,7 @@ export default function HorizontalScrollSection() {
                   containerAnimation: tl,
                   start: "left-=25% center",
                   end: "left-=15% center",
-                  scrub: 0.1,
+                  scrub: 0.05,
                 }
               }
             )
@@ -207,7 +207,7 @@ export default function HorizontalScrollSection() {
                   containerAnimation: tl,
                   start: "left-=25% center",
                   end: "left-=10% center",
-                  scrub: 0.1,
+                  scrub: 0.05,
                 }
               }
             )
@@ -226,7 +226,7 @@ export default function HorizontalScrollSection() {
                   containerAnimation: tl,
                   start: "left-=20% center",
                   end: "left-=5% center",
-                  scrub: 0.1,
+                  scrub: 0.05,
                 }
               }
             )
@@ -245,7 +245,7 @@ export default function HorizontalScrollSection() {
                   containerAnimation: tl,
                   start: "left-=15% center",
                   end: "left center",
-                  scrub: 0.1,
+                  scrub: 0.05,
                 }
               }
             )
@@ -264,7 +264,7 @@ export default function HorizontalScrollSection() {
                   containerAnimation: tl,
                   start: "left-=10% center",
                   end: "left+=5% center",
-                  scrub: 0.1,
+                  scrub: 0.05,
                 }
               }
             )
@@ -287,7 +287,7 @@ export default function HorizontalScrollSection() {
                       containerAnimation: tl,
                       start: "left-=5% center",
                       end: "left+=10% center",
-                      scrub: 0.1,
+                      scrub: 0.05,
                     }
                   }
                 )
@@ -428,7 +428,7 @@ export default function HorizontalScrollSection() {
                 ref={el => setTitleRef(el, index)}
                 className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-none text-white"
               >
-                {section.title} <ArrowRight className="inline-block ml-4 h-10 w-10" />
+                {section.title}
               </h2>
               <h2
                 ref={el => setSecondaryTitleRef(el, index)}
@@ -473,14 +473,12 @@ export default function HorizontalScrollSection() {
               ref={el => setSubtitleRef(el, index)}
               className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange text-center font-sans flex items-center"
             >
-              <Compass className="mr-2 h-4 w-4 text-lazone-orange" />
               {section.subtitle}
-              <Compass className="ml-2 h-4 w-4 text-lazone-orange" />
             </h3>
             
             <div className="title-group mb-8 sm:mb-10 lg:mb-12 text-center relative">
               <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-                <Award className="h-16 w-16 text-lazone-orange/20" />
+                {/* Placeholder for architectural SVG */}
               </div>
               <h2
                 ref={el => setTitleRef(el, index)}
@@ -498,13 +496,7 @@ export default function HorizontalScrollSection() {
                 ref={el => setAccentTitleRef(el, index)}
                 className={`text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor} flex items-center justify-center`}
               >
-                <span className="mr-4 inline-block">
-                  <Star className="h-6 w-6 inline-block text-lazone-orange" />
-                </span>
                 {section.titleAccent}
-                <span className="ml-4 inline-block">
-                  <Star className="h-6 w-6 inline-block text-lazone-orange" />
-                </span>
               </h2>
             </div>
             
@@ -518,9 +510,6 @@ export default function HorizontalScrollSection() {
             <div ref={el => setContentRef(el, index)} className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
               {section.stats?.map((stat, i) => (
                 <div key={i} className="animate-item bg-black/40 p-8 rounded-xl backdrop-blur-sm border border-white/5 hover:border-lazone-orange/20 transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:shadow-lazone-orange/10 transform hover:-translate-y-1 group relative overflow-hidden">
-                  <div className="absolute top-0 right-0 opacity-10 group-hover:opacity-20 transition-opacity">
-                    {i === 0 ? <Award className="h-32 w-32 text-lazone-orange" /> : <Zap className="h-32 w-32 text-lazone-orange" />}
-                  </div>
                   <div className="text-5xl font-serif font-bold text-lazone-orange mb-3 group-hover:scale-110 transition-transform">{stat.value}</div>
                   <h4 className="text-xl font-serif font-medium text-white mb-2">{stat.label}</h4>
                   <p className="text-white/70 text-sm font-sans">{stat.description}</p>
@@ -591,8 +580,6 @@ export default function HorizontalScrollSection() {
                 ref={el => setSubtitleRef(el, index)}
                 className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange font-sans flex items-center"
               >
-                {section.id === 1 && <Lightbulb className="mr-2 h-4 w-4 text-lazone-orange" />}
-                {section.id === 3 && <Award className="mr-2 h-4 w-4 text-lazone-orange" />}
                 {section.subtitle}
               </h3>
               
@@ -614,9 +601,6 @@ export default function HorizontalScrollSection() {
                   className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor} flex items-center`}
                 >
                   {section.titleAccent}
-                  <span className="ml-4 inline-block">
-                    <Star className="h-8 w-8 inline-block text-lazone-orange animate-pulse" />
-                  </span>
                 </h2>
               </div>
               
@@ -646,11 +630,10 @@ export default function HorizontalScrollSection() {
             <div ref={el => setContentRef(el, index)} className="flex flex-col justify-center mt-2 sm:mt-0 relative z-10">
               <div className="space-y-6 sm:space-y-8 lg:space-y-10">
                 {section.features?.map((feature, i) => {
-                  const IconComponent = feature.icon || Square;
                   return (
                     <div key={i} className="animate-item bg-black/40 p-8 sm:p-10 rounded-xl backdrop-blur-sm border border-white/5 hover:border-lazone-orange/20 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/10 transform hover:-translate-y-1 flex items-start group">
                       <div className={`mr-5 p-4 rounded-lg bg-black/60 ${section.accentColor}/20 group-hover:${section.accentColor}/30 transition-all duration-300 transform group-hover:scale-110`}>
-                        <IconComponent className={`h-8 w-8 ${section.accentColor}`} />
+                        {/* Placeholder for feature icon */}
                       </div>
                       <div>
                         <h4 className={`text-2xl sm:text-3xl font-serif font-bold mb-3 sm:mb-4 ${section.accentColor}`}>{feature.title}</h4>
@@ -671,17 +654,21 @@ export default function HorizontalScrollSection() {
   // For mobile view - render sections vertically
   if (isMobile) {
     return (
-      <section className="relative bg-black" data-scroll-section ref={sectionRef}>
+      <section className="relative bg-white" data-scroll-section ref={sectionRef}>
         {contentSections.map((section, index) => (
           <div
             id={`mobile-section-${index}`}
             key={section.id}
             className={cn(
-              "min-h-screen w-full py-16 px-4 relative",
+              "min-h-screen w-full py-12 sm:py-20 md:py-32 px-4 sm:px-8 md:px-16 lg:px-32 relative overflow-hidden",
               section.color
             )}
           >
-            {renderSectionContent(section, index)}
+            {/* Architectural SVG background placeholder */}
+            <div className="absolute inset-0 pointer-events-none z-0 opacity-20">ARCHITECTURAL_SVG_PLACEHOLDER</div>
+            <div className="relative z-10">
+              {renderSectionContent(section, index)}
+            </div>
           </div>
         ))}
       </section>
@@ -690,7 +677,7 @@ export default function HorizontalScrollSection() {
 
   // For desktop view - horizontal scrolling
   return (
-    <section className="relative" data-scroll-section ref={sectionRef}>
+    <section className="relative bg-white" data-scroll-section ref={sectionRef}>
       {/* This wrapper is what gets pinned */}
       <div
         ref={triggerRef}
@@ -706,11 +693,15 @@ export default function HorizontalScrollSection() {
             <div
               key={section.id}
               className={cn(
-                "h-screen w-screen relative",
+                "h-screen w-screen relative overflow-hidden py-12 sm:py-20 md:py-32 px-4 sm:px-8 md:px-16 lg:px-32",
                 section.color
               )}
             >
-              {renderSectionContent(section, index)}
+              {/* Architectural SVG background placeholder */}
+              <div className="absolute inset-0 pointer-events-none z-0 opacity-20">ARCHITECTURAL_SVG_PLACEHOLDER</div>
+              <div className="relative z-10">
+                {renderSectionContent(section, index)}
+              </div>
             </div>
           ))}
         </div>
