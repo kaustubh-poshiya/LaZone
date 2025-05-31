@@ -6,11 +6,11 @@ import ScrollReveal from "@/components/scroll-reveal"
 export default function ServicePreview() {
   const services = [
     {
-      title: "Master Planning",
+      title: "Project Management",
       description:
-        "Creating comprehensive spatial frameworks that guide development, optimize land use, and establish sustainable, functional environments.",
-      image: "/images/master-planning.png",
-      link: "/services/master-planning",
+        "Comprehensive oversight from architectural design to interior design, ensuring seamless coordination, quality, and timely delivery across all project phases.",
+      image: "/images/project-management.png",
+      link: "/services/project-management",
     },
     {
       title: "Architecture",

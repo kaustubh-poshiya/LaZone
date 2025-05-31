@@ -22,7 +22,7 @@ export default function Navbar() {
 
   // Determine if current page has a light background header
   // Add more paths here if needed 
-  const hasLightBackground = ['/contact', '/about', '/services', '/portfolio', '/services/interior-design', '/services/architecture', '/services/lighting-design', '/services/master-planning', '/services/furnishings-product', '/services/lifestyle-wellbeing'].includes(pathname)
+  const hasLightBackground = ['/contact', '/about', '/services', '/portfolio', '/services/interior-design', '/services/architecture', '/services/lobby-design', '/services/project-management', '/services/furnishing-fitout', '/services/lifestyle-wellbeing'].includes(pathname)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,9 +51,9 @@ export default function Navbar() {
       dropdown: [
         { name: "Interior Design", href: "/services/interior-design" },
         { name: "Architecture", href: "/services/architecture" },
-        { name: "Lighting Design", href: "/services/lighting-design" },
-        { name: "Master Planning", href: "/services/master-planning" },
-        { name: "Furnishings Product", href: "/services/furnishings-product" },
+        { name: "Lobby Design", href: "/services/lobby-design" },
+        { name: "Project Management", href: "/services/project-management" },
+        { name: "Furnishing & Fit-Out", href: "/services/furnishing-fitout" },
         { name: "Lifestyle & Wellbeing", href: "/services/lifestyle-wellbeing" },
       ],
     },

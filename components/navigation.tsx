@@ -28,9 +28,9 @@ export default function Navigation() {
       dropdown: [
         { name: "Interior Design", href: "/services/interior-design" },
         { name: "Architecture", href: "/services/architecture" },
-        { name: "Lighting Design", href: "/services/lighting-design" },
-        { name: "Master Planning", href: "/services/master-planning" },
-        { name: "Furnishings Product", href: "/services/furnishings-product" },
+        { name: "Lobby Design", href: "/services/lobby-design" },
+        { name: "Project Management", href: "/services/project-management" },
+        { name: "Furnishing & Fit-Out", href: "/services/furnishing-fitout" },
         { name: "Lifestyle & Wellbeing", href: "/services/lifestyle-wellbeing" },
       ],
     },

@@ -34,22 +34,22 @@ export default function ServicesSection() {
       id: "lobby-design",
       title: "LOBBY DESIGN",
       description:
-        "Creating impactful first impressions through thoughtfully designed entrance spaces that set the tone for the entire building experience.",
+        "Unleash lobby artistry with our experts. From grand hotels to corporate hubs, we create captivating first impressions. Embracing trends and innovations, we infuse lobbies with your brand, elevating experiences for all who enter.",
       image: "/images/lobby.png",
     },
     {
-      id: "master-planning",
-      title: "MASTER PLANNING",
+      id: "project-management",
+      title: "PROJECT MANAGEMENT",
       description:
-        "Developing comprehensive spatial strategies that optimize land use, connectivity, and community engagement for large-scale projects.",
-      image: "/images/master-planning.png",
+        "Comprehensive oversight from architectural design to interior design, ensuring seamless coordination, quality, and timely delivery across all project phases.",
+      image: "/images/project-management.png",
     },
     {
-      id: "furnishing-product",
-      title: "FURNISHING PRODUCT",
+      id: "furnishing-fitout",
+      title: "Furnishing & Fit-Out",
       description:
-        "Curating and designing distinctive furniture and accessories that complement architectural spaces and enhance the overall design narrative.",
-      image: "/images/furnishing-product.png",
+        "Experience the art of perfecting spaces with our bespoke furnishing and fit-out services. From concept to reality, we create spaces that embody comfort, style, and sophistication.",
+      image: "/images/furnishing-fitout.png",
     },
     {
       id: "lifestyle-wellbeing",

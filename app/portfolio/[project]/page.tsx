@@ -173,7 +173,7 @@ function getProjectData(projectSlug: string) {
       location: "Dubai South, DWC, Dubai",
       year: "2023",
       size: "14,500 m²",
-      services: ["Interior Design", "Furnishings Product", "Lighting Design"],
+      services: ["Interior Design", "Furnishing & Fit-Out", "Lobby Design"],
       heroImage: "/images/projects/serene.png",
       description: [
         "Serene Residential Building is a luxurious development designed to provide a tranquil living environment amidst the bustling city of Dubai.",
@@ -243,7 +243,7 @@ function getProjectData(projectSlug: string) {
       location: "Arjan, AlBarsha South, Dubai",
       year: "2022",
       size: "22,000 m²",
-      services: ["Architecture", "Master Planning", "Landscape Design"],
+      services: ["Architecture", "Project Management", "Landscape Design"],
       heroImage: "/images/projects/wings.png",
       description: [
         "THE WINGS is an architectural landmark in Arjan, designed to make a bold statement while providing functional living spaces for residents.",
@@ -305,7 +305,7 @@ function getProjectData(projectSlug: string) {
       location: "Dubai South, DWC, Dubai",
       year: "2022",
       size: "18,000 m²",
-      services: ["Interior Design", "Furnishings Product"],
+      services: ["Interior Design", "Furnishing & Fit-Out"],
       heroImage: "/images/projects/harmony.png",
       description: [
         "THE HARMONY is a residential development in Dubai South that emphasizes balanced living environments through thoughtful interior design.",
@@ -375,7 +375,7 @@ function getProjectData(projectSlug: string) {
       location: "Business Bay, Dubai",
       year: "2022",
       size: "32,000 m²",
-      services: ["Architecture", "Interior Design", "Master Planning"],
+      services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/square-I.png",
       description: [
         "SQUARE I is a modern residential development in Business Bay that combines elegant architecture with practical living spaces.",
@@ -445,7 +445,7 @@ function getProjectData(projectSlug: string) {
       location: "Business Bay, Dubai",
       year: "2023",
       size: "28,000 m²",
-      services: ["Interior Design", "Furnishings Design", "Lighting Design"],
+      services: ["Interior Design", "Furnishing & Fit-Out", "Lobby Design"],
       heroImage: "/assets/square-2/main-view.jpg",
       description: [
         "SQUARE II represents an evolution in residential interior design, with a focus on creating versatile living spaces that adapt to residents' changing needs.",
@@ -524,7 +524,7 @@ function getProjectData(projectSlug: string) {
         "Our integrated approach to lifestyle design ensures that wellness isn't just an add-on amenity but is woven into the fabric of the entire residential experience.",
       ],
       approach: [
-        "We approached this project with a holistic view of wellbeing, considering how design decisions at every scale - from master planning to material selection - impact resident health and happiness.",
+        "We approached this project with a holistic view of wellbeing, considering how design decisions at every scale - from project management to material selection - impact resident health and happiness.",
         "Biophilic design principles informed many aspects of the project, with abundant natural light, ventilation, views to nature, and natural materials creating spaces that support human wellbeing.",
         "Community and social connection were prioritized through the design of shared spaces that encourage interaction while still providing opportunities for privacy and solitude when desired.",
       ],
@@ -586,7 +586,7 @@ function getProjectData(projectSlug: string) {
       location: "Palm Jumeirah, Dubai",
       year: "2024",
       size: "1,200 m²",
-      services: ["Interior Design", "Furnishings Product", "Lighting Design"],
+      services: ["Interior Design", "Furnishing & Fit-Out", "Lobby Design"],
       heroImage: "/images/projects/cb10-villa.jpg",
       description: [
         "CB10 Luxury Villa represents the pinnacle of contemporary luxury living, seamlessly blending sophisticated design with comfortable functionality.",
@@ -637,7 +637,7 @@ function getProjectData(projectSlug: string) {
       location: "Downtown Dubai",
       year: "2024",
       size: "18,000 m²",
-      services: ["Architecture", "Interior Design", "Landscape Design"],
+      services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/ermax-residence.jpg",
       description: [
         "ERMAX Modern Residence is a striking architectural masterpiece that redefines luxury living in Downtown Dubai.",
@@ -688,7 +688,7 @@ function getProjectData(projectSlug: string) {
       location: "Dubai Hills Estate, Dubai",
       year: "2024",
       size: "25,000 m²",
-      services: ["Residential Architecture", "Interior Design", "Landscape Design"],
+      services: ["Residential Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/terva-homes.jpg",
       description: [
         "Terva Contemporary Living is a collection of modern residential units that redefine community living in Dubai Hills Estate.",
@@ -712,7 +712,7 @@ function getProjectData(projectSlug: string) {
       story: [
         {
           title: "Community Planning",
-          description: "The project began with extensive community planning to create a development that would foster social interaction while respecting privacy.",
+          description: "The project began with comprehensive project management to create a development that would foster social interaction while respecting privacy.",
           image: "/assets/terva-homes/1.jpg",
         },
         {
@@ -739,7 +739,7 @@ function getProjectData(projectSlug: string) {
       location: "D.I.C, Saih Shuaib, Dubai",
       year: "2026",
       size: "216,751 sqft",
-      services: ["Residential Architecture", "Retail Design", "Master Planning"],
+      services: ["Residential Architecture", "Retail Design", "Project Management"],
       heroImage: "/images/projects/square-III.jpg",
       description: [
         "THE SQUARE III is a sophisticated G+6F+R residential and retail building that combines modern living spaces with commercial opportunities.",
@@ -790,7 +790,7 @@ function getProjectData(projectSlug: string) {
       location: "Majan, Wadi AlSafa, Dubai",
       year: "2027",
       size: "806,000 sqft",
-      services: ["Mixed-Use Architecture", "Commercial Design", "Master Planning"],
+      services: ["Mixed-Use Architecture", "Commercial Design", "Project Management"],
       heroImage: "/images/projects/majan-plaza.jpg",
       description: [
         "MAJAN PLAZA is a landmark mixed-use development featuring a 2B+6+29F tower that combines residential, retail, and office spaces.",
@@ -814,7 +814,7 @@ function getProjectData(projectSlug: string) {
       story: [
         {
           title: "Master Planning",
-          description: "The project began with comprehensive master planning to create a balanced mix of uses while ensuring efficient circulation and access.",
+          description: "The project began with comprehensive project management to create a balanced mix of uses while ensuring efficient circulation and access.",
           image: "/assets/majan-plaza/image65.jpeg",
         },
         {
@@ -841,7 +841,7 @@ function getProjectData(projectSlug: string) {
       location: "Arjan, AlBarsha South, Dubai",
       year: "2026",
       size: "128,914 sqft",
-      services: ["Commercial Architecture", "Retail Design", "Interior Design"],
+      services: ["Commercial Architecture", "Retail Design", "Project Management"],
       heroImage: "/images/projects/arjan-diamond.jpg",
       description: [
         "ARJAN DIAMOND is a sophisticated B+G+4F+R commercial building that combines retail and office spaces in a modern architectural setting.",
@@ -892,7 +892,7 @@ function getProjectData(projectSlug: string) {
       location: "Wadi Al Safa, Dubai",
       year: "2027",
       size: "681,290 sqft",
-      services: ["Residential Architecture", "Master Planning", "Landscape Design"],
+      services: ["Residential Architecture", "Project Management", "Landscape Design"],
       heroImage: "/images/projects/living-heaven.jpg",
       description: [
         "LIVING HEAVEN is a comprehensive residential development featuring 6+13F+R and G+20F+R buildings that offer diverse living options.",
@@ -916,7 +916,7 @@ function getProjectData(projectSlug: string) {
       story: [
         {
           title: "Master Planning",
-          description: "The project began with comprehensive master planning to create a balanced community with diverse housing options and shared amenities.",
+          description: "The project began with comprehensive project management to create a balanced community with diverse housing options and shared amenities.",
           image: "/assets/living-heaven/image72.jpeg",
         },
         {
@@ -943,7 +943,7 @@ function getProjectData(projectSlug: string) {
       location: "The Villa Community, Dubailand, Dubai",
       year: "2023",
       size: "11,144 sqft",
-      services: ["Residential Architecture", "Interior Design", "Landscape Design"],
+      services: ["Residential Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/yd-villa.jpg",
       description: [
         "YD VILLA is a luxurious G+1F residential villa that combines sophisticated design with comfortable living spaces.",
@@ -994,7 +994,7 @@ function getProjectData(projectSlug: string) {
       location: "The Villa Community, Dubailand, Dubai",
       year: "2023",
       size: "12,574 sqft",
-      services: ["Residential Architecture", "Interior Design", "Landscape Design"],
+      services: ["Residential Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/mallorca.jpg",
       description: [
         "MALLORCA is an elegant G+1F residential villa that combines Mediterranean-inspired design with modern luxury.",
@@ -1045,7 +1045,7 @@ function getProjectData(projectSlug: string) {
       location: "Pearl Jumeirah Island, Jumeirah First, Dubai",
       year: "2025",
       size: "16,544 sqft",
-      services: ["Residential Architecture", "Interior Design", "Landscape Design"],
+      services: ["Residential Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/black-pearl-villa.jpg",
       description: [
         "BLACK PEARL VILLA is a luxurious B+G+1F+R residential villa that combines sophisticated design with waterfront living.",
@@ -1091,12 +1091,12 @@ function getProjectData(projectSlug: string) {
     },
     "white-ponderosa": {
       title: "WHITE PONDEROSA",
-      category: "Residential Architecture",
+      category: "Furnishing & Fit-Out",
       client: "Private Client",
       location: "The Villa Community, Dubailand, Dubai",
       year: "2024",
       size: "8,948 sqft",
-      services: ["Residential Architecture", "Interior Design", "Landscape Design"],
+      services: ["Interior Design", "Project Management", "Furnishing & Fit-Out"],
       heroImage: "/images/projects/white-ponderosa.jpg",
       description: [
         "WHITE PONDEROSA is an elegant G+1F residential villa that combines contemporary design with comfortable family living.",
@@ -1147,7 +1147,7 @@ function getProjectData(projectSlug: string) {
       location: "World Islands, Dubai",
       year: "2028",
       size: "-",
-      services: ["Residential Architecture", "Master Planning", "Landscape Design"],
+      services: ["Residential Architecture", "Project Management", "Landscape Design"],
       heroImage: "/images/projects/isha-island.jpg",
       description: [
         "ISHA ISLAND is an exclusive beach-front development featuring 30 luxury villas and a clubhouse on the World Islands.",
@@ -1171,7 +1171,7 @@ function getProjectData(projectSlug: string) {
       story: [
         {
           title: "Island Planning",
-          description: "The project began with comprehensive planning of the island's development, considering environmental factors and creating a sustainable community.",
+          description: "The project began with comprehensive project management of the island's development, considering environmental factors and creating a sustainable community.",
           image: "/assets/isha-island/image74.jpeg",
         },
         {

@@ -20,7 +20,7 @@ type Project = {
 // Define projects data
 const projects: Project[] = [
   {
-    id: "Serene",
+    id: "serene",
     year: "2023",
     featured: true,
     title: "Serene Residential Building",
@@ -29,7 +29,7 @@ const projects: Project[] = [
     image: "/images/projects/serene.png",
   },
   {
-    id: "THE-WINGS",
+    id: "the-wings",
     year: "2022",
     featured: true,
     title: "THE WINGS",
@@ -38,7 +38,7 @@ const projects: Project[] = [
     image: "/images/projects/wings.png",
   },
   {
-    id: "THE-HARMONY",
+    id: "the-harmony",
     title: "THE HARMONY",
     location: "Dubai South, DWC, Dubai",
     image: "/images/projects/harmony.png",
@@ -47,7 +47,7 @@ const projects: Project[] = [
     featured: false,
   },
   {
-    id: "MAJAN-TWIN",
+    id: "majan-twin",
     title: "MAJAN TWIN",
     category: "Lifestyle & Wellbeing",
     location: "Majan, Wadi AlSafa, Dubai ",
@@ -56,7 +56,7 @@ const projects: Project[] = [
     featured: false,
   },
   {
-    id: "SQUARE-I",
+    id: "square-I",
     title: "SQUARE I",
     category: "Residential Architecture",
     location: "Business Bay, Dubai",
@@ -65,7 +65,7 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: "SQUARE-II",
+    id: "square-II",
     title: "SQUARE II",
     category: "Interior Design",
     location: "Business Bay, Dubai",
@@ -74,32 +74,113 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: "CB10-VILLA",
+    id: "cb10-villa",
     title: "CB10 Luxury Villa",
-    category: "Lighting Design",
+    category: "Lobby Design",
     location: "Palm Jumeirah, Dubai",
     year: "2024",
     image: "/images/projects/cb10-villa.jpg",
     featured: true,
   },
   {
-    id: "ERMAX-RESIDENCE",
+    id: "ermax-residence",
     title: "ERMAX Modern Residence",
-    category: "Master Planning",
+    category: "Project Management",
     location: "Downtown Dubai",
     year: "2024",
     image: "/images/projects/ermax-residence.jpg",
     featured: true,
   },
   {
-    id: "TERVA-HOMES",
+    id: "terva-homes",
     title: "Terva Contemporary Living",
-    category: "Furnishings Product",
+    category: "Furnishing & Fit-Out",
     location: "Dubai Hills Estate, Dubai",
     year: "2024",
     image: "/images/projects/terva-homes.jpg",
     featured: false,
   },
+  {
+    id: "isha-island",
+    title: "ISHA ISLAND",
+    category: "Architecture",
+    location: "World Islands, Dubai",
+    year: "2028",
+    image: "/images/projects/isha-island.jpg",
+    featured: false,
+  },
+  {
+    id: "black-pearl-villa",
+    title: "BLACK PEARL VILLA",
+    category: "Architecture",
+    location: "Pearl Jumeirah Island, Jumeirah First, Dubai",
+    year: "2025",
+    image: "/images/projects/black-pearl-villa.jpg",
+    featured: false,
+  },
+  {
+    id: "white-ponderosa",
+    title: "WHITE PONDEROSA",
+    category: "Furnishing & Fit-Out",
+    location: "The Villa Community, Dubailand, Dubai",
+    year: "2024",
+    image: "/images/projects/white-ponderosa.jpg",
+    featured: true,
+  },
+  {
+    id: "mallorca",
+    title: "MALLORCA",
+    category: "Interior Design",
+    location: "The Villa Community, Dubailand, Dubai",
+    year: "2023",
+    image: "/images/projects/mallorca.jpg",
+    featured: false,
+  },
+  {
+    id: "arjan-diamond",
+    title: "ARJAN DIAMOND",
+    category: "Interior Design",
+    location: "Arjan, AlBarsha South, Dubai",
+    year: "2026",
+    image: "/images/projects/arjan-diamond.jpg",
+    featured: true,
+  },
+  {
+    id: "living-heaven",
+    title: "LIVING HEAVEN",
+    category: "Architecture",
+    location: "Wadi Al Safa, Dubai",
+    year: "2027",
+    image: "/images/projects/living-heaven.jpg",
+    featured: true,
+  },
+  {
+    id: "yd-villa",
+    title: "YD VILLA",
+    category: "Interior Design",
+    location: "The Villa Community, Dubailand, Dubai",
+    year: "2023",
+    image: "/images/projects/yd-villa.jpg",
+    featured: false,
+  },
+  {
+    id: "majan-plaza",
+    title: "MAJAN PLAZA",
+    category: "Interior Design",
+    location: "Majan, Wadi AlSafa, Dubai",
+    year: "2027",
+    image: "/images/projects/majan-plaza.jpg",
+    featured: false,
+  },
+  {
+    id: "square-III",
+    title: "SQUARE III",
+    category: "Architecture",
+    location: "D.I.C, Saih Shuaib, Dubai",
+    year: "2026",
+    image: "/images/projects/square-III.jpg",
+    featured: false,
+  }
 ];
 
 type ServicePageProps = {
@@ -325,48 +406,43 @@ function getServiceData(serviceSlug: string) {
       ],
       featuredProjects: getArchitectureProjects(),
     },
-    "lighting-design": {
-      title: "Lighting Design",
-      subtitle: "Enhancing spaces through thoughtful lighting solutions",
+    "lobby-design": {
+      title: "Lobby Design",
+      subtitle: "Unleash lobby artistry with our experts. From grand hotels to corporate hubs, we create captivating first impressions. Embracing trends and innovations, we infuse lobbies with your brand, elevating experiences for all who enter.",
       mainImage: "/images/lobby.png",
       description: [
-        "Our lighting design service creates illumination strategies that enhance architectural features, establish atmosphere, and support the functionality of spaces. We believe that lighting is a crucial element that can transform a well-designed space into an extraordinary experience.",
-        "Our lighting specialists understand the technical and artistic aspects of illumination, including fixture selection, light quality, energy efficiency, and control systems.",
-        "We develop comprehensive lighting designs for interiors and exteriors, considering both natural and artificial light sources to create cohesive and engaging environments throughout the day and night.",
+        "Unleash lobby artistry with our experts. From grand hotels to corporate hubs, we create captivating first impressions. Embracing trends and innovations, we infuse lobbies with your brand, elevating experiences for all who enter.",
       ],
       approach: [
         {
-          title: "Layered Illumination",
-          description:
-            "We combine ambient, task, and accent lighting to create depth, interest, and functionality in every space.",
+          title: "Captivating Impressions",
+          description: "We design lobbies that leave a lasting impact, setting the tone for the entire space.",
         },
         {
-          title: "Mood Engineering",
-          description:
-            "We use light quality, color temperature, and intensity to establish the desired emotional response and atmosphere.",
+          title: "Spatial Flow Mastery",
+          description: "Our layouts ensure seamless movement and intuitive navigation for all visitors.",
         },
         {
-          title: "Energy Consciousness",
-          description:
-            "We select efficient fixtures and smart control systems to minimize energy consumption while maximizing lighting effectiveness.",
+          title: "Brand Identity Fusion",
+          description: "We infuse your brand's essence into every detail, creating a unique and memorable experience.",
         },
       ],
-      featuredProjects: getProjectsByCategory("Lighting Design"),
+      featuredProjects: getProjectsByCategory("Lobby Design"),
     },
-    "master-planning": {
-      title: "Master Planning",
-      subtitle: "Developing comprehensive spatial strategies for large-scale projects",
-      mainImage: "/images/master-planning.png",
+    "project-management": {
+      title: "Project Management",
+      subtitle: "Comprehensive oversight from architectural design to interior design, ensuring seamless coordination, quality, and timely delivery across all project phases.",
+      mainImage: "/images/project-management.png",
       description: [
-        "Our master planning service develops comprehensive frameworks for the development of sites, campuses, and communities. We create cohesive plans that address land use, circulation, infrastructure, open space, and built form.",
-        "Our planners bring expertise in urban design, landscape architecture, infrastructure systems, and stakeholder engagement to create visions that are both aspirational and implementable.",
-        "We develop master plans at various scales, from individual properties to urban districts, guiding growth and change while reinforcing identity and enhancing quality of life.",
+        "Our project management service provides comprehensive oversight from architectural design to interior design, ensuring seamless coordination, quality, and timely delivery across all project phases.",
+        "Our team of experienced project managers brings expertise in project planning, resource allocation, risk management, and stakeholder communication to ensure successful project outcomes.",
+        "Whether you're looking to manage a single project or an entire portfolio, we provide tailored project management solutions that align with your goals and objectives.",
       ],
       approach: [
         {
           title: "Integrated Systems",
           description:
-            "We ensure all components of the plan work together harmoniously, from infrastructure to open spaces.",
+            "We ensure all components of the project work together harmoniously, from design to construction to completion.",
         },
         {
           title: "Phased Implementation",
@@ -375,38 +451,33 @@ function getServiceData(serviceSlug: string) {
         },
         {
           title: "Community Connection",
-          description: "We create plans that foster social interaction, cultural expression, and a sense of belonging.",
+          description: "We create projects that foster social interaction, cultural expression, and a sense of belonging.",
         },
       ],
-      featuredProjects: getProjectsByCategory("Master Planning"),
+      featuredProjects: getProjectsByCategory("Project Management"),
     },
-    "furnishings-product": {
-      title: "Furnishings Product",
-      subtitle: "Curating and designing distinctive furniture and accessories",
-      mainImage: "/images/furnishing-product.png",
+    "furnishing-fitout": {
+      title: "FURNISHING & FIT-OUT",
+      subtitle: "Experience the art of perfecting spaces with our bespoke furnishing and fit-out services. From concept to reality, we create spaces that embody comfort, style, and sophistication.",
+      mainImage: "/images/furnishing-fitout.png",
       description: [
-        "Our furnishings product service encompasses both the curation of existing pieces and the design of custom furniture and accessories. We select and create items that complement architectural spaces while expressing the unique character of a project.",
-        "Our product designers and specialists have extensive knowledge of materials, manufacturing techniques, and design history. We believe that furnishings should be both beautiful and functional, enhancing the overall experience of a space.",
-        "Whether you're looking for a single statement piece or a complete collection, we provide furnishing solutions that align with your aesthetic vision, practical requirements, and budget considerations.",
+        "Experience the art of perfecting spaces with our bespoke furnishing and fit-out services. From concept to reality, we create spaces that embody comfort, style, and sophistication.",
       ],
       approach: [
         {
-          title: "Bespoke Creation",
-          description:
-            "We design custom pieces that perfectly fit your space and requirements when standard options won't suffice.",
+          title: "Crafting Unique Spaces",
+          description: "We tailor every detail to create spaces that are truly one-of-a-kind.",
         },
         {
-          title: "Material Excellence",
-          description:
-            "We select materials of the highest quality that offer both beauty and durability for lasting enjoyment.",
+          title: "Bespoke Design",
+          description: "Our team conceptualizes and delivers custom solutions for every project.",
         },
         {
-          title: "Cohesive Curation",
-          description:
-            "We carefully select pieces that work together harmoniously while adding interest through thoughtful contrast.",
+          title: "Impeccable Transformation",
+          description: "From vision to reality, we ensure flawless execution and stunning results.",
         },
       ],
-      featuredProjects: getProjectsByCategory("Furnishings Product"),
+      featuredProjects: getProjectsByCategory("Furnishing & Fit-Out"),
     },
     "lifestyle-wellbeing": {
       title: "Lifestyle & Wellbeing",

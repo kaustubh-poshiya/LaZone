@@ -84,7 +84,7 @@ export default function AboutPage() {
                 <p className="text-neutral-200 leading-relaxed">
                   Founded in 2023, LAZONE began as a small interior design studio with a passion for creating spaces that
                   inspire. Over the years, we've evolved into a comprehensive creative studio, expanding our services to
-                  include architecture, lighting design, master planning, furnishings, and lifestyle experiences.
+                  include architecture, project management, lighting design, furnishings, and lifestyle experiences.
                 </p>
                 <p className="text-neutral-200 leading-relaxed">
                   Our journey has been defined by a commitment to excellence, innovation, and a deep understanding of how
@@ -97,7 +97,7 @@ export default function AboutPage() {
             <ScrollReveal animation="fade-left" delay={200}>
               <div className="relative h-[400px] lg:h-[500px] overflow-hidden rounded-md border-2 border-transparent hover:border-lazone-orange transition-all duration-300 group">
                 <Image
-                  src="/images/master-planning.png"
+                  src="/images/project-management.png"
                   alt="LAZONE Studio"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"

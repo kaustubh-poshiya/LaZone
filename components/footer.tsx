@@ -75,28 +75,28 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/lighting-design"
+                    href="/services/lobby-design"
                     className="text-white/70 hover:text-lazone-orange transition-colors text-sm flex items-center group"
                   >
-                    Lighting Design
+                    Lobby Design
                     <ArrowUpRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/services/master-planning"
+                    href="/services/project-management"
                     className="text-white/70 hover:text-lazone-orange transition-colors text-sm flex items-center group"
                   >
-                    Master Planning
+                    Project Management
                     <ArrowUpRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/services/furnishings-product"
+                    href="/services/furnishing-fitout"
                     className="text-white/70 hover:text-lazone-orange transition-colors text-sm flex items-center group"
                   >
-                    Furnishings Product
+                    Furnishing & Fit-Out
                     <ArrowUpRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>

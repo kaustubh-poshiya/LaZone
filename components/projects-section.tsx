@@ -39,14 +39,14 @@ export default function ProjectsSection() {
     {
       id: "project-4",
       title: "Urban Development",
-      category: "Master Planning",
-      image: "/images/master-planning.png",
+      category: "Project Management",
+      image: "/images/project-management.png",
     },
     {
       id: "project-5",
       title: "Custom Furniture Collection",
-      category: "Furnishing Product",
-      image: "/images/furnishing-product.png",
+      category: "Furnishing & Fit-Out",
+      image: "/images/furnishing-fitout.png",
     },
     {
       id: "project-6",

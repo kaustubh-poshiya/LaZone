@@ -6,11 +6,11 @@ import { Search, Lightbulb, PenTool, CheckSquare } from "lucide-react"
 export default function ServicesPage() {
   const services = [
     {
-      id: "master-planning",
-      title: "Master Planning",
+      id: "project-management",
+      title: "Project Management",
       description:
-        "Developing comprehensive spatial strategies that optimize land use, connectivity, and community engagement for large-scale projects.",
-      image: "/images/master-planning.png",
+        "Comprehensive oversight from architectural design to interior design, ensuring seamless coordination, quality, and timely delivery across all project phases.",
+      image: "/images/project-management.png",
     },
     {
       id: "architecture",
@@ -27,18 +27,18 @@ export default function ServicesPage() {
       image: "/images/interior.jpg",
     },
     {
-      id: "lighting-design",
-      title: "Lighting Design",
+      id: "lobby-design",
+      title: "Lobby Design",
       description:
-        "Enhancing spaces through thoughtful lighting solutions that create atmosphere, highlight architectural features, and improve functionality.",
+        "Unleash lobby artistry with our experts. From grand hotels to corporate hubs, we create captivating first impressions. Embracing trends and innovations, we infuse lobbies with your brand, elevating experiences for all who enter.",
       image: "/images/lobby.png",
     },
     {
-      id: "furnishings-product",
-      title: "Furnishings Product",
+      id: "furnishing-fitout",
+      title: "Furnishing & Fit-Out",
       description:
-        "Curating and designing distinctive furniture and accessories that complement architectural spaces and enhance the overall design narrative.",
-      image: "/images/furnishing-product.png",
+        "Experience the art of perfecting spaces with our bespoke furnishing and fit-out services. From concept to reality, we create spaces that embody comfort, style, and sophistication.",
+      image: "/images/furnishing-fitout.png",
     },
     {
       id: "lifestyle-wellbeing",

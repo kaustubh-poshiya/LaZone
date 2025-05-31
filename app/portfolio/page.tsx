@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/scroll-reveal"
 type Project = {
   id: string
   title: string
-  category: string
+  categories: string[]
   location: string
   year: string
   image: string
@@ -13,13 +13,30 @@ type Project = {
 }
 
 export default function PortfolioPage() {
+  const categories = [
+    "all",
+    "Interior Design",
+    "Architecture",
+    "Lifestyle & Wellbeing",
+    "Lobby Design",
+    "Project Management",
+    "Furnishing & Fit-Out",
+  ]
+
   const projects: Project[] = [
     {
       id: "serene",
       year: "2023",
       featured: true,
       title: "Serene Residential Building",
-      category: "Interior Design",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "Dubai South, DWC, Dubai",
       image: "/images/projects/serene.png",
     },
@@ -28,7 +45,14 @@ export default function PortfolioPage() {
       year: "2022",
       featured: true,
       title: "THE WINGS",
-      category: "Architecture",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "Arjan, AlBarsha South, Dubai",
       image: "/images/projects/wings.png",
     },
@@ -37,14 +61,28 @@ export default function PortfolioPage() {
       title: "THE HARMONY",
       location: "Dubai South, DWC, Dubai",
       image: "/images/projects/harmony.png",
-      category: "Interior Design",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       year: "2022",
       featured: false,
     },
     {
       id: "majan-twin",
       title: "MAJAN TWIN",
-      category: "Lifestyle & Wellbeing",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "Majan, Wadi AlSafa, Dubai ",
       year: "2021",
       image: "/images/projects/twin.png",
@@ -53,7 +91,14 @@ export default function PortfolioPage() {
     {
       id: "square-I",
       title: "SQUARE I",
-      category: "Residential Architecture",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "Business Bay, Dubai",
       year: "2022",
       image: "/images/projects/square-I.png",
@@ -62,7 +107,14 @@ export default function PortfolioPage() {
     {
       id: "square-II",
       title: "SQUARE II",
-      category: "Interior Design",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "Business Bay, Dubai",
       year: "2023",
       image: "/images/projects/square-II.png",
@@ -71,7 +123,14 @@ export default function PortfolioPage() {
     {
       id: "cb10-villa",
       title: "CB10 Luxury Villa",
-      category: "Lighting Design",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "Palm Jumeirah, Dubai",
       year: "2024",
       image: "/images/projects/cb10-villa.jpg",
@@ -80,7 +139,14 @@ export default function PortfolioPage() {
     {
       id: "ermax-residence",
       title: "ERMAX Modern Residence",
-      category: "Master Planning",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "Downtown Dubai",
       year: "2024",
       image: "/images/projects/ermax-residence.jpg",
@@ -89,7 +155,14 @@ export default function PortfolioPage() {
     {
       id: "terva-homes",
       title: "Terva Contemporary Living",
-      category: "Furnishings Product",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "Dubai Hills Estate, Dubai",
       year: "2024",
       image: "/images/projects/terva-homes.jpg",
@@ -98,7 +171,14 @@ export default function PortfolioPage() {
     {
       id: "square-III",
       title: "THE SQUARE III",
-      category: "Architecture",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "D.I.C, Saih Shuaib, Dubai",
       year: "2026",
       image: "/images/projects/square-III.jpg",
@@ -107,7 +187,7 @@ export default function PortfolioPage() {
     {
       id: "majan-plaza",
       title: "MAJAN PLAZA",
-      category: "Architecture",
+      categories: ["Lobby Design"],
       location: "Majan, Wadi AlSafa, Dubai",
       year: "2027",
       image: "/images/projects/majan-plaza.jpg",
@@ -116,7 +196,7 @@ export default function PortfolioPage() {
     {
       id: "arjan-diamond",
       title: "ARJAN DIAMOND",
-      category: "Architecture",
+      categories: ["Lobby Design"],
       location: "Arjan, AlBarsha South, Dubai",
       year: "2026",
       image: "/images/projects/arjan-diamond.jpg",
@@ -125,7 +205,14 @@ export default function PortfolioPage() {
     {
       id: "living-heaven",
       title: "LIVING HEAVEN",
-      category: "Architecture",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "Wadi Al Safa, Dubai",
       year: "2027",
       image: "/images/projects/living-heaven.jpg",
@@ -134,25 +221,32 @@ export default function PortfolioPage() {
     {
       id: "yd-villa",
       title: "YD VILLA",
-      category: "Architecture",
+      categories: ["Interior Design"],
       location: "The Villa Community, Dubailand, Dubai",
       year: "2023",
       image: "/images/projects/yd-villa.jpg",
-      featured: false,
+      featured: true,
     },
     {
       id: "mallorca",
       title: "MALLORCA",
-      category: "Architecture",
+      categories: ["Interior Design"],
       location: "The Villa Community, Dubailand, Dubai",
       year: "2023",
       image: "/images/projects/mallorca.jpg",
-      featured: false,
+      featured: true,
     },
     {
       id: "black-pearl-villa",
       title: "BLACK PEARL VILLA",
-      category: "Architecture",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "Pearl Jumeirah Island, Jumeirah First, Dubai",
       year: "2025",
       image: "/images/projects/black-pearl-villa.jpg",
@@ -161,31 +255,28 @@ export default function PortfolioPage() {
     {
       id: "white-ponderosa",
       title: "WHITE PONDEROSA",
-      category: "Architecture",
+      categories: ["Furnishing & Fit-Out"],
       location: "The Villa Community, Dubailand, Dubai",
       year: "2024",
       image: "/images/projects/white-ponderosa.jpg",
-      featured: false,
+      featured: true,
     },
     {
       id: "isha-island",
       title: "ISHA ISLAND",
-      category: "Architecture",
+      categories: [
+        "Interior Design",
+        "Architecture",
+        "Lifestyle & Wellbeing",
+        "Lobby Design",
+        "Project Management",
+        "Furnishing & Fit-Out",
+      ],
       location: "World Islands, Dubai",
       year: "2028",
       image: "/images/projects/isha-island.jpg",
-      featured: true,
+      featured: false,
     },
-  ]
-
-  const categories = [
-    "all",
-    "Interior Design",
-    "Architecture",
-    "Lifestyle & Wellbeing",
-    "Lighting Design",
-    "Master Planning",
-    "Furnishings Product",
   ]
 
   return (

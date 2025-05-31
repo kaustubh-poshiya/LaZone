@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/scroll-reveal"
 type Project = {
   id: string
   title: string
-  category: string
+  categories: string[]
   location: string
   year: string
   image: string
@@ -25,7 +25,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
   const [filter, setFilter] = useState<string>("all")
   const [layout, setLayout] = useState<"grid" | "masonry">("grid")
 
-  const filteredProjects = filter === "all" ? projects : projects.filter((project) => project.category === filter)
+  const filteredProjects = filter === "all" ? projects : projects.filter((project) => project.categories.includes(filter))
 
   return (
     <div className="space-y-8">
@@ -152,7 +152,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
           >
             <ProjectCard
               title={project.title}
-              category={project.category}
+              category={project.categories[0]}
               image={project.image}
               href={`/portfolio/${project.id}`}
               location={project.location}
