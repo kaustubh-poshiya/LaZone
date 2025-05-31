@@ -103,7 +103,7 @@ export default function HorizontalScrollSection() {
   useEffect(() => {
     // Check if current device is mobile (screen width less than 768px)
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
+      setIsMobile(window.innerWidth < 1024)
     }
     
     // Initial check
@@ -415,30 +415,30 @@ export default function HorizontalScrollSection() {
     switch(section.layout) {
       case "left":
         return (
-          <div className="content-wrapper h-full w-full flex flex-col justify-center px-6 sm:px-10 md:pl-16 md:pr-12 lg:pl-32 xl:pl-48 pt-20 sm:pt-16 md:pt-0 transition-all duration-300 hover:scale-[1.02]">
+          <div className="content-wrapper h-full w-full flex flex-col justify-center px-4 sm:px-6 md:pl-12 md:pr-8 lg:pl-24 xl:pl-32 transition-all duration-300 hover:scale-[1.02] max-h-[90dvh] overflow-y-auto py-4">
             <h3
               ref={el => setSubtitleRef(el, index)}
-              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange font-sans"
+              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-2 font-medium text-lazone-orange font-sans"
             >
               {section.subtitle}
             </h3>
 
-            <div className="title-group mb-8 sm:mb-10 lg:mb-12">
+            <div className="title-group mb-4 sm:mb-6 lg:mb-8">
               <h2
                 ref={el => setTitleRef(el, index)}
-                className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-none text-white"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-none text-white"
               >
                 {section.title}
               </h2>
               <h2
                 ref={el => setSecondaryTitleRef(el, index)}
-                className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 text-white/80"
               >
                 {section.titleSecondary}
               </h2>
               <h2
                 ref={el => setAccentTitleRef(el, index)}
-                className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold leading-none mt-1 ${section.accentColor}`}
               >
                 {section.titleAccent}
               </h2>
@@ -446,18 +446,18 @@ export default function HorizontalScrollSection() {
 
             <p
               ref={el => setDescriptionRef(el, index)}
-              className="text-base sm:text-lg lg:text-xl max-w-lg text-white/80 leading-relaxed mb-8 font-sans"
+              className="text-sm sm:text-base lg:text-lg max-w-lg text-white/80 leading-relaxed mb-6 font-sans"
             >
               {section.description}
             </p>
 
             <div ref={el => setContentRef(el, index)}>
               {section.points && (
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {section.points.map((point, i) => (
                     <li key={i} className="animate-item flex items-start text-white/90 font-sans">
-                      <span className="text-lazone-orange mr-3 text-2xl">•</span>
-                      <span className="text-lg">{point}</span>
+                      <span className="text-lazone-orange mr-3 text-xl sm:text-2xl">•</span>
+                      <span className="text-base sm:text-lg">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -468,33 +468,33 @@ export default function HorizontalScrollSection() {
       
       case "center":
         return (
-          <div className="content-wrapper relative h-full w-full flex flex-col items-center justify-center px-6 transition-all duration-300 hover:scale-[1.02]">
+          <div className="content-wrapper relative h-full w-full flex flex-col items-center justify-center px-4 transition-all duration-300 hover:scale-[1.02] max-h-[90dvh] overflow-y-auto py-4">
             <h3
               ref={el => setSubtitleRef(el, index)}
-              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange text-center font-sans flex items-center"
+              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-2 font-medium text-lazone-orange text-center font-sans flex items-center"
             >
               {section.subtitle}
             </h3>
             
-            <div className="title-group mb-8 sm:mb-10 lg:mb-12 text-center relative">
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+            <div className="title-group mb-4 sm:mb-6 lg:mb-8 text-center relative">
+              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
                 {/* Placeholder for architectural SVG */}
               </div>
               <h2
                 ref={el => setTitleRef(el, index)}
-                className="text-6xl sm:text-7xl lg:text-8xl font-serif font-bold leading-none text-white"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-none text-white"
               >
                 {section.title}
               </h2>
               <h2
                 ref={el => setSecondaryTitleRef(el, index)}
-                className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 text-white/80"
               >
                 {section.titleSecondary}
               </h2>
               <h2
                 ref={el => setAccentTitleRef(el, index)}
-                className={`text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor} flex items-center justify-center`}
+                className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold leading-none mt-1 ${section.accentColor} flex items-center justify-center`}
               >
                 {section.titleAccent}
               </h2>
@@ -502,17 +502,17 @@ export default function HorizontalScrollSection() {
             
             <p
               ref={el => setDescriptionRef(el, index)}
-              className="text-lg max-w-2xl text-center text-white/80 leading-relaxed mb-12 font-sans"
+              className="text-sm sm:text-base lg:text-lg max-w-2xl text-center text-white/80 leading-relaxed mb-6 sm:mb-8 font-sans"
             >
               {section.description}
             </p>
             
-            <div ref={el => setContentRef(el, index)} className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+            <div ref={el => setContentRef(el, index)} className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full max-w-4xl">
               {section.stats?.map((stat, i) => (
-                <div key={i} className="animate-item bg-black/40 p-8 rounded-xl backdrop-blur-sm border border-white/5 hover:border-lazone-orange/20 transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:shadow-lazone-orange/10 transform hover:-translate-y-1 group relative overflow-hidden">
-                  <div className="text-5xl font-serif font-bold text-lazone-orange mb-3 group-hover:scale-110 transition-transform">{stat.value}</div>
-                  <h4 className="text-xl font-serif font-medium text-white mb-2">{stat.label}</h4>
-                  <p className="text-white/70 text-sm font-sans">{stat.description}</p>
+                <div key={i} className="animate-item bg-black/40 p-4 sm:p-6 rounded-xl backdrop-blur-sm border border-white/5 hover:border-lazone-orange/20 transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:shadow-lazone-orange/10 transform hover:-translate-y-1 group relative overflow-hidden">
+                  <div className="text-3xl sm:text-4xl font-serif font-bold text-lazone-orange mb-2 group-hover:scale-110 transition-transform">{stat.value}</div>
+                  <h4 className="text-base sm:text-lg font-serif font-medium text-white mb-1">{stat.label}</h4>
+                  <p className="text-white/70 text-xs sm:text-sm font-sans">{stat.description}</p>
                 </div>
               ))}
             </div>
@@ -521,30 +521,30 @@ export default function HorizontalScrollSection() {
       
       case "right":
         return (
-          <div className="content-wrapper h-full w-full flex flex-col justify-center items-end px-6 sm:px-10 md:pr-16 md:pl-12 lg:pr-32 xl:pr-48 pt-20 sm:pt-16 md:pt-0 transition-all duration-300 hover:scale-[1.02]">
+          <div className="content-wrapper h-full w-full flex flex-col justify-center items-end px-4 sm:px-6 md:pr-12 md:pl-8 lg:pr-24 xl:pr-32 transition-all duration-300 hover:scale-[1.02] max-h-[90dvh] overflow-y-auto py-4">
             <h3
               ref={el => setSubtitleRef(el, index)}
-              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange text-right font-sans"
+              className="text-sm sm:text-md uppercase tracking-[0.2em] mb-2 font-medium text-lazone-orange text-right font-sans"
             >
               {section.subtitle}
             </h3>
             
-            <div className="title-group mb-8 sm:mb-10 lg:mb-12 text-right">
+            <div className="title-group mb-4 sm:mb-6 lg:mb-8 text-right">
               <h2
                 ref={el => setTitleRef(el, index)}
-                className="text-6xl sm:text-7xl lg:text-8xl font-serif font-bold leading-none text-white"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-none text-white"
               >
                 {section.title}
               </h2>
               <h2
                 ref={el => setSecondaryTitleRef(el, index)}
-                className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 text-white/80"
               >
                 {section.titleSecondary}
               </h2>
               <h2
                 ref={el => setAccentTitleRef(el, index)}
-                className={`text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor}`}
+                className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold leading-none mt-1 ${section.accentColor}`}
               >
                 {section.titleAccent}
               </h2>
@@ -552,20 +552,20 @@ export default function HorizontalScrollSection() {
             
             <p
               ref={el => setDescriptionRef(el, index)}
-              className="text-lg max-w-lg text-right text-white/80 leading-relaxed mb-8 font-sans"
+              className="text-sm sm:text-base lg:text-lg max-w-lg text-right text-white/80 leading-relaxed mb-6 font-sans"
             >
               {section.description}
             </p>
             
-            <div ref={el => setContentRef(el, index)} className="flex flex-row space-x-6 justify-end">
+            <div ref={el => setContentRef(el, index)} className="flex flex-row space-x-4 sm:space-x-6 justify-end">
               {section.counters?.map((counter, i) => (
                 <div key={i} className="counter-wrapper animate-item text-center">
                   <CountUp 
                     end={counter.value} 
                     suffix={counter.suffix} 
-                    className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white" 
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white" 
                   />
-                  <p className="text-base md:text-lg text-white/90 mt-2 font-sans">{counter.label}</p>
+                  <p className="text-sm sm:text-base text-white/90 mt-1 font-sans">{counter.label}</p>
                 </div>
               ))}
             </div>
@@ -574,31 +574,31 @@ export default function HorizontalScrollSection() {
       
       case "split":
         return (
-          <div className="content-wrapper relative h-full w-full grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 p-6 sm:p-10 transition-all duration-300 hover:scale-[1.02]">
-            <div className="flex flex-col justify-center md:pr-8 mb-8 md:mb-0 relative z-10">
+          <div className="content-wrapper relative h-full w-full grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6 p-4 sm:p-6 transition-all duration-300 hover:scale-[1.02] max-h-[90dvh] overflow-y-auto">
+            <div className="flex flex-col justify-center md:pr-6 mb-6 md:mb-0 relative z-10">
               <h3
                 ref={el => setSubtitleRef(el, index)}
-                className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange font-sans flex items-center"
+                className="text-sm sm:text-md uppercase tracking-[0.2em] mb-2 font-medium text-lazone-orange font-sans flex items-center"
               >
                 {section.subtitle}
               </h3>
               
-              <div className="title-group mb-8 sm:mb-10 lg:mb-12">
+              <div className="title-group mb-4 sm:mb-6 lg:mb-8">
                 <h2
                   ref={el => setTitleRef(el, index)}
-                  className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-none text-white"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-none text-white"
                 >
                   {section.title}
                 </h2>
                 <h2
                   ref={el => setSecondaryTitleRef(el, index)}
-                  className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-none mt-1 sm:mt-2 text-white/80"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 text-white/80"
                 >
                   {section.titleSecondary}
                 </h2>
                 <h2
                   ref={el => setAccentTitleRef(el, index)}
-                  className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-none mt-1 sm:mt-2 ${section.accentColor} flex items-center`}
+                  className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold leading-none mt-1 ${section.accentColor} flex items-center`}
                 >
                   {section.titleAccent}
                 </h2>
@@ -606,39 +606,39 @@ export default function HorizontalScrollSection() {
               
               <p
                 ref={el => setDescriptionRef(el, index)}
-                className="text-base sm:text-lg text-white/80 leading-relaxed font-sans"
+                className="text-sm sm:text-base text-white/80 leading-relaxed font-sans"
               >
                 {section.description}
               </p>
 
-              <div className="mt-8 flex items-center">
-                <div className="bg-black/30 p-3 rounded-full backdrop-blur-sm border border-white/10 shadow-lg">
+              <div className="mt-4 sm:mt-6 flex items-center">
+                <div className="bg-black/30 p-2 rounded-full backdrop-blur-sm border border-white/10 shadow-lg">
                   <Image 
                     src="/images/logo-light.png" 
                     alt="LaZone Logo" 
-                    width={60} 
-                    height={60} 
-                    className="animate-item opacity-90 hover:opacity-100 transition-opacity"
+                    width={40} 
+                    height={40} 
+                    className="animate-item opacity-90 hover:opacity-100 transition-opacity sm:w-[50px] sm:h-[50px]"
                   />
                 </div>
-                <div className="ml-4 px-4 py-2 bg-gradient-to-r from-black/50 to-transparent rounded-full border border-white/5">
-                  <span className="text-white/70 font-serif text-sm">Design Excellence</span>
+                <div className="ml-3 px-3 py-1 bg-gradient-to-r from-black/50 to-transparent rounded-full border border-white/5">
+                  <span className="text-white/70 font-serif text-xs sm:text-sm">Design Excellence</span>
                 </div>
               </div>
             </div>
 
-            <div ref={el => setContentRef(el, index)} className="flex flex-col justify-center mt-2 sm:mt-0 relative z-10">
-              <div className="space-y-6 sm:space-y-8 lg:space-y-10">
+            <div ref={el => setContentRef(el, index)} className="flex flex-col justify-center mt-0 relative z-10">
+              <div className="space-y-3 sm:space-y-4 md:space-y-6">
                 {section.features?.map((feature, i) => {
                   return (
-                    <div key={i} className="animate-item bg-black/40 p-8 sm:p-10 rounded-xl backdrop-blur-sm border border-white/5 hover:border-lazone-orange/20 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/10 transform hover:-translate-y-1 flex items-start group">
-                      <div className={`mr-5 p-4 rounded-lg bg-black/60 ${section.accentColor}/20 group-hover:${section.accentColor}/30 transition-all duration-300 transform group-hover:scale-110`}>
+                    <div key={i} className="animate-item bg-black/40 p-4 sm:p-6 rounded-xl backdrop-blur-sm border border-white/5 hover:border-lazone-orange/20 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-lazone-orange/10 transform hover:-translate-y-1 flex items-start group">
+                      <div className={`mr-3 sm:mr-4 p-2 sm:p-3 rounded-lg bg-black/60 ${section.accentColor}/20 group-hover:${section.accentColor}/30 transition-all duration-300 transform group-hover:scale-110`}>
                         {/* Placeholder for feature icon */}
                       </div>
                       <div>
-                        <h4 className={`text-2xl sm:text-3xl font-serif font-bold mb-3 sm:mb-4 ${section.accentColor}`}>{feature.title}</h4>
-                        <p className="text-lg sm:text-xl text-white/80 font-sans font-light leading-relaxed">
-                          {feature.description.length > 100 ? `${feature.description.substring(0, 100)}...` : feature.description}
+                        <h4 className={`text-lg sm:text-xl md:text-2xl font-serif font-bold mb-1 sm:mb-2 ${section.accentColor}`}>{feature.title}</h4>
+                        <p className="text-sm sm:text-base md:text-lg text-white/80 font-sans font-light leading-relaxed">
+                          {feature.description}
                         </p>
                       </div>
                     </div>
@@ -660,14 +660,91 @@ export default function HorizontalScrollSection() {
             id={`mobile-section-${index}`}
             key={section.id}
             className={cn(
-              "min-h-screen w-full py-12 sm:py-20 md:py-32 px-4 sm:px-8 md:px-16 lg:px-32 relative overflow-hidden",
+              "min-h-[100dvh] w-full py-12 px-4 sm:px-8 relative overflow-hidden",
               section.color
             )}
           >
             {/* Architectural SVG background placeholder */}
             <div className="absolute inset-0 pointer-events-none z-0 opacity-20">ARCHITECTURAL_SVG_PLACEHOLDER</div>
-            <div className="relative z-10">
-              {renderSectionContent(section, index)}
+            <div className="relative z-10 py-8">
+              <h3 className="text-sm sm:text-md uppercase tracking-[0.2em] mb-4 font-medium text-lazone-orange font-sans">
+                {section.subtitle}
+              </h3>
+              
+              <div className="title-group mb-6">
+                <h2 className="text-5xl sm:text-6xl font-serif font-bold leading-none text-white">
+                  {section.title}
+                </h2>
+                <h2 className="text-4xl sm:text-5xl font-serif font-bold leading-none mt-1 text-white/80">
+                  {section.titleSecondary}
+                </h2>
+                <h2 className={`text-3xl sm:text-4xl font-serif font-bold leading-none mt-1 ${section.accentColor}`}>
+                  {section.titleAccent}
+                </h2>
+              </div>
+              
+              <p className="text-base sm:text-lg max-w-xl text-white/80 leading-relaxed mb-8 font-sans">
+                {section.description}
+              </p>
+              
+              {/* Mobile-optimized content based on section layout */}
+              <div className="animate-item">
+                {section.features && (
+                  <div className="space-y-4 mt-6">
+                    {section.features.map((feature, i) => (
+                      <div key={i} className="bg-black/40 p-5 rounded-xl backdrop-blur-sm border border-white/5 shadow-lg flex items-start">
+                        <div className={`mr-4 p-3 rounded-lg bg-black/60 ${section.accentColor}/20`}>
+                          {/* Placeholder for feature icon */}
+                        </div>
+                        <div>
+                          <h4 className={`text-xl font-serif font-bold mb-2 ${section.accentColor}`}>{feature.title}</h4>
+                          <p className="text-base text-white/80 font-sans font-light leading-relaxed">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                {section.stats && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    {section.stats.map((stat, i) => (
+                      <div key={i} className="bg-black/40 p-5 rounded-xl backdrop-blur-sm border border-white/5 text-center shadow-lg">
+                        <div className="text-4xl font-serif font-bold text-lazone-orange mb-2">{stat.value}</div>
+                        <h4 className="text-lg font-serif font-medium text-white mb-1">{stat.label}</h4>
+                        <p className="text-white/70 text-sm font-sans">{stat.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                {section.counters && (
+                  <div className="flex flex-wrap gap-6 justify-center sm:justify-start mt-6">
+                    {section.counters.map((counter, i) => (
+                      <div key={i} className="counter-wrapper text-center" data-visible="true">
+                        <CountUp 
+                          end={counter.value} 
+                          suffix={counter.suffix} 
+                          className="text-3xl sm:text-4xl font-serif font-bold text-white" 
+                        />
+                        <p className="text-base text-white/90 mt-1 font-sans">{counter.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                {section.points && (
+                  <ul className="space-y-2 mt-6">
+                    {section.points.map((point, i) => (
+                      <li key={i} className="flex items-start text-white/90 font-sans">
+                        <span className="text-lazone-orange mr-3 text-2xl">•</span>
+                        <span className="text-lg">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
           </div>
         ))}
@@ -681,25 +758,25 @@ export default function HorizontalScrollSection() {
       {/* This wrapper is what gets pinned */}
       <div
         ref={triggerRef}
-        className="relative h-screen overflow-hidden"
+        className="relative h-[100dvh] overflow-hidden"
       >
         {/* This container holds all the horizontal panels */}
         <div
           ref={horizontalRef}
-          className="absolute flex h-screen top-0 left-0 will-change-transform"
+          className="absolute flex h-[100dvh] top-0 left-0 will-change-transform"
           style={{ width: `${contentSections.length * 100}vw` }}
         >
           {contentSections.map((section, index) => (
             <div
               key={section.id}
               className={cn(
-                "h-screen w-screen relative overflow-hidden py-12 sm:py-20 md:py-32 px-4 sm:px-8 md:px-16 lg:px-32",
+                "h-[100dvh] w-screen relative overflow-auto py-8 sm:py-12 md:py-16 px-4 sm:px-8 md:px-12 lg:px-24",
                 section.color
               )}
             >
               {/* Architectural SVG background placeholder */}
               <div className="absolute inset-0 pointer-events-none z-0 opacity-20">ARCHITECTURAL_SVG_PLACEHOLDER</div>
-              <div className="relative z-10">
+              <div className="relative z-10 h-full flex items-center">
                 {renderSectionContent(section, index)}
               </div>
             </div>
