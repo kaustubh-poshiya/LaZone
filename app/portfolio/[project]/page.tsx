@@ -957,10 +957,10 @@ function getProjectData(projectSlug: string) {
       ],
       approachImage: "/images/projects/yd-villa.jpg",
       gallery: [
-        "/assets/yd-villa/image81.jpeg",
+        "/assets/yd-villa/image81.png",
         "/assets/yd-villa/image89.jpeg",
         "/assets/yd-villa/image90.jpeg",
-        "/assets/yd-villa/image81.jpeg",
+        "/assets/yd-villa/image81.png",
         "/assets/yd-villa/image89.jpeg",
         "/assets/yd-villa/image90.jpeg",
       ],
@@ -968,7 +968,7 @@ function getProjectData(projectSlug: string) {
         {
           title: "Client Vision",
           description: "The project began with understanding the client's vision for a family home that would accommodate their specific needs and lifestyle.",
-          image: "/assets/yd-villa/image81.jpeg",
+          image: "/assets/yd-villa/image81.png",
         },
         {
           title: "Space Planning",
@@ -983,7 +983,7 @@ function getProjectData(projectSlug: string) {
         {
           title: "Landscape Design",
           description: "The outdoor spaces were designed to extend the living areas and create a seamless connection with nature.",
-          image: "/assets/yd-villa/image81.jpeg",
+          image: "/assets/yd-villa/image81.png",
         },
       ],
     },
