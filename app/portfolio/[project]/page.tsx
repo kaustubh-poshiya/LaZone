@@ -82,14 +82,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       {/* Project Story Timeline */}
-      {projectData.story && (
+      {/* {projectData.story && (
         <ProjectStory
           title="Design Journey"
           subtitle="Explore the creative process behind this project"
           steps={projectData.story}
           className="bg-muted/30"
         />
-      )}
+      )} */}
 
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">

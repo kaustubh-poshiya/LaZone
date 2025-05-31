@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
 // use the images from /image/projects folder
   const projects: Project[] = [
     {
-      id: "Serene",
+      id: "serene",
       title: "Serene Residential Building",
       location: "Dubai South, DWC, Dubai",
       image: "/images/projects/serene.png",
@@ -34,13 +34,13 @@ export default function FeaturedProjects() {
     //   image: "/images/projects/wings.png",
     // },
     {
-      id: "THE-HARMONY",
+      id: "the-harmony",
       title: "THE HARMONY",
       location: "Dubai South, DWC, Dubai",
       image: "/images/projects/harmony.png",
     },
     {
-      id: "MAJAN-TWIN",
+      id: "majan-twin",
       title: "MAJAN TWIN",
       location: "Majan, Wadi AlSafa, Dubai ",
       image: "/images/projects/twin.png",
