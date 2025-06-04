@@ -161,6 +161,8 @@ export default function HorizontalScrollSection() {
 
         // Create animations for each section's content with optimized settings
         gsap.utils.toArray(horizontalRef.current.children).forEach((panel, i) => {
+          // Skip animation for the last slide
+          if (i === contentSections.length - 1) return;
           const contentEl = (panel as HTMLElement).querySelector('.content-wrapper')
           if (!contentEl) return
 
