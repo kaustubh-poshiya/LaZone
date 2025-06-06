@@ -61,7 +61,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </li>
                 <li className="flex justify-between">
                   <span className="text-muted-foreground">Location</span>
-                  <span className="font-medium">{projectData.location}</span>
+                  <span className="font-medium flex text-end">{projectData.location}</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-muted-foreground">Year</span>
