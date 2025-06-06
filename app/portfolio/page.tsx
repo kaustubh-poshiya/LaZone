@@ -15,12 +15,12 @@ type Project = {
 export default function PortfolioPage() {
   const categories = [
     "all",
-    "Interior Design",
-    "Architecture",
-    "Lifestyle & Wellbeing",
-    "Lobby Design",
     "Project Management",
+    "Architecture",
+    "Interior Design",
     "Furnishing & Fit-Out",
+    "Lobby Design",
+    "Lifestyle & Wellbeing",
   ]
 
   const projects: Project[] = [
@@ -187,7 +187,9 @@ export default function PortfolioPage() {
     {
       id: "majan-plaza",
       title: "MAJAN PLAZA",
-      categories: ["Lobby Design"],
+      categories: [
+        "Lobby Design"
+      ],
       location: "Majan, Wadi AlSafa, Dubai",
       year: "2027",
       image: "/images/projects/majan-plaza.jpg",
@@ -196,7 +198,9 @@ export default function PortfolioPage() {
     {
       id: "arjan-diamond",
       title: "ARJAN DIAMOND",
-      categories: ["Lobby Design"],
+      categories: [
+        "Lobby Design"
+      ],
       location: "Arjan, AlBarsha South, Dubai",
       year: "2026",
       image: "/images/projects/arjan-diamond.jpg",
@@ -221,7 +225,9 @@ export default function PortfolioPage() {
     {
       id: "yd-villa",
       title: "YD VILLA",
-      categories: ["Interior Design"],
+      categories: [
+        "Interior Design"
+      ],
       location: "The Villa Community, Dubailand, Dubai",
       year: "2023",
       image: "/images/projects/yd-villa.jpg",
@@ -230,7 +236,9 @@ export default function PortfolioPage() {
     {
       id: "mallorca",
       title: "MALLORCA",
-      categories: ["Interior Design"],
+      categories: [
+        "Interior Design"
+      ],
       location: "The Villa Community, Dubailand, Dubai",
       year: "2023",
       image: "/images/projects/mallorca.jpg",
@@ -255,7 +263,9 @@ export default function PortfolioPage() {
     {
       id: "white-ponderosa",
       title: "WHITE PONDEROSA",
-      categories: ["Furnishing & Fit-Out"],
+      categories: [
+        "Furnishing & Fit-Out"
+      ],
       location: "The Villa Community, Dubailand, Dubai",
       year: "2024",
       image: "/images/projects/white-ponderosa.jpg",
