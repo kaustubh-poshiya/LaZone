@@ -140,7 +140,7 @@ export default function HorizontalScrollSection() {
           scrollTrigger: {
             trigger: triggerRef.current,
             start: "top top",
-            end: `+=${distanceToScroll * 0.5}`,
+            end: `+=${distanceToScroll * 0.4}`,
             pin: true,
             anticipatePin: 1,
             scrub: 0.5,
