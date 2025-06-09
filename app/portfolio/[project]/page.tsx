@@ -243,7 +243,7 @@ function getProjectData(projectSlug: string) {
       location: "Arjan, AlBarsha South, Dubai",
       year: "2022",
       size: "22,000 m²",
-      services: ["Architecture", "Project Management", "Landscape Design"],
+      services: ["Architecture", "Project Management"],
       heroImage: "/images/projects/wings.png",
       description: [
         "THE WINGS is an architectural landmark in Arjan, designed to make a bold statement while providing functional living spaces for residents.",
@@ -370,7 +370,7 @@ function getProjectData(projectSlug: string) {
     },
     "square-I": {
       title: "SQUARE I",
-      category: "Residential Architecture",
+      category: "Architecture",
       client: "Business Bay Development",
       location: "Business Bay, Dubai",
       year: "2022",
@@ -516,7 +516,7 @@ function getProjectData(projectSlug: string) {
       location: "Majan, Wadi AlSafa, Dubai",
       year: "2021",
       size: "25,000 m²",
-      services: [ "Interior Design", "Lifestyle & Wellbeing"],
+      services: ["Interior Design", "Lifestyle & Wellbeing"],
       heroImage: "/images/projects/twin.png",
       description: [
         "MAJAN TWIN is a dual-tower residential development that prioritizes resident wellbeing through thoughtful design of both architecture and amenity spaces.",
@@ -683,12 +683,12 @@ function getProjectData(projectSlug: string) {
     },
     "terva-homes": {
       title: "Terva Contemporary Living",
-      category: "Residential Architecture",
+      category: "Architecture",
       client: "Terva Development Group",
       location: "Dubai Hills Estate, Dubai",
       year: "2024",
       size: "25,000 m²",
-      services: ["Residential Architecture", "Interior Design", "Project Management"],
+      services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/terva-homes.jpg",
       description: [
         "Terva Contemporary Living is a collection of modern residential units that redefine community living in Dubai Hills Estate.",
@@ -734,12 +734,12 @@ function getProjectData(projectSlug: string) {
     },
     "square-III": {
       title: "THE SQUARE III",
-      category: "Residential Architecture",
+      category: "Architecture",
       client: "D.I.C Development",
       location: "D.I.C, Saih Shuaib, Dubai",
       year: "2026",
       size: "216,751 sqft",
-      services: ["Residential Architecture", "Retail Design", "Project Management"],
+      services: ["Architecture", "Retail Design", "Project Management"].filter(s => ["Interior Design", "Architecture", "Lifestyle & Wellbeing", "Lobby Design", "Project Management", "Furnishing & Fit-Out"].includes(s)),
       heroImage: "/images/projects/square-III.jpg",
       description: [
         "THE SQUARE III is a sophisticated G+6F+R residential and retail building that combines modern living spaces with commercial opportunities.",
@@ -785,12 +785,12 @@ function getProjectData(projectSlug: string) {
     },
     "majan-plaza": {
       title: "MAJAN PLAZA",
-      category: "Mixed-Use Architecture",
+      category: "Architecture",
       client: "Majan Development",
       location: "Majan, Wadi AlSafa, Dubai",
       year: "2027",
       size: "806,000 sqft",
-      services: ["Mixed-Use Architecture", "Commercial Design", "Project Management"],
+      services: ["Architecture", "Project Management"],
       heroImage: "/images/projects/majan-plaza.jpg",
       description: [
         "MAJAN PLAZA is a landmark mixed-use development featuring a 2B+6+29F tower that combines residential, retail, and office spaces.",
@@ -836,12 +836,12 @@ function getProjectData(projectSlug: string) {
     },
     "arjan-diamond": {
       title: "ARJAN DIAMOND",
-      category: "Commercial Architecture",
+      category: "Architecture",
       client: "Arjan Development",
       location: "Arjan, AlBarsha South, Dubai",
       year: "2026",
       size: "128,914 sqft",
-      services: ["Commercial Architecture", "Retail Design", "Project Management"],
+      services: ["Architecture", "Project Management"],
       heroImage: "/images/projects/arjan-diamond.jpg",
       description: [
         "ARJAN DIAMOND is a sophisticated B+G+4F+R commercial building that combines retail and office spaces in a modern architectural setting.",
@@ -887,12 +887,12 @@ function getProjectData(projectSlug: string) {
     },
     "living-heaven": {
       title: "LIVING HEAVEN",
-      category: "Residential Architecture",
+      category: "Architecture",
       client: "Wadi Al Safa Development",
       location: "Wadi Al Safa, Dubai",
       year: "2027",
       size: "681,290 sqft",
-      services: ["Residential Architecture", "Project Management", "Landscape Design"],
+      services: ["Architecture", "Project Management", "Landscape Design"].filter(s => ["Interior Design", "Architecture", "Lifestyle & Wellbeing", "Lobby Design", "Project Management", "Furnishing & Fit-Out"].includes(s)),
       heroImage: "/images/projects/living-heaven.jpg",
       description: [
         "LIVING HEAVEN is a comprehensive residential development featuring 6+13F+R and G+20F+R buildings that offer diverse living options.",
@@ -938,12 +938,12 @@ function getProjectData(projectSlug: string) {
     },
     "yd-villa": {
       title: "YD VILLA",
-      category: "Residential Architecture",
+      category: "Architecture",
       client: "Private Client",
       location: "The Villa Community, Dubailand, Dubai",
       year: "2023",
       size: "11,144 sqft",
-      services: ["Residential Architecture", "Interior Design", "Project Management"],
+      services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/yd-villa.jpg",
       description: [
         "YD VILLA is a luxurious G+1F residential villa that combines sophisticated design with comfortable living spaces.",
@@ -989,12 +989,12 @@ function getProjectData(projectSlug: string) {
     },
     "mallorca": {
       title: "MALLORCA",
-      category: "Residential Architecture",
+      category: "Architecture",
       client: "Private Client",
       location: "The Villa Community, Dubailand, Dubai",
       year: "2023",
       size: "12,574 sqft",
-      services: ["Residential Architecture", "Interior Design", "Project Management"],
+      services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/mallorca.jpg",
       description: [
         "MALLORCA is an elegant G+1F residential villa that combines Mediterranean-inspired design with modern luxury.",
@@ -1040,12 +1040,12 @@ function getProjectData(projectSlug: string) {
     },
     "black-pearl-villa": {
       title: "BLACK PEARL VILLA",
-      category: "Residential Architecture",
+      category: "Architecture",
       client: "Private Client",
       location: "Pearl Jumeirah Island, Jumeirah First, Dubai",
       year: "2025",
       size: "16,544 sqft",
-      services: ["Residential Architecture", "Interior Design", "Project Management"],
+      services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/black-pearl-villa.jpg",
       description: [
         "BLACK PEARL VILLA is a luxurious B+G+1F+R residential villa that combines sophisticated design with waterfront living.",
@@ -1142,12 +1142,12 @@ function getProjectData(projectSlug: string) {
     },
     "isha-island": {
       title: "ISHA ISLAND",
-      category: "Residential Architecture",
+      category: "Architecture",
       client: "World Islands Development",
       location: "World Islands, Dubai",
       year: "2028",
       size: "-",
-      services: ["Residential Architecture", "Project Management", "Landscape Design"],
+      services: ["Architecture", "Project Management"],
       heroImage: "/images/projects/isha-island.jpg",
       description: [
         "ISHA ISLAND is an exclusive beach-front development featuring 30 luxury villas and a clubhouse on the World Islands.",

@@ -10,7 +10,7 @@ import ScrollReveal from "@/components/scroll-reveal"
 type Project = {
   id: string
   title: string
-  category: string
+  categories: string[]
   location: string
   year: string
   image: string
@@ -24,7 +24,7 @@ const projects: Project[] = [
     year: "2023",
     featured: true,
     title: "Serene Residential Building",
-    category: "Interior Design",
+    categories: ["Interior Design"],
     location: "Dubai South, DWC, Dubai",
     image: "/images/projects/serene.png",
   },
@@ -33,7 +33,7 @@ const projects: Project[] = [
     year: "2022",
     featured: true,
     title: "THE WINGS",
-    category: "Architecture",
+    categories: ["Architecture"],
     location: "Arjan, AlBarsha South, Dubai",
     image: "/images/projects/wings.png",
   },
@@ -42,14 +42,14 @@ const projects: Project[] = [
     title: "THE HARMONY",
     location: "Dubai South, DWC, Dubai",
     image: "/images/projects/harmony.png",
-    category: "Interior Design",
+    categories: ["Interior Design"],
     year: "2022",
     featured: false,
   },
   {
     id: "majan-twin",
     title: "MAJAN TWIN",
-    category: "Lifestyle & Wellbeing",
+    categories: ["Lifestyle & Wellbeing"],
     location: "Majan, Wadi AlSafa, Dubai ",
     year: "2021",
     image: "/images/projects/twin.png",
@@ -58,7 +58,7 @@ const projects: Project[] = [
   {
     id: "square-I",
     title: "SQUARE I",
-    category: "Residential Architecture",
+    categories: ["Architecture"],
     location: "Business Bay, Dubai",
     year: "2022",
     image: "/images/projects/square-I.png",
@@ -67,7 +67,7 @@ const projects: Project[] = [
   {
     id: "square-II",
     title: "SQUARE II",
-    category: "Interior Design",
+    categories: ["Interior Design"],
     location: "Business Bay, Dubai",
     year: "2023",
     image: "/images/projects/square-II.png",
@@ -76,7 +76,7 @@ const projects: Project[] = [
   {
     id: "cb10-villa",
     title: "CB10 Luxury Villa",
-    category: "Lobby Design",
+    categories: ["Lobby Design"],
     location: "Palm Jumeirah, Dubai",
     year: "2024",
     image: "/images/projects/cb10-villa.jpg",
@@ -85,7 +85,7 @@ const projects: Project[] = [
   {
     id: "ermax-residence",
     title: "ERMAX Modern Residence",
-    category: "Project Management",
+    categories: ["Project Management"],
     location: "Downtown Dubai",
     year: "2024",
     image: "/images/projects/ermax-residence.jpg",
@@ -94,7 +94,7 @@ const projects: Project[] = [
   {
     id: "terva-homes",
     title: "Terva Contemporary Living",
-    category: "Furnishing & Fit-Out",
+    categories: ["Furnishing & Fit-Out"],
     location: "Dubai Hills Estate, Dubai",
     year: "2024",
     image: "/images/projects/terva-homes.jpg",
@@ -103,7 +103,7 @@ const projects: Project[] = [
   {
     id: "isha-island",
     title: "ISHA ISLAND",
-    category: "Architecture",
+    categories: ["Architecture"],
     location: "World Islands, Dubai",
     year: "2028",
     image: "/images/projects/isha-island.jpg",
@@ -112,7 +112,7 @@ const projects: Project[] = [
   {
     id: "black-pearl-villa",
     title: "BLACK PEARL VILLA",
-    category: "Architecture",
+    categories: ["Architecture"],
     location: "Pearl Jumeirah Island, Jumeirah First, Dubai",
     year: "2025",
     image: "/images/projects/black-pearl-villa.jpg",
@@ -121,7 +121,7 @@ const projects: Project[] = [
   {
     id: "white-ponderosa",
     title: "WHITE PONDEROSA",
-    category: "Furnishing & Fit-Out",
+    categories: ["Furnishing & Fit-Out"],
     location: "The Villa Community, Dubailand, Dubai",
     year: "2024",
     image: "/images/projects/white-ponderosa.jpg",
@@ -130,16 +130,16 @@ const projects: Project[] = [
   {
     id: "mallorca",
     title: "MALLORCA",
-    category: "Interior Design",
+    categories: ["Interior Design"],
     location: "The Villa Community, Dubailand, Dubai",
     year: "2023",
     image: "/images/projects/mallorca.jpg",
-    featured: false,
+    featured: true,
   },
   {
     id: "arjan-diamond",
     title: "ARJAN DIAMOND",
-    category: "Interior Design",
+    categories: ["Interior Design"],
     location: "Arjan, AlBarsha South, Dubai",
     year: "2026",
     image: "/images/projects/arjan-diamond.jpg",
@@ -148,7 +148,7 @@ const projects: Project[] = [
   {
     id: "living-heaven",
     title: "LIVING HEAVEN",
-    category: "Architecture",
+    categories: ["Architecture"],
     location: "Wadi Al Safa, Dubai",
     year: "2027",
     image: "/images/projects/living-heaven.jpg",
@@ -157,7 +157,7 @@ const projects: Project[] = [
   {
     id: "yd-villa",
     title: "YD VILLA",
-    category: "Interior Design",
+    categories: ["Interior Design"],
     location: "The Villa Community, Dubailand, Dubai",
     year: "2023",
     image: "/images/projects/yd-villa.jpg",
@@ -166,7 +166,7 @@ const projects: Project[] = [
   {
     id: "majan-plaza",
     title: "MAJAN PLAZA",
-    category: "Interior Design",
+    categories: ["Interior Design"],
     location: "Majan, Wadi AlSafa, Dubai",
     year: "2027",
     image: "/images/projects/majan-plaza.jpg",
@@ -175,7 +175,7 @@ const projects: Project[] = [
   {
     id: "square-III",
     title: "SQUARE III",
-    category: "Architecture",
+    categories: ["Architecture"],
     location: "D.I.C, Saih Shuaib, Dubai",
     year: "2026",
     image: "/images/projects/square-III.jpg",
@@ -328,7 +328,7 @@ function getServiceData(serviceSlug: string) {
   // Filter projects for each service category
   const getProjectsByCategory = (category: string, limit: number = 3) => {
     return projects
-      .filter(project => project.category === category)
+      .filter(project => project.categories.includes(category))
       .slice(0, limit)
       .map(project => ({
         title: project.title,
@@ -340,7 +340,7 @@ function getServiceData(serviceSlug: string) {
   // Get projects for related categories (Architecture and Residential Architecture)
   const getArchitectureProjects = (limit: number = 3) => {
     return projects
-      .filter(project => project.category === "Architecture" || project.category === "Residential Architecture")
+      .filter(project => project.categories.includes("Architecture") || project.categories.includes("Residential Architecture"))
       .slice(0, limit)
       .map(project => ({
         title: project.title,
