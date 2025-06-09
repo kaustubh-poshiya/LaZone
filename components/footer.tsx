@@ -55,12 +55,12 @@ export default function Footer() {
                 </Link>
               </h3>
               <ul className="space-y-2">
-                <li>
+              <li>
                   <Link
-                    href="/services/interior-design"
+                    href="/services/project-management"
                     className="text-white/70 hover:text-lazone-orange transition-colors text-sm flex items-center group"
                   >
-                    Interior Design
+                    Project Management
                     <ArrowUpRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
@@ -75,19 +75,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/lobby-design"
+                    href="/services/interior-design"
                     className="text-white/70 hover:text-lazone-orange transition-colors text-sm flex items-center group"
                   >
-                    Lobby Design
-                    <ArrowUpRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/project-management"
-                    className="text-white/70 hover:text-lazone-orange transition-colors text-sm flex items-center group"
-                  >
-                    Project Management
+                    Interior Design
                     <ArrowUpRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
@@ -106,6 +97,15 @@ export default function Footer() {
                     className="text-white/70 hover:text-lazone-orange transition-colors text-sm flex items-center group"
                   >
                     Lifestyle & Wellbeing
+                    <ArrowUpRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/3d-rendering"
+                    className="text-white/70 hover:text-lazone-orange transition-colors text-sm flex items-center group"
+                  >
+                    3D Rendering
                     <ArrowUpRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>

@@ -173,7 +173,7 @@ function getProjectData(projectSlug: string) {
       location: "Dubai South, DWC, Dubai",
       year: "2023",
       size: "14,500 m²",
-      services: ["Interior Design", "Furnishing & Fit-Out", "Lobby Design"],
+      services: ["Interior Design", "Furnishing & Fit-Out", "3D Rendering"],
       heroImage: "/images/projects/serene.png",
       description: [
         "Serene Residential Building is a luxurious development designed to provide a tranquil living environment amidst the bustling city of Dubai.",
@@ -305,7 +305,7 @@ function getProjectData(projectSlug: string) {
       location: "Dubai South, DWC, Dubai",
       year: "2022",
       size: "18,000 m²",
-      services: ["Interior Design", "Furnishing & Fit-Out"],
+      services: ["Interior Design", "Furnishing & Fit-Out", "3D Rendering"],
       heroImage: "/images/projects/harmony.png",
       description: [
         "THE HARMONY is a residential development in Dubai South that emphasizes balanced living environments through thoughtful interior design.",
@@ -445,7 +445,7 @@ function getProjectData(projectSlug: string) {
       location: "Business Bay, Dubai",
       year: "2023",
       size: "28,000 m²",
-      services: ["Interior Design", "Furnishing & Fit-Out", "Lobby Design"],
+      services: ["Interior Design", "Furnishing & Fit-Out", "3D Rendering"],
       heroImage: "/assets/square-2/main-view.jpg",
       description: [
         "SQUARE II represents an evolution in residential interior design, with a focus on creating versatile living spaces that adapt to residents' changing needs.",
@@ -586,7 +586,7 @@ function getProjectData(projectSlug: string) {
       location: "Palm Jumeirah, Dubai",
       year: "2024",
       size: "1,200 m²",
-      services: ["Interior Design", "Furnishing & Fit-Out", "Lobby Design"],
+      services: ["Interior Design", "Furnishing & Fit-Out", "3D Rendering"],
       heroImage: "/images/projects/cb10-villa.jpg",
       description: [
         "CB10 Luxury Villa represents the pinnacle of contemporary luxury living, seamlessly blending sophisticated design with comfortable functionality.",
@@ -739,7 +739,7 @@ function getProjectData(projectSlug: string) {
       location: "D.I.C, Saih Shuaib, Dubai",
       year: "2026",
       size: "216,751 sqft",
-      services: ["Architecture", "Retail Design", "Project Management"].filter(s => ["Interior Design", "Architecture", "Lifestyle & Wellbeing", "Lobby Design", "Project Management", "Furnishing & Fit-Out"].includes(s)),
+      services: ["Architecture", "Project Management"].filter(s => ["Interior Design", "Architecture", "Lifestyle & Wellbeing", "3D Rendering", "Project Management", "Furnishing & Fit-Out"].includes(s)),
       heroImage: "/images/projects/square-III.jpg",
       description: [
         "THE SQUARE III is a sophisticated G+6F+R residential and retail building that combines modern living spaces with commercial opportunities.",
@@ -892,7 +892,7 @@ function getProjectData(projectSlug: string) {
       location: "Wadi Al Safa, Dubai",
       year: "2027",
       size: "681,290 sqft",
-      services: ["Architecture", "Project Management", "Landscape Design"].filter(s => ["Interior Design", "Architecture", "Lifestyle & Wellbeing", "Lobby Design", "Project Management", "Furnishing & Fit-Out"].includes(s)),
+      services: ["Architecture", "Project Management"].filter(s => ["Interior Design", "Architecture", "Lifestyle & Wellbeing", "3D Rendering", "Project Management", "Furnishing & Fit-Out"].includes(s)),
       heroImage: "/images/projects/living-heaven.jpg",
       description: [
         "LIVING HEAVEN is a comprehensive residential development featuring 6+13F+R and G+20F+R buildings that offer diverse living options.",

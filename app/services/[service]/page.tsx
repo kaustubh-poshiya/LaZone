@@ -24,7 +24,7 @@ const projects: Project[] = [
     year: "2023",
     featured: true,
     title: "Serene Residential Building",
-    categories: ["Interior Design"],
+    categories: ["Interior Design", "Lifestyle & Wellbeing"],
     location: "Dubai South, DWC, Dubai",
     image: "/images/projects/serene.png",
   },
@@ -49,7 +49,7 @@ const projects: Project[] = [
   {
     id: "majan-twin",
     title: "MAJAN TWIN",
-    categories: ["Lifestyle & Wellbeing"],
+    categories: ["Architecture", "3D Rendering"],
     location: "Majan, Wadi AlSafa, Dubai ",
     year: "2021",
     image: "/images/projects/twin.png",
@@ -76,7 +76,7 @@ const projects: Project[] = [
   {
     id: "cb10-villa",
     title: "CB10 Luxury Villa",
-    categories: ["Lobby Design"],
+    categories: ["Lifestyle & Wellbeing"],
     location: "Palm Jumeirah, Dubai",
     year: "2024",
     image: "/images/projects/cb10-villa.jpg",
@@ -121,7 +121,7 @@ const projects: Project[] = [
   {
     id: "white-ponderosa",
     title: "WHITE PONDEROSA",
-    categories: ["Furnishing & Fit-Out"],
+    categories: ["Furnishing & Fit-Out", "Lifestyle & Wellbeing"],
     location: "The Villa Community, Dubailand, Dubai",
     year: "2024",
     image: "/images/projects/white-ponderosa.jpg",
@@ -130,7 +130,7 @@ const projects: Project[] = [
   {
     id: "mallorca",
     title: "MALLORCA",
-    categories: ["Interior Design"],
+    categories: ["Interior Design", "Lifestyle & Wellbeing"],
     location: "The Villa Community, Dubailand, Dubai",
     year: "2023",
     image: "/images/projects/mallorca.jpg",
@@ -139,7 +139,7 @@ const projects: Project[] = [
   {
     id: "arjan-diamond",
     title: "ARJAN DIAMOND",
-    categories: ["Interior Design"],
+    categories: ["3D Rendering", "Architecture"],
     location: "Arjan, AlBarsha South, Dubai",
     year: "2026",
     image: "/images/projects/arjan-diamond.jpg",
@@ -148,7 +148,7 @@ const projects: Project[] = [
   {
     id: "living-heaven",
     title: "LIVING HEAVEN",
-    categories: ["Architecture"],
+    categories: ["Architecture", "Project Management"],
     location: "Wadi Al Safa, Dubai",
     year: "2027",
     image: "/images/projects/living-heaven.jpg",
@@ -166,7 +166,7 @@ const projects: Project[] = [
   {
     id: "majan-plaza",
     title: "MAJAN PLAZA",
-    categories: ["Interior Design"],
+    categories: ["3D Rendering"],
     location: "Majan, Wadi AlSafa, Dubai",
     year: "2027",
     image: "/images/projects/majan-plaza.jpg",
@@ -506,6 +506,31 @@ function getServiceData(serviceSlug: string) {
         },
       ],
       featuredProjects: getProjectsByCategory("Lifestyle & Wellbeing"),
+    },
+    "3d-rendering": {
+      title: "3D Rendering",
+      subtitle: "Bringing your vision to life with photorealistic visualizations",
+      mainImage: "/images/3d-rendering.png",
+      description: [
+        "Our 3D Rendering service transforms design concepts into stunning, photorealistic visualizations. We help clients, architects, and developers see their projects before they are built, making it easier to communicate ideas, make decisions, and market properties.",
+        "Using advanced rendering technology and artistic expertise, our team creates detailed images and animations that capture every nuance of your design, from lighting and materials to spatial relationships and atmosphere.",
+        "Whether you need interior, exterior, or aerial views, our 3D renderings provide a powerful tool for presentations, approvals, and marketing campaigns."
+      ],
+      approach: [
+        {
+          title: "Concept Visualization",
+          description: "We turn sketches and plans into lifelike images, helping you and your stakeholders visualize the final result early in the process."
+        },
+        {
+          title: "Material & Lighting Accuracy",
+          description: "We meticulously replicate real-world materials and lighting conditions to ensure your renderings are both beautiful and realistic."
+        },
+        {
+          title: "Iterative Collaboration",
+          description: "We work closely with you throughout the process, refining the visuals based on your feedback to achieve the perfect result."
+        }
+      ],
+      featuredProjects: getProjectsByCategory("3D Rendering"),
     },
   }
 

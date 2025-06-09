@@ -13,6 +13,7 @@ type Project = {
   year: string
   image: string
   featured: boolean
+  type: string
 }
 
 type PortfolioGridProps = {
@@ -152,7 +153,7 @@ export default function PortfolioGrid({ projects, categories = ["all"], showFilt
           >
             <ProjectCard
               title={project.title}
-              category={project.categories[0]}
+              category={project.type}
               image={project.image}
               href={`/portfolio/${project.id}`}
               location={project.location}

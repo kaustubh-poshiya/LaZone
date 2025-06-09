@@ -8,6 +8,7 @@ export type Project = {
   year: string
   image: string
   featured: boolean
+  type: string
 }
 
 export const categories = [
@@ -16,8 +17,8 @@ export const categories = [
   "Architecture",
   "Interior Design",
   "Furnishing & Fit-Out",
-  "Lobby Design",
   "Lifestyle & Wellbeing",
+  "3D Rendering",
 ]
 
 export const projects: Project[] = [
@@ -25,12 +26,13 @@ export const projects: Project[] = [
     id: "serene",
     year: "2023",
     featured: true,
-    title: "Serene Residential Building",
+    title: "Serene",
+    type: "Residential Building",
     categories: [
       "Interior Design",
       "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
+      "3D Rendering",
       "Project Management",
       "Furnishing & Fit-Out",
     ],
@@ -42,11 +44,12 @@ export const projects: Project[] = [
     year: "2022",
     featured: true,
     title: "THE WINGS",
+    type: "Residential Building",
     categories: [
       "Interior Design",
       "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
+      "3D Rendering",
       "Project Management",
       "Furnishing & Fit-Out",
     ],
@@ -58,11 +61,12 @@ export const projects: Project[] = [
     title: "THE HARMONY",
     location: "Dubai South, DWC, Dubai",
     image: "/images/projects/harmony.png",
+    type: "Residential Building",
     categories: [
       "Interior Design",
       "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
+      "3D Rendering",
       "Project Management",
       "Furnishing & Fit-Out",
     ],
@@ -72,13 +76,10 @@ export const projects: Project[] = [
   {
     id: "majan-twin",
     title: "MAJAN TWIN",
+    type: "Residential & Commercial Building",
     categories: [
-      "Interior Design",
       "Architecture",
-      "Lifestyle & Wellbeing",
-      "Lobby Design",
-      "Project Management",
-      "Furnishing & Fit-Out",
+      "3D Rendering"
     ],
     location: "Majan, Wadi AlSafa, Dubai ",
     year: "2021",
@@ -88,11 +89,12 @@ export const projects: Project[] = [
   {
     id: "square-I",
     title: "SQUARE I",
+    type: "Residential Building",
     categories: [
       "Interior Design",
       "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
+      "3D Rendering",
       "Project Management",
       "Furnishing & Fit-Out",
     ],
@@ -104,11 +106,12 @@ export const projects: Project[] = [
   {
     id: "square-II",
     title: "SQUARE II",
+    type: "Residential Building",
     categories: [
       "Interior Design",
       "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
+      "3D Rendering",
       "Project Management",
       "Furnishing & Fit-Out",
     ],
@@ -120,11 +123,12 @@ export const projects: Project[] = [
   {
     id: "cb10-villa",
     title: "CB10 Luxury Villa",
+    type: "Villa",
     categories: [
       "Interior Design",
       "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
+      "3D Rendering",
       "Project Management",
       "Furnishing & Fit-Out",
     ],
@@ -136,12 +140,11 @@ export const projects: Project[] = [
   {
     id: "ermax-residence",
     title: "ERMAX Modern Residence",
+    type: "Residential Building",
     categories: [
       "Interior Design",
-      "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
-      "Project Management",
+      "3D Rendering",
       "Furnishing & Fit-Out",
     ],
     location: "Downtown Dubai",
@@ -152,11 +155,12 @@ export const projects: Project[] = [
   {
     id: "terva-homes",
     title: "Terva Contemporary Living",
+    type: "Townhouse",
     categories: [
       "Interior Design",
       "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
+      "3D Rendering",
       "Project Management",
       "Furnishing & Fit-Out",
     ],
@@ -168,11 +172,12 @@ export const projects: Project[] = [
   {
     id: "square-III",
     title: "THE SQUARE III",
+    type: "Residential Building",
     categories: [
       "Interior Design",
       "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
+      "3D Rendering",
       "Project Management",
       "Furnishing & Fit-Out",
     ],
@@ -184,8 +189,10 @@ export const projects: Project[] = [
   {
     id: "majan-plaza",
     title: "MAJAN PLAZA",
+    type: "Residential & Commercial Building",
     categories: [
-      "Lobby Design"
+      "Architecture",
+      "3D Rendering"
     ],
     location: "Majan, Wadi AlSafa, Dubai",
     year: "2027",
@@ -195,8 +202,10 @@ export const projects: Project[] = [
   {
     id: "arjan-diamond",
     title: "ARJAN DIAMOND",
+    type: "Residential & Commercial Building",
     categories: [
-      "Lobby Design"
+      "Architecture",
+      "3D Rendering"
     ],
     location: "Arjan, AlBarsha South, Dubai",
     year: "2026",
@@ -206,11 +215,12 @@ export const projects: Project[] = [
   {
     id: "living-heaven",
     title: "LIVING HEAVEN",
+    type: "Residential Building",
     categories: [
       "Interior Design",
       "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
+      "3D Rendering",
       "Project Management",
       "Furnishing & Fit-Out",
     ],
@@ -222,8 +232,14 @@ export const projects: Project[] = [
   {
     id: "yd-villa",
     title: "YD VILLA",
+    type: "Villa",
     categories: [
-      "Interior Design"
+      "Interior Design",
+      "Architecture",
+      "Lifestyle & Wellbeing",
+      "3D Rendering",
+      "Project Management",
+      "Furnishing & Fit-Out",
     ],
     location: "The Villa Community, Dubailand, Dubai",
     year: "2023",
@@ -233,8 +249,14 @@ export const projects: Project[] = [
   {
     id: "mallorca",
     title: "MALLORCA",
+    type: "Villa",
     categories: [
-      "Interior Design"
+      "Interior Design",
+      "Architecture",
+      "Lifestyle & Wellbeing",
+      "3D Rendering",
+      "Project Management",
+      "Furnishing & Fit-Out",
     ],
     location: "The Villa Community, Dubailand, Dubai",
     year: "2023",
@@ -244,13 +266,11 @@ export const projects: Project[] = [
   {
     id: "black-pearl-villa",
     title: "BLACK PEARL VILLA",
+    type: "Villa",
     categories: [
       "Interior Design",
       "Architecture",
-      "Lifestyle & Wellbeing",
-      "Lobby Design",
-      "Project Management",
-      "Furnishing & Fit-Out",
+      "3D Rendering",
     ],
     location: "Pearl Jumeirah Island, Jumeirah First, Dubai",
     year: "2025",
@@ -260,8 +280,14 @@ export const projects: Project[] = [
   {
     id: "white-ponderosa",
     title: "WHITE PONDEROSA",
+    type: "Villa",
     categories: [
-      "Furnishing & Fit-Out"
+      "Interior Design",
+      "Architecture",
+      "Lifestyle & Wellbeing",
+      "3D Rendering",
+      "Project Management",
+      "Furnishing & Fit-Out",
     ],
     location: "The Villa Community, Dubailand, Dubai",
     year: "2024",
@@ -271,11 +297,12 @@ export const projects: Project[] = [
   {
     id: "isha-island",
     title: "ISHA ISLAND",
+    type: "Townhouse",
     categories: [
       "Interior Design",
       "Architecture",
       "Lifestyle & Wellbeing",
-      "Lobby Design",
+      "3D Rendering",
       "Project Management",
       "Furnishing & Fit-Out",
     ],

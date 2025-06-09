@@ -26,13 +26,13 @@ export default function ServicesPage() {
         "Creating harmonious interior spaces that balance aesthetics, functionality, and personal expression.",
       image: "/images/interior.jpg",
     },
-    {
-      id: "lobby-design",
-      title: "Lobby Design",
-      description:
-        "Unleash lobby artistry with our experts. From grand hotels to corporate hubs, we create captivating first impressions. Embracing trends and innovations, we infuse lobbies with your brand, elevating experiences for all who enter.",
-      image: "/images/lobby.png",
-    },
+    // {
+    //   id: "lobby-design",
+    //   title: "Lobby Design",
+    //   description:
+    //     "Unleash lobby artistry with our experts. From grand hotels to corporate hubs, we create captivating first impressions. Embracing trends and innovations, we infuse lobbies with your brand, elevating experiences for all who enter.",
+    //   image: "/images/lobby.png",
+    // },
     {
       id: "furnishing-fitout",
       title: "Furnishing & Fit-Out",
@@ -46,6 +46,13 @@ export default function ServicesPage() {
       description:
         "Integrating wellness principles into design to create spaces that promote physical health, mental clarity, and emotional balance.",
       image: "/images/lifestyle.png",
+    },
+    {
+      id: "3d-rendering",
+      title: "3D Rendering",
+      description:
+        "Transforming design concepts into realistic 3D visualizations to help clients visualize and understand the final design.",
+      image: "/images/3d-rendering.png",
     },
   ]
 

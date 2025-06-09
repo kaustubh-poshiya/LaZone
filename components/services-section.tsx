@@ -30,13 +30,13 @@ export default function ServicesSection() {
         "Designing innovative structures that harmonize with their surroundings while pushing the boundaries of form, function, and sustainability.",
       image: "/images/architecture.png",
     },
-    {
-      id: "lobby-design",
-      title: "LOBBY DESIGN",
-      description:
-        "Unleash lobby artistry with our experts. From grand hotels to corporate hubs, we create captivating first impressions. Embracing trends and innovations, we infuse lobbies with your brand, elevating experiences for all who enter.",
-      image: "/images/lobby.png",
-    },
+    // {
+    //   id: "lobby-design",
+    //   title: "LOBBY DESIGN",
+    //   description:
+    //     "Unleash lobby artistry with our experts. From grand hotels to corporate hubs, we create captivating first impressions. Embracing trends and innovations, we infuse lobbies with your brand, elevating experiences for all who enter.",
+    //   image: "/images/lobby.png",
+    // },
     {
       id: "project-management",
       title: "PROJECT MANAGEMENT",
@@ -57,6 +57,13 @@ export default function ServicesSection() {
       description:
         "Integrating wellness principles into design to create spaces that promote physical health, mental clarity, and emotional balance.",
       image: "/images/lifestyle.png",
+    },
+    {
+      id: "3d-rendering",
+      title: "3D Rendering",
+      description:
+        "Transforming design concepts into realistic 3D visualizations to help clients visualize and understand the final project.",
+      image: "/images/3d-rendering.png",
     },
   ]
 
