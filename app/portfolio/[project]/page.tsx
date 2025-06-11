@@ -64,7 +64,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   <span className="font-medium">{projectData.year}</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-muted-foreground">Size</span>
+                  <span className="text-muted-foreground">Built-Up Area</span>
                   <span className="font-medium">{projectData.size}</span>
                 </li>
                 <li className="flex justify-between">
