@@ -56,10 +56,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <h3 className="text-xl font-serif mb-6">Project Details</h3>
               <ul className="space-y-4">
                 <li className="flex justify-between">
-                  <span className="text-muted-foreground">Client</span>
-                  <span className="font-medium">{projectData.client}</span>
-                </li>
-                <li className="flex justify-between">
                   <span className="text-muted-foreground">Location</span>
                   <span className="font-medium flex text-end">{projectData.location}</span>
                 </li>
@@ -70,6 +66,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <li className="flex justify-between">
                   <span className="text-muted-foreground">Size</span>
                   <span className="font-medium">{projectData.size}</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-muted-foreground">Unit Mix</span>
+                  <span className="font-medium">{projectData.unitMix}</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-muted-foreground">Project Details</span>
+                  <span className="font-medium flex text-end">{projectData.projectDetails}</span>
                 </li>
                 {/* <li className="flex justify-between">
                   <span className="text-muted-foreground">Services</span>
@@ -167,16 +171,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 function getProjectData(projectSlug: string) {
   const projects = {
     "serene": {
-      title: "Serene Residential Building",
+      title: "THE SERENE",
       category: "Interior Design",
-      client: "Private Client",
       location: "Dubai South, DWC, Dubai",
-      year: "2023",
-      size: "14,500 m²",
+      year: "2025",
+      size: "159,948 Sqft",
+      unitMix: "Studios, 1BR, 2BR & 3BR",
+      projectDetails: "G+4F+R Residential Building",
       services: ["Interior Design", "Furnishing & Fit-Out", "3D Rendering"],
       heroImage: "/images/projects/serene.png",
       description: [
-        "Serene Residential Building is a luxurious development designed to provide a tranquil living environment amidst the bustling city of Dubai.",
+        "The Serene Residential Building is a luxurious development designed to provide a tranquil living environment amidst the bustling city of Dubai.",
         "Our approach balanced contemporary elegance with functionality, using a neutral palette accented with carefully selected materials and textures. The open-plan layouts were designed to enhance flow between spaces while maintaining distinct functional zones.",
         "Custom furnishings and lighting solutions were developed specifically for the project, ensuring each element contributed to the cohesive design narrative while meeting the residents' practical needs.",
       ],
@@ -239,10 +244,11 @@ function getProjectData(projectSlug: string) {
     "the-wings": {
       title: "THE WINGS",
       category: "Architecture",
-      client: "Dubai Properties",
       location: "Arjan, AlBarsha South, Dubai",
-      year: "2022",
-      size: "22,000 m²",
+      year: "2020",
+      size: "415,971 Sqft",
+      projectDetails: "G+4 F+R Residential & Retail Building (3 Blocks)",
+      unitMix: "Studios, 1BR, 2BR & 3BR + RETAILS",
       services: ["Architecture", "Project Management"],
       heroImage: "/images/projects/wings.png",
       description: [
@@ -301,10 +307,11 @@ function getProjectData(projectSlug: string) {
     "the-harmony": {
       title: "THE HARMONY",
       category: "Interior Design",
-      client: "Dubai South Developments",
       location: "Dubai South, DWC, Dubai",
-      year: "2022",
-      size: "18,000 m²",
+      year: "2024",
+      size: "72,381 Sqft",
+      unitMix: "Studios, 1BR, 2BR & 3BR",
+      projectDetails: "G+4F+R Residential Building (2 Blocks)",
       services: ["Interior Design", "Furnishing & Fit-Out", "3D Rendering"],
       heroImage: "/images/projects/harmony.png",
       description: [
@@ -369,12 +376,13 @@ function getProjectData(projectSlug: string) {
       virtualTour: [],
     },
     "square-I": {
-      title: "SQUARE I",
+      title: "THE SQUARE",
       category: "Architecture",
-      client: "Business Bay Development",
-      location: "Business Bay, Dubai",
-      year: "2022",
-      size: "32,000 m²",
+      location: "Arjan, Dubai",
+      year: "2021",
+      size: "415,971 Sqft",
+      unitMix: "Studios, 1BR, 2BR & 3BR + RETAILS",
+      projectDetails: "G+4, Residential Complex",
       services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/square-I.png",
       description: [
@@ -439,12 +447,13 @@ function getProjectData(projectSlug: string) {
       virtualTour: [],
     },
     "square-II": {
-      title: "SQUARE II",
+      title: "THE SQUARE II",
       category: "Interior Design",
-      client: "Business Bay Properties",
-      location: "Business Bay, Dubai",
-      year: "2023",
-      size: "28,000 m²",
+      location: "D.I.C, Saih Shuaib, Dubai ",
+      year: "2024",
+      size: "72,381 Sqft",
+      unitMix: "Studios, 1BR, 2BR",
+      projectDetails: "G+4, Residential Complex",
       services: ["Interior Design", "Furnishing & Fit-Out", "3D Rendering"],
       heroImage: "/assets/square-2/main-view.jpg",
       description: [
@@ -512,10 +521,11 @@ function getProjectData(projectSlug: string) {
     "majan-twin": {
       title: "MAJAN TWIN",
       category: "Lifestyle & Wellbeing",
-      client: "Wadi AlSafa Development",
       location: "Majan, Wadi AlSafa, Dubai",
-      year: "2021",
-      size: "25,000 m²",
+      year: "2027",
+      size: "806,000 Sqft",
+      unitMix: "Studios, 1BR, 2BR & 3BR + SHOPPING MALL + OFFICES",
+      projectDetails: "2B+G+6F+R Mixed-Use Building (2 Blocks)",
       services: ["Interior Design", "Lifestyle & Wellbeing"],
       heroImage: "/images/projects/twin.png",
       description: [
@@ -582,10 +592,11 @@ function getProjectData(projectSlug: string) {
     "cb10-villa": {
       title: "CB10 Luxury Villa",
       category: "Interior Design",
-      client: "Private Client",
       location: "Palm Jumeirah, Dubai",
       year: "2024",
       size: "1,200 m²",
+      unitMix: "",
+      projectDetails: "",
       services: ["Interior Design", "Furnishing & Fit-Out", "3D Rendering"],
       heroImage: "/images/projects/cb10-villa.jpg",
       description: [
@@ -610,7 +621,7 @@ function getProjectData(projectSlug: string) {
       story: [
         {
           title: "Client Vision",
-          description: "The project began with a clear vision from our client: to create a contemporary luxury villa that would serve as both a private retreat and an entertainment space.",
+          description: "The project began with a clear vision from our client to create a contemporary luxury villa that would serve as both a private retreat and an entertainment space.",
           image: "/images/projects/cb10-villa.jpg",
         },
         {
@@ -631,12 +642,13 @@ function getProjectData(projectSlug: string) {
       ],
     },
     "ermax-residence": {
-      title: "ERMAX Modern Residence",
+      title: "ERMAX",
       category: "Architecture",
-      client: "ERMAX Development",
       location: "Downtown Dubai",
       year: "2024",
       size: "18,000 m²",
+      unitMix: "3BR, 4BR & 5BR",
+      projectDetails: "G+1F Town-Houses (24 Units) + Club House",
       services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/ermax-residence.jpg",
       description: [
@@ -682,16 +694,17 @@ function getProjectData(projectSlug: string) {
       ],
     },
     "terva-homes": {
-      title: "Terva Contemporary Living",
+      title: "THE TERVA HOMES",
       category: "Architecture",
-      client: "Terva Development Group",
-      location: "Dubai Hills Estate, Dubai",
-      year: "2024",
-      size: "25,000 m²",
+      location: "D.I.C, Saih Shuaib, Dubai",
+      year: "2025",
+      size: "43,427 Sqft",
+      unitMix: "3BR, 4BR & 5BR",
+      projectDetails: "G+1F Town-Houses (24 Units) + Club House",
       services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/terva-homes.jpg",
       description: [
-        "Terva Contemporary Living is a collection of modern residential units that redefine community living in Dubai Hills Estate.",
+        "The Terva Homes is a collection of modern residential units that redefine community living in Dubai Hills Estate.",
         "The project combines contemporary architecture with sustainable design principles to create homes that are both beautiful and environmentally conscious.",
         "Each residence is thoughtfully designed to maximize space and natural light while providing privacy and comfort for residents.",
       ],
@@ -735,14 +748,15 @@ function getProjectData(projectSlug: string) {
     "square-III": {
       title: "THE SQUARE III",
       category: "Architecture",
-      client: "D.I.C Development",
       location: "D.I.C, Saih Shuaib, Dubai",
       year: "2026",
       size: "216,751 sqft",
+      unitMix: "1BR, 2BR & 3BR",
+      projectDetails: "1BR, 2BR & 3BR + RETAILS",
       services: ["Architecture", "Project Management"].filter(s => ["Interior Design", "Architecture", "Lifestyle & Wellbeing", "3D Rendering", "Project Management", "Furnishing & Fit-Out"].includes(s)),
       heroImage: "/images/projects/square-III.jpg",
       description: [
-        "THE SQUARE III is a sophisticated G+6F+R residential and retail building that combines modern living spaces with commercial opportunities.",
+        "THE SQUARE III is a sophisticated 1BR, 2BR & 3BR residential and retail building that combines modern living spaces with commercial opportunities.",
         "The project features a carefully planned unit mix of 1BR, 2BR, and 3BR apartments, complemented by retail spaces on the ground floor.",
         "The design emphasizes functionality and comfort while maintaining a strong visual presence in the Saih Shuaib area.",
       ],
@@ -786,10 +800,11 @@ function getProjectData(projectSlug: string) {
     "majan-plaza": {
       title: "MAJAN PLAZA",
       category: "Architecture",
-      client: "Majan Development",
       location: "Majan, Wadi AlSafa, Dubai",
       year: "2027",
       size: "806,000 sqft",
+      unitMix: "2BR, 3BR, 4BR Dplx & 5BR Dplx + SHOPPING MALL + OFFICES",
+      projectDetails: "2B+G+29F Mixed-Use Tower",
       services: ["Architecture", "Project Management"],
       heroImage: "/images/projects/majan-plaza.jpg",
       description: [
@@ -837,10 +852,11 @@ function getProjectData(projectSlug: string) {
     "arjan-diamond": {
       title: "ARJAN DIAMOND",
       category: "Architecture",
-      client: "Arjan Development",
       location: "Arjan, AlBarsha South, Dubai",
       year: "2026",
       size: "128,914 sqft",
+      unitMix: "SHOPPING MALL & OFFICES",
+      projectDetails: "B+G+4F+R Commercial Building",
       services: ["Architecture", "Project Management"],
       heroImage: "/images/projects/arjan-diamond.jpg",
       description: [
@@ -888,10 +904,11 @@ function getProjectData(projectSlug: string) {
     "living-heaven": {
       title: "LIVING HEAVEN",
       category: "Architecture",
-      client: "Wadi Al Safa Development",
       location: "Wadi Al Safa, Dubai",
       year: "2027",
       size: "681,290 sqft",
+      unitMix: "1BR, 2BR, 3BR, 4BR, 5BR Dplx & 6BR Trplx",
+      projectDetails: "G+13F+R & G+20F+R Residential Buildings",
       services: ["Architecture", "Project Management"].filter(s => ["Interior Design", "Architecture", "Lifestyle & Wellbeing", "3D Rendering", "Project Management", "Furnishing & Fit-Out"].includes(s)),
       heroImage: "/images/projects/living-heaven.jpg",
       description: [
@@ -939,10 +956,11 @@ function getProjectData(projectSlug: string) {
     "yd-villa": {
       title: "YD VILLA",
       category: "Architecture",
-      client: "Private Client",
       location: "The Villa Community, Dubailand, Dubai",
       year: "2023",
       size: "11,144 sqft",
+      unitMix: "6BR",
+      projectDetails: "G+1F Residential Villa",
       services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/yd-villa.jpg",
       description: [
@@ -990,10 +1008,11 @@ function getProjectData(projectSlug: string) {
     "mallorca": {
       title: "MALLORCA",
       category: "Architecture",
-      client: "Private Client",
       location: "The Villa Community, Dubailand, Dubai",
       year: "2023",
       size: "12,574 sqft",
+      unitMix: "7BR",
+      projectDetails: "G+1F Residential Villa",
       services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/mallorca.jpg",
       description: [
@@ -1041,10 +1060,11 @@ function getProjectData(projectSlug: string) {
     "black-pearl-villa": {
       title: "BLACK PEARL VILLA",
       category: "Architecture",
-      client: "Private Client",
       location: "Pearl Jumeirah Island, Jumeirah First, Dubai",
       year: "2025",
       size: "16,544 sqft",
+      unitMix: "5BR",
+      projectDetails: "B+G+1F+R Residential Villa",
       services: ["Architecture", "Interior Design", "Project Management"],
       heroImage: "/images/projects/black-pearl-villa.jpg",
       description: [
@@ -1092,10 +1112,11 @@ function getProjectData(projectSlug: string) {
     "white-ponderosa": {
       title: "WHITE PONDEROSA",
       category: "Furnishing & Fit-Out",
-      client: "Private Client",
       location: "The Villa Community, Dubailand, Dubai",
       year: "2024",
       size: "8,948 sqft",
+      unitMix: "6BR",
+      projectDetails: "G+1F Residential Villa",
       services: ["Interior Design", "Project Management", "Furnishing & Fit-Out"],
       heroImage: "/images/projects/white-ponderosa.jpg",
       description: [
@@ -1143,10 +1164,11 @@ function getProjectData(projectSlug: string) {
     "isha-island": {
       title: "ISHA ISLAND",
       category: "Architecture",
-      client: "World Islands Development",
       location: "World Islands, Dubai",
       year: "2028",
       size: "-",
+      unitMix: "3BR, 4BR & 5BR",
+      projectDetails: "G+1F+R Beach-Front Villas (30 Units) + Club House",
       services: ["Architecture", "Project Management"],
       heroImage: "/images/projects/isha-island.jpg",
       description: [

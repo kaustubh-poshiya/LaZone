@@ -9,6 +9,9 @@ export type Project = {
   image: string
   featured: boolean
   type: string
+  unitMix: string
+  projectDetails: string
+  description: string[]
 }
 
 export const categories = [
@@ -24,9 +27,9 @@ export const categories = [
 export const projects: Project[] = [
   {
     id: "serene",
-    year: "2023",
+    year: "2025",
     featured: true,
-    title: "Serene",
+    title: "THE SERENE",
     type: "Residential Building",
     categories: [
       "Interior Design",
@@ -38,10 +41,17 @@ export const projects: Project[] = [
     ],
     location: "Dubai South, DWC, Dubai",
     image: "/images/projects/serene.png",
+    unitMix: "Studios, 1BR, 2BR & 3BR",
+    projectDetails: "G+4F+R Residential Building",
+    description: [
+      "Serene Residential Building is a luxurious development designed to provide a tranquil living environment amidst the bustling city of Dubai.",
+      "Our approach balanced contemporary elegance with functionality, using a neutral palette accented with carefully selected materials and textures. The open-plan layouts were designed to enhance flow between spaces while maintaining distinct functional zones.",
+      "Custom furnishings and lighting solutions were developed specifically for the project, ensuring each element contributed to the cohesive design narrative while meeting the residents' practical needs.",
+    ],
   },
   {
     id: "the-wings",
-    year: "2022",
+    year: "2020",
     featured: true,
     title: "THE WINGS",
     type: "Residential Building",
@@ -55,6 +65,13 @@ export const projects: Project[] = [
     ],
     location: "Arjan, AlBarsha South, Dubai",
     image: "/images/projects/wings.png",
+    unitMix: "Studios, 1BR, 2BR & 3BR + RETAILS",
+    projectDetails: "G+4 F+R Residential & Retail Building (3 Blocks)",
+    description: [
+      "THE WINGS is an architectural landmark in Arjan, designed to make a bold statement while providing functional living spaces for residents.",
+      "The distinctive wing-shaped facades give the building its unique identity, while also serving to optimize natural light and views from the residences.",
+      "This project demonstrates our ability to create architecture that is both visually striking and practically responsive to the needs of its users and context.",
+    ],
   },
   {
     id: "the-harmony",
@@ -70,8 +87,15 @@ export const projects: Project[] = [
       "Project Management",
       "Furnishing & Fit-Out",
     ],
-    year: "2022",
+    year: "2024",
     featured: false,
+    unitMix: "Studios, 1BR, 2BR & 3BR",
+    projectDetails: "G+4F+R Residential Building (2 Blocks)",
+    description: [
+      "THE HARMONY is a residential development in Dubai South that emphasizes balanced living environments through thoughtful interior design.",
+      "Our interior design strategy focused on creating spaces that promote wellbeing, with careful attention to spatial flow, natural light, and material selection.",
+      "The project demonstrates our approach to creating interiors that feel both luxurious and livable, with a timeless quality that will endure beyond passing trends.",
+    ],
   },
   {
     id: "majan-twin",
@@ -82,13 +106,20 @@ export const projects: Project[] = [
       "3D Rendering"
     ],
     location: "Majan, Wadi AlSafa, Dubai ",
-    year: "2021",
+    year: "2027",
     image: "/images/projects/twin.png",
     featured: false,
+    unitMix: "Studios, 1BR, 2BR & 3BR + SHOPPING MALL + OFFICES",
+    projectDetails: "2B+G+6F+R Mixed-Use Building (2 Blocks)",
+    description: [
+      "MAJAN TWIN is a dual-tower residential development that prioritizes resident wellbeing through thoughtful design of both architecture and amenity spaces.",
+      "The project incorporates extensive wellness facilities, including fitness centers, spa areas, meditation rooms, and outdoor recreation spaces designed to promote physical and mental health.",
+      "Our integrated approach to lifestyle design ensures that wellness isn't just an add-on amenity but is woven into the fabric of the entire residential experience.",
+    ],
   },
   {
     id: "square-I",
-    title: "SQUARE I",
+    title: "THE SQUARE",
     type: "Residential Building",
     categories: [
       "Interior Design",
@@ -98,14 +129,21 @@ export const projects: Project[] = [
       "Project Management",
       "Furnishing & Fit-Out",
     ],
-    location: "Business Bay, Dubai",
-    year: "2022",
+    location: "Arjan, Dubai",
+    year: "2021",
     image: "/images/projects/square-I.png",
     featured: true,
+    unitMix: "Studios, 1BR, 2BR & 3BR + RETAILS",
+    projectDetails: "G+4, Residential Complex",
+    description: [
+      "SQUARE I is a modern residential development in Business Bay that combines elegant architecture with practical living spaces.",
+      "The project features a distinctive façade that creates a strong identity within the urban context, while interior spaces are designed to maximize views and natural light.",
+      "Our comprehensive design approach considered both the aesthetic impact of the building in its setting and the quality of life for residents within their homes.",
+    ],
   },
   {
     id: "square-II",
-    title: "SQUARE II",
+    title: "THE SQUARE II",
     type: "Residential Building",
     categories: [
       "Interior Design",
@@ -115,10 +153,17 @@ export const projects: Project[] = [
       "Project Management",
       "Furnishing & Fit-Out",
     ],
-    location: "Business Bay, Dubai",
-    year: "2023",
+    location: "D.I.C, Saih Shuaib, Dubai ",
+    year: "2024",
     image: "/images/projects/square-II.png",
     featured: true,
+    unitMix: "Studios, 1BR, 2BR",
+    projectDetails: "G+4, Residential Complex",
+    description: [
+      "SQUARE II represents an evolution in residential interior design, with a focus on creating versatile living spaces that adapt to residents' changing needs.",
+      "Our design strategy emphasizes spacious layouts, premium finishes, and thoughtful details that elevate everyday living experiences.",
+      "Each residence features carefully considered material palettes that balance visual warmth with durability, creating spaces that feel both luxurious and livable.",
+    ],
   },
   {
     id: "cb10-villa",
@@ -136,6 +181,13 @@ export const projects: Project[] = [
     year: "2024",
     image: "/images/projects/cb10-villa.jpg",
     featured: true,
+    unitMix: "",
+    projectDetails: "",
+    description: [
+      "CB10 Luxury Villa represents the pinnacle of contemporary luxury living, seamlessly blending sophisticated design with comfortable functionality.",
+      "Our design approach focused on creating fluid spaces that transition effortlessly between indoor and outdoor living areas, taking full advantage of the Palm Jumeirah location.",
+      "Each room was carefully curated with bespoke furnishings and unique design elements that reflect the client's refined taste while maintaining a warm, inviting atmosphere.",
+    ],
   },
   {
     id: "ermax-residence",
@@ -151,6 +203,13 @@ export const projects: Project[] = [
     year: "2024",
     image: "/images/projects/ermax-residence.jpg",
     featured: true,
+    unitMix: "3BR, 4BR & 5BR",
+    projectDetails: "G+1F Town-Houses (24 Units) + Club House",
+    description: [
+      "ERMAX Modern Residence is a striking architectural masterpiece that redefines luxury living in Downtown Dubai.",
+      "The design emphasizes clean lines and bold geometries while maintaining a strong connection to the surrounding urban context.",
+      "Sustainability and innovation are key features of the project, with smart home technology and energy-efficient systems integrated throughout.",
+    ],
   },
   {
     id: "terva-homes",
@@ -165,9 +224,16 @@ export const projects: Project[] = [
       "Furnishing & Fit-Out",
     ],
     location: "Dubai Hills Estate, Dubai",
-    year: "2024",
+    year: "2025",
     image: "/images/projects/terva-homes.jpg",
     featured: false,
+    unitMix: "3BR, 4BR & 5BR",
+    projectDetails: "G+1F Town-Houses (24 Units) + Club House",
+    description: [
+      "The Terva Homes is a collection of modern residential units that redefine community living in Dubai Hills Estate.",
+      "The project combines contemporary architecture with sustainable design principles to create homes that are both beautiful and environmentally conscious.",
+      "Each residence is thoughtfully designed to maximize space and natural light while providing privacy and comfort for residents.",
+    ],
   },
   {
     id: "square-III",
@@ -185,6 +251,13 @@ export const projects: Project[] = [
     year: "2026",
     image: "/images/projects/square-III.jpg",
     featured: true,
+    unitMix: "1BR, 2BR & 3BR",
+    projectDetails: "1BR, 2BR & 3BR + RETAILS",
+    description: [
+      "THE SQUARE III is a sophisticated 1BR, 2BR & 3BR residential and retail building that combines modern living spaces with commercial opportunities.",
+      "The project features a carefully planned unit mix of 1BR, 2BR, and 3BR apartments, complemented by retail spaces on the ground floor.",
+      "The design emphasizes functionality and comfort while maintaining a strong visual presence in the Saih Shuaib area.",
+    ],
   },
   {
     id: "majan-plaza",
@@ -198,6 +271,13 @@ export const projects: Project[] = [
     year: "2027",
     image: "/images/projects/majan-plaza.jpg",
     featured: true,
+    unitMix: "2BR, 3BR, 4BR Dplx & 5BR Dplx + SHOPPING MALL + OFFICES",
+    projectDetails: "2B+G+29F Mixed-Use Tower",
+    description: [
+      "MAJAN PLAZA is a landmark mixed-use development featuring a 2B+6+29F tower that combines residential, retail, and office spaces.",
+      "The project offers a diverse unit mix including 2BR, 3BR, 4BR Duplex, and 5BR Duplex apartments, complemented by a shopping mall and office spaces.",
+      "The design creates a vibrant urban environment that serves both residents and visitors while maintaining a strong architectural presence.",
+    ],
   },
   {
     id: "arjan-diamond",
@@ -211,6 +291,13 @@ export const projects: Project[] = [
     year: "2026",
     image: "/images/projects/arjan-diamond.jpg",
     featured: false,
+    unitMix: "SHOPPING MALL & OFFICES",
+    projectDetails: "B+G+4F+R Commercial Building",
+    description: [
+      "ARJAN DIAMOND is a sophisticated B+G+4F+R commercial building that combines retail and office spaces in a modern architectural setting.",
+      "The project features a carefully planned mix of shopping mall and office spaces, creating a dynamic commercial environment.",
+      "The design emphasizes functionality and flexibility while maintaining a strong visual identity in the Arjan area.",
+    ],
   },
   {
     id: "living-heaven",
@@ -228,6 +315,13 @@ export const projects: Project[] = [
     year: "2027",
     image: "/images/projects/living-heaven.jpg",
     featured: true,
+    unitMix: "1BR, 2BR, 3BR, 4BR, 5BR Dplx & 6BR Trplx",
+    projectDetails: "G+13F+R & G+20F+R Residential Buildings",
+    description: [
+      "LIVING HEAVEN is a comprehensive residential development featuring 6+13F+R and G+20F+R buildings that offer diverse living options.",
+      "The project provides a wide range of unit types from 1BR to 6BR Triplex, catering to various family sizes and lifestyles.",
+      "The design creates a harmonious living environment that combines modern architecture with thoughtful amenities and landscaping.",
+    ],
   },
   {
     id: "yd-villa",
@@ -245,6 +339,13 @@ export const projects: Project[] = [
     year: "2023",
     image: "/images/projects/yd-villa.jpg",
     featured: true,
+    unitMix: "6BR",
+    projectDetails: "G+1F Residential Villa",
+    description: [
+      "YD VILLA is a luxurious G+1F residential villa that combines sophisticated design with comfortable living spaces.",
+      "The project features a spacious 6BR layout designed to accommodate extended family living while maintaining privacy and comfort.",
+      "The design emphasizes the connection between indoor and outdoor spaces, creating a seamless living experience.",
+    ],
   },
   {
     id: "mallorca",
@@ -262,6 +363,13 @@ export const projects: Project[] = [
     year: "2023",
     image: "/images/projects/mallorca.jpg",
     featured: true,
+    unitMix: "7BR",
+    projectDetails: "G+1F Residential Villa",
+    description: [
+      "MALLORCA is an elegant G+1F residential villa that combines Mediterranean-inspired design with modern luxury.",
+      "The project features a spacious 7BR layout designed to accommodate extended family living while maintaining privacy and comfort.",
+      "The design emphasizes the connection between indoor and outdoor spaces, creating a resort-like living experience.",
+    ],
   },
   {
     id: "black-pearl-villa",
@@ -276,6 +384,13 @@ export const projects: Project[] = [
     year: "2025",
     image: "/images/projects/black-pearl-villa.jpg",
     featured: true,
+    unitMix: "5BR",
+    projectDetails: "B+G+1F+R Residential Villa",
+    description: [
+      "BLACK PEARL VILLA is a luxurious B+G+1F+R residential villa that combines sophisticated design with waterfront living.",
+      "The project features a spacious 5BR layout designed to maximize views of the surrounding water while maintaining privacy.",
+      "The design emphasizes the connection between indoor and outdoor spaces, creating a seamless living experience with the water.",
+    ],
   },
   {
     id: "white-ponderosa",
@@ -293,6 +408,13 @@ export const projects: Project[] = [
     year: "2024",
     image: "/images/projects/white-ponderosa.jpg",
     featured: true,
+    unitMix: "6BR",
+    projectDetails: "G+1F Residential Villa",
+    description: [
+      "WHITE PONDEROSA is an elegant G+1F residential villa that combines contemporary design with comfortable family living.",
+      "The project features a spacious 6BR layout designed to accommodate extended family living while maintaining privacy and comfort.",
+      "The design emphasizes the connection between indoor and outdoor spaces, creating a seamless living experience.",
+    ],
   },
   {
     id: "isha-island",
@@ -310,5 +432,12 @@ export const projects: Project[] = [
     year: "2028",
     image: "/images/projects/isha-island.jpg",
     featured: false,
+    unitMix: "3BR, 4BR & 5BR",
+    projectDetails: "G+1F+R Beach-Front Villas (30 Units) + Club House",
+    description: [
+      "ISHA ISLAND is an exclusive beach-front development featuring 30 luxury villas and a clubhouse on the World Islands.",
+      "The project offers a range of villa types from 3BR to 5BR, each designed to maximize views and connection with the water.",
+      "The design creates a unique island living experience that combines luxury with natural beauty.",
+    ],
   },
 ]
