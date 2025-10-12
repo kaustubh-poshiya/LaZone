@@ -68,26 +68,26 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.6 }}
 
             >
-              <p className="mb-6 font-sans text-xl text-white/70">
+              <p className="mb-8 font-sans text-lg md:text-xl text-white/80 leading-relaxed">
                 Lazone is a premier interior design and architecture firm based in the UAE. We specialize in creating
                 bespoke designs that reflect our clients' unique personalities and lifestyles.
               </p>
-              <p className="mb-8 font-sans text-xl text-white/70">
+              <p className="mb-10 font-sans text-lg md:text-xl text-white/75 leading-relaxed">
                 Our team of experienced designers and architects work collaboratively to deliver innovative solutions
                 that transform spaces into extraordinary experiences. We believe that great design should not only be
                 beautiful but also functional and sustainable.
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 lg:gap-8 mb-12">
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                    className="text-center px-4 py-6 bg-black/20 rounded-lg backdrop-blur-sm border border-white/5"
+                    className="text-center px-4 py-8 bg-black/30 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-lazone-orange/30 hover:bg-black/40 transition-all duration-300 group"
                   >
-                    <div className="inline-flex items-center justify-center w-14 h-14 border border-white/30 rounded-full bg-primary/10 text-white/80 mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 border-2 border-lazone-orange/50 rounded-full bg-lazone-orange/10 text-lazone-orange mb-5 group-hover:scale-110 group-hover:border-lazone-orange transition-all duration-300">
                       {stat.icon}
                     </div>
                     <CountUp
@@ -95,17 +95,17 @@ export default function WhyChooseUs() {
                       suffix={stat.suffix}
                       duration={2}
                       delay={index * 0.2}
-                      className="text-3xl md:text-4xl font-bold text-lazone-orange mb-2"
+                      className="block text-4xl md:text-5xl font-bold text-lazone-orange mb-3"
                       startOnView={true}
                     />
-                    <div className="text-sm md:text-base text-white/70 font-light">{stat.label}</div>
+                    <div className="text-sm md:text-base text-white/80 font-light leading-snug">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
 
               <Link href="/about">
-                <Button size="lg" className="mt-16 group flex px-10 py-3 border bg-transparent border-white/30 text-white/80 hover:bg-architect-vibrant hover:text-white transition-colors duration-700 rounded-full">
-                  Learn More About Us <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 " />
+                <Button size="lg" className="mt-8 group px-10 py-6 bg-lazone-orange hover:bg-lazone-orange/90 text-white transition-all duration-300 rounded-xl hover:shadow-xl hover:shadow-lazone-orange/30 hover:scale-105 font-medium">
+                  Learn More About Us <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </motion.div>
