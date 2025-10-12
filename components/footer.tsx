@@ -5,8 +5,9 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white mt-[-1px]">
-      <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
+    <footer className="bg-gradient-to-b from-black to-[#0a0a0a] text-white mt-[-1px] relative">
+      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+      <div className="container mx-auto px-4 md:px-6 py-16 md:py-20 relative">
         <ScrollReveal animation="fade-bottom">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
             <div className="md:col-span-1">
