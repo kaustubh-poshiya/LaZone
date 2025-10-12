@@ -133,12 +133,16 @@ export default function TestimonialSection() {
   }
 
   return (
-    <section className="py-20 md:py-24 bg-gradient-to-r from-neutral-100 to-neutral-200 dark:from-neutral-900 dark:to-neutral-800">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-4">What Our Clients Say</h2>
-          <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
-          <p className="text-lg text-neutral-700 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+    <section className="py-24 md:py-32 lg:py-40 bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-50 dark:from-[#0a0a0a] dark:via-neutral-900 dark:to-[#0a0a0a] relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-20 right-10 w-96 h-96 bg-lazone-orange/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-lazone-orange/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative">
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light tracking-tight mb-6 leading-tight">What Our Clients Say</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-lazone-orange to-transparent mx-auto mb-8 rounded-full"></div>
+          <p className="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
             Don't just take our word for it. Here's what our clients have to say about their experience working with us.
           </p>
         </div>
