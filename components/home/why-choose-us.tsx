@@ -29,10 +29,13 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section id="about" ref={containerRef} className="flex items-center justify-center flex-col py-20 md:py-24 overflow-hidden bg-[#080D13] min-h-[110vh]">
-      <div className="container">
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif mb-6 uppercase text-white">Why choose us</h2>
-        <div className=" flex items-start w-32 h-0.5 bg-architect-vibrant mb-6"></div>
+    <section id="about" ref={containerRef} className="flex items-center justify-center flex-col py-24 md:py-32 lg:py-40 overflow-hidden bg-gradient-to-b from-[#080D13] via-[#0a0a0a] to-[#080D13] relative">
+      {/* Decorative background */}
+      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+      
+      <div className="container relative">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-8 text-white leading-tight">Why Choose Us</h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-lazone-orange to-lazone-orange/50 mb-12 rounded-full"></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
             <motion.div style={{ y: y1 }} className="relative z-10 rounded-lg overflow-hidden">
