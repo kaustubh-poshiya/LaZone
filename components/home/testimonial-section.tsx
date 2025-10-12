@@ -186,23 +186,23 @@ export default function TestimonialSection() {
             {/* Featured testimonial - medium */}
             <motion.div
               variants={itemVariants}
-              className="col-span-12 md:col-span-6 bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-md border-t-2 border-lazone-orange"
+              className="col-span-12 md:col-span-6 bg-white dark:bg-neutral-800/50 dark:backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-transparent hover:border-lazone-orange/30 group"
             >
-              <Quote className="w-10 h-10 text-lazone-orange/20 mb-2" />
-              <p className="text-neutral-700 dark:text-neutral-300 text-lg mb-5 leading-relaxed">
+              <Quote className="w-12 h-12 text-lazone-orange/30 mb-4 group-hover:text-lazone-orange/50 transition-colors" />
+              <p className="text-neutral-700 dark:text-neutral-300 text-lg md:text-xl mb-6 leading-relaxed">
                 {testimonials[1].text}
               </p>
               
-              <div className="flex items-start gap-3">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
-                  <span className="text-xl font-medium text-neutral-600 dark:text-neutral-300">{testimonials[1].name.charAt(0)}</span>
+              <div className="flex items-start gap-4">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 bg-gradient-to-br from-lazone-orange/20 to-lazone-orange/10 dark:from-lazone-orange/30 dark:to-lazone-orange/20 flex items-center justify-center border-2 border-lazone-orange/20">
+                  <span className="text-xl font-semibold text-lazone-orange">{testimonials[1].name.charAt(0)}</span>
                 </div>
                 <div>
-                  <h4 className="font-medium text-neutral-900 dark:text-white">{testimonials[1].name}</h4>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                    {testimonials[1].position}, <span className="text-lazone-orange">{testimonials[1].company}</span>
+                  <h4 className="font-semibold text-neutral-900 dark:text-white text-lg">{testimonials[1].name}</h4>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">
+                    {testimonials[1].position}, <span className="text-lazone-orange font-medium">{testimonials[1].company}</span>
                   </p>
-                  <div className="flex mt-1">{renderStars(testimonials[1].rating)}</div>
+                  <div className="flex gap-1">{renderStars(testimonials[1].rating)}</div>
                 </div>
               </div>
             </motion.div>
