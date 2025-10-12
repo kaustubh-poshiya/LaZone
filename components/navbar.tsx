@@ -140,10 +140,10 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className={`text-sm uppercase tracking-wider font-light transition-colors ${
+                  className={`text-sm uppercase tracking-wider font-medium transition-all duration-300 ${
                     isScrolled || hasLightBackground
-                      ? "text-foreground hover:text-lazone-vibrantOrange"
-                      : "text-white hover:text-white/80"
+                      ? "text-foreground hover:text-lazone-vibrantOrange hover:scale-105"
+                      : "text-white hover:text-white/90 hover:scale-105"
                   }`}
                 >
                   {link.name}
