@@ -94,10 +94,10 @@ export default function Navbar() {
                 <>
                   <Link
                     href={link.href}
-                    className={`flex mt-2 items-center text-sm uppercase tracking-wider font-light transition-colors ${
+                    className={`flex mt-2 items-center text-sm uppercase tracking-wider font-medium transition-all duration-300 ${
                       isScrolled || hasLightBackground
-                        ? "text-foreground hover:text-lazone-vibrantOrange"
-                        : "text-white hover:text-white/80"
+                        ? "text-foreground hover:text-lazone-vibrantOrange hover:scale-105"
+                        : "text-white hover:text-white/90 hover:scale-105"
                     }`}
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}
@@ -107,7 +107,7 @@ export default function Navbar() {
                     aria-label="Services dropdown"
                   >
                     {link.name}
-                    <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+                    <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
                   </Link>
                   <div className="h-2"
                     onMouseEnter={() => setServicesOpen(true)}
