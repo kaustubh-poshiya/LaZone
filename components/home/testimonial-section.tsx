@@ -210,21 +210,21 @@ export default function TestimonialSection() {
             {/* Standard testimonials - row 1 */}
             <motion.div
               variants={itemVariants}
-              className="col-span-12 md:col-span-4 bg-white dark:bg-neutral-800 p-5 rounded-xl shadow-md"
+              className="col-span-12 md:col-span-4 bg-white dark:bg-neutral-800/50 dark:backdrop-blur-sm p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-transparent hover:border-lazone-orange/20"
             >
-              <div className="flex items-start gap-3 mb-3">
-                <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
-                  <span className="text-md font-medium text-neutral-600 dark:text-neutral-300">{testimonials[2].name.charAt(0)}</span>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="relative w-11 h-11 rounded-full overflow-hidden flex-shrink-0 bg-gradient-to-br from-lazone-orange/20 to-lazone-orange/10 flex items-center justify-center border-2 border-lazone-orange/20">
+                  <span className="text-base font-semibold text-lazone-orange">{testimonials[2].name.charAt(0)}</span>
                 </div>
                 <div>
-                  <h4 className="font-medium text-neutral-900 dark:text-white text-sm">{testimonials[2].name}</h4>
-                  <p className="text-xs text-neutral-600 dark:text-neutral-400">
-                    {testimonials[2].position}, <span className="text-lazone-orange">{testimonials[2].company}</span>
+                  <h4 className="font-semibold text-neutral-900 dark:text-white text-base">{testimonials[2].name}</h4>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-1">
+                    {testimonials[2].position}, <span className="text-lazone-orange font-medium">{testimonials[2].company}</span>
                   </p>
-                  <div className="flex mt-1">{renderStars(testimonials[2].rating)}</div>
+                  <div className="flex gap-0.5">{renderStars(testimonials[2].rating)}</div>
                 </div>
               </div>
-              <p className="text-neutral-700 dark:text-neutral-300 text-sm">
+              <p className="text-neutral-700 dark:text-neutral-300 text-sm leading-relaxed">
                 {testimonials[2].text}
               </p>
             </motion.div>
