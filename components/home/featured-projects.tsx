@@ -76,20 +76,22 @@ export default function FeaturedProjects() {
   }, [])
 
   return (
-    <section className="py-16 md:py-24 lg:py-32">
+    <section className="py-20 md:py-28 lg:py-36 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollReveal animation="fade-bottom">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-            <div className="flex items-center">
-              <h2 className="section-heading text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">
-                Featured Projects <ArrowRight className="inline-block ml-2 h-6 w-6" />
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light tracking-tight mb-4 leading-tight">
+                Featured Projects
               </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-lazone-orange to-lazone-orange/50 rounded-full"></div>
             </div>
             <Link
               href="/portfolio"
-              className="mt-4 md:mt-0 inline-flex items-center border-b border-architect-vibrant pb-1 text-foreground hover:text-architect-vibrant transition-colors text-base md:text-lg"
+              className="mt-6 md:mt-0 inline-flex items-center gap-2 px-6 py-3 bg-lazone-orange text-white rounded-lg hover:bg-lazone-orange/90 transition-all duration-300 hover:shadow-lg hover:scale-105 group"
             >
               View all projects
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </ScrollReveal>
