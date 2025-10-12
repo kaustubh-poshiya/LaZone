@@ -25,7 +25,7 @@
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 14 100% 54%; /* FF4E16 - Vibrant orange */
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   .dark {
