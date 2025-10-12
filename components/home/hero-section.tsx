@@ -50,9 +50,6 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        {/* Black overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
-
         {/* Hero video */}
         <video
           autoPlay
@@ -65,6 +62,10 @@ export default function HeroSection() {
           <source src="/hero_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        
+        {/* Sophisticated gradient overlay for better text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/30 to-black/40 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10"></div>
       </div>
 
       <div className="relative top-[10vh] sm:top-[15vh] md:top-[17vh] lg:right-[32vw] md:right-[25vw] z-20 text-white px-4 max-w-4xl mx-auto md:mx-0">
