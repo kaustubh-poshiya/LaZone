@@ -14,7 +14,7 @@ export default function Footer() {
               <Link href="/" className="inline-block mb-4">
                 <Image width={100} height={100} src="/images/logo-light.png" alt="LAZONE Logo" className="h-20 w-auto" />
               </Link>
-              <p className="text-white/70 text-sm mb-6">
+              <p className="text-white/80 text-base mb-8 leading-relaxed">
                 Bold creativity. Minimal elegance.
                 <br />
                 Transforming spaces since 2010.
@@ -23,24 +23,24 @@ export default function Footer() {
                 <a
                   href="https://www.instagram.com/lazone.ae/"
                   target="_blank"
-                  className="text-white/70 hover:text-lazone-orange transition-colors"
+                  className="text-white/70 hover:text-lazone-orange transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                   aria-label="Instagram"
                 >
-                  <Instagram className="h-7 w-7" />
+                  <Instagram className="h-6 w-6" />
                 </a>
                 <a
                   href="#"
-                  className="text-white/70 hover:text-lazone-orange transition-colors"
+                  className="text-white/70 hover:text-lazone-orange transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="h-7 w-7" />
+                  <Linkedin className="h-6 w-6" />
                 </a>
                 <a
                   href="#"
-                  className="text-white/70 hover:text-lazone-orange transition-colors"
+                  className="text-white/70 hover:text-lazone-orange transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                   aria-label="Facebook"
                 >
-                  <Facebook className="h-7 w-7" />
+                  <Facebook className="h-6 w-6" />
                 </a>
               </div>
             </div>
