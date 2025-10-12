@@ -97,7 +97,7 @@ export default function FeaturedProjects() {
         </ScrollReveal>
 
         <div className="relative" ref={sliderRef}>
-          <div className="relative h-[500px] md:h-[600px] overflow-hidden rounded-lg">
+          <div className="relative h-[550px] md:h-[650px] lg:h-[700px] overflow-hidden rounded-2xl shadow-2xl">
             {projects.map((project, index) => (
               <div
                 key={project.id}
@@ -107,30 +107,32 @@ export default function FeaturedProjects() {
                 )}
               >
                 <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-8 md:p-12 text-white">
-                  <div className="text-base md:text-lg font-light tracking-wider mb-2 text-architect-secondary">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 text-white max-w-2xl">
+                  <div className="text-sm md:text-base font-medium tracking-wider mb-3 text-lazone-orange uppercase">
                     {project.location}
                   </div>
-                  <h3 className="text-2xl md:text-4xl font-serif font-light mb-6">{project.title}</h3>
+                  <h3 className="text-3xl md:text-5xl lg:text-6xl font-serif font-light mb-8 leading-tight" style={{ textShadow: '0 2px 20px rgba(0, 0, 0, 0.5)' }}>{project.title}</h3>
                   <Button
                     asChild
                     variant="outline"
-                    className="border-white bg-transparent text-white hover:bg-transparent hover:border-architect-vibrant hover:text-architect-vibrant transition-all text-base md:text-lg"
+                    className="border-2 border-white/80 bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-black transition-all duration-300 text-base md:text-lg px-8 py-6 hover:scale-105 hover:shadow-xl"
                   >
-                    <Link href={`/portfolio/${project.id}`}>View Project</Link>
+                    <Link href={`/portfolio/${project.id}`}>View Project Details</Link>
                   </Button>
                 </div>
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl"></div>
               </div>
             ))}
           </div>
 
-          <div className="absolute top-1/2 left-0 right-0 flex justify-between px-4 md:px-8 -mt-6 z-20">
+          <div className="absolute top-1/2 left-0 right-0 flex justify-between px-2 md:px-4 -mt-6 z-20">
             <Button
               onClick={prevSlide}
               size="icon"
               variant="outline"
-              className="border-white text-foreground hover:bg-transparent hover:border-architect-vibrant rounded-full p-2 h-12 w-12"
+              className="border-2 border-white/80 bg-black/30 backdrop-blur-sm text-white hover:bg-white hover:text-black hover:border-white rounded-full h-14 w-14 transition-all duration-300 hover:scale-110 shadow-lg"
               aria-label="Previous project"
             >
               <ChevronLeft className="h-6 w-6" />
@@ -139,21 +141,23 @@ export default function FeaturedProjects() {
               onClick={nextSlide}
               size="icon"
               variant="outline"
-              className="border-white text-foreground hover:bg-transparent hover:border-architect-vibrant rounded-full p-2 h-12 w-12"
+              className="border-2 border-white/80 bg-black/30 backdrop-blur-sm text-white hover:bg-white hover:text-black hover:border-white rounded-full h-14 w-14 transition-all duration-300 hover:scale-110 shadow-lg"
               aria-label="Next project"
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
           </div>
 
-          <div className="flex justify-center mt-6 space-x-2">
+          <div className="flex justify-center mt-8 space-x-3">
             {projects.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={cn(
-                  "w-2 h-2 rounded-full transition-all duration-300",
-                  index === activeIndex ? "bg-architect-vibrant w-6" : "bg-muted",
+                  "rounded-full transition-all duration-500 hover:scale-110",
+                  index === activeIndex 
+                    ? "bg-lazone-orange w-12 h-3 shadow-lg shadow-lazone-orange/50" 
+                    : "bg-muted hover:bg-muted-foreground/50 w-3 h-3",
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />
