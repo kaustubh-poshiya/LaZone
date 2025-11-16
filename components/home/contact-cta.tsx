@@ -18,7 +18,7 @@ export default function ContactCta() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-transparent via-lazone-orange to-transparent mx-auto mb-10 rounded-full"></div>
             <p className="max-w-2xl mx-auto text-xl md:text-2xl text-white/80 mb-14 leading-relaxed">
-              Get in touch to schedule a consultation and discover how we can bring your vision to life with exceptional design and craftsmanship.
+              Get in touch to schedule a consultation and bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 

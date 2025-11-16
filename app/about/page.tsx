@@ -32,19 +32,19 @@ export default function AboutPage() {
       name: "YOGESH DOSHI",
       role: "CHAIRMAN",
       image: "/images/team/chairman.png",
-      bio: "With over 20 years of experience in the real estate and design industry, Yogesh has established himself as a visionary leader with a passion for excellence. His strategic direction has been instrumental in LAZONE's growth and success.",
+      bio: "With over 20 years in real estate and design, Yogesh leads LAZONE with vision and passion for excellence.",
     },
     {
       name: "MITAL DOSHI",
       role: "DESIGN DIRECTOR",
       image: "/images/team/design-director.png",
-      bio: "Mital's creative vision and technical expertise have been driving forces behind LAZONE's most acclaimed projects. Her approach combines bold creativity with meticulous attention to detail, resulting in spaces that are both functional and visually stunning.",
+      bio: "Mital's creative vision and technical expertise drive our most celebrated projects. She combines bold ideas with meticulous detail.",
     },
     {
       name: "BAIJU MEHTA",
       role: "OPERATIONS DIRECTOR",
       image: "/images/team/operations-director.png",
-      bio: "Baiju oversees the operational excellence that underpins LAZONE's project delivery. His systematic approach ensures that each project is executed with precision, efficiency, and the highest standards of quality control.",
+      bio: "Baiju ensures operational excellence across every project with precision, efficiency, and uncompromising quality standards.",
     },
   ]
 
@@ -66,7 +66,7 @@ export default function AboutPage() {
             </h1>
             <div className="w-24 h-px bg-lazone-orange mx-auto mb-8"></div>
             <p className="text-lg md:text-xl text-neutral-800 dark:text-neutral-200 leading-relaxed">
-              LAZONE unites design that transcends mere function, merging the essence of art with contemporary craftsmanship. Our curated approach reflects a philosophy rooted in integrity and simplicity—creating spaces that are timeless, purposeful, and free from excess.
+              LAZONE designs with purpose. We merge art with contemporary craftsmanship, creating spaces that are timeless, intentional, and free from clutter.
             </p>
           </motion.div>
         </div>
@@ -82,14 +82,11 @@ export default function AboutPage() {
                 <h2 className="text-3xl md:text-5xl font-serif font-light tracking-tight text-white">Our Story</h2>
                 <div className="w-20 h-1 bg-lazone-orange mb-6"></div>
                 <p className="text-neutral-200 leading-relaxed">
-                  Founded in 2023, LAZONE began as a small interior design studio with a passion for creating spaces that
-                  inspire. Over the years, we've evolved into a comprehensive creative studio, expanding our services to
-                  include architecture, project management, lighting design, furnishings, and lifestyle experiences.
+                  Founded in 2023, LAZONE started as a small interior design studio with one goal: create spaces that inspire.
+                  We've grown into a comprehensive creative studio offering architecture, project management, and lifestyle design.
                 </p>
                 <p className="text-neutral-200 leading-relaxed">
-                  Our journey has been defined by a commitment to excellence, innovation, and a deep understanding of how
-                  spaces influence human experience. We believe that thoughtful design has the power to transform not just
-                  physical environments, but the way people live, work, and interact.
+                What drives us? A belief that thoughtful design transforms not just spaces, but how people live and work.
                 </p>
               </div>
             </ScrollReveal>
@@ -126,13 +123,10 @@ export default function AboutPage() {
                 <h2 className="text-3xl md:text-5xl font-serif font-light tracking-tight text-white">Our Vision</h2>
                 <div className="w-20 h-1 bg-lazone-orange mb-6"></div>
                 <p className="text-neutral-200 leading-relaxed">
-                  At LAZONE, we are committed to creating spaces that seamlessly blend functionality with aesthetic excellence.
-                  We approach each project with a fresh perspective, embracing the unique challenges and opportunities it presents.
+                  We create spaces where functionality meets beauty. Each project brings fresh challenges, and we embrace them with a perspective that balances bold ideas with refined execution.
                 </p>
                 <p className="text-neutral-200 leading-relaxed">
-                  Today, LAZONE is recognized for our distinctive approach that balances bold creativity with minimal
-                  elegance, creating designs that are both timeless and contemporary. Our holistic design philosophy considers not just
-                  the visual appeal, but how spaces influence emotions, productivity, and well-being.
+                  LAZONE is known for designs that feel both timeless and contemporary. We consider more than aesthetics—we think about how spaces affect emotions, productivity, and well-being.
                 </p>
               </div>
             </ScrollReveal>
@@ -148,8 +142,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">Our Philosophy</h2>
               <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
               <p className="text-neutral-800 dark:text-neutral-200 leading-relaxed">
-                At LAZONE, we believe that exceptional design emerges from the perfect balance of form, function, and
-                feeling. Our approach is guided by three core principles:
+                Exceptional design requires three things:
               </p>
             </div>
           </ScrollReveal>
@@ -172,8 +165,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-serif text-lazone-orange">Bold Creativity</h3>
               </div>
               <p className="text-neutral-800 dark:text-neutral-200">
-                We embrace innovative thinking and creative exploration, pushing boundaries to discover unique solutions
-                that make a statement while serving a purpose.
+                We explore, experiment, and push boundaries to find solutions that make an impact.
               </p>
               <div className="w-full h-0.5 bg-gradient-to-r from-lazone-orange to-transparent mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
@@ -189,8 +181,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-serif text-lazone-orange">Minimal Elegance</h3>
               </div>
               <p className="text-neutral-800 dark:text-neutral-200">
-                We value simplicity and refinement, believing that true luxury lies in the careful curation of elements,
-                where each detail contributes to a harmonious whole.
+                True luxury is in the details. We curate carefully, letting each element contribute to the whole.
               </p>
               <div className="w-full h-0.5 bg-gradient-to-r from-lazone-orange to-transparent mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
@@ -206,8 +197,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-serif text-lazone-orange">Human Connection</h3>
               </div>
               <p className="text-neutral-800 dark:text-neutral-200">
-                We design with people in mind, creating spaces that not only look beautiful but feel right, fostering
-                meaningful connections and enhancing quality of life.
+                Beautiful spaces should feel right. We design for the people who will live and work in them.
               </p>
               <div className="w-full h-0.5 bg-gradient-to-r from-lazone-orange to-transparent mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
@@ -274,7 +264,7 @@ export default function AboutPage() {
               Bring Your Vision to Life
             </h2>
             <p className="text-lg md:text-xl mb-8 text-neutral-100/80">
-              Your Vision, Our Expertise: Let's Create Extraordinary Spaces Together
+              Your vision, our expertise. Let's create extraordinary spaces together.
             </p>
             <a
               href="/contact"

@@ -19,9 +19,10 @@ export default function PortfolioPage() {
               <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">Our Projects</h2>
               <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
               <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                Our portfolio showcases a diverse range of projects that reflect our commitment to innovative design,
-                functionality, and aesthetic excellence. Each project represents a unique collaboration between our
-                creative vision and our clients' aspirations.
+                Explore our selected works across various disciplines.
+              </p>
+              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                Each project reflects our commitment to innovative design, functionality, and aesthetic excellence through unique collaboration.
               </p>
             </div>
           </ScrollReveal>

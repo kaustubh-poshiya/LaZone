@@ -69,8 +69,8 @@ export default function WhyChooseUs() {
 
             >
               <p className="mb-8 font-sans text-lg md:text-xl text-white/80 leading-relaxed">
-                Lazone is a premier interior design and architecture firm based in the UAE. We specialize in creating
-                bespoke designs that reflect our clients' unique personalities and lifestyles.
+                LAZONE is a UAE-based design and architecture firm specializing in spaces that reflect who you are. 
+                Our team works collaboratively to transform ideas into reality with designs that are beautiful, functional, and sustainable.
               </p>
               <p className="mb-10 font-sans text-lg md:text-xl text-white/75 leading-relaxed">
                 Our team of experienced designers and architects work collaboratively to deliver innovative solutions

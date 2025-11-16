@@ -4,11 +4,18 @@ import { ArrowLeft } from "lucide-react"
 import { notFound } from "next/navigation"
 import ProjectStory from "@/components/projects/project-story"
 import ScrollReveal from "@/components/scroll-reveal"
+import { projects } from "@/lib/projects"
 
 type ProjectPageProps = {
   params: {
     project: string
   }
+}
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    project: project.id,
+  }))
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {

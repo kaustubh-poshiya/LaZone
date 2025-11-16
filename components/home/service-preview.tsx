@@ -8,21 +8,21 @@ export default function ServicePreview() {
     {
       title: "Project Management",
       description:
-        "Comprehensive oversight from architectural design to interior design, ensuring seamless coordination, quality, and timely delivery across all project phases.",
+        "From concept to completion, we coordinate every phase to deliver quality on time.",
       image: "/images/project-management.png",
       link: "/services/project-management",
     },
     {
       title: "Architecture",
       description:
-        "Designing innovative structures that harmonize with their surroundings while pushing the boundaries of form and function.",
+        "We design structures that fit their environment while exploring new possibilities in form and function.",
       image: "/images/architecture.png",
       link: "/services/architecture",
     },
     {
       title: "Interior Design",
       description:
-        "Creating harmonious interior spaces that balance aesthetics, functionality, and personal expression.",
+        "Spaces that balance beauty, practicality, and personality.",
       image: "/images/interior.jpg",
       link: "/services/interior-design",
     },
@@ -39,8 +39,7 @@ export default function ServicePreview() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light tracking-tight mb-6 text-white leading-tight">Our Services</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-lazone-orange to-transparent mx-auto mb-8 rounded-full"></div>
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/80 leading-relaxed">
-              We offer a comprehensive suite of design services that work in harmony to create cohesive, thoughtful
-              spaces that inspire and elevate the human experience.
+              We bring together architecture, interiors, and project management to create spaces that inspire and elevate the human experience.
             </p>
           </div>
         </ScrollReveal>

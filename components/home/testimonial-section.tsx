@@ -30,7 +30,7 @@ export default function TestimonialSection() {
       company: "Reviora",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "LaZone is known for their innovative solutions that push the boundaries of traditional design. They fearlessly experiment with new ideas to deliver truly original spaces that exceed expectations.",
+      text: "LaZone pushes boundaries. They experiment fearlessly and deliver original spaces that go beyond expectations.",
       featured: true,
     },
     {
@@ -40,7 +40,7 @@ export default function TestimonialSection() {
       company: "Quentro",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "LaZone's designs exude timeless elegance. They have a keen eye for classic aesthetics and a knack for incorporating modern elements to create spaces that stand the test of time.",
+      text: "Timeless elegance with modern sensibility. Their designs have staying power.",
       featured: true,
     },
     {
@@ -50,7 +50,7 @@ export default function TestimonialSection() {
       company: "Cyfuse",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "LaZone takes a personalized approach to every project, ensuring that each space reflects the unique personality and preferences of the client. Their tailored designs leave a lasting impression.",
+      text: "Functional layouts that make every space work harder and look better.",
       featured: true,
     },
     {
@@ -60,7 +60,7 @@ export default function TestimonialSection() {
       company: "Velion",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "LaZone's expertise in color theory shines through in their harmonious color schemes. They masterfully combine hues to create spaces that evoke the desired mood and atmosphere.",
+      text: "Every project feels personal. They capture your vision and make it real.",
     },
     {
       id: "5",
@@ -69,7 +69,7 @@ export default function TestimonialSection() {
       company: "Reviora",
       image: "/placeholder.svg?height=400&width=400",
       rating: 5,
-      text: "LaZone prioritizes functional layouts that optimize space usage and enhance the overall flow of a room. Their thoughtful arrangements ensure that every corner serves a purpose.",
+      text: "Their mastery of color creates exactly the mood you're looking for.",
     },
     {
       id: "6",

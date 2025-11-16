@@ -9,21 +9,21 @@ export default function ServicesPage() {
       id: "project-management",
       title: "Project Management",
       description:
-        "Comprehensive oversight from architectural design to interior design, ensuring seamless coordination, quality, and timely delivery across all project phases.",
+        "Complete oversight from design to delivery. Seamless coordination, quality control, and on-time completion.",
       image: "/images/project-management.png",
     },
     {
       id: "architecture",
       title: "Architecture",
       description:
-        "Designing innovative structures that harmonize with their surroundings while pushing the boundaries of form and function.",
+        "Innovative structures that harmonize with their surroundings while exploring new forms.",
       image: "/images/architecture.png",
     },
     {
       id: "interior-design",
       title: "Interior Design",
       description:
-        "Creating harmonious interior spaces that balance aesthetics, functionality, and personal expression.",
+        "Spaces that balance aesthetics, functionality, and personal expression.",
       image: "/images/interior.jpg",
     },
     // {
@@ -37,21 +37,21 @@ export default function ServicesPage() {
       id: "furnishing-fitout",
       title: "Furnishing & Fit-Out",
       description:
-        "Experience the art of perfecting spaces with our bespoke furnishing and fit-out services. From concept to reality, we create spaces that embody comfort, style, and sophistication.",
+        "Bespoke furnishing services from concept to reality. Comfort, style, and sophistication in every detail.",
       image: "/images/furnishing-fitout.png",
     },
     {
       id: "lifestyle-wellbeing",
       title: "Lifestyle & Wellbeing",
       description:
-        "Integrating wellness principles into design to create spaces that promote physical health, mental clarity, and emotional balance.",
+        "Design that promotes physical health, mental clarity, and emotional balance.",
       image: "/images/lifestyle.png",
     },
     {
       id: "3d-rendering",
       title: "3D Rendering",
       description:
-        "Transforming design concepts into realistic 3D visualizations to help clients visualize and understand the final design.",
+        "Realistic visualizations that help you see and understand the final design before construction begins.",
       image: "/images/3d-rendering.png",
     },
   ]
@@ -67,9 +67,7 @@ export default function ServicesPage() {
               <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">What We Offer</h2>
               <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
               <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                At LAZONE, we offer a comprehensive suite of design services that work in harmony to create cohesive,
-                thoughtful spaces. Whether you're looking for a single service or a complete design solution, our team
-                brings expertise, creativity, and attention to detail to every project.
+                Whether you need a single service or complete design solution, we bring expertise and creativity to every project.
               </p>
             </div>
           </ScrollReveal>
@@ -97,7 +95,7 @@ export default function ServicesPage() {
               <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6">Our Process</h2>
               <div className="w-20 h-px bg-lazone-orange mx-auto mb-6"></div>
               <p className="text-neutral-300 leading-relaxed">
-                Our design process is structured yet flexible, allowing us to tailor our approach to each client's unique needs while ensuring consistent quality and attention to detail.
+                Structured yet flexible. We tailor our approach while maintaining consistent quality.
               </p>
             </div>
           </ScrollReveal>
@@ -109,7 +107,7 @@ export default function ServicesPage() {
                   <Search className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-serif mb-3 mt-2 text-white text-center">Discovery</h3>
-                <p className="text-neutral-400 text-center">We begin by understanding your vision, requirements, and constraints through in-depth consultation and site analysis.</p>
+                <p className="text-neutral-400 text-center">We understand your vision through in-depth consultation and site analysis.</p>
               </div>
             </ScrollReveal>
             
@@ -119,7 +117,7 @@ export default function ServicesPage() {
                   <Lightbulb className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-serif mb-3 mt-2 text-white text-center">Concept Development</h3>
-                <p className="text-neutral-400 text-center">We create preliminary designs that translate your requirements into spatial and aesthetic solutions.</p>
+                <p className="text-neutral-400 text-center">Preliminary designs that translate your requirements into spatial solutions.</p>
               </div>
             </ScrollReveal>
             
@@ -129,7 +127,7 @@ export default function ServicesPage() {
                   <PenTool className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-serif mb-3 mt-2 text-white text-center">Refinement</h3>
-                <p className="text-neutral-400 text-center">We refine the design based on your feedback, developing detailed plans and specifications for implementation.</p>
+                <p className="text-neutral-400 text-center">Detailed plans developed based on your feedback and specifications.</p>
               </div>
             </ScrollReveal>
             
@@ -139,7 +137,7 @@ export default function ServicesPage() {
                   <CheckSquare className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-serif mb-3 mt-2 text-white text-center">Realization</h3>
-                <p className="text-neutral-400 text-center">We oversee the implementation of the design, ensuring that every detail is executed according to plan.</p>
+                <p className="text-neutral-400 text-center">Implementation oversight ensuring every detail matches the plan.</p>
               </div>
             </ScrollReveal>
           </div>

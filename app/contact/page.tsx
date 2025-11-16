@@ -174,8 +174,7 @@ export default function ContactPage() {
                 <h2 className="text-3xl md:text-4xl font-serif font-light tracking-tight mb-6 animate-text">Get In Touch</h2>
                 <div className="w-32 h-1 bg-lazone-vibrantOrange mb-6 animate-text"></div>
                 <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed animate-text">
-                  We'd love to hear about your project. Contact us to schedule a consultation or to
-                  learn more about our services.
+                  We'd love to hear about your project. Contact us to schedule a consultation or learn more about our services.
                 </p>
               </div>
 
@@ -187,7 +186,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-1">LOCATION</h4>
                     <p className="text-neutral-700 dark:text-neutral-300">
-                      609- Apricot Tower, Silicon Oasis, Dubai, UAE
+                      609 Apricot Tower, Silicon Oasis, Dubai, UAE
                     </p>
                   </div>
                 </div>

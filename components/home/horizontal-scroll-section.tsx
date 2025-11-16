@@ -45,11 +45,11 @@ const contentSections: ContentSection[] = [
     titleSecondary: "Spaces",
     titleAccent: "Redefined",
     subtitle: "DESIGN PHILOSOPHY",
-    description: "We craft extraordinary spaces that transcend conventional architecture. Each project is a masterpiece where innovation meets functionality, creating environments that inspire and transform.",
+    description: "We create environments that go beyond the expected. Each project merges innovation with purpose, transforming how people experience space.",
     features: [
-      { title: "Innovative Design Approach", description: "Pushing boundaries with cutting-edge architectural concepts and creative solutions" },
-      { title: "Sustainable Integration", description: "Harmoniously blending eco-conscious materials with modern design principles" },
-      { title: "Human-Centric Spaces", description: "Creating environments that enhance well-being and foster connection" }
+      { title: "Innovative Design", description: "We push boundaries with fresh architectural thinking and creative problem-solving." },
+      { title: "Sustainable Integration", description: "Eco-conscious materials meet modern design without compromise." },
+      { title: "Human-Centric Spaces", description: "Environments designed to enhance well-being and connection." }
     ],
     color: "bg-[#080D13]",
     accentColor: "text-lazone-orange",
@@ -62,10 +62,10 @@ const contentSections: ContentSection[] = [
     titleSecondary: "Meets",
     titleAccent: "Artistry",
     subtitle: "CRAFTSMANSHIP",
-    description: "Our design process marries precision engineering with artistic vision, delivering spaces that are both functionally superior and aesthetically captivating.",
+    description: "Engineering meets art in our process. The result? Spaces that perform flawlessly and captivate visually.",
     stats: [
-      { value: "98%", label: "Client Satisfaction", description: "Exceeding expectations through meticulous attention to detail" },
-      { value: "100%", label: "Design Excellence", description: "Commitment to uncompromising quality in every project" }
+      { value: "98%", label: "Client Satisfaction", description: "Attention to detail drives results" },
+      { value: "100%", label: "Design Excellence", description: "We never compromise on quality" }
     ],
     color: "bg-[#080D13]",
     accentColor: "text-lazone-orange",
@@ -78,11 +78,11 @@ const contentSections: ContentSection[] = [
     titleSecondary: "Design",
     titleAccent: "Excellence",
     subtitle: "ENDURING BEAUTY",
-    description: "We create spaces that stand the test of time, combining classic elegance with contemporary innovation to deliver lasting architectural impact.",
+    description: "Our work lasts. We combine classic principles with contemporary innovation for spaces that age gracefully.",
     features: [
-      { title: "Intelligent Space Planning", description: "Optimizing flow and functionality while maximizing aesthetic appeal" },
-      { title: "Premium Materials", description: "Selecting exceptional materials that enhance both beauty and durability" },
-      { title: "Natural Integration", description: "Seamlessly incorporating natural light and environmental elements" }
+      { title: "Intelligent Space Planning", description: "Flow and function optimized for maximum impact." },
+      { title: "Premium Materials", description: "Quality materials that enhance beauty and stand the test of time." },
+      { title: "Natural Integration", description: "Light and environment woven seamlessly into every design." }
     ],
     color: "bg-[#080D13]",
     accentColor: "text-lazone-orange",

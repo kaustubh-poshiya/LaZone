@@ -189,6 +189,22 @@ type ServicePageProps = {
   }
 }
 
+export async function generateStaticParams() {
+  const services = [
+    "interior-design",
+    "architecture", 
+    "lobby-design",
+    "project-management",
+    "furnishing-fitout",
+    "lifestyle-wellbeing",
+    "3d-rendering"
+  ]
+
+  return services.map((service) => ({
+    service: service,
+  }))
+}
+
 export default function ServicePage({ params }: ServicePageProps) {
   const serviceData = getServiceData(params.service)
 
