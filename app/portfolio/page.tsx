@@ -2,6 +2,8 @@ import PageHeader from "@/components/page-header"
 import PortfolioGrid from "@/components/portfolio/portfolio-grid"
 import ScrollReveal from "@/components/scroll-reveal"
 import { projects, categories } from "@/lib/projects"
+import { Button } from "@/components/ui/button"
+import { Download } from "lucide-react"
 
 export default function PortfolioPage() {
   return (
@@ -10,6 +12,18 @@ export default function PortfolioPage() {
         title="Portfolio"
         subtitle="Explore our selected works across various disciplines"
         className="bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-800"
+        action={
+          <Button
+            asChild
+            size="lg"
+            className="bg-lazone-orange text-white hover:bg-lazone-orange/90 hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
+          >
+            <a href="/sample.pdf" download="portfolio.pdf" aria-label="Download portfolio PDF">
+              <Download className="mr-2" />
+              Download Portfolio
+            </a>
+          </Button>
+        }
       />
 
       <section className="py-16 md:py-24">
